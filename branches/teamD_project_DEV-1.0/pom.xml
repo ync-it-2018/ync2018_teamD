@@ -4,11 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ync-it</groupId>
 	<artifactId>team-b</artifactId>
-	<name>ex02</name><!-- test -->
-	<!-- TEST 중입니다. -->
+	<name>ex02</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
-	<!--연습  -->
+	
 	<properties>
 		<java-version>18</java-version>
 		<org.springframework-version>4.3.18.RELEASE</org.springframework-version>
@@ -273,5 +272,3 @@
         </plugins>
     </build>
 </project>
-
-<!-- 테스트중 -->
