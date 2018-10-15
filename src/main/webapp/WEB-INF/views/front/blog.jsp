@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html lang="en">
+<html>
 
 <head>
 	<meta charset="utf-8">
@@ -7,15 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<!-- css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-	<link href="css/jcarousel.css" rel="stylesheet" />
-	<link href="css/flexslider.css" rel="stylesheet" />
-	<link href="css/style.css" rel="stylesheet" />
+	<link href="/resources/front/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/resources/front/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<link href="/resources/front/css/jcarousel.css" rel="stylesheet" />
+	<link href="/resources/front/css/flexslider.css" rel="stylesheet" />
+	<link href="/resources/front/css/style.css" rel="stylesheet" />
 
 
 	<!-- Theme skin -->
-	<link href="skins/default.css" rel="stylesheet" />
+	<link href="/resources/front/skins/default.css" rel="stylesheet" />
 
 	<!-- =======================================================
     Theme Name: Moderna
@@ -38,22 +38,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-						<a class="navbar-brand" href="index.html"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<li><a href="index.html">Home</a></li>
-							<li class="dropdown ">
+							<li><a href="/">Home</a></li>
+							<li class="dropdown">
 								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="typography.html">Typography</a></li>
-									<li><a href="components.html">Components</a></li>
-									<li><a href="pricingbox.html">Pricing box</a></li>
+									<li><a href="/typography">Typography</a></li>
+									<li><a href="/components">Components</a></li>
+									<li><a href="/pricingbox">Pricing box</a></li>
 								</ul>
 							</li>
-							<li><a href="portfolio.html">Portfolio</a></li>
-							<li class="active"><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="/portfolio">Portfolio</a></li>
+							<li class="active"><a href="/blog">Blog</a></li>
+							<li><a href="/contact">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 								<div class="post-heading">
 									<h3><a href="#">This is an example of standard post format</a></h3>
 								</div>
-								<img src="img/dummies/blog/img1.jpg" alt="" />
+								<img src="/resources/front/img/dummies/blog/img1.jpg" alt="" />
 							</div>
 							<p>
 								Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
@@ -106,13 +106,13 @@
 								<div id="post-slider" class="flexslider">
 									<ul class="slides">
 										<li>
-											<img src="img/dummies/blog/img1.jpg" alt="" />
+											<img src="/resources/front/img/dummies/blog/img1.jpg" alt="" />
 										</li>
 										<li>
-											<img src="img/dummies/blog/img2.jpg" alt="" />
+											<img src="/resources/front/img/dummies/blog/img2.jpg" alt="" />
 										</li>
 										<li>
-											<img src="img/dummies/blog/img3.jpg" alt="" />
+											<img src="/resources/front/img/dummies/blog/img3.jpg" alt="" />
 										</li>
 									</ul>
 								</div>
@@ -203,21 +203,21 @@
 								<h5 class="widgetheading">Latest posts</h5>
 								<ul class="recent">
 									<li>
-										<img src="img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
+										<img src="/resources/front/img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
 										<h6><a href="#">Lorem ipsum dolor sit</a></h6>
 										<p>
 											Mazim alienum appellantur eu cu ullum officiis pro pri
 										</p>
 									</li>
 									<li>
-										<a href="#"><img src="img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt="" /></a>
+										<a href="#"><img src="/resources/front/img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt="" /></a>
 										<h6><a href="#">Maiorum ponderum eum</a></h6>
 										<p>
 											Mazim alienum appellantur eu cu ullum officiis pro pri
 										</p>
 									</li>
 									<li>
-										<a href="#"><img src="img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt="" /></a>
+										<a href="#"><img src="/resources/front/img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt="" /></a>
 										<h6><a href="#">Et mei iusto dolorum</a></h6>
 										<p>
 											Mazim alienum appellantur eu cu ullum officiis pro pri
@@ -326,18 +326,18 @@
 	<!-- javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.pack.js"></script>
-	<script src="js/jquery.fancybox-media.js"></script>
-	<script src="js/google-code-prettify/prettify.js"></script>
-	<script src="js/portfolio/jquery.quicksand.js"></script>
-	<script src="js/portfolio/setting.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script src="js/animate.js"></script>
-	<script src="js/custom.js"></script>
-
+	<script src="/resources/front/js/jquery.js"></script>
+	<script src="/resources/front/js/jquery.easing.1.3.js"></script>
+	<script src="/resources/front/js/bootstrap.min.js"></script>
+	<script src="/resources/front/js/jquery.fancybox.pack.js"></script>
+	<script src="/resources/front/js/jquery.fancybox-media.js"></script>
+	<script src="/resources/front/js/google-code-prettify/prettify.js"></script>
+	<script src="/resources/front/js/portfolio/jquery.quicksand.js"></script>
+	<script src="/resources/front/js/portfolio/setting.js"></script>
+	<script src="/resources/front/js/jquery.flexslider.js"></script>
+	<script src="/resources/front/js/animate.js"></script>
+	<script src="/resources/front/js/custom.js"></script>
+	
 </body>
 
 </html>

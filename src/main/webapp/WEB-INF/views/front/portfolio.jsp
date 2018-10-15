@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html lang="en">
+<html>
 
 <head>
 	<meta charset="utf-8">
@@ -7,15 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<!-- css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-	<link href="css/jcarousel.css" rel="stylesheet" />
-	<link href="css/flexslider.css" rel="stylesheet" />
-	<link href="css/style.css" rel="stylesheet" />
+	<link href="/resources/front/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/resources/front/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<link href="/resources/front/css/jcarousel.css" rel="stylesheet" />
+	<link href="/resources/front/css/flexslider.css" rel="stylesheet" />
+	<link href="/resources/front/css/style.css" rel="stylesheet" />
 
 
 	<!-- Theme skin -->
-	<link href="skins/default.css" rel="stylesheet" />
+	<link href="/resources/front/skins/default.css" rel="stylesheet" />
 
 	<!-- =======================================================
     Theme Name: Moderna
@@ -39,22 +39,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-						<a class="navbar-brand" href="index.html"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<li><a href="index.html">Home</a></li>
+							<li><a href="/">Home</a></li>
 							<li class="dropdown ">
 								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="typography.html">Typography</a></li>
-									<li><a href="components.html">Components</a></li>
-									<li><a href="pricingbox.html">Pricing box</a></li>
+									<li><a href="/typography">Typography</a></li>
+									<li><a href="/components">Components</a></li>
+									<li><a href="/pricingbox">Pricing box</a></li>
 								</ul>
 							</li>
-							<li class="active"><a href="portfolio.html">Portfolio</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li class="active"><a href="/portfolio">Portfolio</a></li>
+							<li><a href="/blog">Blog</a></li>
+							<li><a href="/contact">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -91,88 +91,88 @@
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/1.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="/resources/front/img/works/1.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/2.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="/resources/front/img/works/2.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="graphic">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/3.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="/resources/front/img/works/3.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/4.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="/resources/front/img/works/4.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/4.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/4.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 photography" data-id="id-4" data-type="web">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/5.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="/resources/front/img/works/5.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/5.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/5.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 photography" data-id="id-5" data-type="icon">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/6.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="/resources/front/img/works/6.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/6.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/6.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/7.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="/resources/front/img/works/7.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/7.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/7.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="graphic">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/8.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="/resources/front/img/works/8.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/8.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/8.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 								</ul>
@@ -267,17 +267,18 @@
 	<!-- javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.pack.js"></script>
-	<script src="js/jquery.fancybox-media.js"></script>
-	<script src="js/google-code-prettify/prettify.js"></script>
-	<script src="js/portfolio/jquery.quicksand.js"></script>
-	<script src="js/portfolio/setting.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script src="js/animate.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="/resources/front/js/jquery.js"></script>
+	<script src="/resources/front/js/jquery.easing.1.3.js"></script>
+	<script src="/resources/front/js/bootstrap.min.js"></script>
+	<script src="/resources/front/js/jquery.fancybox.pack.js"></script>
+	<script src="/resources/front/js/jquery.fancybox-media.js"></script>
+	<script src="/resources/front/js/google-code-prettify/prettify.js"></script>
+	<script src="/resources/front/js/portfolio/jquery.quicksand.js"></script>
+	<script src="/resources/front/js/portfolio/setting.js"></script>
+	<script src="/resources/front/js/jquery.flexslider.js"></script>
+	<script src="/resources/front/js/animate.js"></script>
+	<script src="/resources/front/js/custom.js"></script>
+	
 
 </body>
 
