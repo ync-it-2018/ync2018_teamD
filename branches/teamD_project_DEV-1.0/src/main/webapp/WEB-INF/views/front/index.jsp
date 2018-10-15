@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<html>
 
 <head>
 	<meta charset="utf-8">
@@ -7,14 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<!-- css -->
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-	<link href="css/jcarousel.css" rel="stylesheet" />
-	<link href="css/flexslider.css" rel="stylesheet" />
-	<link href="css/style.css" rel="stylesheet" />
+	<link href="../../../resources/front/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../../../resources/front/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<link href="../../../resources/front/css/jcarousel.css" rel="stylesheet" />
+	<link href="../../../resources/front/css/flexslider.css" rel="stylesheet" />
+	<link href="../../../resources/front/css/style.css" rel="stylesheet" />
 
 	<!-- Theme skin -->
-	<link href="skins/default.css" rel="stylesheet" />
+	<link href="../../../resources/front/skins/default.css" rel="stylesheet" />
 
 	<!-- =======================================================
     Theme Name: Moderna
@@ -37,22 +37,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-						<a class="navbar-brand" href="index.html"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="index.jsp"><span>M</span>oderna</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="index.jsp">Home</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="typography.html">Typography</a></li>
-									<li><a href="components.html">Components</a></li>
-									<li><a href="pricingbox.html">Pricing box</a></li>
+									<li><a href="typography.jsp">Typography</a></li>
+									<li><a href="components.jsp">Components</a></li>
+									<li><a href="pricingbox.jsp">Pricing box</a></li>
 								</ul>
 							</li>
-							<li><a href="portfolio.html">Portfolio</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="portfolio.jsp">Portfolio</a></li>
+							<li><a href="blog.jsp">Blog</a></li>
+							<li><a href="contact.jsp">Contact</a></li>
 						</ul>
 					</div>
 				</div>
