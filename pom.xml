@@ -8,6 +8,7 @@
 	<!-- TEST 중입니다. -->
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<!--연습  -->
 	<properties>
 		<java-version>18</java-version>
 		<org.springframework-version>4.3.18.RELEASE</org.springframework-version>
