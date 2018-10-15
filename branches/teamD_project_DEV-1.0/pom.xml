@@ -5,6 +5,7 @@
 	<groupId>com.ync-it</groupId>
 	<artifactId>team-b</artifactId>
 	<name>ex02</name>
+	<!-- 연습중 -->
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
