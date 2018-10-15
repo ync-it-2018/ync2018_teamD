@@ -1,20 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
 
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>Moderna - Bootstrap 3 flat corporate template</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<!-- css -->
-	<link href="../../../resources/front/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="../../../resources/front/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-	<link href="../../../resources/front/css/jcarousel.css" rel="stylesheet" />
-	<link href="../../../resources/front/css/flexslider.css" rel="stylesheet" />
-	<link href="../../../resources/front/css/style.css" rel="stylesheet" />
+	<link href="/resources/front/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/resources/front/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+	<link href="/resources/front/css/jcarousel.css" rel="stylesheet" />
+	<link href="/resources/front/css/flexslider.css" rel="stylesheet" />
+	<link href="/resources/front/css/style.css" rel="stylesheet" />
 
 	<!-- Theme skin -->
-	<link href="../../../resources/front/skins/default.css" rel="stylesheet" />
+	<link href="/resources/front/skins/default.css" rel="stylesheet" />
 
 	<!-- =======================================================
     Theme Name: Moderna
@@ -68,7 +68,7 @@
 						<div id="main-slider" class="flexslider">
 							<ul class="slides">
 								<li>
-									<img src="img/slides/1.jpg" alt="" />
+									<img src="/resources/front/img/slides/1.jpg" alt="" />
 									<div class="flex-caption">
 										<h3>Modern Design</h3>
 										<p>Duis fermentum auctor ligula ac malesuada. Mauris et metus odio, in pulvinar urna</p>
@@ -76,7 +76,7 @@
 									</div>
 								</li>
 								<li>
-									<img src="img/slides/2.jpg" alt="" />
+									<img src="/resources/front/img/slides/2.jpg" alt="" />
 									<div class="flex-caption">
 										<h3>Fully Responsive</h3>
 										<p>Sodales neque vitae justo sollicitudin aliquet sit amet diam curabitur sed fermentum.</p>
@@ -84,7 +84,7 @@
 									</div>
 								</li>
 								<li>
-									<img src="img/slides/3.jpg" alt="" />
+									<img src="/resources/front/img/slides/3.jpg" alt="" />
 									<div class="flex-caption">
 										<h3>Clean & Fast</h3>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit donec mer lacinia.</p>
@@ -209,46 +209,46 @@
 									<li class="col-lg-3 design" data-id="id-0" data-type="web">
 										<div class="item-thumbs">
 											<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-											<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 1" href="img/works/1.jpg">
+											<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 1" href="/resources/front/img/works/1.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 											<!-- Thumb Image and Description -->
-											<img src="img/works/1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+											<img src="/resources/front/img/works/1.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 										</div>
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 2" href="img/works/2.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 2" href="/resources/front/img/works/2.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/2.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 3" href="img/works/3.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 3" href="/resources/front/img/works/3.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/3.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 									<!-- Item Project and Filter Name -->
 									<li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
 										<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 4" href="img/works/4.jpg">
+										<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Work 4" href="/resources/front/img/works/4.jpg">
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
 										<!-- Thumb Image and Description -->
-										<img src="img/works/4.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+										<img src="/resources/front/img/works/4.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
 									</li>
 									<!-- End Item Project -->
 								</ul>
@@ -344,17 +344,17 @@
 	<!-- javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.fancybox.pack.js"></script>
-	<script src="js/jquery.fancybox-media.js"></script>
-	<script src="js/google-code-prettify/prettify.js"></script>
-	<script src="js/portfolio/jquery.quicksand.js"></script>
-	<script src="js/portfolio/setting.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-	<script src="js/animate.js"></script>
-	<script src="js/custom.js"></script>
+	<script src="/resources/front/js/jquery.js"></script>
+	<script src="/resources/front/js/jquery.easing.1.3.js"></script>
+	<script src="/resources/front/js/bootstrap.min.js"></script>
+	<script src="/resources/front/js/jquery.fancybox.pack.js"></script>
+	<script src="/resources/front/js/jquery.fancybox-media.js"></script>
+	<script src="/resources/front/js/google-code-prettify/prettify.js"></script>
+	<script src="/resources/front/js/portfolio/jquery.quicksand.js"></script>
+	<script src="/resources/front/js/portfolio/setting.js"></script>
+	<script src="/resources/front/js/jquery.flexslider.js"></script>
+	<script src="/resources/front/js/animate.js"></script>
+	<script src="/resources/front/js/custom.js"></script>
 
 </body>
 
