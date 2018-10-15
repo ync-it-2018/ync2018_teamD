@@ -26,7 +26,7 @@ public class HomeController {
 	public String home(Locale locale, Model model) {
 
 		// 가나다
-		logger.info("teamD log 내용", locale);
+		logger.info("teamD log 내용", locale); 
 
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
