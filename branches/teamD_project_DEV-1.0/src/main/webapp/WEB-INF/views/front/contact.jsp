@@ -226,7 +226,7 @@
 			google.maps.event.addDomListener(window, 'load', initialize_google_map);
 		});
 	</script>
-	<script src="contactform/contactform.js"></script>
+	<script src="/resources/front/contactform/contactform.js"></script>
 
 </body>
 
