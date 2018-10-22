@@ -30,7 +30,7 @@
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-<form action="/user/loginPost" method="post">
+<form action="/admin/loginPost" method="post">
   <div class="form-group has-feedback">
     <input type="text" name="uids" class="form-control" placeholder="USER ID"/>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

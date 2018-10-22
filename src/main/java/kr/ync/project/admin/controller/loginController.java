@@ -30,9 +30,11 @@ public class loginController {
 		return "admin/login";
 	}
 	
-//	@RequestMapping("login")
-//	public void loginPost(LoginDTO dto, HttpSession session, Model model) throws Exception{
-//
+	@RequestMapping("loginPost")
+	public void loginPost(/*LoginDTO dto, HttpSession session, Model model*/) throws Exception{
+		
+		
+		
 //		UserVO vo = service.login(dto);
 //
 //		if (vo == null) {
@@ -49,6 +51,5 @@ public class loginController {
 //
 //			service.keepLogin(vo.getUids(), session.getId(), sessionLimit);
 //		}
-//	}
-
+	}
 }
