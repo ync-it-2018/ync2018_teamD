@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 public class PageController {
 	
 		
-	@GetMapping("/blog")
+	@RequestMapping("/blog")
 	public String blog() {
 		log.info("blog call.....");
 		
