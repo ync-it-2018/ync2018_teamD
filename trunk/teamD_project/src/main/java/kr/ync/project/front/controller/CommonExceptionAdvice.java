@@ -1,4 +1,4 @@
-package kr.ync.project.controller;
+package kr.ync.project.front.controller;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

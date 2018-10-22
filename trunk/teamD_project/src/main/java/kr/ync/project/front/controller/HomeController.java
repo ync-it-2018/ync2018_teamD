@@ -1,4 +1,4 @@
-package kr.ync.project.controller;
+package kr.ync.project.front.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -37,4 +37,5 @@ public class HomeController {
 		
 		return "front/index";
 	}
+	
 }
