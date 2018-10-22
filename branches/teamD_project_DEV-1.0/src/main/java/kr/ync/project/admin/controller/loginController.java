@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import kr.ync.project.admin.domain.UserVO;
-import kr.ync.project.admin.dto.LoginDTO;
-import kr.ync.project.admin.service.UserService;
+//import kr.ync.project.admin.domain.UserVO;
+//import kr.ync.project.admin.dto.LoginDTO;
+//import kr.ync.project.admin.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
@@ -21,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 public class loginController {
 	
 	@Inject
-	private UserService service;
+//	private UserService service;
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String adminlogin() {
