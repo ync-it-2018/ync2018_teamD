@@ -41,10 +41,10 @@
 		<form class="modal-content animate" action="/login">
 
 			<div class="modal-container">
-				<label for="uname"><b>Username</b></label> <input type="text"
-					placeholder="Enter Username" name="uname" required> <label
-					for="psw"><b>Password</b></label> <input type="password"
-					placeholder="Enter Password" name="psw" required>
+				<label for="uid"><b>Username</b></label> <input type="text"
+					placeholder="Enter Username" name="uid" required id="uid"> <label
+					for="pwd"><b>Password</b></label> <input type="password"
+					placeholder="Enter Password" name="pwd" required id="pwd">
 
 				<button type="submit" class="modalbtn">Login</button>
 				<label> <input type="checkbox" checked="checked"
@@ -54,7 +54,7 @@
 
 			<div class="modal-container" style="background-color: #f1f1f1">
 				<button type="button" class="cancelbtn">Cancel</button>
-				<span class="psw">Forgot <a href="#">password?</a></span>
+				<span class="pwd">Forgot <a href="#">password?</a></span>
 			</div>
 		</form>
 	</div>
@@ -426,12 +426,27 @@
 
 	<script>
 		$(document).ready(function() {
+			//로그인 창 띄우기
 			$('#loginPage').on('click', function() {
 				document.getElementById('login').style.display = 'block';
 			})
-
+			// 취소 시 로그인 창 닫기
 			$('.cancelbtn').on('click', function() {
 				document.getElementById('login').style.display = 'none';
+				document.getElementById('uid').value = "";
+				document.getElementById('pwd').value = "";
+			})
+
+			
+			var modal = document.getElementById('login');
+
+			$(window).on('click', function(event) {
+			    if (event.target == modal) {
+			        modal.style.display = "none";
+					document.getElementById('uid').value = "";
+					document.getElementById('pwd').value = "";
+
+			    }
 			})
 		});
 	</script>
