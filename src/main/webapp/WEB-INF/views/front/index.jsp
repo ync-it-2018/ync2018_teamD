@@ -42,18 +42,18 @@
 
 			<div class="modal-container">
 				<label for="uid"><b>Username</b></label> <input type="text"
-					placeholder="Enter Username" name="uid" required id="uid"> <label
-					for="pwd"><b>Password</b></label> <input type="password"
+					placeholder="Enter Username" name="uid" required id="uid">
+				<label for="pwd"><b>Password</b></label> <input type="password"
 					placeholder="Enter Password" name="pwd" required id="pwd">
 
-				<button type="submit" class="modalbtn">Login</button>
-				<label> <input type="checkbox" checked="checked"
-					name="remember"> Remember me
-				</label>
+				<button type="submit" class="btn btn-success" id="login"
+					value="Login">로그인</button>
+				<button type="button" class="btn btn-danger" id="cancelbtn"
+					value="Cancel">취소</button>
 			</div>
 
 			<div class="modal-container" style="background-color: #f1f1f1">
-				<button type="button" class="cancelbtn">Cancel</button>
+
 				<span class="pwd">Forgot <a href="#">password?</a></span>
 			</div>
 		</form>
@@ -106,8 +106,7 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<!-- 검색 내용이 들어갈 공간  -->
-						
-						<!-- 더미 데이터(Lorem Ipsum) -->
+
 						Lorem Ipsum is simply dummy text of the printing and typesetting
 						industry. Lorem Ipsum has been the industry's standard dummy text
 						ever since the 1500s, when an unknown printer took a galley of
@@ -118,7 +117,8 @@
 						containing Lorem Ipsum passages, and more recently with desktop
 						publishing software like Aldus PageMaker including versions of
 						Lorem Ipsum.
-						<!-- 더미데이터 끝 -->
+
+
 					</div>
 					<div class="col-lg-6">
 						<!-- Slider -->
@@ -126,24 +126,21 @@
 							<ul class="slides">
 								<li><img src="/resources/front/img/slides/1.jpg" alt="" />
 									<div class="flex-caption">
-										<h3>Modern Design</h3>
-										<p>Duis fermentum auctor ligula ac malesuada. Mauris et
-											metus odio, in pulvinar urna</p>
-										<a href="#" class="btn btn-theme">Learn More</a>
+										<h3>대구 노보텔</h3>
+										<p>베리 굳</p>
+										<a href="#" class="btn btn-theme">예약하기</a>
 									</div></li>
 								<li><img src="/resources/front/img/slides/2.jpg" alt="" />
 									<div class="flex-caption">
-										<h3>Fully Responsive</h3>
-										<p>Sodales neque vitae justo sollicitudin aliquet sit amet
-											diam curabitur sed fermentum.</p>
-										<a href="#" class="btn btn-theme">Learn More</a>
+										<h3>신라 호텔</h3>
+										<p>굳</p>
+										<a href="#" class="btn btn-theme">예약하기</a>
 									</div></li>
 								<li><img src="/resources/front/img/slides/3.jpg" alt="" />
 									<div class="flex-caption">
-										<h3>Clean & Fast</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit
-											donec mer lacinia.</p>
-										<a href="#" class="btn btn-theme">Learn More</a>
+										<h3>클린호텔</h3>
+										<p>클린함</p>
+										<a href="#" class="btn btn-theme">예약하기</a>
 									</div></li>
 							</ul>
 						</div>
@@ -162,7 +159,7 @@
 						<div class="big-cta">
 							<div class="cta-text">
 								<h2>
-									<span>Moderna</span> HTML Business Template
+									<span>Team_D</span> Hotel reservation Project
 								</h2>
 							</div>
 						</div>
@@ -170,6 +167,7 @@
 				</div>
 			</div>
 		</section>
+		
 		<section id="content">
 			<div class="container">
 				<div class="row">
@@ -431,22 +429,21 @@
 				document.getElementById('login').style.display = 'block';
 			})
 			// 취소 시 로그인 창 닫기
-			$('.cancelbtn').on('click', function() {
+			$('#cancelbtn').on('click', function() {
 				document.getElementById('login').style.display = 'none';
 				document.getElementById('uid').value = "";
 				document.getElementById('pwd').value = "";
 			})
 
-			
 			var modal = document.getElementById('login');
 
 			$(window).on('click', function(event) {
-			    if (event.target == modal) {
-			        modal.style.display = "none";
+				if (event.target == modal) {
+					modal.style.display = "none";
 					document.getElementById('uid').value = "";
 					document.getElementById('pwd').value = "";
 
-			    }
+				}
 			})
 		});
 	</script>
