@@ -15,7 +15,7 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/")
+	@RequestMapping("/")
 	public String home() {
 
 		// 가나다
