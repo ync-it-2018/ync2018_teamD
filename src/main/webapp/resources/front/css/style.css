@@ -21,6 +21,15 @@
 1. General
 ==================================== */
 
+.searchpadding {
+	padding-top : 50px;
+}
+
+.searchinput{
+   width:10%;
+}
+
+
 body {
 	font-family:'Open Sans', Arial, sans-serif;
 	font-size:14px;
