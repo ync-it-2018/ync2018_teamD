@@ -1596,6 +1596,11 @@ ul.social-network li {
 ================================ */
 /* --- buttons --- */
 
+
+.loginbtn {
+	margin : 5px;
+}
+
 .bs-docs-example {
 	margin:0 0 10px 0;
 }
