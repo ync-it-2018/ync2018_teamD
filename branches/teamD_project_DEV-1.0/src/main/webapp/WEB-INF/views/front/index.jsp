@@ -34,7 +34,7 @@
 </head>
 
 <body>
-	<!-- The Modal -->
+	<!-- 로그인 모달 -->
 	<div id="login" class="modal">
 
 		<!-- Modal Content -->
@@ -46,12 +46,61 @@
 				<label for="pwd"><b>Password</b></label> <input type="password"
 					placeholder="Enter Password" name="pwd" required id="pwd">
 
-				<button type="submit" class="btn btn-success" id="login"
-					value="Login">로그인</button>
-				<button type="button" class="btn btn-danger" id="cancelbtn"
-					value="Cancel">취소</button>
+				<button type="submit" style="margin: 3px" class="btn btn-success"
+					id="login">로그인</button>
+				<button type="button" style="margin: 3px" class="btn btn-danger"
+					name="cancelbtn">취소</button>
+				<br>
+				<button type="button" style="margin: 3px" class="btn btn-default"
+					id="registerbtn">회원가입</button>
 			</div>
 
+			<div class="modal-container" style="background-color: #f1f1f1">
+
+				<span class="pwd">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
+	</div>
+
+	<!-- 회원가입 모달 -->
+	<div id="register" class="modal">
+
+		<!-- Modal Content -->
+		<form class="modal-content animate" action="/register_proc/">
+
+			<div class="modal-container">
+				<table class="table">
+					<tr>
+						<th><label for="uid"><b>User ID (E-mail)</b></label></th>
+						<td><input type="text" placeholder="Enter Username" required
+							id="regi_uid">
+							<button type="button" class="btn btn-default" name="doublechk">중복확인</button></td>
+					</tr>
+					<tr>
+						<th><label for="pwd"><b>Password</b></label></th>
+						<td><input type="password" placeholder="Enter Password" required
+							id="regi_password"></td>
+					</tr>
+					<tr>
+						<th><label for="pwdchk"><b>Password Check</b></label></th>
+						<td><input type="password" placeholder="Password Check" required
+							id="regi_passwordchk" ></td>
+					</tr>
+					<tr>
+						<td colspan="2'">
+							<div class="alert alert-success">비밀번호가 일치합니다.</div>
+							<div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<button type="submit" class="btn btn-success">회원가입</button>
+							<button type="button" style="margin: 3px" class="btn btn-danger"
+								name="cancelbtn">취소</button>
+						</td>
+					</tr>
+				</table>
+			</div>
 			<div class="modal-container" style="background-color: #f1f1f1">
 
 				<span class="pwd">Forgot <a href="#">password?</a></span>
@@ -167,7 +216,7 @@
 				</div>
 			</div>
 		</section>
-		
+
 		<section id="content">
 			<div class="container">
 				<div class="row">
@@ -409,7 +458,7 @@
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 	<!-- javascript
     ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- 문서의 아랫쪽에 스크립트를 호출함으로써 페이지 로딩 속도 향상 -->
 	<script src="/resources/front/js/jquery.js"></script>
 	<script src="/resources/front/js/jquery.easing.1.3.js"></script>
 	<script src="/resources/front/js/bootstrap.min.js"></script>
@@ -421,32 +470,8 @@
 	<script src="/resources/front/js/jquery.flexslider.js"></script>
 	<script src="/resources/front/js/animate.js"></script>
 	<script src="/resources/front/js/custom.js"></script>
-
-	<script>
-		$(document).ready(function() {
-			//로그인 창 띄우기
-			$('#loginPage').on('click', function() {
-				document.getElementById('login').style.display = 'block';
-			})
-			// 취소 시 로그인 창 닫기
-			$('#cancelbtn').on('click', function() {
-				document.getElementById('login').style.display = 'none';
-				document.getElementById('uid').value = "";
-				document.getElementById('pwd').value = "";
-			})
-
-			var modal = document.getElementById('login');
-
-			$(window).on('click', function(event) {
-				if (event.target == modal) {
-					modal.style.display = "none";
-					document.getElementById('uid').value = "";
-					document.getElementById('pwd').value = "";
-
-				}
-			})
-		});
-	</script>
+	<script src="/resources/front/js/login/login.js"></script>
+	<script src="/resources/front/js/login/register.js"></script>
 
 </body>
 
