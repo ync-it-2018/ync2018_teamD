@@ -78,13 +78,13 @@
 					</tr>
 					<tr>
 						<th><label for="pwd"><b>Password</b></label></th>
-						<td><input type="password" placeholder="Enter Password" required
-							id="regi_password"></td>
+						<td><input type="password" placeholder="Enter Password"
+							required id="regi_password"></td>
 					</tr>
 					<tr>
 						<th><label for="pwdchk"><b>Password Check</b></label></th>
-						<td><input type="password" placeholder="Password Check" required
-							id="regi_passwordchk" ></td>
+						<td><input type="password" placeholder="Password Check"
+							required id="regi_passwordchk"></td>
 					</tr>
 					<tr>
 						<td colspan="2'">
@@ -150,27 +150,26 @@
 
 
 		<section id="featured">
-			<!-- 슬라이더 시작 -->
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-6 searchpadding">
 						<!-- 검색 내용이 들어갈 공간  -->
-
-						Lorem Ipsum is simply dummy text of the printing and typesetting
-						industry. Lorem Ipsum has been the industry's standard dummy text
-						ever since the 1500s, when an unknown printer took a galley of
-						type and scrambled it to make a type specimen book. It has
-						survived not only five centuries, but also the leap into
-						electronic typesetting, remaining essentially unchanged. It was
-						popularised in the 1960s with the release of Letraset sheets
-						containing Lorem Ipsum passages, and more recently with desktop
-						publishing software like Aldus PageMaker including versions of
-						Lorem Ipsum.
-
-
+						<div>
+							<input type="text" class="searchinput" value="1" /> <input
+								type="text" value="1.5" />
+						</div>
+						<div>
+							<input type="text" value="2" />
+						</div>
+						<div>
+							<input type="text" value="3" />
+						</div>
+						<div>
+							<input type="text" value="4" />
+						</div>
 					</div>
 					<div class="col-lg-6">
-						<!-- Slider -->
+						<!-- 슬라이더 시작 -->
 						<div id="main-slider" class="flexslider">
 							<ul class="slides">
 								<li><img src="/resources/front/img/slides/1.jpg" alt="" />
@@ -196,8 +195,8 @@
 						<!-- 슬라이더 끝 -->
 					</div>
 				</div>
-			</div>
 
+			</div>
 		</section>
 
 
