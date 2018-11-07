@@ -8,9 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
-//@RequestMapping("/front/*")
+//@RequestMapping("/")
 public class PageController {
 	
+		
 	@RequestMapping("/blog")
 	public String blog() {
 		log.info("blog call.....");
@@ -53,4 +54,24 @@ public class PageController {
 		return "front/typography";
 	}
 	
+	@RequestMapping("/searchresult")
+	public String searchresult() {
+		log.info("searchresult call.....");
+		
+		return "front/searchresult";
+	}
+	
+	@RequestMapping("/register_proc")
+	public String register() {
+		log.info("register confirm call.....");
+		
+		return "front/register_proc";
+	}
+
+	@RequestMapping("/doublechk")
+	public String doublechk() {
+		log.info("name check page call.....");
+		
+		return "front/doublechk";
+	}
 }
