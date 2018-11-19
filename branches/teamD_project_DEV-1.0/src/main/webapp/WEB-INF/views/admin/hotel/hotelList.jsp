@@ -34,22 +34,22 @@
 							---</option>
 						<option value="t"
 							<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
-							Title</option>
+							Hotel</option>
 						<option value="c"
 							<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
-							Content</option>
+							Country</option>
 						<option value="w"
 							<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
-							Writer</option>
+							City</option>
 						<option value="tc"
 							<c:out value="${cri.searchType eq 'tc'?'selected':''}"/>>
-							Title OR Content</option>
+							Hotel OR Country</option>
 						<option value="cw"
 							<c:out value="${cri.searchType eq 'cw'?'selected':''}"/>>
-							Content OR Writer</option>
+							Country OR City</option>
 						<option value="tcw"
 							<c:out value="${cri.searchType eq 'tcw'?'selected':''}"/>>
-							Title OR Content OR Writer</option>
+							Hotel OR Country OR City</option>
 					</select> <input type="text" name='keyword' id="keywordInput"
 						value='${cri.keyword }'>
 					<button id='searchBtn'>Search</button>
@@ -66,18 +66,17 @@
 						</tr>
 					
 					
-					<c:forEach items="${list}" var="boardVO">
+					<c:forEach items="${list}" var="HotelVO">
 					
 						<tr>
 							<td>1</td>
 							<td>
-							<a href=""> ${boardVO.hotel_name }</a>
+							<a href="/admin/hotelDetail?hotel_code=${HotelVO.hotel_code }"> ${HotelVO.hotel_name }</a>
 							</td>
-							<td>${boardVO.nation_code }</td>
-							<td>${boardVO.city_code }</td>
-							<td>${boardVO.rate }</td>
+							<td>${HotelVO.nation_name }</td>
+							<td>${HotelVO.city_name }</td>
+							<td>${HotelVO.rate }</td>
 						</tr>
-					
 					</c:forEach>
 					
 					</table>
@@ -109,13 +108,13 @@
 								
 							</ul>
 						</div>
-				
+					
 				</div>
 				<!-- /.box-footer-->
 			</div>
 		</div>
 		<!--/.col (left) -->
-
+		
 	</div>
 	<!-- /.row -->
 </section>

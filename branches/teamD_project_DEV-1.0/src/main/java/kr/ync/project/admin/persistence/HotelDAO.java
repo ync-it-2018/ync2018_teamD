@@ -2,21 +2,21 @@ package kr.ync.project.admin.persistence;
 
 import java.util.List;
 
-import kr.ync.project.admin.domain.BoardVO;
+import kr.ync.project.admin.domain.HotelVO;
 
-public interface BoardDAO {
+public interface HotelDAO {
 
-	public void create(BoardVO vo) throws Exception;
+	public void create(HotelVO vo) throws Exception;
 
-	public BoardVO read(Integer bno) throws Exception;
+	public HotelVO read(String hotel_code) throws Exception;
 
-	public void update(BoardVO vo) throws Exception;
+	public void update(HotelVO vo) throws Exception;
 
 	public void delete(Integer bno) throws Exception;
 	
 	public void updateReplyCnt(Integer bno, int amount) throws Exception;
 	
-	public List<BoardVO> listAll() throws Exception;
+	public List<HotelVO> listAll() throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   
