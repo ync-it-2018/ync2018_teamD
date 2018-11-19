@@ -7,32 +7,31 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import kr.ync.project.admin.domain.BoardVO;
+import kr.ync.project.admin.domain.HotelVO;
 
 @Repository
-public class BoardDAOImpl implements BoardDAO {
+public class HotelDAOImpl implements HotelDAO {
 	
 	@Inject
 	private SqlSession session;
 	
 	private static String namespace 
-	= "kr.ync.project.mapper.boardMapper";
+	= "kr.ync.project.mapper.hotelMapper";
 	
 	@Override
-	public void create(BoardVO vo) throws Exception {
+	public void create(HotelVO vo) throws Exception {
 		// TODO Auto-generated method stub
 //		session.insert(namespace + ".create", vo); 
 	}
 
 	@Override
-	public BoardVO read(Integer bno) throws Exception {
+	public HotelVO read(String hotel_code) throws Exception {
 		// TODO Auto-generated method stub
-//		return session.selectOne(namespace+".read",bno);
-		return null;
+		return session.selectOne(namespace+".read",hotel_code);
 	}
 
 	@Override
-	public void update(BoardVO vo) throws Exception {
+	public void update(HotelVO vo) throws Exception {
 		// TODO Auto-generated method stub
 //		session.update(namespace + ".update", vo);
 	}
@@ -44,7 +43,7 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public List<BoardVO> listAll() throws Exception {
+	public List<HotelVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace+".listAll");
 	}

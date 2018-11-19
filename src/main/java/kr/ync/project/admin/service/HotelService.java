@@ -2,19 +2,19 @@ package kr.ync.project.admin.service;
 
 import java.util.List;
 
-import kr.ync.project.admin.domain.BoardVO;
+import kr.ync.project.admin.domain.HotelVO;
 
-public interface BoardService {
+public interface HotelService {
 
-      public void regist(BoardVO board) throws Exception;
+      public void regist(HotelVO board) throws Exception;
       
-      public BoardVO read(Integer bno) throws Exception;
+      public HotelVO read(String hotel_code) throws Exception;
       
-      public void modify (BoardVO board) throws Exception;
+      public void modify (HotelVO board) throws Exception;
       
       public void remove (Integer bno) throws Exception;
       
-      public List<BoardVO> listAll() throws Exception;
+      public List<HotelVO> listAll() throws Exception;
 
 //      public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 //      

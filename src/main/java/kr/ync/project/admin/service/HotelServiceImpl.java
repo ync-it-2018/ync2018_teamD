@@ -6,30 +6,30 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
 
-import kr.ync.project.admin.domain.BoardVO;
-import kr.ync.project.admin.persistence.BoardDAO;
+import kr.ync.project.admin.domain.HotelVO;
+import kr.ync.project.admin.persistence.HotelDAO;
 
 
 @Repository
-public class BoardServiceImpl implements BoardService {
+public class HotelServiceImpl implements HotelService {
 
    @Inject
-   private BoardDAO dao;
+   private HotelDAO dao;
 
    @Override
-   public void regist(BoardVO board) throws Exception {
+   public void regist(HotelVO board) throws Exception {
       // TODO Auto-generated method stub
       dao.create(board);
    }
 
    @Override
-   public BoardVO read(Integer bno) throws Exception {
+   public HotelVO read(String hotel_code) throws Exception {
       // TODO Auto-generated method stub
-      return dao.read(bno);
+      return dao.read(hotel_code);
    }
 
    @Override
-   public void modify(BoardVO board) throws Exception {
+   public void modify(HotelVO board) throws Exception {
       // TODO Auto-generated method stub
       dao.update(board);
    }
@@ -41,7 +41,7 @@ public class BoardServiceImpl implements BoardService {
    }
 
    @Override
-   public List<BoardVO> listAll() throws Exception {
+   public List<HotelVO> listAll() throws Exception {
       // TODO Auto-generated method stub
       return dao.listAll();
    }
