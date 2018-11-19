@@ -4,7 +4,17 @@
   pageEncoding="UTF-8"%>
 
 <%@include file="/WEB-INF/views/admin/include/header.jsp" %>
-<!-- 깨끗한 빈 페이지. 해당 파일을 복사하여 새로운 admin view page를 만들어가면 됨 -->
+	<!-- 컨텐츠 상단바 -->
+	<section class="content-header">
+          <h1>
+            Notice List
+            <small>Preview</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="/admin/noticeList"><i class="fa fa-dashboard"></i> Notice</a></li>
+            <li><a href="/admin/noticeList">noticeList</a></li>
+          </ol>
+        </section>
     <!-- Main content -->
     <section class="content">
       <div class="row">

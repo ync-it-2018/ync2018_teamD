@@ -36,7 +36,7 @@
       
       <header class="main-header">
         <!-- Logo -->
-        <a href="/admin/home" class="logo">
+        <a href="/admin/noticeList" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>D</b>ai</span>
           <!-- logo for regular state and mobile devices -->
@@ -199,15 +199,3 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Board Management
-            <small>Preview</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Forms</a></li>
-            <li class="active">General Elements</li>
-          </ol>
-        </section>

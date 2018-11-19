@@ -22,6 +22,6 @@ public class mainController {
 		log.info("teamD log 내용", locale); 
 
 				
-		return "admin/home";
+		return "admin/notice/noticeList";
 	}
 }
