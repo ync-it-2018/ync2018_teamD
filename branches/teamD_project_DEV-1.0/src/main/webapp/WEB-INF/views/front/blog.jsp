@@ -16,6 +16,28 @@
 
 	<!-- Theme skin -->
 	<link href="/resources/front/skins/default.css" rel="stylesheet" />
+	<script type="text/javascript">
+
+
+
+function popupOpen(){
+
+	var popUrl = "/avgresult";	//팝업창에 출력될 페이지 URL
+	
+
+	var popOption = "width=500, height=400, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+
+		window.open(popUrl,"",popOption);
+
+	}
+
+
+
+</script>
+
+
+
+
 
 	<!-- =======================================================
     Theme Name: Moderna
@@ -38,7 +60,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="/"><span>D</span>aisy</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
@@ -79,58 +101,19 @@
 						<article>
 							<div class="post-image">
 								<div class="post-heading">
-									<h3><a href="#">This is an example of standard post format</a></h3>
+									<h3><a href="#">엘디스 리젠트 대구호텔</a></h3>
 								</div>
-								<img src="/resources/front/img/dummies/blog/img1.jpg" alt="" />
 							</div>
-							<p>
-								Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
-								ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed.
-							</p>
-							<div class="bottom-article">
-								<ul class="meta-post">
-									<li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
-									<li><i class="icon-user"></i><a href="#"> Admin</a></li>
-									<li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-									<li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
-								</ul>
-								<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
-							</div>
-						</article>
-						<article>
-							<div class="post-slider">
-								<div class="post-heading">
-									<h3><a href="#">This is an example of slider post format</a></h3>
-								</div>
-								<!-- start flexslider -->
-								<div id="post-slider" class="flexslider">
-									<ul class="slides">
-										<li>
-											<img src="/resources/front/img/dummies/blog/img1.jpg" alt="" />
-										</li>
-										<li>
-											<img src="/resources/front/img/dummies/blog/img2.jpg" alt="" />
-										</li>
-										<li>
-											<img src="/resources/front/img/dummies/blog/img3.jpg" alt="" />
-										</li>
-									</ul>
-								</div>
-								<!-- end flexslider -->
-							</div>
-							<p>
-								Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
-								ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed.
-							</p>
-							<div class="bottom-article">
-								<ul class="meta-post">
-									<li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
-									<li><i class="icon-user"></i><a href="#"> Admin</a></li>
-									<li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-									<li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
-								</ul>
-								<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
-							</div>
+							<!-- 슬라이더 시작 -->
+						<div id="main-slider" class="flexslider">
+							<ul class="slides">
+								<li><img src="/resources/front/img/slides/1.jpg" alt="" />
+								<li><img src="/resources/front/img/slides/2.jpg" alt="" />
+								<li><img src="/resources/front/img/slides/3.jpg" alt="" />
+							</ul>
+						</div>
+						<!-- 슬라이더 끝 -->
+							
 						</article>
 						<article>
 							<div class="post-quote">
@@ -190,43 +173,26 @@
 								</form>
 							</div>
 							<div class="widget">
-								<h5 class="widgetheading">Categories</h5>
+								<h1 class="widgetheading">가격400,000</h1>
 								<ul class="cat">
-									<li><i class="icon-angle-right"></i><a href="#">Web design</a><span> (20)</span></li>
-									<li><i class="icon-angle-right"></i><a href="#">Online business</a><span> (11)</span></li>
-									<li><i class="icon-angle-right"></i><a href="#">Marketing strategy</a><span> (9)</span></li>
-									<li><i class="icon-angle-right"></i><a href="#">Technology</a><span> (12)</span></li>
-									<li><i class="icon-angle-right"></i><a href="#">About finance</a><span> (18)</span></li>
+									<li>
+									<img src="/resources/front/img/hotel/maps.jpg" class="pull-left" alt="" />
+									</li>
+									
 								</ul>
 							</div>
 							<div class="widget">
-								<h5 class="widgetheading">Latest posts</h5>
+								<h2 class="widgetheading">평점 7.0</h2>
 								<ul class="recent">
 									<li>
-										<img src="/resources/front/img/dummies/blog/65x65/thumb1.jpg" class="pull-left" alt="" />
-										<h6><a href="#">Lorem ipsum dolor sit</a></h6>
-										<p>
-											Mazim alienum appellantur eu cu ullum officiis pro pri
-										</p>
+										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="javascript:popupOpen();"/>
 									</li>
-									<li>
-										<a href="#"><img src="/resources/front/img/dummies/blog/65x65/thumb2.jpg" class="pull-left" alt="" /></a>
-										<h6><a href="#">Maiorum ponderum eum</a></h6>
-										<p>
-											Mazim alienum appellantur eu cu ullum officiis pro pri
-										</p>
-									</li>
-									<li>
-										<a href="#"><img src="/resources/front/img/dummies/blog/65x65/thumb3.jpg" class="pull-left" alt="" /></a>
-										<h6><a href="#">Et mei iusto dolorum</a></h6>
-										<p>
-											Mazim alienum appellantur eu cu ullum officiis pro pri
-										</p>
-									</li>
+									
+									
 								</ul>
 							</div>
 							<div class="widget">
-								<h5 class="widgetheading">Popular tags</h5>
+								<h5 class="widgetheading">관심호텔</h5>
 								<ul class="tags">
 									<li><a href="#">Web design</a></li>
 									<li><a href="#">Trends</a></li>

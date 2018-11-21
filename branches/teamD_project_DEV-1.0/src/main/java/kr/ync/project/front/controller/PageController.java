@@ -74,4 +74,12 @@ public class PageController {
 		
 		return "front/doublechk";
 	}
+	
+	@RequestMapping("/avgresult")
+	public String avgresult() {
+		log.info("avgresult page call.....");
+		
+		return "front/avgresult";
+	}
+	
 }
