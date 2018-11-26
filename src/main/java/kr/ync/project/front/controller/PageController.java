@@ -88,5 +88,11 @@ public class PageController {
 		
 		return "front/mypage";
 	}
-
+	
+	@RequestMapping("/likepage")
+	public String likepage() {
+		log.info("likepage call.....");
+		
+		return "front/likepage";
+	}
 }
