@@ -234,6 +234,11 @@
 						<td><p><input type = "button" value ="호텔 검색하기" onclick=""></p>
 						</td>
 					</tr>
+					
+					<tr><td>
+					<li><a href="/likepage">최근 본 상품</a></li>
+					<li><a href="/likepage">관심 상품</a></li>
+					</td></tr>
 				</table>
 						
 						
