@@ -27,5 +27,13 @@ public class HotelVO {
     private String nation_name;
 
     private String city_name;  
+    
+    private String hotel_core_info;  
+    
+    private String hotel_precautions;  
+    
+    private String hotel_checktime;  
+    
+    private String hotel_etc;  
 	
 }

@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Repository;
 
 import kr.ync.project.admin.domain.HotelVO;
+import kr.ync.project.admin.domain.RoomVO;
 import kr.ync.project.admin.persistence.HotelDAO;
 
 
@@ -45,6 +46,18 @@ public class HotelServiceImpl implements HotelService {
       // TODO Auto-generated method stub
       return dao.listAll();
    }
+
+   @Override
+   public List<RoomVO> roomdata(String hotel_code) throws Exception {
+   	// TODO Auto-generated method stub
+   	return dao.roomdata(hotel_code);
+   }
+
+@Override
+public RoomVO room_detail(String room_idx) throws Exception {
+	// TODO Auto-generated method stub
+	return dao.roomdetail(room_idx);
+}
 
 //@Override
 //public List<BoardVO> listCriteria(Criteria cri) throws Exception {

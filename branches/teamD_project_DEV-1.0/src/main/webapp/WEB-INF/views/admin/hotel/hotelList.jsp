@@ -66,10 +66,10 @@
 						</tr>
 					
 					
-					<c:forEach items="${list}" var="HotelVO">
+					<c:forEach items="${list}" var="HotelVO" varStatus="bno">
 					
 						<tr>
-							<td>1</td>
+							<td>${bno.count }</td>
 							<td>
 							<a href="/admin/hotelDetail?hotel_code=${HotelVO.hotel_code }"> ${HotelVO.hotel_name }</a>
 							</td>

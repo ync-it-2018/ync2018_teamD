@@ -28,13 +28,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    hotel_class, 
 		    information, 
 		    hotel_discount, 
-		    hotel_code, 
+		    h.hotel_code, 
 		    hotel_name, 
 		    nation_name, 
-		    city_name		
-	FROM td_hotel h, td_nation n, td_city c
+		    city_name,
+		    hotel_core_info,
+		    hotel_precautions,
+		    hotel_checktime,
+		    hotel_etc	
+	FROM td_hotel h, td_nation n, td_city c, td_hotel_detailinfo i
 	where h.nation_code = n.nation_code
-	and   h.city_code = c.city_code  
- 	and   hotel_code = #{hotel_code}
+	and   h.city_code = c.city_code
+	and   h.hotel_code = i.hotel_code 
+ 	and   h.hotel_code = #{hotel_code}
+</select>
+
+<select id = "roomData" resultType= "RoomVO">
+	SELECT 	room_idx, 
+		    room_peoplenum, 
+		    room_peoplenum_k,
+		    room_bed, 
+		    room_price,
+		    room_name	
+	FROM  td_room
+	where hotel_code = #{hotel_code}
+</select>
+
+<select id = "roomDetail" resultType= "RoomVO">
+	SELECT 	RIMAGE_IDX, 
+		    RIMAGE_NAME
+	FROM  td_room_image
+	where room_idx = #{room_idx}
 </select>
 </mapper>
