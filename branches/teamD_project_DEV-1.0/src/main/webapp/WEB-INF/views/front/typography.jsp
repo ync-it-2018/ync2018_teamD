@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
@@ -145,8 +146,7 @@
 			</div>
 		</header>
 		<!-- ..까지가 우상단 바 -->
-
-		<section id="inner-headline">
+			<section id="inner-headline">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -160,6 +160,39 @@
 				</div>
 			</div>
 		</section>
+		<%-- <c:forEach items="${list}" var="FhotelVO" >
+		1
+			${FhotelVO.address}
+			${FhotelVO.room_lowprice}
+			${FhotelVO.rate}
+			${FhotelVO.hotel_class}
+			${FhotelVO.information}
+			${FhotelVO.hotel_discount}
+			${FhotelVO.hotel_code}
+			${FhotelVO.hotel_name}
+			${FhotelVO.nation_name}
+			${FhotelVO.city_name}
+		</c:forEach> --%>
+		
+		<c:forEach items="${list}" var="FhotelVO">
+					
+						<tr>
+							<td>1</td>
+							<td>
+							${FhotelVO.address}
+			${FhotelVO.room_lowprice}
+			${FhotelVO.rate}
+			${FhotelVO.hotel_class}
+			${FhotelVO.information}
+			${FhotelVO.hotel_discount}
+			${FhotelVO.hotel_code}
+			${FhotelVO.hotel_name}
+			${FhotelVO.nation_name}
+			${FhotelVO.city_name}
+			</td>
+						</tr>
+					</c:forEach>
+		
 		<section id="content">
 			<div class="container">
 				<div class="row">

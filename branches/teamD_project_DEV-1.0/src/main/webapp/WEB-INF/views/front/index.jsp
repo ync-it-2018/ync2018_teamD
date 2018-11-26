@@ -231,7 +231,7 @@
 				
 					<tr>
 						<td>
-						<td><p><input type = "button" value ="호텔 검색하기" onclick=""></p>
+						<td><p><a href="/typography"><input type = "button" value ="호텔 검색하기" onclick=""></a></p>
 						</td>
 					</tr>
 					
@@ -560,6 +560,11 @@
 	<script src="/resources/front/js/custom.js"></script>
 	<script src="/resources/front/js/login/login.js"></script>
 	<script src="/resources/front/js/login/register.js"></script>
+	<!-- <script type="text/javascript">
+		function test(){
+			
+		}
+	</script> -->
 
 </body>
 

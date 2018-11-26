@@ -5,7 +5,8 @@
 <configuration>
 
 	<typeAliases>
-    	<package name="kr.ync.project.admin.domain"/>    
+    	<package name="kr.ync.project.admin.domain"/>  
+    	<package name="kr.ync.project.front.domain"/>      
   	</typeAliases>
   	
 </configuration>
