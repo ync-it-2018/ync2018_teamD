@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.memberVO;
 import kr.ync.project.admin.persistence.memberDAO;
 
@@ -22,9 +23,9 @@ public class memberServiceImpl implements memberService {
 	}
 
 	@Override
-	public memberVO read(Integer bno) throws Exception {
+	public memberVO read(String member_id) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.read(bno);
+		return dao.read(member_id);
 	}
 
 	@Override
@@ -44,5 +45,17 @@ public class memberServiceImpl implements memberService {
 		// TODO Auto-generated method stub
 		return dao.listAll();
 	}
+	
+	@Override
+	public List<memberVO> listCriteria(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listCriteria(cri);
+	}
+
+	@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.mcountPaging(cri);
+	}	
 
 }

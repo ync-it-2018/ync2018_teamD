@@ -2,13 +2,76 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<!-- maven build 시 mapper xml찾지못하는 오류 방지하기위해 임시로 작성한 mapper xml -->
+
 <mapper namespace="kr.ync.project.mapper.memberMapper">
-<select id="memberList" resultType="memberVO"> 
-<!-- 부등호 <,>를 사용하기 위해서 필요한 부분 : CDATA  -->
-	SELECT 	MEMBER_ID,
-			MEMBER_FIANAME,
-			MEMBER_JOINDATE
-	FROM td_member
+
+<!-- <select id="memberList" resultType="memberVO"> 
+부등호 <,>를 사용하기 위해서 필요한 부분 : CDATA 
+	SELECT 	
+		MEMBER_ID,
+		MEMBER_FIANAME,
+		MEMBER_JOINDATE
+	FROM 
+		td_member
+</select> -->
+
+<select id="read" resultType="memberVO">
+	select  
+		member_id,
+		member_password,
+		member_pnumber,
+		member_address,
+		member_out,
+		nation_code,
+		member_fianame,
+		member_laname,
+		member_joindate
+	from 	
+		td_member 
+	where	
+		member_id = #{member_id}
 </select>
+
+<!-- <select id="listPage" resultType="memberVO">
+<![CDATA[
+	select	
+		member_id,
+		member_fianame,
+		member_joindate
+	from	
+		td_member
+	where 	
+		rownum > (#{page} -1) * #{perPageNum}
+]]>
+</select>-->
+
+<select id="listCriteria" resultType="memberVO">
+<![CDATA[
+	select	
+		member_id,
+		member_fianame,
+		member_joindate
+	from	(select  /*+INDEX_DESC(td_member td_xpkmember*/
+        			rownum rn,
+       				member_id,
+       				member_fianame,
+       				member_joindate
+     	 	 from
+       				td_member
+    	 	 where
+        			rownum <= #{page} * #{perPageNum}
+        	 )
+	where
+    	rn > (#{page} -1) * #{perPageNum}
+]]>
+</select> 
+
+<!-- <select id="mcountPaging" resultType="int">
+<![CDATA[
+	select	
+		count(MEMBER_ID)
+	from	
+		td_member
+]]>
+</select> -->
 </mapper>

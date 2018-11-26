@@ -8,21 +8,21 @@ import lombok.ToString;
 @Setter
 @ToString
 public class memberVO {
-	private String MEMBER_ID;
+	private String member_id;
 
-    private String MEMBER_PASSWORD;
+    private String member_password;
 
-    private String MEMBER_PNUMBER;
+    private String member_pnumber;
 
-    private String MEMBER_ADDRESS;
+    private String member_address;
     
-    private String MEMBER_OUT;
+    private String member_out;
     
-    private String NATION_CODE;
+    private String nation_code;
     
-    private String MEMBER_FIANAME;
+    private String member_fianame;
     
-    private String MEMBER_LANAME;
+    private String member_laname;
     
-    private String MEMBER_JOINDATE;
+    private String member_joindate;
 }
