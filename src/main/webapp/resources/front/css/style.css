@@ -790,7 +790,7 @@ blockquote cite a:visited 				{ color:#555; }
 	display:block;
 	color:#a2a2a2;
 	font-family:'Noto Serif', serif;
-	font-size:14px;
+	font-size:20px;
 	line-height:1.6em;
 	padding-right:20px;
 }
@@ -2006,3 +2006,4 @@ article img.pull-right, article .align-right{
 @media (max-width: 360px) {
 
 }
+hr.one{width:500px;border-bottom:0px;text-align:left;margin-left:0px;}

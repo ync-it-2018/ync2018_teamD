@@ -19,6 +19,11 @@
 	<link href="/resources/front/skins/default.css" rel="stylesheet" />
 	<script type="text/javascript">
 
+	
+
+
+<script type="text/javascript">
+
 
 
 function popupOpen(){
@@ -35,6 +40,11 @@ function popupOpen(){
 
 
 </script>
+<style>
+hr.two{width: 100%;color:black;border: thin solid black;}
+
+
+</style>
 
 
 
@@ -162,7 +172,7 @@ function popupOpen(){
 		</header>
 		<!-- ..까지가 우상단 바 -->
 
-		<section id="inner-headline">
+		<!-- <section id="inner-headline">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -173,10 +183,25 @@ function popupOpen(){
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
+		
 		<section id="content">
 			<div class="container">
 				<div class="row">
+							<form action = "#" accept-charset="utf-8" name ="person_info1" method = "get">
+            <fieldset style = "width:100%">
+                    목적지 : <input type = "text" name = "hotelname" style="WIDTH: 15%; HEIGHT: 40px"/>
+                    체크인 : <input type="date" id="checkin" name="checkin"
+                      value="yyyy-mm-dd">
+                    체크아웃 : <input type="date" id="checkout" name="checkout"
+                      value="yyyy-mm-dd">
+                      <input type="button" value="검색" 	style="WIDTH: 50px; HEIGHT: 40px" /> 
+                   
+                   
+                      
+
+            </fieldset>
+						<form action=#>
 					<div class="col-lg-8">
 						<article>
 							<div class="post-image">
@@ -196,54 +221,44 @@ function popupOpen(){
 							
 						</article>
 						<article>
-							<div class="post-quote">
-								<div class="post-heading">
-									<h3><a href="#">Nice example of quote post format below</a></h3>
-								</div>
-								<blockquote>
-									<i class="icon-quote-left"></i> Lorem ipsum dolor sit amet, ei quod constituto qui. Summo labores expetendis ad quo, lorem luptatum et vis. No qui vidisse signiferumque...
-								</blockquote>
-							</div>
-							<div class="bottom-article">
-								<ul class="meta-post">
-									<li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
-									<li><i class="icon-user"></i><a href="#"> Admin</a></li>
-									<li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-									<li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
-								</ul>
-								<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
-							</div>
+						
+									
+								
+									<div>객실정보 :110개 객실</div>
+									<h4>체크시 준비사항 </h4>
+									<ol>
+										<li>준비사항1</li>
+										<li>준비사항2</li>
+										<li>준비사항3</li>
+									</ol>
+									<h4>체크인/체크아웃 </h4>
+									<ol>
+										<li>체크인15:00이후</li>
+										<li>체크아웃12:00이전</li>
+									</ol>
+							
+									
+								
+							
+							</form>
 						</article>
 						<article>
 							<div class="post-video">
 								<div class="post-heading">
-									<h3><a href="#">Amazing video post format here</a></h3>
+								
+								
+								
 								</div>
-								<div class="video-container">
+								<!-- <div class="video-container">
 									<iframe src="http://player.vimeo.com/video/30585464?title=0&amp;byline=0">
 								</iframe>
-								</div>
+								</div> -->
+								
 							</div>
-							<p>
-								Qui ut ceteros comprehensam. Cu eos sale sanctus eligendi, id ius elitr saperet, ocurreret pertinacia pri an. No mei nibh consectetuer, semper laoreet perfecto ad qui, est rebum nulla argumentum ei. Fierent adipisci iracundia est ei, usu timeam persius
-								ea. Usu ea justo malis, pri quando everti electram ei.
-							</p>
-							<div class="bottom-article">
-								<ul class="meta-post">
-									<li><i class="icon-calendar"></i><a href="#"> Mar 23, 2013</a></li>
-									<li><i class="icon-user"></i><a href="#"> Admin</a></li>
-									<li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
-									<li><i class="icon-comments"></i><a href="#">4 Comments</a></li>
-								</ul>
-								<a href="#" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
-							</div>
+							
+							
 						</article>
-						<div id="pagination">
-							<span class="all">Page 1 of 3</span>
-							<span class="current">1</span>
-							<a href="#" class="inactive">2</a>
-							<a href="#" class="inactive">3</a>
-						</div>
+					
 					</div>
 					<div class="col-lg-4">
 						<aside class="right-sidebar">
@@ -256,6 +271,7 @@ function popupOpen(){
 								<h1 class="widgetheading">가격400,000</h1>
 								<ul class="cat">
 									<li>
+									
 									<img src="/resources/front/img/hotel/maps.jpg" class="pull-left" alt="" />
 									</li>
 									
@@ -274,17 +290,34 @@ function popupOpen(){
 							<div class="widget">
 								<h5 class="widgetheading">관심호텔</h5>
 								<ul class="tags">
-									<li><a href="#">Web design</a></li>
-									<li><a href="#">Trends</a></li>
-									<li><a href="#">Technology</a></li>
-									<li><a href="#">Internet</a></li>
-									<li><a href="#">Tutorial</a></li>
-									<li><a href="#">Development</a></li>
+									<li><input type="button" value="관심호텔 등록" 	style="WIDTH: 200px; HEIGHT: 50px" /></li> <!-- 버튼 누르면 관심 호텔 등록 -->
 								</ul>
 							</div>
 						</aside>
 					</div>
+				<div>
+					<hr class="two">
+					<fieldset  style="width:100%; border:5 solid black;">
+						<strong style="font-size: 2.0em;word-spacing: 3.0em; ">객실유형 객실선택 객실정보 체크인 체크아웃 가격정보</strong>
+						<hr class="two">
+						<img src="/resources/front/img/slides/1.jpg" width="15%" height="30%"/> 
+						<select name="room" style="WIDTH: 200px; HEIGHT: 30px" >
+							<option value="">객실선택</option>
+							<option value="스탠다드 더블룸">스탠다드 더블룸</option>
+							<option value="스탠다드 트윈룸">스탠다드 트윈룸</option>
+							<option value="빌리지 파티룸">빌리지 파티룸</option>
+						</select>
+						<select name="info" style="WIDTH: 200px; HEIGHT: 30px" >
+							<div>wifi</div>
+						</select>
+						<input type="date" id="checkin2" name="checkin2"
+                      value="yyyy-mm-dd">
+                      <input type="date" id="checkin2" name="checkin2"
+                      value="yyyy-mm-dd">
+                      <span">400,000</span>
+					</fieldset>
 				</div>
+			</div>
 			</div>
 		</section>
 		<footer>
