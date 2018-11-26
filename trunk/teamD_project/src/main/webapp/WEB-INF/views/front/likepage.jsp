@@ -1,4 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
@@ -9,18 +8,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <!-- css -->
-<link href="/resources/front/css/interio/grid.css" rel="stylesheet" />
-<link href="/resources/front/css/interio/ie.css" rel="stylesheet" />
-<link href="/resources/front/css/interio/reset.css" rel="stylesheet" />
-<link href="/resources/front/css/interio/style1.css" rel="stylesheet" />
 <link href="/resources/front/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/resources/front/css/fancybox/jquery.fancybox.css"
 	rel="stylesheet">
 <link href="/resources/front/css/jcarousel.css" rel="stylesheet" />
 <link href="/resources/front/css/flexslider.css" rel="stylesheet" />
 <link href="/resources/front/css/style.css" rel="stylesheet" />
+<link href="/resources/front/css/interio/grid.css" rel="stylesheet" />
+<link href="/resources/front/css/interio/ie.css" rel="stylesheet" />
+<link href="/resources/front/css/interio/reset.css" rel="stylesheet" />
+<link href="/resources/front/css/interio/style1.css" rel="stylesheet" />
 
-<link href="/resources/front/css/loginform.css" rel="stylesheet" />
 
 <!-- Theme skin -->
 <link href="/resources/front/skins/default.css" rel="stylesheet" />
@@ -30,89 +28,14 @@
     Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
     Author: BootstrapMade
     Author URL: https://bootstrapmade.com
-   ======================================================= -->
+	======================================================= -->
 
 </head>
 
 <body>
-	<!-- 로그인 모달 -->
-	<div id="login" class="modal">
-
-		<!-- Modal Content -->
-		<form class="modal-content animate" action="/login">
-
-			<div class="modal-container">
-				<label for="uid"><b>Username</b></label> <input type="text"
-					placeholder="Enter Username" name="uid" required id="uid">
-				<label for="pwd"><b>Password</b></label> <input type="password"
-					placeholder="Enter Password" name="pwd" required id="pwd">
-
-				<button type="submit" style="margin: 3px" class="btn btn-success"
-					id="login">로그인</button>
-				<button type="button" style="margin: 3px" class="btn btn-danger"
-					name="cancelbtn">취소</button>
-				<br>
-				<button type="button" style="margin: 3px" class="btn btn-default"
-					id="registerbtn">회원가입</button>
-			</div>
-
-			<div class="modal-container" style="background-color: #f1f1f1">
-
-				<span class="pwd">Forgot <a href="#">password?</a></span>
-			</div>
-		</form>
-	</div>
-
-	<!-- 회원가입 모달 -->
-	<div id="register" class="modal">
-
-		<!-- Modal Content -->
-		<form class="modal-content animate" action="/register_proc/">
-
-			<div class="modal-container">
-				<table class="table">
-					<tr>
-						<th><label for="uid"><b>User ID (E-mail)</b></label></th>
-						<td><input type="text" placeholder="Enter Username" required
-							id="regi_uid">
-							<button type="button" class="btn btn-default" name="doublechk">중복확인</button></td>
-					</tr>
-					<tr>
-						<th><label for="pwd"><b>Password</b></label></th>
-						<td><input type="password" placeholder="Enter Password"
-							required id="regi_password"></td>
-					</tr>
-					<tr>
-						<th><label for="pwdchk"><b>Password Check</b></label></th>
-						<td><input type="password" placeholder="Password Check"
-							required id="regi_passwordchk"></td>
-					</tr>
-					<tr>
-						<td colspan="2'">
-							<div class="alert alert-success">비밀번호가 일치합니다.</div>
-							<div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2">
-							<button type="submit" class="btn btn-success">회원가입</button>
-							<button type="button" style="margin: 3px" class="btn btn-danger"
-								name="cancelbtn">취소</button>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="modal-container" style="background-color: #f1f1f1">
-
-				<span class="pwd">Forgot <a href="#">password?</a></span>
-			</div>
-		</form>
-	</div>
-
-
 	<div id="wrapper">
-		<!-- 우상단 바 관련 소스 -->
-		<header>
+		<!-- start header -->
+			<header>
 			<div class="navbar navbar-default navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
@@ -145,111 +68,23 @@
 				</div>
 			</div>
 		</header>
-		<!-- ..까지가 우상단 바 -->
-			<section id="inner-headline">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<ul class="breadcrumb">
-							<li><a href="#"><i class="fa fa-home"></i></a><i
-								class="icon-angle-right"></i></li>
-							<li><a href="#">Features</a><i class="icon-angle-right"></i></li>
-							<li class="active">Typography</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</section>
-		<%-- <c:forEach items="${list}" var="FhotelVO" >
-		1
-			${FhotelVO.address}
-			${FhotelVO.room_lowprice}
-			${FhotelVO.rate}
-			${FhotelVO.hotel_class}
-			${FhotelVO.information}
-			${FhotelVO.hotel_discount}
-			${FhotelVO.hotel_code}
-			${FhotelVO.hotel_name}
-			${FhotelVO.nation_name}
-			${FhotelVO.city_name}
-		</c:forEach> --%>
-		
-		<c:forEach items="${list}" var="FhotelVO">
-					
-						<tr>
-							<td>1</td>
-							<td>
-							${FhotelVO.address}
-			${FhotelVO.room_lowprice}
-			${FhotelVO.rate}
-			${FhotelVO.hotel_class}
-			${FhotelVO.information}
-			${FhotelVO.hotel_discount}
-			${FhotelVO.hotel_code}
-			${FhotelVO.hotel_name}
-			${FhotelVO.nation_name}
-			${FhotelVO.city_name}
-			</td>
-						</tr>
-					</c:forEach>
+		<!-- end header -->
 		
 		<section id="content">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 leftBorder listSet">
-						<div class="filterName">필터 조건</div>
-						<div>
-							<input type="checkbox" name="free_wifi" value="HTML">무료wifi
-						</div>
-						<div>
-							<input type="checkbox" name="free_parking" value="HTML">주차(무료)
-						</div>
-						<div>
-							<input type="checkbox" name="free_meal" value="HTML">무료
-							아침식사
-						</div>
-						<div>
-							<input type="checkbox" name="free_animal" value="HTML">애완동물
-							동반가능
-						</div>
-						<div class="filterName">호텔 등급</div>
-						<div>
-							<input type="checkbox" name="star_5" value="HTML">★★★★★
-						</div>
-						<div>
-							<input type="checkbox" name="star_4" value="HTML">★★★★
-						</div>
-						<div>
-							<input type="checkbox" name="star_3" value="HTML">★★★
-						</div>
-						<div>
-							<input type="checkbox" name="star_2" value="HTML">★★
-						</div>
-						<div>
-							<input type="checkbox" name="star_1" value="HTML">★
-						</div>
-						<div class="filterName">1박 요금</div>
-						<div id="slider"></div>
-
-                                 <div class="wrapper">
-                                    <span class="price fleft">200,000</span> <a
-                                       class="button fright" href="blog">상세보기</a>
-                                 </div>
-                              </div>
-                           </figure>
-
-					</div>
+				
 					<div class="col-lg-8 listSet">
-						<div id="listTitle">
-							<h3 class="p0">검색한 값이 출력되는 곳 (ex:대구시 남구....)</h3>
+						<div id="listTitle" >
+							<h3 class="lipage">최근 본 상품</h3>
 						</div>
-						<formname="firm"> <input type="button"
-							class="btn btn-success" value="최고인기순" onclick="" /> <input
-							type=button class="btn btn-info" value="고객평점순" onclick="" /> <select
-							name="price">
-							<option value="">높은가격순</option>
-							<option value="">낮은가격순</option>
-						</select> </formname>
+						<formname="firm"> 
+							<input type="button" class="btn btn-success" value="최고인기순" onclick="" /> 
+							<input type=button class="btn btn-info" value="고객평점순" onclick="" /> 
+							<select name="price">
+								<option value="">높은가격순</option>
+								<option value="">낮은가격순</option>
+							</select>
+						</formname>
 						<div class="wrapper p4">
 
 							<article class="grid_4 alpha">
@@ -271,6 +106,7 @@
 											</div>
 										</div>
 									</figure>
+
 
 								</div>
 							</article>
@@ -435,7 +271,7 @@
 	<script src="/resources/front/js/jquery.flexslider.js"></script>
 	<script src="/resources/front/js/animate.js"></script>
 	<script src="/resources/front/js/custom.js"></script>
-	<script src="/resources/front/js/login/login.js"></script>
+
 
 </body>
 

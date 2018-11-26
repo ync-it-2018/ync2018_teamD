@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequestMapping("/admin/*")
 public class hotelController {
-	
+	//테스트
 	@Inject
 	private HotelService service;
 	
@@ -40,7 +40,14 @@ public class hotelController {
 	
 	@RequestMapping(value = "/hotelDetail", method = RequestMethod.GET)
 	public String hotelDetail(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
-		model.addAttribute(service.read(hotel_code));
+		model.addAttribute("hotel", service.read(hotel_code));
+		model.addAttribute("room", service.roomdata(hotel_code));
 		return "admin/hotel/hotelDetail";
+	}
+	
+	@RequestMapping(value = "/roomDetail", method = RequestMethod.GET)
+	public String roomDetail(@RequestParam("room_idx") String room_idx, Model model) throws Exception {
+		model.addAttribute("detail", service.room_detail(room_idx));
+		return "admin/hotel/roomDetail";
 	}
 }
