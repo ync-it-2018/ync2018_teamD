@@ -1,27 +1,22 @@
-package kr.ync.project.admin.persistence;
+package kr.ync.project.front.persistence;
 
 import java.util.List;
 
-import kr.ync.project.admin.domain.HotelVO;
-import kr.ync.project.admin.domain.RoomVO;
+import kr.ync.project.front.domain.FhotelVO;
 
-public interface HotelDAO {
+public interface FhotelDAO {
 
-	public void create(HotelVO vo) throws Exception;
+	public void create(FhotelVO vo) throws Exception;
 
-	public HotelVO read(String hotel_code) throws Exception;
+	public FhotelVO read(String hotel_code) throws Exception;
 
-	public void update(HotelVO vo) throws Exception;
+	public void update(FhotelVO vo) throws Exception;
 
 	public void delete(Integer bno) throws Exception;
 	
 	public void updateReplyCnt(Integer bno, int amount) throws Exception;
 	
-	public List<HotelVO> listAll() throws Exception;
-	
-	public List<RoomVO> roomdata(String hotel_code) throws Exception;
-
-	public RoomVO roomdetail(String room_idx)throws Exception;
+	public List<FhotelVO> listAll() throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   

@@ -1,4 +1,4 @@
-package kr.ync.project.admin.persistence;
+package kr.ync.project.front.persistence;
 
 import java.util.List;
 
@@ -7,32 +7,31 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import kr.ync.project.admin.domain.HotelVO;
-import kr.ync.project.admin.domain.RoomVO;
+import kr.ync.project.front.domain.FhotelVO;
 
 @Repository
-public class HotelDAOImpl implements HotelDAO {
+public class FhotelDAOImpl implements FhotelDAO {
 	
 	@Inject
 	private SqlSession session;
 	
 	private static String namespace 
-	= "kr.ync.project.mapper.hotelMapper";
+	= "kr.ync.project.mapper.FhotelMapper";
 	
 	@Override
-	public void create(HotelVO vo) throws Exception {
+	public void create(FhotelVO vo) throws Exception {
 		// TODO Auto-generated method stub
 //		session.insert(namespace + ".create", vo); 
 	}
 
 	@Override
-	public HotelVO read(String hotel_code) throws Exception {
+	public FhotelVO read(String hotel_code) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".read",hotel_code);
 	}
 
 	@Override
-	public void update(HotelVO vo) throws Exception {
+	public void update(FhotelVO vo) throws Exception {
 		// TODO Auto-generated method stub
 //		session.update(namespace + ".update", vo);
 	}
@@ -44,7 +43,7 @@ public class HotelDAOImpl implements HotelDAO {
 	}
 
 	@Override
-	public List<HotelVO> listAll() throws Exception {
+	public List<FhotelVO> listAll() throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace+".listAll");
 	}
@@ -63,18 +62,6 @@ public class HotelDAOImpl implements HotelDAO {
 	public void updateReplyCnt(Integer bno, int amount) throws Exception {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public List<RoomVO> roomdata(String hotel_code) throws Exception {
-		// TODO Auto-generated method stub
-		return session.selectList(namespace + ".roomData", hotel_code );
-	}
-
-	@Override
-	public RoomVO roomdetail(String room_idx) throws Exception {
-		// TODO Auto-generated method stub
-		return session.selectOne(namespace + ".roomDetail", room_idx);
 	}
 
 //	@Override

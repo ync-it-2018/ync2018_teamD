@@ -1,4 +1,4 @@
-package kr.ync.project.admin.service;
+package kr.ync.project.front.service;
 
 import java.util.List;
 
@@ -6,31 +6,30 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
 
-import kr.ync.project.admin.domain.HotelVO;
-import kr.ync.project.admin.domain.RoomVO;
-import kr.ync.project.admin.persistence.HotelDAO;
+import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.persistence.FhotelDAO;
 
 
 @Repository
-public class HotelServiceImpl implements HotelService {
+public class FhotelServiceImpl implements FhotelService {
 
    @Inject
-   private HotelDAO dao;
+   private FhotelDAO dao;
 
    @Override
-   public void regist(HotelVO board) throws Exception {
+   public void regist(FhotelVO board) throws Exception {
       // TODO Auto-generated method stub
       dao.create(board);
    }
 
    @Override
-   public HotelVO read(String hotel_code) throws Exception {
+   public FhotelVO read(String hotel_code) throws Exception {
       // TODO Auto-generated method stub
       return dao.read(hotel_code);
    }
 
    @Override
-   public void modify(HotelVO board) throws Exception {
+   public void modify(FhotelVO board) throws Exception {
       // TODO Auto-generated method stub
       dao.update(board);
    }
@@ -42,22 +41,10 @@ public class HotelServiceImpl implements HotelService {
    }
 
    @Override
-   public List<HotelVO> listAll() throws Exception {
+   public List<FhotelVO> listAll() throws Exception {
       // TODO Auto-generated method stub
       return dao.listAll();
    }
-
-   @Override
-   public List<RoomVO> roomdata(String hotel_code) throws Exception {
-   	// TODO Auto-generated method stub
-   	return dao.roomdata(hotel_code);
-   }
-
-@Override
-public RoomVO room_detail(String room_idx) throws Exception {
-	// TODO Auto-generated method stub
-	return dao.roomdetail(room_idx);
-}
 
 //@Override
 //public List<BoardVO> listCriteria(Criteria cri) throws Exception {

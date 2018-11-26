@@ -3,8 +3,8 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- maven build 시 mapper xml찾지못하는 오류 방지하기위해 임시로 작성한 mapper xml -->
-<mapper namespace="kr.ync.project.mapper.hotelMapper">
-<select id="listAll" resultType="HotelVO"> 
+<mapper namespace="kr.ync.project.mapper.FhotelMapper">
+<select id="listAll" resultType="FhotelVO"> 
 <!-- 부등호 <,>를 사용하기 위해서 필요한 부분 : CDATA  -->
 	SELECT 	address, 
 		    room_lowprice, 
@@ -21,43 +21,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	and   h.city_code = c.city_code 
 </select>
 
-<select id = "read" resultType= "HotelVO">
+<select id = "read" resultType= "FhotelVO">
 	SELECT 	address, 
 		    room_lowprice, 
 		    rate, 
 		    hotel_class, 
 		    information, 
 		    hotel_discount, 
-		    h.hotel_code, 
+		    hotel_code, 
 		    hotel_name, 
 		    nation_name, 
-		    city_name,
-		    hotel_core_info,
-		    hotel_precautions,
-		    hotel_checktime,
-		    hotel_etc	
-	FROM td_hotel h, td_nation n, td_city c, td_hotel_detailinfo i
+		    city_name		
+	FROM td_hotel h, td_nation n, td_city c
 	where h.nation_code = n.nation_code
-	and   h.city_code = c.city_code
-	and   h.hotel_code = i.hotel_code 
- 	and   h.hotel_code = #{hotel_code}
-</select>
-
-<select id = "roomData" resultType= "RoomVO">
-	SELECT 	room_idx, 
-		    room_peoplenum, 
-		    room_peoplenum_k,
-		    room_bed, 
-		    room_price,
-		    room_name	
-	FROM  td_room
-	where hotel_code = #{hotel_code}
-</select>
-
-<select id = "roomDetail" resultType= "RoomVO">
-	SELECT 	RIMAGE_IDX, 
-		    RIMAGE_NAME
-	FROM  td_room_image
-	where room_idx = #{room_idx}
+	and   h.city_code = c.city_code  
+ 	and   hotel_code = #{hotel_code}
 </select>
 </mapper>

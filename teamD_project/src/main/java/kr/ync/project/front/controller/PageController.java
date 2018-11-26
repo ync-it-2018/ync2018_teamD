@@ -1,16 +1,23 @@
 package kr.ync.project.front.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import javax.inject.Inject;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.service.FhotelService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
-//@RequestMapping("/")
+@RequestMapping("/")
 public class PageController {
 	
+	@Inject
+	private FhotelService service;
 		
 	@RequestMapping("/blog")
 	public String blog() {
@@ -47,10 +54,10 @@ public class PageController {
 		return "front/pricingbox";
 	}
 	
-	@RequestMapping("/typography")
-	public String typography() {
+	@RequestMapping(value= "/typography" , method = RequestMethod.GET)
+	public String typography(FhotelVO board, Model model) throws Exception {
 		log.info("typography call.....");
-		
+		model.addAttribute("list", service.listAll());
 		return "front/typography";
 	}
 	
@@ -73,5 +80,26 @@ public class PageController {
 		log.info("name check page call.....");
 		
 		return "front/doublechk";
+	}
+	
+	@RequestMapping("/avgresult")
+	public String avgresult() {
+		log.info("avgresult page call.....");
+		
+		return "front/avgresult";
+	}
+
+	@RequestMapping("/mypage")
+	public String mypage() {
+		log.info("mypage call.....");
+		
+		return "front/mypage";
+	}
+	
+	@RequestMapping("/likepage")
+	public String likepage() {
+		log.info("likepage call.....");
+		
+		return "front/likepage";
 	}
 }

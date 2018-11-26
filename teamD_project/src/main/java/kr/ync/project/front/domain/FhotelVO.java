@@ -1,4 +1,4 @@
-package kr.ync.project.admin.domain;
+package kr.ync.project.front.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class HotelVO {
+public class FhotelVO {
 	private String address;
 
 	private int room_lowprice;
@@ -27,13 +27,5 @@ public class HotelVO {
     private String nation_name;
 
     private String city_name;  
-    
-    private String hotel_core_info;  
-    
-    private String hotel_precautions;  
-    
-    private String hotel_checktime;  
-    
-    private String hotel_etc;  
 	
 }
