@@ -40,7 +40,7 @@ public class hotelController {
 	
 	@RequestMapping(value = "/hotelDetail", method = RequestMethod.GET)
 	public String hotelDetail(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
-		model.addAttribute(service.read(hotel_code));
+		model.addAttribute("HotelVO",service.read(hotel_code));
 		return "admin/hotel/hotelDetail";
 	}
 }
