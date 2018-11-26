@@ -156,20 +156,97 @@
 				<div class="row">
 					<div class="col-lg-6 searchpadding">
 						<!-- 검색 내용이 들어갈 공간  -->
+						
+				<table class="table">
+					<tr>
+						<td colspan="2">
 						<div>
-							<input type="text" class="searchinput" value="1" /> <input
-								type="text" value="1.5" />
+						호텔검색<br>
+						<input type="text" name="textfield" style="text-align:left; width:200px; height:30px" value = "ex) Tokyo">
+						 <input type="button" name="btn2" value="검색" onclick="alert('링크로바꿔야함')">
 						</div>
-						<div>
-							<input type="text" value="2" />
-						</div>
-						<div>
-							<input type="text" value="3" />
-						</div>
-						<div>
-							<input type="text" value="4" />
-						</div>
+						 <br>
+						</td>
+						
+					</tr>
+					<tr>
+						<td><p>체크인</p><input type="date" id="userdate" name="userdate"
+    		            value="2018-12-24" ></td>
+						<td><p>체크아웃</p><input type="date" id="userdate" name="userdate"
+    		            value="2018-12-25" ></td>
+					</tr>
+<!-- 					<tr>
+						<td>
+						
+    					<div>체크인 날짜 :  </div>
+    					
+    					<div style = "padding: 0px 1px 0px 350px;">  
+                         		체크아웃 날짜 : </div> <br>
+    					<input type="date" id="userdate" name="userdate"
+    		            value="2018-12-24" >
+   						 <div><input type="submit" value="전송"></div>
+   						
+    					<div style = "padding: 0px 1px 0px 350px;">  
+    					<input type="date" id="userdate" name="userdate"
+    		            value="2018-12-25"></div>
+   						 <div><input type="submit" value="전송"></div>
+						<br><br>
+						</td>
+					</tr> -->
+					<tr>
+						<td><p>객실선택</p>
+						<select name="room">
+  						<option value="one" selected="selected">1개의 객실</option>
+ 						 <option value="two">2개의 객실</option>
+ 						 <option value="three">3개의 객실</option>
+						</select></td>
+						<td><p>체크아웃</p><select name="man">
+  						<option value="one" selected="selected">1명</option>
+ 						 <option value="two">2명</option>
+ 						 <option value="three">3명</option>
+						</select>
+						<select name="boy">
+  						<option value="one" selected="selected">1명</option>
+ 						 <option value="two">2명</option>
+ 						 <option value="three">3명</option>
+						</select><br><br></td>
+						<td></td><td></td>
+					</tr>
+					
+					<tr>
+						<td><p>호텔등급</p><input type="checkbox" name="grade" value="onestar"> ★<br>
+						<input type="checkbox" name="grader" value="twostar"> ★★<br>
+						<input type="checkbox" name="grader" value="threestar"> ★★★<br>
+						<input type="checkbox" name="grader" value="fourstar"> ★★★★<br>
+						<input type="checkbox" name="grader" value="fourstar"> ★★★★★<br>
+						<input type="checkbox" name="grader" value="fourstar"> ★★★★★★<br></td>
+						<td><p>호텔가격</p><input type="checkbox" name="fruits" value="apple"> ￦0 - ￦49000<br>
+						<input type="checkbox" name="fruits" value="banana"> ￦50000 - ￦99000<br>
+						<input type="checkbox" name="fruits" value="orange"> ￦100000 - ￦149000 <br>
+						<input type="checkbox" name="fruits" value="orange"> ￦150000 - ￦199000 <br> 
+						<input type="checkbox" name="fruits" value="orange"> ￦200000 - ￦249000 <br>
+						<input type="checkbox" name="fruits" value="orange"> ￦250000 -  <br></td>
+					</tr>
+					
+				
+					<tr>
+						<td>
+						<td><p><input type = "button" value ="호텔 검색하기" onclick=""></p>
+						</td>
+					</tr>
+				</table>
+						
+						
+						
+						
+						
 					</div>
+					
+					
+					
+					
+					
+					
 					<div class="col-lg-6">
 						<!-- 슬라이더 시작 -->
 						<div id="main-slider" class="flexslider">
@@ -195,8 +272,13 @@
 							</ul>
 						</div>
 						<!-- 슬라이더 끝 -->
+						
+						
+						
 					</div>
 				</div>
+
+
 
 			</div>
 		</section>
