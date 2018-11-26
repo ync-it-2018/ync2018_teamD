@@ -3,6 +3,7 @@ package kr.ync.project.admin.persistence;
 import java.util.List;
 
 import kr.ync.project.admin.domain.HotelVO;
+import kr.ync.project.admin.domain.RoomVO;
 
 public interface HotelDAO {
 
@@ -17,6 +18,10 @@ public interface HotelDAO {
 	public void updateReplyCnt(Integer bno, int amount) throws Exception;
 	
 	public List<HotelVO> listAll() throws Exception;
+	
+	public List<RoomVO> roomdata(String hotel_code) throws Exception;
+
+	public RoomVO roomdetail(String room_idx)throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   

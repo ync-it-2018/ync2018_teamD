@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import kr.ync.project.admin.domain.HotelVO;
+import kr.ync.project.admin.domain.RoomVO;
 
 @Repository
 public class HotelDAOImpl implements HotelDAO {
@@ -62,6 +63,18 @@ public class HotelDAOImpl implements HotelDAO {
 	public void updateReplyCnt(Integer bno, int amount) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<RoomVO> roomdata(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".roomData", hotel_code );
+	}
+
+	@Override
+	public RoomVO roomdetail(String room_idx) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace + ".roomDetail", room_idx);
 	}
 
 //	@Override
