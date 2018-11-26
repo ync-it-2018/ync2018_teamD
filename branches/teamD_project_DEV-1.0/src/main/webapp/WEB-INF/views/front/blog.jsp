@@ -12,6 +12,7 @@
 	<link href="/resources/front/css/jcarousel.css" rel="stylesheet" />
 	<link href="/resources/front/css/flexslider.css" rel="stylesheet" />
 	<link href="/resources/front/css/style.css" rel="stylesheet" />
+	<link href="/resources/front/css/loginform.css" rel="stylesheet" />
 
 
 	<!-- Theme skin -->
@@ -49,39 +50,118 @@ function popupOpen(){
 </head>
 
 <body>
+	<!-- 로그인 모달 -->
+	<div id="login" class="modal">
+
+		<!-- Modal Content -->
+		<form class="modal-content animate" action="/login">
+
+			<div class="modal-container">
+				<label for="uid"><b>Username</b></label> <input type="text"
+					placeholder="Enter Username" name="uid" required id="uid">
+				<label for="pwd"><b>Password</b></label> <input type="password"
+					placeholder="Enter Password" name="pwd" required id="pwd">
+
+				<button type="submit" style="margin: 3px" class="btn btn-success"
+					id="login">로그인</button>
+				<button type="button" style="margin: 3px" class="btn btn-danger"
+					name="cancelbtn">취소</button>
+				<br>
+				<button type="button" style="margin: 3px" class="btn btn-default"
+					id="registerbtn">회원가입</button>
+			</div>
+
+			<div class="modal-container" style="background-color: #f1f1f1">
+
+				<span class="pwd">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
+	</div>
+
+	<!-- 회원가입 모달 -->
+	<div id="register" class="modal">
+
+		<!-- Modal Content -->
+		<form class="modal-content animate" action="/register_proc/">
+
+			<div class="modal-container">
+				<table class="table">
+					<tr>
+						<th><label for="uid"><b>User ID (E-mail)</b></label></th>
+						<td><input type="text" placeholder="Enter Username" required
+							id="regi_uid">
+							<button type="button" class="btn btn-default" name="doublechk">중복확인</button></td>
+					</tr>
+					<tr>
+						<th><label for="pwd"><b>Password</b></label></th>
+						<td><input type="password" placeholder="Enter Password"
+							required id="regi_password"></td>
+					</tr>
+					<tr>
+						<th><label for="pwdchk"><b>Password Check</b></label></th>
+						<td><input type="password" placeholder="Password Check"
+							required id="regi_passwordchk"></td>
+					</tr>
+					<tr>
+						<td colspan="2'">
+							<div class="alert alert-success">비밀번호가 일치합니다.</div>
+							<div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<button type="submit" class="btn btn-success">회원가입</button>
+							<button type="button" style="margin: 3px" class="btn btn-danger"
+								name="cancelbtn">취소</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="modal-container" style="background-color: #f1f1f1">
+
+				<span class="pwd">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
+	</div>
+
+
 	<div id="wrapper">
-		<!-- start header -->
+		<!-- 우상단 바 관련 소스 -->
 		<header>
 			<div class="navbar navbar-default navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-						<a class="navbar-brand" href="/"><span>D</span>aisy</a>
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<li><a href="/">Home</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+							<li class="active"><a href="/">Home</a></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle "
+								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+								data-close-others="false">Features <b
+									class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
 									<li><a href="/typography">Typography</a></li>
 									<li><a href="/components">Components</a></li>
 									<li><a href="/pricingbox">Pricing box</a></li>
-								</ul>
-							</li>
+								</ul></li>
+							<li><a href="/searchresult">SearchResult</a></li>
 							<li><a href="/portfolio">Portfolio</a></li>
-							<li class="active"><a href="/blog">Blog</a></li>
+							<li><a href="/blog">Blog</a></li>
 							<li><a href="/contact">Contact</a></li>
+							<li><a href="#" id="loginPage">Login</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</header>
-		<!-- end header -->
+		<!-- ..까지가 우상단 바 -->
+
 		<section id="inner-headline">
 			<div class="container">
 				<div class="row">
@@ -303,6 +383,7 @@ function popupOpen(){
 	<script src="/resources/front/js/jquery.flexslider.js"></script>
 	<script src="/resources/front/js/animate.js"></script>
 	<script src="/resources/front/js/custom.js"></script>
+	<script src="/resources/front/js/login/login.js"></script>
 	
 </body>
 

@@ -81,5 +81,12 @@ public class PageController {
 		
 		return "front/avgresult";
 	}
-	
+
+	@RequestMapping("/mypage")
+	public String mypage() {
+		log.info("mypage call.....");
+		
+		return "front/mypage";
+	}
+
 }
