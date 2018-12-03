@@ -46,5 +46,10 @@ $(document).ready(function() {
 		cancelPage.style.display = 'none';
 		modifyPage.style.display = 'block';
 	})
-
+	
+	$("[name=reviewChk]").on('click', function() {
+		window.open("/writereview", "" , "width=800,height=600,toolbar=no,location=no");
+	})
+	
+	
 });

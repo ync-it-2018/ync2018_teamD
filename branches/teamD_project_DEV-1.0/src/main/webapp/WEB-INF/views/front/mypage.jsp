@@ -208,28 +208,28 @@
 									<td>The Big 7 Hotel</td>
 									<td>2015-07-02</td>
 									<td>2015-07-30</td>
-									<td><button class="btn">확인하기</button></td>
+									<td><button class="btn" name="reviewChk">확인하기</button></td>
 								</tr>
 								<tr>
 									<td>2</td>
 									<td>Daegu Hotel</td>
 									<td>2015-08-22</td>
 									<td>2015-08-25</td>
-									<td><button class="btn">확인하기</button></td>
+									<td><button class="btn" name="reviewChk">확인하기</button></td>
 								</tr>
 								<tr>
 									<td>3</td>
 									<td>Tokyo Sky Hotel</td>
 									<td>2016-10-25</td>
 									<td>2016-11-12</td>
-									<td><button class="btn">작성하기</button></td>
+									<td><button class="btn" name="reviewChk">작성하기</button></td>
 								</tr>
 								<tr>
 									<td>4</td>
 									<td>Lorem Ipsum Hotel</td>
 									<td>2017-01-23</td>
 									<td>2017-05-10</td>
-									<td><button class="btn">작성하기</button></td>
+									<td><button class="btn" name="reviewChk">작성하기</button></td>
 								</tr>
 							</table>
 							<div class="bottom-article">
