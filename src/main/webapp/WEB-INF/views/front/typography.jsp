@@ -192,7 +192,7 @@
 			</td>
 						</tr>
 					</c:forEach>
-		
+		<br>
 		<section id="content">
 			<div class="container">
 				<div class="row">

@@ -48,7 +48,7 @@ $(document).ready(function() {
 	})
 	
 	$("[name=reviewChk]").on('click', function() {
-		window.open("/writereview", "" , "width=800,height=600,toolbar=no,location=no");
+		window.open("/writereview", "" , "width=800,height=600,toolbar=no,location=no,resizeable=no");
 	})
 	
 	
