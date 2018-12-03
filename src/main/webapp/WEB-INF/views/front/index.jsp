@@ -40,13 +40,13 @@
 	<div id="login" class="modal">
 
 		<!-- Modal Content -->
-		<form class="modal-content animate" action="/login">
+		<form method="POST"  class="modal-content animate" action="/loginPost">
 
 			<div class="modal-container">
 				<label for="uid"><b>Username</b></label> <input type="text"
-					placeholder="Enter Username" name="uid" required id="uid">
+					placeholder="Enter Username" name="member_id" required id="member_id">
 				<label for="pwd"><b>Password</b></label> <input type="password"
-					placeholder="Enter Password" name="pwd" required id="pwd">
+					placeholder="Enter Password" name="member_password" required id="member_password">
 
 				<button type="submit" style="margin: 3px" class="btn btn-success"
 					id="login">로그인</button>
@@ -559,7 +559,6 @@
 	<script src="/resources/front/js/animate.js"></script>
 	<script src="/resources/front/js/custom.js"></script>
 	<script src="/resources/front/js/login/login.js"></script>
-	<script src="/resources/front/js/login/register.js"></script>
 	<!-- <script type="text/javascript">
 		function test(){
 			

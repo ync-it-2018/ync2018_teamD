@@ -102,4 +102,12 @@ public class PageController {
 		
 		return "front/likepage";
 	}
+	
+	@RequestMapping("/writereview")
+	public String writereview() {
+		log.info("write review page call.....");
+		
+		return "front/writereview";
+	}
+	
 }
