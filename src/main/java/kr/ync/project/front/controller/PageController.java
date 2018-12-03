@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.service.FhotelService;
@@ -19,11 +20,19 @@ public class PageController {
 	@Inject
 	private FhotelService service;
 		
-	@RequestMapping("/blog")
+	/*@RequestMapping("/blog")
 	public String blog() {
 		log.info("blog call.....");
 		
+		
 		return "front/blog";
+	}*/
+	@RequestMapping(value= "/blog" , method = RequestMethod.GET)
+	public String blog(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
+		log.info("blog call.....");
+		model.addAttribute("detailroom", service.detailroom(hotel_code)); //최종적으로불러올이름
+		model.addAttribute("detail", service.detail(hotel_code));
+		return "front/blog"; //최종적으로 페이지
 	}
 	
 	@RequestMapping("/components")
@@ -60,6 +69,9 @@ public class PageController {
 		model.addAttribute("list", service.listAll());
 		return "front/typography";
 	}
+	
+	
+	
 	
 	@RequestMapping("/searchresult")
 	public String searchresult() {
