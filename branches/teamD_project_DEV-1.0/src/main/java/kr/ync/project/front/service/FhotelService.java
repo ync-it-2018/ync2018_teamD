@@ -2,6 +2,7 @@ package kr.ync.project.front.service;
 
 import java.util.List;
 
+import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
 
 public interface FhotelService {
@@ -15,6 +16,11 @@ public interface FhotelService {
       public void remove (Integer bno) throws Exception;
       
       public List<FhotelVO> listAll() throws Exception;
+      
+      public FdetailVO detail(String hotel_code) throws Exception;
+      
+      public List<FdetailVO> detailroom(String hotel_code) throws Exception;
+      
 
 //      public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 //      

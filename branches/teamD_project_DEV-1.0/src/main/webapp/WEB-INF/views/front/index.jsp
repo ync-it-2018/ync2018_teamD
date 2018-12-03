@@ -138,7 +138,7 @@
 								</ul></li>
 							<li><a href="/searchresult">SearchResult</a></li>
 							<li><a href="/portfolio">Portfolio</a></li>
-							<li><a href="/blog">Blog</a></li>
+							<li><a href="/blog?hotel_code=KORDAGDH">Blog</a></li>
 							<li><a href="/contact">Contact</a></li>
 							<li><a href="#" id="loginPage">Login</a></li>
 						</ul>
