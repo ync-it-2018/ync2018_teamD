@@ -19,7 +19,7 @@
 			<td class="sliderboard">
 				<input id="score_1" data-slider-id='Slider1' type="text"
 				data-slider-min="0" data-slider-max="10" data-slider-step="1"
-				data-slider-value="0"  name="score"/>
+				data-slider-value="10"  name="score"/>
 			</td>
 			<td rowspan="4" > <div class="averagescore" id="score">평점</div>
 			</td>
@@ -29,7 +29,7 @@
 			<td>
 			<input id="score_2" data-slider-id='Slider2' type="text"
 			data-slider-min="0" data-slider-max="10" data-slider-step="1"
-			data-slider-value="0"   name="score"/>
+			data-slider-value="10"   name="score"/>
 			</td>
 		</tr>
 		<tr>
@@ -37,7 +37,7 @@
 			<td>
 			<input id="score_3" data-slider-id='Slider3' type="text"
 			data-slider-min="0" data-slider-max="10" data-slider-step="1"
-			data-slider-value="0"   name="score"/>
+			data-slider-value="10"   name="score"/>
 			</td>
 		</tr>
 		<tr>
@@ -45,7 +45,7 @@
 			<td>
 			<input id="score_4" data-slider-id='Slider4' type="text"
 			data-slider-min="0" data-slider-max="10" data-slider-step="1"
-			data-slider-value="0"   name="score"/>
+			data-slider-value="10"   name="score"/>
 			</td>
 		</tr>
 	</table>

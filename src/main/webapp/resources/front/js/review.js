@@ -6,10 +6,10 @@
 
 $(document).ready(function() {
 	
-	var s1 = "";
-	var s2 = "";
-	var s3 = "";
-	var s4 = "";
+	var s1 = 10;
+	var s2 = 10;
+	var s3 = 10;
+	var s4 = 10;
 	
 	$('#score_1').slider({
 		formatter : function(value) {
@@ -48,10 +48,8 @@ $(document).ready(function() {
 		s4 = slideEvt.value;
 	});
 
-	
 	$('[name=score]').on("slide", function(slideEvt) {
-		
-		$("#score").text((s1+s2+s3+s4)/4);
+		$("#score").html((s1+s2+s3+s4)/4);
 	});
 	
 })
