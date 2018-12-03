@@ -71,8 +71,6 @@ public class PageController {
 	}
 	
 	
-	
-	
 	@RequestMapping("/searchresult")
 	public String searchresult() {
 		log.info("searchresult call.....");

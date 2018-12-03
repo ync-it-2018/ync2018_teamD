@@ -4,10 +4,23 @@
  * 작 성 자 : 1405003 김건우 최초작성일자 : 2018-12-03
  */
 
+img {
+	margin : 10px;
+}
+
+.upperdiv {
+	margin-top : 3%;
+}
+.userInfo {
+	text-align : center;
+	margin-top : 15%;
+	margin-bottom : 15%;
+}
 
 .scoreboard {
 	width : 90%;
-	margin : 5%;
+	margin-top : 2%;
+	margin-left : 5%;
 	padding : 15px;
 	text-align : center;
 }
