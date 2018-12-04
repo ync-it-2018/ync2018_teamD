@@ -6,7 +6,10 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.admin.domain.BedVO;
+import kr.ync.project.admin.domain.FeatureVO;
 import kr.ync.project.admin.domain.HotelVO;
+import kr.ync.project.admin.domain.ImageVO;
 import kr.ync.project.admin.domain.RoomVO;
 import kr.ync.project.admin.persistence.HotelDAO;
 
@@ -52,12 +55,46 @@ public class HotelServiceImpl implements HotelService {
    	// TODO Auto-generated method stub
    	return dao.roomdata(hotel_code);
    }
+   
+   @Override
+	public List<FeatureVO> hotel_feature(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.hotel_feature(hotel_code);
+	}
 
-@Override
-public RoomVO room_detail(String room_idx) throws Exception {
-	// TODO Auto-generated method stub
-	return dao.roomdetail(room_idx);
-}
+	@Override
+	public List<FeatureVO> room_feature(int room_idx) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.room_feature(room_idx);
+	}
+
+	@Override
+	public List<BedVO> room_bed(int room_idx) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.room_bed(room_idx);
+	}
+
+	@Override
+	public List<ImageVO> room_image(int room_idx) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.room_image(room_idx);
+	}
+	
+	@Override
+	public List<ImageVO> hotel_image(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.hotel_image(hotel_code);
+	}
+
+	@Override
+	public ImageVO rimage_detail(int idx) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.rimage_detail(idx);
+	}
+
+	
+
+	
 
 //@Override
 //public List<BoardVO> listCriteria(Criteria cri) throws Exception {
