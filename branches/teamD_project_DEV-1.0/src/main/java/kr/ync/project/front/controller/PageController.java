@@ -93,9 +93,9 @@ public class PageController {
 	}
 	
 	@RequestMapping("/avgresult")
-	public String avgresult() {
+	public String avgresult(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
 		log.info("avgresult page call.....");
-		
+		model.addAttribute("review", service.review(hotel_code));
 		return "front/avgresult";
 	}
 

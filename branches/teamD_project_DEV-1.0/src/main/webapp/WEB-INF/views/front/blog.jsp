@@ -20,16 +20,9 @@
 	<link href="/resources/front/skins/default.css" rel="stylesheet" />
 	<script type="text/javascript">
 
-	
+	function popupOpen(){
 
-
-<script type="text/javascript">
-
-
-
-function popupOpen(){
-
-	var popUrl = "/avgresult";	//팝업창에 출력될 페이지 URL
+	var popUrl = "/avgresult?hotel_code=KORDAGDH";	//팝업창에 출력될 페이지 URL
 	
 
 	var popOption = "width=500, height=400, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
@@ -309,7 +302,7 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 								<h2 class="widgetheading">평점:${detail.rate}</h2>
 								<ul class="recent">
 									<li>
-										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="javascript:popupOpen();"/>
+										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="popupOpen()"/>
 									</li>
 									
 									

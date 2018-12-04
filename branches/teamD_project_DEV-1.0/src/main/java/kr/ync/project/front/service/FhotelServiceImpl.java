@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.domain.FreviewVO;
 import kr.ync.project.front.persistence.FhotelDAO;
 
 
@@ -58,6 +59,12 @@ public FdetailVO detail(String hotel_code) throws Exception {
 public List<FdetailVO> detailroom(String hotel_code) throws Exception {
 	// TODO Auto-generated method stub
 	return dao.detailroom(hotel_code);
+}
+
+@Override
+public List<FreviewVO> review(String hotel_code) throws Exception {
+	// TODO Auto-generated method stub
+	return dao.review(hotel_code);
 }
 
 //@Override
