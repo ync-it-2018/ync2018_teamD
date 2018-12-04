@@ -42,12 +42,22 @@ public class hotelController {
 	public String hotelDetail(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
 		model.addAttribute("hotel", service.read(hotel_code));
 		model.addAttribute("room", service.roomdata(hotel_code));
+		model.addAttribute("hotel_f", service.hotel_feature(hotel_code));
+		model.addAttribute("h_image", service.hotel_image(hotel_code));
 		return "admin/hotel/hotelDetail";
 	}
 	
 	@RequestMapping(value = "/roomDetail", method = RequestMethod.GET)
-	public String roomDetail(@RequestParam("room_idx") String room_idx, Model model) throws Exception {
-		model.addAttribute("detail", service.room_detail(room_idx));
+	public String roomDetail(@RequestParam("room_idx") int room_idx, Model model) throws Exception {
+		model.addAttribute("item", service.room_feature(room_idx));
+		model.addAttribute("bed", service.room_bed(room_idx));
+		model.addAttribute("image", service.room_image(room_idx));
 		return "admin/hotel/roomDetail";
+	}
+	
+	@RequestMapping(value = "/imageDetail", method = RequestMethod.GET)
+	public String imageDetail(@RequestParam("idx") int idx, Model model) throws Exception {
+		model.addAttribute("image", service.rimage_detail(idx));
+		return "admin/hotel/imageDetail";
 	}
 }
