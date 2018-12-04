@@ -4,6 +4,7 @@ import java.util.List;
 
 import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.domain.FreviewVO;
 
 public interface FhotelService {
 
@@ -20,6 +21,8 @@ public interface FhotelService {
       public FdetailVO detail(String hotel_code) throws Exception;
       
       public List<FdetailVO> detailroom(String hotel_code) throws Exception;
+      
+      public List<FreviewVO> review(String hotel_code) throws Exception;
       
 
 //      public List<BoardVO> listCriteria(Criteria cri) throws Exception;

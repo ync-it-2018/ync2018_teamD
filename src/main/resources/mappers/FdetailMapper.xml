@@ -36,23 +36,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			hotel_core_info,
 			hotel_precautions,
 		    hotel_checktime,
-		    hotel_etc,
-		    room_idx, 
-			room_peoplenum, 
-			room_bed, 
-			room_price, 
-			hotel_code, 
-			room_name, 
-			room_peoplenum_k 
-		    
-	FROM td_hotel h, td_hotel_detailinfo d, td_room r
+		    hotel_etc
+	FROM td_hotel h, td_hotel_detailinfo d
 	where   h.hotel_code = d.hotel_code
  	and   h.hotel_code = #{hotel_code} <!-- 상세보기 클릭시 나오는 호텔코드 -->
 </select>
 
  <select id = "detailroom" resultType= "FdetailVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함-->
 	SELECT * FROM TD_ROOM
-	WHERE HOTEL_CODE='KORDAGDH';
+	WHERE HOTEL_CODE='KORDAGDH'
  	and  hotel_code = #{hotel_code}<!-- 상세보기 클릭시 나오는 호텔코드 -->
 </select> 
 </mapper>

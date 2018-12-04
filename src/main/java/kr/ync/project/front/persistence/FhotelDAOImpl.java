@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.domain.FreviewVO;
 
 @Repository
 public class FhotelDAOImpl implements FhotelDAO {
@@ -21,6 +22,9 @@ public class FhotelDAOImpl implements FhotelDAO {
 	
 	private static String namespace1 
 	= "kr.ync.project.mapper.FdetailMapper";
+	
+	private static String review 
+	= "kr.ync.project.mapper.FreviewMapper";
 	
 	@Override
 	public void create(FhotelVO vo) throws Exception {
@@ -78,6 +82,12 @@ public class FhotelDAOImpl implements FhotelDAO {
 	public List<FdetailVO> detailroom(String hotel_code) throws Exception {
 		// TODO Auto-generated method stub
 		 return session.selectList(namespace1+".detailroom", hotel_code);
+	}
+
+	@Override
+	public List<FreviewVO> review(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(review + ".review", hotel_code);
 	}
 
 //	@Override
