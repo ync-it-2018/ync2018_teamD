@@ -22,28 +22,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		member_pnumber,
 		member_address,
 		member_out,
-		nation_code,
+		n.nation_name,
 		member_fianame,
 		member_laname,
 		member_joindate
 	from 	
-		td_member 
+		td_member m, td_nation n
 	where	
 		member_id = #{member_id}
+	and
+		m.nation_code = n.nation_code
 </select>
-
-<!-- <select id="listPage" resultType="memberVO">
-<![CDATA[
-	select	
-		member_id,
-		member_fianame,
-		member_joindate
-	from	
-		td_member
-	where 	
-		rownum > (#{page} -1) * #{perPageNum}
-]]>
-</select>-->
 
 <select id="listCriteria" resultType="memberVO">
 <![CDATA[
@@ -65,7 +54,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	rn > (#{page} -1) * #{perPageNum}
 ]]>
 </select> 
-
+<sql id="search">
+	<if test="searchType != null" >
+		<if test="searchType == 't'.toString()">
+			AND title LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'c'.toString()">
+			AND content LIKE '%'|| #{keyword}||'%'
+		</if>
+		<if test="searchType == 'w'.toString()">
+			AND writer LIKE '%'|| #{keyword}||'%'
+		</if>    
+		<if test="searchType == 'tc'.toString()">
+			AND (title LIKE '%'|| #{keyword}||'%' OR content LIKE '%'|| #{keyword}||'%')
+		</if>      
+	</if>
+</sql>
+<select id="listSearchCount"  resultType="int">
+	<![CDATA[
+		SELECT	count(member_id)
+		FROM	td_member
+	]]>
+	
+	<where>
+		<include refid="search"></include>
+		<![CDATA[
+			AND rownum > 0
+		]]>
+	</where>
+</select>
 <!-- <select id="mcountPaging" resultType="int">
 <![CDATA[
 	select	

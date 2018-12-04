@@ -11,7 +11,7 @@
 	}
 </style>
 		<section class="content-header">
-          <h1>Member List</h1>
+          <h1>Member Manage</h1>
           <ol class="breadcrumb">
             <li><a href="/admin/memberList"><i class="fa fa-dashboard"></i> Member Manage</a></li>
             <li><a href="/admin/memberList">MemberList</a></li>
@@ -57,16 +57,14 @@
 						<c:if test="${pageMaker.prev}">
 							<li><a href="memberList${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>	
 						</c:if>
-						
-						<c:forEach begin="${pageMaker.startPage }"
+						<c:forEach begin="${pageMaker.startPage}"
 							end="${pageMaker.endPage }" var="idx">
-							<li<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-								<a href="memberList${pageMaker.makeSearch(idx)}">${idx}</a>
-							</li>
+							<li <c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
+								 <a href="memberList${pageMaker.makeSearch(idx)}">${idx}</a>
+							</li> 
 						</c:forEach>
-						
-						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">									<li><a
-								href="memberList${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+							<li><a href="memberList${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 						</c:if>
 					</ul>
 				</div>

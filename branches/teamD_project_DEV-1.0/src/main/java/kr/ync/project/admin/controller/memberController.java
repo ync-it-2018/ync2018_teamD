@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import kr.ync.project.admin.domain.Criteria;
+import kr.ync.project.admin.domain.PageMaker;
+import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.service.memberService;
 import lombok.extern.slf4j.Slf4j;
 /**
@@ -31,16 +32,19 @@ public class memberController {
 	private memberService service;
 	
 	@RequestMapping(value = "/memberList", method = RequestMethod.GET)
-	public String memberList(@ModelAttribute("cri") Criteria cri, Model model) throws Exception {
+	public String memberList(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 		log.info(cri.toString());
 		model.addAttribute("memberList", service.listCriteria(cri));
-		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listSearchCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
 		return "/admin/member/memberList";
 	}	
 	
 	@RequestMapping(value = "/memberDetail", method = RequestMethod.GET)
-	public String memberList(@RequestParam("member_id") String member_id, Model model) throws Exception {
-		model.addAttribute("list", service.read(member_id));
+	public String memberDetail(@RequestParam("member_id") String member_id, Model model) throws Exception {
+		model.addAttribute("member", service.read(member_id));
 		return "/admin/member/memberDetail";
 	}
 }

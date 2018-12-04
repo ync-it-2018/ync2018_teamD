@@ -3,6 +3,7 @@ package kr.ync.project.admin.persistence;
 import java.util.List;
 
 import kr.ync.project.admin.domain.Criteria;
+import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.domain.memberVO;
 
 public interface memberDAO {
@@ -23,4 +24,6 @@ public interface memberDAO {
 	public List<memberVO> listCriteria(Criteria cri) throws Exception;
 	
 	public int mcountPaging(Criteria cri) throws Exception;
+	
+	public int listSearchCount(SearchCriteria cri)throws Exception;
 }

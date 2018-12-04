@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Repository;
 
 import kr.ync.project.admin.domain.Criteria;
+import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.domain.memberVO;
 import kr.ync.project.admin.persistence.memberDAO;
 
@@ -56,6 +57,12 @@ public class memberServiceImpl implements memberService {
 	public int listCountCriteria(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.mcountPaging(cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listSearchCount(cri);
 	}	
 
 }
