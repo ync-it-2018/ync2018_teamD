@@ -28,4 +28,12 @@ public class memberVO {
     private String member_joindate;
     
     private String nation_name;
+    
+    private String hotel_name;
+    
+    private String room_name;
+    
+    private String booking_in_date;
+    
+    private String booking_out_date;
 }
