@@ -31,6 +31,12 @@ public class memberDAOImpl implements memberDAO{
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".read",member_id);
 	}
+	
+	@Override
+	public List<memberVO> readbooking(String member_id) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".readbooking", member_id);
+	}
 
 	@Override
 	public void update(memberVO vo) throws Exception {
@@ -84,6 +90,14 @@ public class memberDAOImpl implements memberDAO{
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
+
+	@Override
+	public List<memberVO> readbookingEnd(String member_id) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".readbookingEnd", member_id);
+	}
+
+	
 
 	
 

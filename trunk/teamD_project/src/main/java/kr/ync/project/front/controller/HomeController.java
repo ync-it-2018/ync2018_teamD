@@ -1,8 +1,13 @@
 package kr.ync.project.front.controller;
 
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.ync.project.front.domain.FnoticeVO;
+import kr.ync.project.front.service.FnoticeService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -12,16 +17,19 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HomeController {
 	
+	@Inject
+	private FnoticeService notice_service;
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping("/")
-	public String home() {
+	@RequestMapping(value = "/")
+	public String home(Model model) throws Exception {
 
 		// 가나다
-		log.info("index call....."); 
-		
+		log.info("index call.....");
+		model.addAttribute("readNotice", notice_service.listAll());
 		return "front/index";
 	}
-	
+
 }

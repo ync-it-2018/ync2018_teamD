@@ -83,6 +83,48 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</where>
 </select>
+<select id = "readbooking" resultType = "memberVO">
+	<![CDATA[
+		SELECT
+			h.hotel_name,
+			r.room_name,
+			to_char(booking_in_date, 'yyyy-mm-dd') as "booking_in_date",
+			to_char(booking_out_date, 'yyyy-mm-dd') as "booking_out_date" 
+		FROM
+			td_room r, td_booking b, td_hotel h
+		WHERE
+			r.room_idx = b.room_idx
+		AND
+			r.hotel_code = b.hotel_code
+		AND
+			b.hotel_code = h.hotel_code
+		AND
+			booking_in_date > SYSDATE
+		AND
+			member_id = #{member_id}
+	]]>
+</select>
+<select id = "readbookingEnd" resultType = "memberVO">
+	<![CDATA[
+		SELECT
+			h.hotel_name,
+			r.room_name,
+			to_char(booking_in_date, 'yyyy-mm-dd') as "booking_in_date",
+			to_char(booking_out_date, 'yyyy-mm-dd') as "booking_out_date" 
+		FROM
+			td_room r, td_booking b, td_hotel h
+		WHERE
+			r.room_idx = b.room_idx
+		AND
+			r.hotel_code = b.hotel_code
+		AND
+			b.hotel_code = h.hotel_code
+		AND
+			booking_in_date < SYSDATE
+		AND
+			member_id = #{member_id}
+	]]>
+</select>
 <!-- <select id="mcountPaging" resultType="int">
 <![CDATA[
 	select	

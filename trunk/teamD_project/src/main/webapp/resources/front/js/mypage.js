@@ -10,7 +10,12 @@ $(document).ready(function() {
 	var listPage = document.getElementById('resv_list_data');
 	var cancelPage = document.getElementById('resv_cancel_data');
 	var modifyPage = document.getElementById('user_modify_data');
-
+	var preTable = document.getElementById('preModifyTable');
+	var modifyTable = document.getElementById('userModifyTable');
+	
+	var isExistPwd = document.getElementById('is_member_password');
+	
+	modifyTable.style.display = 'none';
 	/**
 	 * Defalut Value : compPage [예약 완료 페이지만 보이게]
 	 */
@@ -49,6 +54,16 @@ $(document).ready(function() {
 	
 	$("[name=reviewChk]").on('click', function() {
 		window.open("/writereview", "" , "width=800,height=600,toolbar=no,location=no,resizeable=no");
+	})
+	
+
+	
+	$('#pwdChkBtn').on('click', function() {
+		
+		alert(isExistPwd.value);
+		
+		preTable.style.display = 'none';
+		modifyTable.style.display = 'block';
 	})
 	
 	

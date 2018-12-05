@@ -45,21 +45,40 @@
 	  margin:auto;
 	  font-size:20px;
 	}
+	.tb_booking_css{
+	  width:95%; 
+	  height:180px;
+	  text-align:center; 
+	  margin:auto;
+	  font-size:20px;
+	}
+	.box{
+		height:700px;
+	}
 </style>
 <script>
 $(document).ready(function(){
 	
 	$('ul.tabs li').click(function(){
 		var tab_id = $(this).attr('data-tab');
-
 		$('ul.tabs li').removeClass('current');
 		$('.tab-content').removeClass('current');
 
 		$(this).addClass('current');
 		$("#"+tab_id).addClass('current');
+		
+		if(tab_id == "tab-1"){
+			$("#modi").show();
+		}else{
+			$("#modi").hide();
+		}
 	})
 
 })
+
+function modify(member_id){
+	window.location.href="/admin/memberModify?member_id="+member_id;
+}
 </script>
 		<section class="content-header">
           <h1>Member Manage</h1>
@@ -95,8 +114,11 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 								<td>* Password</td>
-								<%-- <td colspan = 3>${member.member_password }</td> --%>
-								<%-- <td colspan = 3>${fn:length(${member.member_password}) }</td> --%>
+								<td colspan = 3>
+									<c:forEach begin="1" end="${fn:length(member.member_password) }">
+									*
+									</c:forEach>
+								</td>
 							</tr>
 							<tr>
 								<td style="width:25%">* First Name</td>
@@ -122,17 +144,43 @@ $(document).ready(function(){
 					</div>
   			  </div>
   			  <div id="tab-2" class="tab-content">
-				---- ---- ★------ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
-				---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
-				---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
-				---- ---- ★------ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
-				---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
-  			  	---- ---- ★------ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
-  			  	---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
-  			  	---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
+  			  	<p style="margin-left:10px;">회원 이용 예정 호텔</p>
+				<table border =1; class="tb_booking_css">
+					<tr>
+						<td>호텔명</td>
+						<td>객실</td>
+						<td>체크인</td>
+						<td>체크아웃</td>
+					</tr>
+					<c:forEach items="${booking}" var="memberVO" varStatus="status">
+						<tr>
+							<td>${memberVO.hotel_name }</td>
+							<td>${memberVO.room_name }</td>
+							<td>${memberVO.booking_in_date}</td>
+							<td>${memberVO.booking_out_date }</td>
+						</tr>
+					</c:forEach>
+				</table>
+				<p style="margin:10px 0px 10px 10px;">회원 이용 완료 호텔</p>
+				<table border =1; class="tb_booking_css">
+					<tr>
+						<td>호텔명</td>
+						<td>객실</td>
+						<td>체크인</td>
+						<td>체크아웃</td>
+					</tr>
+					<c:forEach items="${bookingEnd}" var="memberVO" varStatus="status">
+						<tr>
+							<td>${memberVO.hotel_name }</td>
+							<td>${memberVO.room_name }</td>
+							<td>${memberVO.booking_in_date}</td>
+							<td>${memberVO.booking_out_date }</td>
+						</tr>
+					</c:forEach>
+				</table>
   			  </div>
 			</div>
-			<button type="button" class="btn btn-primary" style="margin:20px 0px 10px 830px ;" id=''>수  정</button>
+			<input type="button" value="수정" onclick= "modify('${member.member_id}')" class="btn btn-primary" style="margin:20px 0px 10px 830px ;" id='modi'/>
          </div> 
         </div>
       </div> 

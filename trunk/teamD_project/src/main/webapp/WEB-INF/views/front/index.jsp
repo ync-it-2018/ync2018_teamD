@@ -1,5 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 
 <!-- 2018-11-07 테스트용  -->
 
@@ -123,24 +125,27 @@
 							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="/"><span>D</span>aisy <span>H</span>otel
+							<span>S</span>ervice</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/">Home</a></li>
+							<li><a href="/typography">SearchList</a></li>
+							<!-- 드롭다운 예제 	
 							<li class="dropdown"><a href="#" class="dropdown-toggle "
 								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-								data-close-others="false">Features <b
+								data-close-others="false"><b
 									class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="/typography">Typography</a></li>
+									<li><a href="/typography">SearchList</a></li>
 									<li><a href="/components">Components</a></li>
 									<li><a href="/pricingbox">Pricing box</a></li>
-								</ul></li>
-							<li><a href="/searchresult">SearchResult</a></li>
-							<li><a href="/portfolio">Portfolio</a></li>
-							<li><a href="/blog?hotel_code=KORDAGDH">Blog</a></li>
-							<li><a href="/contact">Contact</a></li>
+								</ul></li> -->
+							<!-- <li><a href="/searchresult">SearchResult</a></li> -->
+							<li><a href="/mypage">Mypage(WIP)</a></li>
+							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
+							<!-- <li><a href="/contact">Contact</a></li> -->
 							<li><a href="#" id="loginPage">Login</a></li>
 						</ul>
 					</div>
@@ -165,58 +170,23 @@
 							<section id="projects">
 								<ul id="thumbs" class="portfolio">
 									<!-- Item Project and Filter Name -->
-									<li class="col-lg-3 design" data-id="id-0" data-type="web">
-										<div class="item-thumbs">
-											<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-											<a class="hover-wrap fancybox" data-fancybox-group="gallery"
-												title="공지사항 1" href="/resources/front/img/works/1.jpg">
-												<span class="overlay-img"></span> <span
-												class="overlay-img-thumb font-icon-plus"></span>
-											</a>
-											<!-- Thumb Image and Description -->
-											<img src="/resources/front/img/works/1.jpg"
-												alt="공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.">
-										</div>
-									</li>
-									<!-- End Item Project -->
-									<!-- Item Project and Filter Name -->
-									<li class="item-thumbs col-lg-3 design" data-id="id-1"
-										data-type="icon">
-										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
-										class="hover-wrap fancybox" data-fancybox-group="gallery"
-										title="공지사항 2" href="/resources/front/img/works/2.jpg"> <span
-											class="overlay-img"></span> <span
-											class="overlay-img-thumb font-icon-plus"></span>
-									</a> <!-- Thumb Image and Description --> <img
-										src="/resources/front/img/works/2.jpg"
-										alt="공지사항 2의 내용임. 아무튼 그럼.">
-									</li>
-									<!-- End Item Project -->
-									<!-- Item Project and Filter Name -->
-									<li class="item-thumbs col-lg-3 photography" data-id="id-2"
-										data-type="illustrator">
-										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
-										class="hover-wrap fancybox" data-fancybox-group="gallery"
-										title="공지사항 3" href="/resources/front/img/works/3.jpg"> <span
-											class="overlay-img"></span> <span
-											class="overlay-img-thumb font-icon-plus"></span>
-									</a> <!-- Thumb Image and Description --> <img
-										src="/resources/front/img/works/3.jpg"
-										alt="공지사항 3의 내용임. 아무튼 그럼.">
-									</li>
-									<!-- End Item Project -->
-									<!-- Item Project and Filter Name -->
-									<li class="item-thumbs col-lg-3 photography" data-id="id-2"
-										data-type="illustrator">
-										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
-										class="hover-wrap fancybox" data-fancybox-group="gallery"
-										title="공지사항 4" href="/resources/front/img/works/4.jpg"> <span
-											class="overlay-img"></span> <span
-											class="overlay-img-thumb font-icon-plus"></span>
-									</a> <!-- Thumb Image and Description --> <img
-										src="/resources/front/img/works/4.jpg"
-										alt="공지사항 4의 내용임. 아무튼 그럼.">
-									</li>
+									<!--  c:forEach 를 통해 DB 내의 공지사항을 받아옴 -->
+									<c:forEach items="${readNotice}"  begin="0" end="3" var="readNotice" >
+										<li class="col-lg-3 design" data-id="id-0" data-type="web">
+											<div class="item-thumbs">
+												<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+												<a class="hover-wrap fancybox" data-fancybox-group="gallery"
+													title="${readNotice.NOTICE_TITLE}"
+													href="${readNotice.NOTICE_IMG}"> <span
+													class="overlay-img"></span> <span
+													class="overlay-img-thumb font-icon-plus"></span>
+												</a>
+												<!-- Thumb Image and Description -->
+												<img src="${readNotice.NOTICE_IMG}"
+													alt="${readNotice.NOTICE_CONTENT}">
+											</div>
+										</li>
+									</c:forEach>
 									<!-- End Item Project -->
 								</ul>
 							</section>
@@ -229,7 +199,6 @@
 					<div class="col-lg-6">
 						<!-- 검색 내용이 들어갈 공간  -->
 						<!-- searchresult에 POST로 전송  -->
-						<form method="POST"  action="/searchresult">
 							<table class="table">
 								<tr>
 									<td colspan="2">
@@ -306,7 +275,7 @@
 
 
 								<tr>
-									<td colspan="2" style="text-align:right"><p>
+									<td colspan="2" style="text-align: right"><p>
 											<a href="/typography"><button class="btn btn-success"
 													id="submit">호텔 검색하기</button></a>
 										</p></td>
@@ -318,17 +287,7 @@
 										href="/likepage"><button class="btn">관심 상품</button></a></td>
 								</tr>
 							</table>
-						</form>
-
-
-
-
 					</div>
-
-
-
-
-
 
 					<div class="col-lg-6">
 						<!-- 슬라이더 시작 -->

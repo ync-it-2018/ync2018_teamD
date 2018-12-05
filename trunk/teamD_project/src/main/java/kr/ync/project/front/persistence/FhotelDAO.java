@@ -2,9 +2,11 @@ package kr.ync.project.front.persistence;
 
 import java.util.List;
 
+import kr.ync.project.admin.domain.ImageVO;
 import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.FreviewVO;
+import kr.ync.project.front.domain.FroomVO;
 
 public interface FhotelDAO {
 
@@ -26,6 +28,9 @@ public interface FhotelDAO {
 	
 	public List<FreviewVO> review(String hotel_code) throws Exception;
 	
+	public List<ImageVO> hotel_image(String hotel_code)throws Exception;
+
+	public List<FroomVO> roomdetail(String room_idx)throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   

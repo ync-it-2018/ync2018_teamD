@@ -47,4 +47,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	WHERE HOTEL_CODE='KORDAGDH'
  	and  hotel_code = #{hotel_code}<!-- 상세보기 클릭시 나오는 호텔코드 -->
 </select> 
+
+<select id = "hotel_image" resultType= "ImageVO">
+	SELECT HIMG_NAME, HIMG_IDX
+	FROM  TD_HOTEL_IMAGE
+	WHERE HOTEL_CODE = #{hotel_code}
+</select>
 </mapper>
