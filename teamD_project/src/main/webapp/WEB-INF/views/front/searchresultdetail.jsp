@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Moderna - Bootstrap 3 flat corporate template</title>
+	<title>검색결과 페이지</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<!-- css -->
@@ -30,6 +30,16 @@
 		window.open(popUrl,"",popOption);
 
 	}
+	function room_popupOpen(){
+
+		var popUrl = "/roomdetail?hotel_code=KORDAGDH";	//팝업창에 출력될 페이지 URL
+		
+
+		var popOption = "width=500, height=400, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+
+			window.open(popUrl,"",popOption);
+
+		}
 
 
 
@@ -227,11 +237,16 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 							</div>
 							<!-- 슬라이더 시작 -->
 						<div id="main-slider" class="flexslider">
+						
 							<ul class="slides">
-								<li><img src="/resources/front/img/slides/1.jpg" alt="" />
+							<c:forEach items="${h_image}" var="ImageVO">
+								<li><img src="${ImageVO.himg_name}" />	
+							</c:forEach>
+								<!-- <li><img src="/resources/front/img/slides/1.jpg" alt="" />
 								<li><img src="/resources/front/img/slides/2.jpg" alt="" />
-								<li><img src="/resources/front/img/slides/3.jpg" alt="" />
+								<li><img src="/resources/front/img/slides/3.jpg" alt="" /> -->
 							</ul>
+							
 						</div>
 						<!-- 슬라이더 끝 -->
 							
@@ -318,33 +333,52 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 					</div>
 				<div>
 					<hr class="two">
-					<fieldset  style="width:100%; border:5 solid black;">
-						<strong style="font-size: 2.0em;word-spacing: 3.0em; ">객실유형 객실선택 객실정보 체크인 체크아웃 가격정보</strong>
+					<div class="row">
+					<!-- <fieldset  style="width:100%; border:5 solid black;"> -->
+						<div class=col-lg-2 style="font-size: 2.0em;text-align: center;">객실유형</div>
+						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">객실선택</div>
+						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">객실정보</div>
+						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">체크인</div>
+						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">체크아웃</div>
+						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">가격정보</div>
+						   </div>
 						<hr class="two">
-						<img src="/resources/front/img/slides/1.jpg" width="15%" height="30%"/> 
-						<select name="room" style="WIDTH: 200px; HEIGHT: 30px" >
+						<div class="row">
+						<div class=col-lg-2 style="text-align:center;" onclick="room_popupOpen()">
+						<img src="/resources/front/img/slides/1.jpg" />
+						<div style="text-align:center;">객실정보</div>
+						<div style="text-align:left;"><ol>
+							<li>숙박인원:2명</li>
+							<li>싱글 침대</li>
+							<li>UHD TV</li>
+							</ol>
+							</div>
+						</div> 
+						<div class=col-lg-2 style="text-align:center;">
+						<select name="room" style="WIDTH: 150px; HEIGHT: 30px" >
 							<option value="">객실선택</option>
-							<option value="스탠다드 더블룸">
-							
 							<c:forEach items="${detailroom}" var="FdetailVO">
-							${FdetailVO.room_name}
-							</c:forEach></option>
-							<!-- <option value="스탠다드 트윈룸">스탠다드 트윈룸</option>
-							<option value="빌리지 파티룸">빌리지 파티룸</option>
-							 -->
-						
+							<option value="${FdetailVO.room_name}" >${FdetailVO.room_name}</option>
+							</c:forEach>
+							
+						</select></div>
+  
+						<div class=col-lg-2 style="text-align:center;">
+							<ol>
+							<li>무료wifi</li>
+							<li>무료 주차장</li>
+							<li>무료 조식</li>
+							</ol>
+						</select>
+						</div>
+						<div class=col-lg-2 style="text-align:center;" ><input type="date" id="checkin2" name="checkin2"
+                      value="yyyy-mm-dd"></div>
+                     <div class=col-lg-2 style="text-align:center;" > <input type="date" id="checkin2" name="checkin2"
+                      value="yyyy-mm-dd"></div>
+                    <div class=col-lg-2  style="text-align:center;"> <h2> 400,000</h2></div>
+                      </div>
+					<!-- </fieldset> -->
 					
-						</select>
-						
-						<select name="info" style="WIDTH: 200px; HEIGHT: 30px" >
-							<div>wifi</div>
-						</select>
-						<input type="date" id="checkin2" name="checkin2"
-                      value="yyyy-mm-dd">
-                      <input type="date" id="checkin2" name="checkin2"
-                      value="yyyy-mm-dd">
-                      <span">400,000</span>
-					</fieldset>
 				</div>
 			</div>
 			</div>

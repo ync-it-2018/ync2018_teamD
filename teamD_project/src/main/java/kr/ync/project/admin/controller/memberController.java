@@ -45,6 +45,14 @@ public class memberController {
 	@RequestMapping(value = "/memberDetail", method = RequestMethod.GET)
 	public String memberDetail(@RequestParam("member_id") String member_id, Model model) throws Exception {
 		model.addAttribute("member", service.read(member_id));
+		model.addAttribute("booking", service.readbooking(member_id));
+		model.addAttribute("bookingEnd", service.readbookingEnd(member_id));
 		return "/admin/member/memberDetail";
+	}
+	
+	@RequestMapping(value = "/memberModify", method = RequestMethod.GET)
+	public String memberModify(@RequestParam("member_id") String member_id, Model model) throws Exception {
+		model.addAttribute("member", service.read(member_id));
+		return "/admin/member/memberModify";
 	}
 }

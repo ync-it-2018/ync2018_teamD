@@ -45,27 +45,23 @@
 	  margin:auto;
 	  font-size:20px;
 	}
+	#tabcolor{
+		color:#A6A6A6;
+	}
+	.box{
+		height:700px;
+	}
 </style>
 <script>
 $(document).ready(function(){
-	
-	$('ul.tabs li').click(function(){
-		var tab_id = $(this).attr('data-tab');
-
-		$('ul.tabs li').removeClass('current');
-		$('.tab-content').removeClass('current');
-
-		$(this).addClass('current');
-		$("#"+tab_id).addClass('current');
-	})
-
+	$("#tab-2").unbind("click");
 })
 </script>
 		<section class="content-header">
           <h1>Member Manage</h1>
           <ol class="breadcrumb">
             <li><a href="/admin/memberList"><i class="fa fa-dashboard"></i> Member Manage</a></li>
-            <li><a href="/admin/memberList">MemberDetail</a></li>
+            <li><a href="/admin/memberList">MemberModify</a></li>
           </ol>
         </section>
     <!-- Main content -->
@@ -77,13 +73,13 @@ $(document).ready(function(){
 
 		<div class="box">
             <div class="box-header with-border">
-            	<h3 class="box-title">MemberDetail</h3>
+            	<h3 class="box-title">MemberModify</h3>
             </div>
             <hr style="border: 1px solid gray; float:left; width:100%; margin-top:0px;">
             <div class="container">
 			  <ul class="tabs">
 			    <li class="tab-link current" data-tab="tab-1">상세 조회</li>
-			    <li class="tab-link" data-tab="tab-2">예약 현황</li>
+			    <li class="tab-link" id="tabcolor" data-tab="tab-2">예약 현황</li>
 			  </ul>
   			  <div id="tab-1" class="tab-content current">
   			  	<div class="form-group" >
@@ -95,8 +91,11 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 								<td>* Password</td>
-								<%-- <td colspan = 3>${fn:length('member.member_password') }</td> --%>
-								<td colspan = 3>${fn:length('sibal') }</td>
+								<td colspan = 3><input type="password"/></td>
+							</tr>
+							<tr>
+								<td>* Password Check</td>
+								<td colspan = 3><input type="password"/></td>
 							</tr>
 							<tr>
 								<td style="width:25%">* First Name</td>
@@ -106,7 +105,7 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 								<td>Address</td>
-								<td colspan = 3>${member.member_address}</td>
+								<td colspan = 3><input type="text"/></td>
 							</tr>
 							<tr>
 								<td>* Country</td>
@@ -114,7 +113,7 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 								<td>Tel Number</td>
-								<td colspan = 3>${member.member_pnumber }</td>
+								<td colspan = 3><input type="text"/></td>
 							</tr>
 						</table>
 						</div>
@@ -122,17 +121,12 @@ $(document).ready(function(){
 					</div>
   			  </div>
   			  <div id="tab-2" class="tab-content">
-				---- ---- ★------ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
-				---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
-				---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
-				---- ---- ★------ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
-				---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
-  			  	---- ---- ★------ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
-  			  	---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
-  			  	---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
   			  </div>
 			</div>
-			<button type="button" class="btn btn-primary" style="margin:20px 0px 10px 830px ;" id=''>수  정</button>
+			<div class="btn-group">
+				<input type="button" value="수정" class="btn btn-primary" style="margin:20px 0px 10px 780px ;" id='modi'/>
+				<input type="button" value="취소" class="btn btn-default" style="margin:20px 0px 10px 10px ;" id='cancel'/>
+         	</div>
          </div> 
         </div>
       </div> 

@@ -192,7 +192,7 @@
 			</td>
 						</tr>
 					</c:forEach>
-		<br>
+		
 		<section id="content">
 			<div class="container">
 				<div class="row">
@@ -231,12 +231,11 @@
 						<div class="filterName">1박 요금</div>
 						<div id="slider"></div>
 
-                                 <div class="wrapper">
-                                    <span class="price fleft">200,000</span> <a
-                                       class="button fright" href="blog">상세보기</a>
-                                 </div>
-                              </div>
-                           </figure>
+
+
+
+
+
 
 					</div>
 					<div class="col-lg-8 listSet">

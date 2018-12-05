@@ -7,9 +7,11 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.admin.domain.ImageVO;
 import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.FreviewVO;
+import kr.ync.project.front.domain.FroomVO;
 
 @Repository
 public class FhotelDAOImpl implements FhotelDAO {
@@ -25,6 +27,9 @@ public class FhotelDAOImpl implements FhotelDAO {
 	
 	private static String review 
 	= "kr.ync.project.mapper.FreviewMapper";
+	
+	private static String roomdetail 
+	= "kr.ync.project.mapper.FroomMapper";
 	
 	@Override
 	public void create(FhotelVO vo) throws Exception {
@@ -90,6 +95,11 @@ public class FhotelDAOImpl implements FhotelDAO {
 		return session.selectList(review + ".review", hotel_code);
 	}
 
+	@Override
+	public List<ImageVO> hotel_image(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace1 + ".hotel_image", hotel_code);
+	}
 //	@Override
 //	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
 //		// TODO Auto-generated method stub
@@ -112,5 +122,11 @@ public class FhotelDAOImpl implements FhotelDAO {
 //		// TODO Auto-generated method stub
 //		return session.selectOne(namespace + ".listSearchCount", cri);
 //	}
+
+	@Override
+	public List<FroomVO> roomdetail(String room_idx) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(roomdetail+".roomdetail",room_idx);
+	}
 
 }

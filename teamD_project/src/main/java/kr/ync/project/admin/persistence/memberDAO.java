@@ -10,6 +10,10 @@ public interface memberDAO {
 	public void create(memberVO vo) throws Exception;
 
 	public memberVO read(String member_id) throws Exception;
+	
+	public List<memberVO> readbooking(String member_id) throws Exception;
+	
+	public List<memberVO> readbookingEnd(String member_id) throws Exception;
 
 	public void update(memberVO vo) throws Exception;
 
