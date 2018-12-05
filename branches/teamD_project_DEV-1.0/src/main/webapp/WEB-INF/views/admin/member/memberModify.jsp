@@ -95,8 +95,8 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 								<td>* Password</td>
-								<%-- <td colspan = 3>${member.member_password }</td> --%>
-								<%-- <td colspan = 3>${fn:length(${member.member_password}) }</td> --%>
+								<%-- <td colspan = 3>${fn:length('member.member_password') }</td> --%>
+								<td colspan = 3>${fn:length('sibal') }</td>
 							</tr>
 							<tr>
 								<td style="width:25%">* First Name</td>
