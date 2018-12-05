@@ -6,7 +6,9 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.domain.FreviewVO;
 import kr.ync.project.front.persistence.FhotelDAO;
 
 
@@ -45,6 +47,25 @@ public class FhotelServiceImpl implements FhotelService {
       // TODO Auto-generated method stub
       return dao.listAll();
    }
+
+@Override
+public FdetailVO detail(String hotel_code) throws Exception {
+	return dao.detail(hotel_code);
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public List<FdetailVO> detailroom(String hotel_code) throws Exception {
+	// TODO Auto-generated method stub
+	return dao.detailroom(hotel_code);
+}
+
+@Override
+public List<FreviewVO> review(String hotel_code) throws Exception {
+	// TODO Auto-generated method stub
+	return dao.review(hotel_code);
+}
 
 //@Override
 //public List<BoardVO> listCriteria(Criteria cri) throws Exception {

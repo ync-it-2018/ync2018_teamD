@@ -1,0 +1,42 @@
+/**
+ * review 관련 css
+ * 
+ * 작 성 자 : 1405003 김건우 최초작성일자 : 2018-12-03
+ */
+
+img {
+	margin : 10px;
+}
+
+.upperdiv {
+	margin-top : 3%;
+}
+.userInfo {
+	text-align : center;
+	margin-top : 15%;
+	margin-bottom : 15%;
+}
+
+.scoreboard {
+	width : 90%;
+	margin-top : 2%;
+	margin-left : 5%;
+	padding : 15px;
+	text-align : center;
+}
+
+.tabletitle {
+	width : 20%;
+}
+
+.sliderboard{
+	text-align : center;
+	width : 70%;
+}
+
+.averagescore{
+	width : 300px;
+	margin-top : 70px;
+	margin-bottom : 70px;
+	font-size : 40px;
+}

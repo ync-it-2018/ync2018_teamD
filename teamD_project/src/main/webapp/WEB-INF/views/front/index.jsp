@@ -40,13 +40,14 @@
 	<div id="login" class="modal">
 
 		<!-- Modal Content -->
-		<form class="modal-content animate" action="/login">
+		<form method="POST" class="modal-content animate" action="/loginPost">
 
 			<div class="modal-container">
 				<label for="uid"><b>Username</b></label> <input type="text"
-					placeholder="Enter Username" name="uid" required id="uid">
-				<label for="pwd"><b>Password</b></label> <input type="password"
-					placeholder="Enter Password" name="pwd" required id="pwd">
+					placeholder="Enter Username" name="member_id" required
+					id="member_id"> <label for="pwd"><b>Password</b></label> <input
+					type="password" placeholder="Enter Password" name="member_password"
+					required id="member_password">
 
 				<button type="submit" style="margin: 3px" class="btn btn-success"
 					id="login">로그인</button>
@@ -138,7 +139,7 @@
 								</ul></li>
 							<li><a href="/searchresult">SearchResult</a></li>
 							<li><a href="/portfolio">Portfolio</a></li>
-							<li><a href="/blog">Blog</a></li>
+							<li><a href="/blog?hotel_code=KORDAGDH">Blog</a></li>
 							<li><a href="/contact">Contact</a></li>
 							<li><a href="#" id="loginPage">Login</a></li>
 						</ul>
@@ -150,32 +151,104 @@
 
 
 
+		<!-- 		<section id="content"></section> -->
 
 		<section id="featured">
 			<div class="container">
+				<!-- divider -->
+				<!-- end divider -->
+				<!-- Portfolio Projects -->
 				<div class="row">
-					<div class="col-lg-6 searchpadding">
-						<!-- 검색 내용이 들어갈 공간  -->
-						
-				<table class="table">
-					<tr>
-						<td colspan="2">
-						<div>
-						호텔검색<br>
-						<input type="text" name="textfield" style="text-align:left; width:200px; height:30px" value = "ex) Tokyo">
-						 <input type="button" name="btn2" value="검색" onclick="alert('링크로바꿔야함')">
+					<div class="col-lg-12">
+						<h4 class="heading">공지사항(진)</h4>
+						<div class="row">
+							<section id="projects">
+								<ul id="thumbs" class="portfolio">
+									<!-- Item Project and Filter Name -->
+									<li class="col-lg-3 design" data-id="id-0" data-type="web">
+										<div class="item-thumbs">
+											<!-- Fancybox - Gallery Enabled - Title - Full Image -->
+											<a class="hover-wrap fancybox" data-fancybox-group="gallery"
+												title="공지사항 1" href="/resources/front/img/works/1.jpg">
+												<span class="overlay-img"></span> <span
+												class="overlay-img-thumb font-icon-plus"></span>
+											</a>
+											<!-- Thumb Image and Description -->
+											<img src="/resources/front/img/works/1.jpg"
+												alt="공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.공지사항 1의 내용임. 아무튼 그럼.">
+										</div>
+									</li>
+									<!-- End Item Project -->
+									<!-- Item Project and Filter Name -->
+									<li class="item-thumbs col-lg-3 design" data-id="id-1"
+										data-type="icon">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
+										class="hover-wrap fancybox" data-fancybox-group="gallery"
+										title="공지사항 2" href="/resources/front/img/works/2.jpg"> <span
+											class="overlay-img"></span> <span
+											class="overlay-img-thumb font-icon-plus"></span>
+									</a> <!-- Thumb Image and Description --> <img
+										src="/resources/front/img/works/2.jpg"
+										alt="공지사항 2의 내용임. 아무튼 그럼.">
+									</li>
+									<!-- End Item Project -->
+									<!-- Item Project and Filter Name -->
+									<li class="item-thumbs col-lg-3 photography" data-id="id-2"
+										data-type="illustrator">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
+										class="hover-wrap fancybox" data-fancybox-group="gallery"
+										title="공지사항 3" href="/resources/front/img/works/3.jpg"> <span
+											class="overlay-img"></span> <span
+											class="overlay-img-thumb font-icon-plus"></span>
+									</a> <!-- Thumb Image and Description --> <img
+										src="/resources/front/img/works/3.jpg"
+										alt="공지사항 3의 내용임. 아무튼 그럼.">
+									</li>
+									<!-- End Item Project -->
+									<!-- Item Project and Filter Name -->
+									<li class="item-thumbs col-lg-3 photography" data-id="id-2"
+										data-type="illustrator">
+										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
+										class="hover-wrap fancybox" data-fancybox-group="gallery"
+										title="공지사항 4" href="/resources/front/img/works/4.jpg"> <span
+											class="overlay-img"></span> <span
+											class="overlay-img-thumb font-icon-plus"></span>
+									</a> <!-- Thumb Image and Description --> <img
+										src="/resources/front/img/works/4.jpg"
+										alt="공지사항 4의 내용임. 아무튼 그럼.">
+									</li>
+									<!-- End Item Project -->
+								</ul>
+							</section>
 						</div>
-						 <br>
-						</td>
-						
-					</tr>
-					<tr>
-						<td><p>체크인</p><input type="date" id="userdate" name="userdate"
-    		            value="2018-12-24" ></td>
-						<td><p>체크아웃</p><input type="date" id="userdate" name="userdate"
-    		            value="2018-12-25" ></td>
-					</tr>
-<!-- 					<tr>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<!-- 검색 내용이 들어갈 공간  -->
+						<!-- searchresult에 POST로 전송  -->
+						<form method="POST"  action="/searchresult">
+							<table class="table">
+								<tr>
+									<td colspan="2">
+										<div>
+											호텔검색<br> <input type="text" name="textfield"
+												style="text-align: left; width: 200px; height: 30px"
+												value="ex) Tokyo"> <input type="button" name="btn2"
+												value="검색" id="hotelSearch" class="btn">
+										</div> <br>
+									</td>
+
+								</tr>
+								<tr>
+									<td><p>체크인</p> <input type="date" id="userdate"
+										name="userdate" value="2018-12-24"></td>
+									<td><p>체크아웃</p> <input type="date" id="userdate"
+										name="userdate" value="2018-12-25"></td>
+								</tr>
+								<!-- 					<tr>
 						<td>
 						
     					<div>체크인 날짜 :  </div>
@@ -193,65 +266,70 @@
 						<br><br>
 						</td>
 					</tr> -->
-					<tr>
-						<td><p>객실선택</p>
-						<select name="room">
-  						<option value="one" selected="selected">1개의 객실</option>
- 						 <option value="two">2개의 객실</option>
- 						 <option value="three">3개의 객실</option>
-						</select></td>
-						<td><p>체크아웃</p><select name="man">
-  						<option value="one" selected="selected">1명</option>
- 						 <option value="two">2명</option>
- 						 <option value="three">3명</option>
-						</select>
-						<select name="boy">
-  						<option value="one" selected="selected">1명</option>
- 						 <option value="two">2명</option>
- 						 <option value="three">3명</option>
-						</select><br><br></td>
-						<td></td><td></td>
-					</tr>
-					
-					<tr>
-						<td><p>호텔등급</p><input type="checkbox" name="grade" value="onestar"> ★<br>
-						<input type="checkbox" name="grader" value="twostar"> ★★<br>
-						<input type="checkbox" name="grader" value="threestar"> ★★★<br>
-						<input type="checkbox" name="grader" value="fourstar"> ★★★★<br>
-						<input type="checkbox" name="grader" value="fourstar"> ★★★★★<br>
-						<input type="checkbox" name="grader" value="fourstar"> ★★★★★★<br></td>
-						<td><p>호텔가격</p><input type="checkbox" name="fruits" value="apple"> ￦0 - ￦49000<br>
-						<input type="checkbox" name="fruits" value="banana"> ￦50000 - ￦99000<br>
-						<input type="checkbox" name="fruits" value="orange"> ￦100000 - ￦149000 <br>
-						<input type="checkbox" name="fruits" value="orange"> ￦150000 - ￦199000 <br> 
-						<input type="checkbox" name="fruits" value="orange"> ￦200000 - ￦249000 <br>
-						<input type="checkbox" name="fruits" value="orange"> ￦250000 -  <br></td>
-					</tr>
-					
-				
-					<tr>
-						<td>
-						<td><p><a href="/typography"><input type = "button" value ="호텔 검색하기" onclick=""></a></p>
-						</td>
-					</tr>
-					
-					<tr><td>
-					<li><a href="/likepage">최근 본 상품</a></li>
-					<li><a href="/likepage">관심 상품</a></li>
-					</td></tr>
-				</table>
-						
-						
-						
-						
-						
+								<tr>
+									<td><p>객실선택</p> <select name="room">
+											<option value="one" selected="selected">1개의 객실</option>
+											<option value="two">2개의 객실</option>
+											<option value="three">3개의 객실</option>
+									</select></td>
+									<td><p>체크아웃</p> <select name="man">
+											<option value="one" selected="selected">1명</option>
+											<option value="two">2명</option>
+											<option value="three">3명</option>
+									</select> <select name="boy">
+											<option value="one" selected="selected">1명</option>
+											<option value="two">2명</option>
+											<option value="three">3명</option>
+									</select></td>
+								</tr>
+
+								<tr>
+									<td><p>호텔등급</p> <input type="checkbox" name="grade"
+										value="onestar"> ★<br> <input type="checkbox"
+										name="grader" value="twostar"> ★★<br> <input
+										type="checkbox" name="grader" value="threestar"> ★★★<br>
+										<input type="checkbox" name="grader" value="fourstar">
+										★★★★<br> <input type="checkbox" name="grader"
+										value="fourstar"> ★★★★★<br> <input
+										type="checkbox" name="grader" value="fourstar"> ★★★★★★<br></td>
+									<td><p>호텔가격</p> <input type="checkbox" name="fruits"
+										value="apple"> ￦0 - ￦49000<br> <input
+										type="checkbox" name="fruits" value="banana"> ￦50000 -
+										￦99000<br> <input type="checkbox" name="fruits"
+										value="orange"> ￦100000 - ￦149000 <br> <input
+										type="checkbox" name="fruits" value="orange"> ￦150000
+										- ￦199000 <br> <input type="checkbox" name="fruits"
+										value="orange"> ￦200000 - ￦249000 <br> <input
+										type="checkbox" name="fruits" value="orange"> ￦250000
+										- <br></td>
+								</tr>
+
+
+								<tr>
+									<td colspan="2" style="text-align:right"><p>
+											<a href="/typography"><button class="btn btn-success"
+													id="submit">호텔 검색하기</button></a>
+										</p></td>
+								</tr>
+
+								<tr>
+									<td colspan="2" style="text-align: right"><a
+										href="/likepage"><button class="btn">최근 본 상품</button></a> <a
+										href="/likepage"><button class="btn">관심 상품</button></a></td>
+								</tr>
+							</table>
+						</form>
+
+
+
+
 					</div>
-					
-					
-					
-					
-					
-					
+
+
+
+
+
+
 					<div class="col-lg-6">
 						<!-- 슬라이더 시작 -->
 						<div id="main-slider" class="flexslider">
@@ -277,13 +355,11 @@
 							</ul>
 						</div>
 						<!-- 슬라이더 끝 -->
-						
-						
-						
+
+
+
 					</div>
 				</div>
-
-
 
 			</div>
 		</section>
@@ -305,154 +381,6 @@
 			</div>
 		</section>
 
-		<section id="content">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="row">
-							<div class="col-lg-3">
-								<div class="box">
-									<div class="box-gray aligncenter">
-										<h4>Fully responsive</h4>
-										<div class="icon">
-											<i class="fa fa-desktop fa-3x"></i>
-										</div>
-										<p>Voluptatem accusantium doloremque laudantium sprea
-											totam rem aperiam.</p>
-
-									</div>
-									<div class="box-bottom">
-										<a href="#">Learn more</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="box">
-									<div class="box-gray aligncenter">
-										<h4>Modern Style</h4>
-										<div class="icon">
-											<i class="fa fa-pagelines fa-3x"></i>
-										</div>
-										<p>Voluptatem accusantium doloremque laudantium sprea
-											totam rem aperiam.</p>
-
-									</div>
-									<div class="box-bottom">
-										<a href="#">Learn more</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="box">
-									<div class="box-gray aligncenter">
-										<h4>Customizable</h4>
-										<div class="icon">
-											<i class="fa fa-edit fa-3x"></i>
-										</div>
-										<p>Voluptatem accusantium doloremque laudantium sprea
-											totam rem aperiam.</p>
-
-									</div>
-									<div class="box-bottom">
-										<a href="#">Learn more</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="box">
-									<div class="box-gray aligncenter">
-										<h4>Valid HTML5</h4>
-										<div class="icon">
-											<i class="fa fa-code fa-3x"></i>
-										</div>
-										<p>Voluptatem accusantium doloremque laudantium sprea
-											totam rem aperiam.</p>
-
-									</div>
-									<div class="box-bottom">
-										<a href="#">Learn more</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- divider -->
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="solidline"></div>
-					</div>
-				</div>
-				<!-- end divider -->
-				<!-- Portfolio Projects -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h4 class="heading">Recent Works</h4>
-						<div class="row">
-							<section id="projects">
-								<ul id="thumbs" class="portfolio">
-									<!-- Item Project and Filter Name -->
-									<li class="col-lg-3 design" data-id="id-0" data-type="web">
-										<div class="item-thumbs">
-											<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-											<a class="hover-wrap fancybox" data-fancybox-group="gallery"
-												title="Work 1" href="/resources/front/img/works/1.jpg">
-												<span class="overlay-img"></span> <span
-												class="overlay-img-thumb font-icon-plus"></span>
-											</a>
-											<!-- Thumb Image and Description -->
-											<img src="/resources/front/img/works/1.jpg"
-												alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-										</div>
-									</li>
-									<!-- End Item Project -->
-									<!-- Item Project and Filter Name -->
-									<li class="item-thumbs col-lg-3 design" data-id="id-1"
-										data-type="icon">
-										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
-										class="hover-wrap fancybox" data-fancybox-group="gallery"
-										title="Work 2" href="/resources/front/img/works/2.jpg"> <span
-											class="overlay-img"></span> <span
-											class="overlay-img-thumb font-icon-plus"></span>
-									</a> <!-- Thumb Image and Description --> <img
-										src="/resources/front/img/works/2.jpg"
-										alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-									</li>
-									<!-- End Item Project -->
-									<!-- Item Project and Filter Name -->
-									<li class="item-thumbs col-lg-3 photography" data-id="id-2"
-										data-type="illustrator">
-										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
-										class="hover-wrap fancybox" data-fancybox-group="gallery"
-										title="Work 3" href="/resources/front/img/works/3.jpg"> <span
-											class="overlay-img"></span> <span
-											class="overlay-img-thumb font-icon-plus"></span>
-									</a> <!-- Thumb Image and Description --> <img
-										src="/resources/front/img/works/3.jpg"
-										alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-									</li>
-									<!-- End Item Project -->
-									<!-- Item Project and Filter Name -->
-									<li class="item-thumbs col-lg-3 photography" data-id="id-2"
-										data-type="illustrator">
-										<!-- Fancybox - Gallery Enabled - Title - Full Image --> <a
-										class="hover-wrap fancybox" data-fancybox-group="gallery"
-										title="Work 4" href="/resources/front/img/works/4.jpg"> <span
-											class="overlay-img"></span> <span
-											class="overlay-img-thumb font-icon-plus"></span>
-									</a> <!-- Thumb Image and Description --> <img
-										src="/resources/front/img/works/4.jpg"
-										alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-									</li>
-									<!-- End Item Project -->
-								</ul>
-							</section>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</section>
 		<footer>
 			<div class="container">
 				<div class="row">
@@ -559,7 +487,6 @@
 	<script src="/resources/front/js/animate.js"></script>
 	<script src="/resources/front/js/custom.js"></script>
 	<script src="/resources/front/js/login/login.js"></script>
-	<script src="/resources/front/js/login/register.js"></script>
 	<!-- <script type="text/javascript">
 		function test(){
 			

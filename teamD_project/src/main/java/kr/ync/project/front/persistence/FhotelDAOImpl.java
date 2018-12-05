@@ -7,7 +7,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.domain.FreviewVO;
 
 @Repository
 public class FhotelDAOImpl implements FhotelDAO {
@@ -17,6 +19,12 @@ public class FhotelDAOImpl implements FhotelDAO {
 	
 	private static String namespace 
 	= "kr.ync.project.mapper.FhotelMapper";
+	
+	private static String namespace1 
+	= "kr.ync.project.mapper.FdetailMapper";
+	
+	private static String review 
+	= "kr.ync.project.mapper.FreviewMapper";
 	
 	@Override
 	public void create(FhotelVO vo) throws Exception {
@@ -47,6 +55,12 @@ public class FhotelDAOImpl implements FhotelDAO {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace+".listAll");
 	}
+	
+	@Override
+	public FdetailVO detail(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace1+".detail", hotel_code);//select one은 한줄
+	}
 //	@Override
 //	public List<BoardVO> listPage(int page) throws Exception{
 //		if(page <=0 ) {
@@ -62,6 +76,18 @@ public class FhotelDAOImpl implements FhotelDAO {
 	public void updateReplyCnt(Integer bno, int amount) throws Exception {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<FdetailVO> detailroom(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		 return session.selectList(namespace1+".detailroom", hotel_code);
+	}
+
+	@Override
+	public List<FreviewVO> review(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(review + ".review", hotel_code);
 	}
 
 //	@Override

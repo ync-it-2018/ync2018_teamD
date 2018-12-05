@@ -8,6 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class memberVO {
+		
 	private String member_id;
 
     private String member_password;
@@ -18,11 +19,13 @@ public class memberVO {
     
     private String member_out;
     
-    private String nation_code;
+//    private String nation_code;
     
     private String member_fianame;
     
     private String member_laname;
     
     private String member_joindate;
+    
+    private String nation_name;
 }
