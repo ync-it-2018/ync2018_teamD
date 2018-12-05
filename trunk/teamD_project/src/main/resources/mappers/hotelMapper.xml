@@ -54,10 +54,42 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	where hotel_code = #{hotel_code}
 </select>
 
-<select id = "roomDetail" resultType= "RoomVO">
-	SELECT 	RIMAGE_IDX, 
-		    RIMAGE_NAME
-	FROM  td_room_image
-	where room_idx = #{room_idx}
+<select id = "hotel_feature" resultType= "FeatureVO">
+	SELECT hf_name
+	FROM TD_HOTEL_INFO i, TD_HOTEL_FACILITY f
+	WHERE i.HF_IDX = f.HF_IDX
+	AND   HOTEL_CODE = #{room_idx}
+</select>
+
+<select id = "room_feature" resultType= "FeatureVO">
+	SELECT f.RF_NAME, r.ROOM_NAME
+	FROM TD_ROOM_INFO i, TD_ROOM_FACILITY f, TD_ROOM r
+	WHERE i.RF_IDX = f.RF_IDX
+	AND   i.ROOM_IDX = r.ROOM_IDX
+	AND   i.ROOM_IDX = #{room_idx}
+</select>
+
+<select id = "room_bed" resultType= "BedVO">
+	SELECT bed_name, bed_cnt
+	FROM   TD_ROOM_BED
+	WHERE  ROOM_IDX = #{room_idx}
+</select>
+
+<select id = "room_image" resultType= "ImageVO">
+	SELECT * 
+	FROM TD_ROOM_IMAGE 
+	WHERE ROOM_IDX = #{room_idx}
+</select>
+
+<select id = "hotel_image" resultType= "ImageVO">
+	SELECT HIMG_NAME, HIMG_IDX
+	FROM  TD_HOTEL_IMAGE
+	WHERE HOTEL_CODE = #{hotel_code}
+</select>
+
+<select id = "rimage_detail" resultType= "ImageVO">
+	SELECT * 
+	FROM TD_ROOM_IMAGE 
+	WHERE RIMAGE_IDX = #{idx}
 </select>
 </mapper>

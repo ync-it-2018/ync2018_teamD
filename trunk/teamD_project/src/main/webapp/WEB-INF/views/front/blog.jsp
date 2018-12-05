@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 
@@ -19,16 +20,9 @@
 	<link href="/resources/front/skins/default.css" rel="stylesheet" />
 	<script type="text/javascript">
 
-	
+	function popupOpen(){
 
-
-<script type="text/javascript">
-
-
-
-function popupOpen(){
-
-	var popUrl = "/avgresult";	//팝업창에 출력될 페이지 URL
+	var popUrl = "/avgresult?hotel_code=KORDAGDH";	//팝업창에 출력될 페이지 URL
 	
 
 	var popOption = "width=500, height=400, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
@@ -146,7 +140,7 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="/"><span>D</span>aisy</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
@@ -196,7 +190,28 @@ hr.two{width: 100%;color:black;border: thin solid black;}
                     체크아웃 : <input type="date" id="checkout" name="checkout"
                       value="yyyy-mm-dd">
                       <input type="button" value="검색" 	style="WIDTH: 50px; HEIGHT: 40px" /> 
-                   
+                 <%--   <c:forEach items="${detail}" var="FdetailVO">
+					
+						<tr>
+							<td>1</td>
+							<td>
+							${FdetailVO.address}
+							${FdetailVO.room_lowprice}
+							${FdetailVO.rate}
+							${FdetailVO.hotel_class}
+							${FdetailVO.information}
+							${FdetailVO.hotel_discount}
+							${FdetailVO.hotel_code}
+							${FdetailVO.hotel_name}
+							${FdetailVO.nation_name}
+							${FdetailVO.city_name}
+							${FdetailVO.hotel_core_info}
+							${FdetailVO.hotel_precautions}
+							${FdetailVO.hotel_checktime}
+							${FdetailVO.hotel_etc}
+							</td>
+						</tr>
+					</c:forEach> --%>
                    
                       
 
@@ -206,8 +221,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 						<article>
 							<div class="post-image">
 								<div class="post-heading">
-									<h3><a href="#">엘디스 리젠트 대구호텔</a></h3>
+									<h3>${detail.hotel_name}</h3>
 								</div>
+								<h4>${detail.information}</h4>
 							</div>
 							<!-- 슬라이더 시작 -->
 						<div id="main-slider" class="flexslider">
@@ -224,19 +240,24 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 						
 									
 								
-									<div>객실정보 :110개 객실</div>
+									<div>${detail.hotel_core_info}</div>
 									<h4>체크시 준비사항 </h4>
 									<ol>
-										<li>준비사항1</li>
-										<li>준비사항2</li>
-										<li>준비사항3</li>
+										<li>${detail.hotel_precautions}</li>
+										
 									</ol>
 									<h4>체크인/체크아웃 </h4>
 									<ol>
-										<li>체크인15:00이후</li>
-										<li>체크아웃12:00이전</li>
+										<li>${detail.hotel_checktime}</li>
+										
+										
 									</ol>
-							
+									<h4>기타사항 </h4>
+									<ol>
+										
+										<li>${detail.hotel_etc}</li>
+										
+									</ol>
 									
 								
 							
@@ -268,7 +289,7 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 								</form>
 							</div>
 							<div class="widget">
-								<h1 class="widgetheading">가격400,000</h1>
+								<h1 class="widgetheading">가격:${detail.room_lowprice}</h1>
 								<ul class="cat">
 									<li>
 									
@@ -278,10 +299,10 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 								</ul>
 							</div>
 							<div class="widget">
-								<h2 class="widgetheading">평점 7.0</h2>
+								<h2 class="widgetheading">평점:${detail.rate}</h2>
 								<ul class="recent">
 									<li>
-										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="javascript:popupOpen();"/>
+										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="popupOpen()"/>
 									</li>
 									
 									
@@ -303,10 +324,18 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 						<img src="/resources/front/img/slides/1.jpg" width="15%" height="30%"/> 
 						<select name="room" style="WIDTH: 200px; HEIGHT: 30px" >
 							<option value="">객실선택</option>
-							<option value="스탠다드 더블룸">스탠다드 더블룸</option>
-							<option value="스탠다드 트윈룸">스탠다드 트윈룸</option>
+							<option value="스탠다드 더블룸">
+							
+							<c:forEach items="${detailroom}" var="FdetailVO">
+							${FdetailVO.room_name}
+							</c:forEach></option>
+							<!-- <option value="스탠다드 트윈룸">스탠다드 트윈룸</option>
 							<option value="빌리지 파티룸">빌리지 파티룸</option>
+							 -->
+						
+					
 						</select>
+						
 						<select name="info" style="WIDTH: 200px; HEIGHT: 30px" >
 							<div>wifi</div>
 						</select>

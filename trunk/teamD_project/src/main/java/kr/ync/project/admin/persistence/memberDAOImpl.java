@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import kr.ync.project.admin.domain.Criteria;
+import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.domain.memberVO;
 
 @Repository
@@ -28,8 +29,7 @@ public class memberDAOImpl implements memberDAO{
 	@Override
 	public memberVO read(String member_id) throws Exception {
 		// TODO Auto-generated method stub
-//		System.out.println("member_id = " + member_id);
-		return session.selectOne(namespace + ".read", member_id);
+		return session.selectOne(namespace+".read",member_id);
 	}
 
 	@Override
@@ -77,6 +77,12 @@ public class memberDAOImpl implements memberDAO{
 	public int mcountPaging(Criteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".mcountPaging", cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 
 	
