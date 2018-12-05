@@ -9,9 +9,9 @@ import lombok.ToString;
 @ToString
 public class LoginVO {
 
-	private String MEMBER_ID;
+	private String member_id;
 
-    private String MEMBER_PASSWORD;
+    private String member_password;
 
 //    private String MEMBER_PNUMBER;
 //
@@ -21,7 +21,7 @@ public class LoginVO {
 //    
 //    private String NATION_CODE;
     
-    private String MEMBER_FIANAME;
+    private String member_fianame;
     
 //    private String MEMBER_LANAME;
 //    

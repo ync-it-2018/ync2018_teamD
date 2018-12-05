@@ -14,6 +14,7 @@
 <link href="/resources/front/css/jcarousel.css" rel="stylesheet" />
 <link href="/resources/front/css/flexslider.css" rel="stylesheet" />
 <link href="/resources/front/css/style.css" rel="stylesheet" />
+<link href="/resources/front/css/mypage.css" rel="stylesheet" />
 <link href="/resources/front/css/loginform.css" rel="stylesheet" />
 
 <!-- Theme 적용 -->
@@ -186,12 +187,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-8">
-					<!-- 각 항목은 Article로써 마이 페이지에 데이터 호출 -->
-					<!-- 예약 완료 목록 페이지  -->
- 						<article id="resv_comp_data">
+						<!-- 각 항목은 Article로써 마이 페이지에 데이터 호출 -->
+						<!-- 예약 완료 목록 페이지  -->
+						<article id="resv_comp_data">
 							<div class="post-image">
 								<div class="post-heading">
-									<img src = "/resources/front/img/dummies/myPage1.png">
+									<img src="/resources/front/img/dummies/myPage1.png">
 								</div>
 							</div>
 							<p>예약 완료 목록을 불러오는 페이지</p>
@@ -245,13 +246,13 @@
 									class="icon-angle-right"></i></a>
 							</div>
 						</article>
- 						<article id="resv_list_data">
+						<article id="resv_list_data">
 							<div class="post-image">
 								<div class="post-heading">
-									<img src = "/resources/front/img/dummies/myPage1.png">
+									<img src="/resources/front/img/dummies/myPage1.png">
 								</div>
 							</div>
-					<!-- 예약된 목록 페이지  -->
+							<!-- 예약된 목록 페이지  -->
 							<p>예약중인 목록을 불러오는 페이지</p>
 							<div class="bottom-article">
 								<ul class="meta-post">
@@ -266,11 +267,11 @@
 									class="icon-angle-right"></i></a>
 							</div>
 						</article>
-					<!-- 예약 취소 페이지  -->
- 						<article id="resv_cancel_data">
+						<!-- 예약 취소 페이지  -->
+						<article id="resv_cancel_data">
 							<div class="post-image">
 								<div class="post-heading">
-									<img src = "/resources/front/img/dummies/myPage1.png">
+									<img src="/resources/front/img/dummies/myPage1.png">
 								</div>
 							</div>
 							<p>예약 취소 페이지</p>
@@ -287,14 +288,48 @@
 									class="icon-angle-right"></i></a>
 							</div>
 						</article>
-					<!-- 개인정보 수정 페이지  -->
- 						<article id="user_modify_data">
+						<!-- 개인정보 수정 페이지  -->
+						<article id="user_modify_data">
 							<div class="post-image">
 								<div class="post-heading">
-									<img src = "/resources/front/img/dummies/myPage1.png">
+									<img src="/resources/front/img/dummies/myPage1.png">
 								</div>
 							</div>
-							<p>사용자 정보 수정 페이지</p>
+							<div id="preModifyTable">
+								<div>
+									회원 확인을 위해 비밀번호를 입력해주세요. <br> PW : <input type="password"
+										class="input" id="is_member_password">
+									<button id="pwdChkBtn">확인</button>
+								</div>
+							</div>
+							<div id="userModifyTable">
+								<table class="table mp">
+									<tr>
+										<th>ID (E-Mail)</th>
+										<td colspan="4"><input type="text" id="member_id" /></td>
+									</tr>
+									<tr>
+										<th>비밀번호 변경</th>
+										<td colspan="4"><input type="password"
+											id="member_password" /></td>
+									</tr>
+									<tr>
+										<th>비밀번호 확인</th>
+										<td colspan="4"><input type="password"
+											id="member_password_chk" /></td>
+									</tr>
+									<tr>
+										<th>이름</th>
+										<td><input type="text" id="member_fianame" /></td>
+										<th>성</th>
+										<td><input type="text" id="member_laname" /></td>
+									</tr>
+									<tr>
+										<th></th>
+										<td colspan="4"></td>
+									</tr>
+								</table>
+							</div>
 							<div class="bottom-article">
 								<ul class="meta-post">
 									<li><i class="icon-calendar"></i><a href="#"> Mar 23,
@@ -308,9 +343,9 @@
 									class="icon-angle-right"></i></a>
 							</div>
 						</article>
-						
+
 						<!-- 템플릿에 있던 예시용 데이터  -->
-<!--
+						<!--
 						<article>
 							<div class="post-slider">
 								<div class="post-heading">
@@ -424,12 +459,15 @@
 								<h3 class="widgetheading">마이 페이지</h3>
 								<ul class="cat">
 									<li><i class="icon-angle-right"></i><a id="resv_comp">예약완료내역</a></li>
-									<li><i class="icon-angle-right"></i><a id="resv_list">예약 현황</a></li>
-									<li><i class="icon-angle-right"></i><a id="resv_cancel">예약 취소</a></li>
-									<li><i class="icon-angle-right"></i><a id="user_modify">개인정보 수정</a></li>
+									<li><i class="icon-angle-right"></i><a id="resv_list">예약
+											현황</a></li>
+									<li><i class="icon-angle-right"></i><a id="resv_cancel">예약
+											취소</a></li>
+									<li><i class="icon-angle-right"></i><a id="user_modify"
+										data-toggle="modal" data-target="#myModal">개인정보 수정</a></li>
 								</ul>
 							</div>
-							
+
 							<!-- <div class="widget">
 								<h5 class="widgetheading">Latest posts</h5>
 								<ul class="recent"> 
@@ -580,7 +618,7 @@
 	<script src="/resources/front/js/jquery.flexslider.js"></script>
 	<script src="/resources/front/js/animate.js"></script>
 	<script src="/resources/front/js/custom.js"></script>
-	<script src="/resources/front/js/login/login.js"></script>	
+	<script src="/resources/front/js/login/login.js"></script>
 	<script src="/resources/front/js/mypage.js"></script>
 
 </body>
