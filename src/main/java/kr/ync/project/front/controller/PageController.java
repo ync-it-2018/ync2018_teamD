@@ -9,13 +9,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.domain.FnoticeVO;
 import kr.ync.project.front.service.FhotelService;
+import kr.ync.project.front.service.FnoticeService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @Slf4j
 @RequestMapping("/")
 public class PageController {
+	
+	
+	@Inject
+	private FnoticeService notice_service;
+	
 	
 	@Inject
 	private FhotelService service;
@@ -119,5 +126,13 @@ public class PageController {
 		
 		return "front/writereview";
 	}
-	
+
+//	@RequestMapping(value = "/noticelist", method = RequestMethod.GET)
+//	public String noticelist(FnoticeVO board, Model model) throws Exception {
+//
+//		model.addAttribute("readNotice", notice_service.listAll());
+//		
+//		return "front/index";
+//	}
+//	
 }

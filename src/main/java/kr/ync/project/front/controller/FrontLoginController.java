@@ -39,7 +39,6 @@ public class FrontLoginController {
 		
 		model.addAttribute("loginVO", vo);
 		
-		
 		return "front/loginPost";
 	}
 	//postHandle 실행
