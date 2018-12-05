@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.ync.project.admin.service.HotelService;
 import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.FnoticeVO;
 import kr.ync.project.front.service.FhotelService;
@@ -26,6 +27,7 @@ public class PageController {
 	
 	@Inject
 	private FhotelService service;
+
 		
 	/*@RequestMapping("/blog")
 	public String blog() {
@@ -34,12 +36,15 @@ public class PageController {
 		
 		return "front/blog";
 	}*/
-	@RequestMapping(value= "/blog" , method = RequestMethod.GET)
-	public String blog(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
-		log.info("blog call.....");
+	@RequestMapping(value= "/searchresultdetail" , method = RequestMethod.GET)
+	public String searchresultdetail(@RequestParam("hotel_code") String hotel_code,
+			@RequestParam("room_idx") String room_idx,Model model) throws Exception {
+		log.info("searchresultdetail call.....");
 		model.addAttribute("detailroom", service.detailroom(hotel_code)); //최종적으로불러올이름
 		model.addAttribute("detail", service.detail(hotel_code));
-		return "front/blog"; //최종적으로 페이지
+		model.addAttribute("h_image", service.hotel_image(hotel_code)); //h_image는 포이치문 아이템즈
+		model.addAttribute("roomdetail",service.roomdetail(room_idx));
+		return "front/searchresultdetail"; //최종적으로 페이지
 	}
 	
 	@RequestMapping("/components")
@@ -104,6 +109,12 @@ public class PageController {
 		log.info("avgresult page call.....");
 		model.addAttribute("review", service.review(hotel_code));
 		return "front/avgresult";
+	}
+	@RequestMapping("/roomdetail")
+	public String roomdetail(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
+		log.info("roomdetail page call.....");
+		model.addAttribute("review", service.review(hotel_code));
+		return "front/roomdetail";
 	}
 
 	@RequestMapping("/mypage")
