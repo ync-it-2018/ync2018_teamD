@@ -123,24 +123,26 @@
 							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="/"><span>D</span>aisy <span>H</span>otel <span>S</span>ervice</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/">Home</a></li>
+							<li><a href="/typography">SearchList</a></li>
+							<!-- 드롭다운 예제 	
 							<li class="dropdown"><a href="#" class="dropdown-toggle "
 								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-								data-close-others="false">Features <b
+								data-close-others="false"><b
 									class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="/typography">Typography</a></li>
+									<li><a href="/typography">SearchList</a></li>
 									<li><a href="/components">Components</a></li>
 									<li><a href="/pricingbox">Pricing box</a></li>
-								</ul></li>
+								</ul></li> -->
 							<li><a href="/searchresult">SearchResult</a></li>
-							<li><a href="/portfolio">Portfolio</a></li>
-							<li><a href="/blog?hotel_code=KORDAGDH">Blog</a></li>
-							<li><a href="/contact">Contact</a></li>
+							<li><a href="/mypage">Mypage(WIP)</a></li>
+							<li><a href="/blog?hotel_code=KORDAGDH">SearchResultDetail</a></li>
+							<!-- <li><a href="/contact">Contact</a></li> -->
 							<li><a href="#" id="loginPage">Login</a></li>
 						</ul>
 					</div>
@@ -169,7 +171,7 @@
 										<div class="item-thumbs">
 											<!-- Fancybox - Gallery Enabled - Title - Full Image -->
 											<a class="hover-wrap fancybox" data-fancybox-group="gallery"
-												title="공지사항 1" href="/resources/front/img/works/1.jpg">
+												title="asdf" href="/resources/front/img/works/1.jpg">
 												<span class="overlay-img"></span> <span
 												class="overlay-img-thumb font-icon-plus"></span>
 											</a>
