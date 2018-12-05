@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Moderna - Bootstrap 3 flat corporate template</title>
+	<title>검색결과 페이지</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<!-- css -->
@@ -30,6 +30,16 @@
 		window.open(popUrl,"",popOption);
 
 	}
+	function room_popupOpen(){
+
+		var popUrl = "/roomdetail?hotel_code=KORDAGDH";	//팝업창에 출력될 페이지 URL
+		
+
+		var popOption = "width=500, height=400, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+
+			window.open(popUrl,"",popOption);
+
+		}
 
 
 
@@ -227,11 +237,16 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 							</div>
 							<!-- 슬라이더 시작 -->
 						<div id="main-slider" class="flexslider">
+						
 							<ul class="slides">
-								<li><img src="/resources/front/img/slides/1.jpg" alt="" />
+							<c:forEach items="${h_image}" var="ImageVO">
+								<li><img src="${ImageVO.himg_name}" />	
+							</c:forEach>
+								<!-- <li><img src="/resources/front/img/slides/1.jpg" alt="" />
 								<li><img src="/resources/front/img/slides/2.jpg" alt="" />
-								<li><img src="/resources/front/img/slides/3.jpg" alt="" />
+								<li><img src="/resources/front/img/slides/3.jpg" alt="" /> -->
 							</ul>
+							
 						</div>
 						<!-- 슬라이더 끝 -->
 							
@@ -329,8 +344,16 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 						   </div>
 						<hr class="two">
 						<div class="row">
-						<div class=col-lg-2 style="text-align:center;">
-						<img src="/resources/front/img/slides/1.jpg" /></div> 
+						<div class=col-lg-2 style="text-align:center;" onclick="room_popupOpen()">
+						<img src="/resources/front/img/slides/1.jpg" />
+						<div style="text-align:center;">객실정보</div>
+						<div style="text-align:left;"><ol>
+							<li>숙박인원:2명</li>
+							<li>싱글 침대</li>
+							<li>UHD TV</li>
+							</ol>
+							</div>
+						</div> 
 						<div class=col-lg-2 style="text-align:center;">
 						<select name="room" style="WIDTH: 150px; HEIGHT: 30px" >
 							<option value="">객실선택</option>

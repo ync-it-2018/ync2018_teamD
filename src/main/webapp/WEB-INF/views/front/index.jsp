@@ -142,9 +142,9 @@
 									<li><a href="/components">Components</a></li>
 									<li><a href="/pricingbox">Pricing box</a></li>
 								</ul></li> -->
-							<li><a href="/searchresult">SearchResult</a></li>
+							<!-- <li><a href="/searchresult">SearchResult</a></li> -->
 							<li><a href="/mypage">Mypage(WIP)</a></li>
-							<li><a href="/blog?hotel_code=KORDAGDH">SearchResultDetail</a></li>
+							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
 							<!-- <li><a href="/contact">Contact</a></li> -->
 							<li><a href="#" id="loginPage">Login</a></li>
 						</ul>
