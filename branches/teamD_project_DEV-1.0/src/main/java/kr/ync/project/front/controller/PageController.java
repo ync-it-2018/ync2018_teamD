@@ -38,12 +38,11 @@ public class PageController {
 	}*/
 	@RequestMapping(value= "/searchresultdetail" , method = RequestMethod.GET)
 	public String searchresultdetail(@RequestParam("hotel_code") String hotel_code,
-			@RequestParam("room_idx") String room_idx,Model model) throws Exception {
+			Model model) throws Exception {
 		log.info("searchresultdetail call.....");
 		model.addAttribute("detailroom", service.detailroom(hotel_code)); //최종적으로불러올이름
 		model.addAttribute("detail", service.detail(hotel_code));
 		model.addAttribute("h_image", service.hotel_image(hotel_code)); //h_image는 포이치문 아이템즈
-		model.addAttribute("roomdetail",service.roomdetail(room_idx));
 		return "front/searchresultdetail"; //최종적으로 페이지
 	}
 	
@@ -110,10 +109,11 @@ public class PageController {
 		model.addAttribute("review", service.review(hotel_code));
 		return "front/avgresult";
 	}
-	@RequestMapping("/roomdetail")
-	public String roomdetail(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
+	@RequestMapping("/roomdetail") //호텔객실 
+	public String roomdetail(
+			@RequestParam("room_idx") int room_idx,Model model) throws Exception {
 		log.info("roomdetail page call.....");
-		model.addAttribute("review", service.review(hotel_code));
+		model.addAttribute("roomdetail",service.roomdetail(room_idx));
 		return "front/roomdetail";
 	}
 

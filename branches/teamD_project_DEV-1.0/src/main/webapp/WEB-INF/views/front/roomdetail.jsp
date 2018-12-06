@@ -14,9 +14,10 @@
 <body>
   <table class="table">
   <thead>
+  
     <tr>
      
-      <th scope="col">스탠다드 룸</th>
+      <th scope="col">${roomdetail.ROOM_NAME}</th>
       
       
     </tr>
@@ -32,6 +33,7 @@
 				
 			</tr>
 		</tbody>
+		
 </table>
 
 </body>
