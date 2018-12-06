@@ -160,7 +160,7 @@
 				<!-- /.box-header -->
 
 				<div class="box-body">
-					<div class="form-group h_group" style="width:70%; float:left">
+					<div class="form-group h_group" style="width:50%; float:left">
 						<H2>${hotel.hotel_name }</H2>
 					</div>
 					<div class="form-group h_group" style="width: 30%; float:left; padding-top:30px;">
@@ -169,27 +169,25 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;평&nbsp;&nbsp;&nbsp;&nbsp;점 :
 					<input type="text" disabled value='${hotel.rate }' style ="width:70px; margin:0px 5px;"/>
 					</div>
+					
+					<div class="form-group h_group" style="width: 20%; float:left; padding-top:30px;">
+					<input type="button" value="수정" onclick = "modify('${hotel.hotel_code}')"/>
+					<input type="button" value="삭제"/>
+					<input type="button" value="목록"/>
+					</div>
 					<hr style="border: 1px solid gray; float:left; width:100%; margin-top:0px;">
 					
 					<div class="form-group">
 						<div style="font-weight:bolder; margin-bottom:10px;">호텔 사진</div>
 						<hr style="border: 1px solid gray; float:left; width:100%; margin-top:0px;">
-						
-										
-								
-						
-					
 					
 					 <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:480px;overflow:hidden;visibility:hidden;">
 				        <!-- Loading Screen -->
-				        <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
-				            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
-				        </div>
 				        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
 				            <c:forEach items="${h_image}" var="hotel_image">
 											<div>
-								                <img data-u="image" src="${ hotel_image.himg_name}" />
-								                <img data-u="thumb" src="${ hotel_image.himg_name}" stlye="width:190; height:90;" />
+								                <img data-u="image" src="${ hotel_image.himg_path}" />
+								                <img data-u="thumb" src="${ hotel_image.himg_path}" stlye="width:190; height:90;" />
 								            </div>
 											
 											<!-- <img src="" style="width:150px; height:130px; margin:15 15;"/> -->
@@ -326,6 +324,10 @@
 		var popOption = "width=500, height=650, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
 
 		window.open(popUrl,"",popOption);
+	}
+	
+	function modify( hotel_code ){
+		window.location.href="/admin/hotelModify?hotel_code="+hotel_code;
 	}
 </script>
 
