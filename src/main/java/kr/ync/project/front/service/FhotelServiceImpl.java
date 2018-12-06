@@ -76,17 +76,16 @@ public List<ImageVO> hotel_image(String hotel_code) throws Exception {
 }
 
 @Override
-public List<FroomVO> roomdetail(String room_idx) throws Exception {
+public FroomVO roomdetail(int room_idx) throws Exception {
 	// TODO Auto-generated method stub
-	return dao.roomdetail(room_idx);
+	return  dao.roomdetail(room_idx);
 }
 
 
-//@Override
-//public List<BoardVO> listCriteria(Criteria cri) throws Exception {
-//	// TODO Auto-generated method stub
-//	return dao.listCriteria(cri);
-//}
+
+
+
+
 //
 //@Override
 //public int listCountCriteria(Criteria cri) throws Exception {

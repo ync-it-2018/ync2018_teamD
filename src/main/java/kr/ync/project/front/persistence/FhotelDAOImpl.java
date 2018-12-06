@@ -124,9 +124,11 @@ public class FhotelDAOImpl implements FhotelDAO {
 //	}
 
 	@Override
-	public List<FroomVO> roomdetail(String room_idx) throws Exception {
+	public FroomVO roomdetail(int room_idx) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(roomdetail+".roomdetail",room_idx);
+		return session.selectOne(roomdetail + ".roomdetail",room_idx);
 	}
+
+	
 
 }

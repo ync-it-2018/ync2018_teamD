@@ -32,7 +32,7 @@
 	}
 	function room_popupOpen(){
 
-		var popUrl = "/roomdetail?hotel_code=KORDAGDH";	//팝업창에 출력될 페이지 URL
+		var popUrl = "/roomdetail?room_idx=1";	//팝업창에 출력될 페이지 URL
 		
 
 		var popOption = "width=500, height=400, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)

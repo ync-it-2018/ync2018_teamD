@@ -30,7 +30,7 @@ public interface FhotelDAO {
 	
 	public List<ImageVO> hotel_image(String hotel_code)throws Exception;
 
-	public List<FroomVO> roomdetail(String room_idx)throws Exception;
+	public FroomVO roomdetail(int room_idx)throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   
