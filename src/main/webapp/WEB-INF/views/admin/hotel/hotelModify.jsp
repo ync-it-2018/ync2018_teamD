@@ -23,118 +23,20 @@
   #tb_room{
   	margin: 15 10;
   }
-  .jssorl-009-spin img {
-            animation-name: jssorl-009-spin;
-            animation-duration: 1.6s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-
-        @keyframes jssorl-009-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /*jssor slider arrow skin 106 css*/
-        .jssora106 {display:block;position:absolute;cursor:pointer;}
-        .jssora106 .c {fill:#fff;opacity:.3;}
-        .jssora106 .a {fill:none;stroke:#000;stroke-width:350;stroke-miterlimit:10;}
-        .jssora106:hover .c {opacity:.5;}
-        .jssora106:hover .a {opacity:.8;}
-        .jssora106.jssora106dn .c {opacity:.2;}
-        .jssora106.jssora106dn .a {opacity:1;}
-        .jssora106.jssora106ds {opacity:.3;pointer-events:none;}
-
-        /*jssor slider thumbnail skin 101 css*/
-        .jssort101 .p {position: absolute;top:0;left:0;box-sizing:border-box;background:#000;}
-        .jssort101 .p .cv {position:relative;top:0;left:0;width:100%;height:100%;border:2px solid #000;box-sizing:border-box;z-index:1;}
-        .jssort101 .a {fill:none;stroke:#fff;stroke-width:400;stroke-miterlimit:10;visibility:hidden;}
-        .jssort101 .p:hover .cv, .jssort101 .p.pdn .cv {border:none;border-color:transparent;}
-        .jssort101 .p:hover{padding:2px;}
-        .jssort101 .p:hover .cv {background-color:rgba(0,0,0,6);opacity:.35;}
-        .jssort101 .p:hover.pdn{padding:0;}
-        .jssort101 .p:hover.pdn .cv {border:2px solid #fff;background:none;opacity:.35;}
-        .jssort101 .pav .cv {border-color:#fff;opacity:.35;}
-        .jssort101 .pav .a, .jssort101 .p:hover .a {visibility:visible;}
-        .jssort101 .t {position:absolute;top:0;left:0;width:100%;height:100%;border:none;opacity:.6;}
-        .jssort101 .pav .t, .jssort101 .p:hover .t{opacity:1;}
-  
+  .input_f{
+  	width:80%; 
+  	margin:10 10;
+  }
   </style>
   <script src="/resources/admin/js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
-  <script type="text/javascript">
-        jssor_1_slider_init = function() {
-
-            var jssor_1_SlideshowTransitions = [
-              {$Duration:800,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:800,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
-            ];
-
-            var jssor_1_options = {
-              $AutoPlay: 0,
-              $SlideshowOptions: {
-                $Class: $JssorSlideshowRunner$,
-                $Transitions: jssor_1_SlideshowTransitions,
-                $TransitionsOrder: 1
-              },
-              $ArrowNavigatorOptions: {
-                $Class: $JssorArrowNavigator$
-              },
-              $ThumbnailNavigatorOptions: {
-                $Class: $JssorThumbnailNavigator$,
-                $SpacingX: 5,
-                $SpacingY: 5
-              }
-            };
-
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-            /*#region responsive code begin*/
-
-            var MAX_WIDTH = 550;
-
-            function ScaleSlider() {
-                var containerElement = jssor_1_slider.$Elmt.parentNode;
-                var containerWidth = containerElement.clientWidth;
-
-                if (containerWidth) {
-
-                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-                    jssor_1_slider.$ScaleWidth(expectedWidth);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-
-            ScaleSlider();
-
-            $Jssor$.$AddEvent(window, "load", ScaleSlider);
-            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-            /*#endregion responsive code end*/
-        };
-    </script>
+ <script>
+ 	function add_f(){
+ 		var select_f;
+ 		select_f = $("#hotel_f option:selected").val();
+ 		
+ 		alert(select_f);
+ 	}
+</script>
 
 <%@include file="/WEB-INF/views/admin/include/header.jsp" %>
 <!-- 컨텐츠 상단바 -->
@@ -161,32 +63,56 @@
 
 				<div class="box-body">
 					<div class="form-group h_group" style="width:50%; float:left">
-						<H2><input type="text" value="${hotel.hotel_name }"/></H2>
+						<H2>${hotel.hotel_name }</H2>
 					</div>
 					<div class="form-group h_group" style="width: 30%; float:left; padding-top:30px;">
-					<input type="checkbox"  checked /> 할&nbsp;&nbsp;&nbsp;&nbsp;인
-					<input type="text"  value='${hotel.hotel_discount }' style ="width:50px; margin:0px 5px;"/>%
+					<input type="checkbox"   checked /> 할&nbsp;&nbsp;&nbsp;&nbsp;인
+					<input type="text"   value='${hotel.hotel_discount }' style ="width:50px; margin:0px 5px;"/>%
 					&nbsp;&nbsp;&nbsp;&nbsp;평&nbsp;&nbsp;&nbsp;&nbsp;점 :
-					<input type="text"  value='${hotel.rate }' style ="width:70px; margin:0px 5px;"/>
+					<input type="text"   value='${hotel.rate }' style ="width:70px; margin:0px 5px;"/>
 					</div>
 					
 					<div class="form-group h_group" style="width: 20%; float:left; padding-top:30px;">
+					<input type="button" value="완료" />
 					<input type="button" value="취소"/>
-					<input type="button" value="수정"/>
 					</div>
 					<hr style="border: 1px solid gray; float:left; width:100%; margin-top:0px;">
 					
-				    <hr style="border: 1px solid gray; float:left; width:100%; margin-top:0px;">
+					<div class="form-group">
+						<label>호텔 이미지</label>
+						<div style="width:88%; text-align: left; margin: 0 auto;">
+							<form id = "hotel_f" style="width:100%; text-align:center; margin: atuo;">
+								<select name ="hote_f" size = "8"  style="width: 100%;">
+									<c:forEach items="${h_image}" var="h_image" >
+										<option value="${h_image.himg_name}">${h_image.himg_name}</option>
+									</c:forEach>
+								</select>
+							</form>
+							<div style="text-align:right; margin:5 5;">
+								<input type="button" value=" 추가 " onclick="add_f()">
+								<input type="button" value=" 삭제 ">
+							</div>
+						</div>
+					</div>
 					
 					<div class="form-group">
 						<label>호텔 내 시설</label>
-						<center>
-						<div style="border:1px solid; width:88%; text-align: left;">
-							<c:forEach items="${hotel_f }" var="hotel_f">
-								<span style="margin: 10 10;"><input type="checkbox" checked  >${hotel_f.hf_name }</span>		
-							</c:forEach>
+							<div style="width:88%; text-align: left; margin: 0 auto;">
+							<div id="pre_set" style="display:none">
+							    <input type="text" name="" value="" class="input_f"> <input type="button" value="삭제" onclick="remove_item(this)">
+							</div>
+							<form id = "hotel_f" style="width:100%; text-align:center; margin: atuo;">
+								<select name ="hote_f" size = "8"  style="width: 100%;">
+									<c:forEach items="${hotel_f}" var="hotel_f" >
+										<option value="${hotel_f.hf_name}">${hotel_f.hf_name}</option>
+									</c:forEach>
+								</select>
+							</form>
+							<div style="text-align:right; margin:5 5;">
+								<input type="button" value=" 추가 " onclick="add_f()">
+								<input type="button" value=" 삭제 ">
+							</div>
 						</div>
-						</center>
 					</div>					
 					
 					<div class="form-group" >
@@ -210,16 +136,16 @@
 								<td colspan=3>
 								 	<div class="detail">
 										<div ><h4>핵심 정보</h4>
-											 <input class="detail_data"  type="text" value="${hotel.hotel_core_info }">
+											 <input class="detail_data"   type="text" value="${hotel.hotel_core_info }">
 										</div>
 										<div><h4>체크인시 주의사항</h4>
-											 <input class="detail_data"  type="text" value="${hotel.hotel_precautions }">
+											 <input class="detail_data"   type="text" value="${hotel.hotel_precautions }">
 										</div>
 										<div><h4>체크인/체크아웃</h4>
-											 <input class="detail_data"  type="text" value="${hotel.hotel_checktime }">
+											 <input class="detail_data"   type="text" value="${hotel.hotel_checktime }">
 										</div>
 										<div><h4>기타 정보</h4>
-											 <input class="detail_data"  type="text" value="${hotel.hotel_etc }">
+											 <input class="detail_data"   type="text" value="${hotel.hotel_etc }">
 										</div>	
 									</div>								
 								</td>
@@ -275,6 +201,10 @@
 		var popOption = "width=500, height=650, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
 
 		window.open(popUrl,"",popOption);
+	}
+	
+	function modify( hotel_code ){
+		window.location.href="/admin/hotelModify?hotel_code="+hotel_code;
 	}
 </script>
 
