@@ -45,9 +45,9 @@ public class FhotelServiceImpl implements FhotelService {
    }
 
    @Override
-   public List<FhotelVO> listAll() throws Exception {
+   public List<FhotelVO> listAll(String textfield) throws Exception {
       // TODO Auto-generated method stub
-      return dao.listAll();
+      return dao.listAll(textfield);
    }
 
 @Override

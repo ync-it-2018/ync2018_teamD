@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
@@ -146,7 +146,7 @@
 			</div>
 		</header>
 		<!-- ..까지가 우상단 바 -->
-			<section id="inner-headline">
+		<section id="inner-headline">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
@@ -173,26 +173,24 @@
 			${FhotelVO.nation_name}
 			${FhotelVO.city_name}
 		</c:forEach> --%>
-		
-		<c:forEach items="${list}" var="FhotelVO">
-					
-						<tr>
-							<td>1</td>
-							<td>
-							${FhotelVO.address}
-			${FhotelVO.room_lowprice}
-			${FhotelVO.rate}
-			${FhotelVO.hotel_class}
-			${FhotelVO.information}
-			${FhotelVO.hotel_discount}
-			${FhotelVO.hotel_code}
-			${FhotelVO.hotel_name}
-			${FhotelVO.nation_name}
-			${FhotelVO.city_name}
-			</td>
-						</tr>
-					</c:forEach>
-		
+
+		<%-- <table class="table">
+			<c:forEach items="${list}" var="FhotelVO">
+				<tr>
+					<td>1</td>
+					<td>${FhotelVO.address}</td>
+					<td>${FhotelVO.room_lowprice}</td>
+					<td>${FhotelVO.rate}</td>
+					<td>${FhotelVO.hotel_class}</td>
+					<td>${FhotelVO.information}</td>
+					<td>${FhotelVO.hotel_discount}</td>
+					<td>${FhotelVO.hotel_code}</td>
+					<td>${FhotelVO.hotel_name}</td>
+					<td>${FhotelVO.nation_name}</td>
+					<td>${FhotelVO.city_name}</td>
+				</tr>
+			</c:forEach>
+		</table> --%>
 		<section id="content">
 			<div class="container">
 				<div class="row">
@@ -239,9 +237,9 @@
 
 					</div>
 					<div class="col-lg-8 listSet">
-						<div id="listTitle">
+						<!-- <div id="listTitle">
 							<h3 class="p0">검색한 값이 출력되는 곳 (ex:대구시 남구....)</h3>
-						</div>
+						</div> -->
 						<formname="firm"> <input type="button"
 							class="btn btn-success" value="최고인기순" onclick="" /> <input
 							type=button class="btn btn-info" value="고객평점순" onclick="" /> <select
@@ -254,27 +252,51 @@
 							<article class="grid_4 alpha">
 								<div class="indent-left hotelList">
 									<figure class="frame2 p2">
-										<div class="color-4 prev-indent-bot hotelName">노보텔</div>
+									
+										<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
+											<tr>
+											<%-- <td>${list[0].hotel_name}</td> --%>
+											<td>${FhotelVO.hotel_name}</td>
+											</tr>
+										</c:forEach>
+										<br>
+										<!-- <div class="color-4 prev-indent-bot hotelName">노보텔</div> -->
 										<div class="col-lg-6 hotelList">
 											<img src="/resources/front/img/hotel/hotel1.jpg" alt="" />
 										</div>
 										<div class="col-lg-6 hotelList">
-											<div>대구</div>
-											<div>평점:9.5</div>
-											<div>3.5도심</div>
-											<div>3.5경북대학교</div>
+											<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
+											<tr>
+											<td>위치 : ${FhotelVO.city_name}</td>
+											</tr>
+											</c:forEach><br><br>
+											<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
+											<tr>
+											<td>평점 : ${FhotelVO.rate}</td>
+											</tr>
+											</c:forEach><br><br>
+											<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
+											<tr>
+											<td>정보 : ${FhotelVO.information}</td>
+											</tr>
+											</c:forEach><br><br>
+											<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
+											<tr>
+											<td>가격 : ${FhotelVO.room_lowprice}</td>
+											</tr>
+											</c:forEach><br><br>
 
 											<div class="wrapper">
-												<span class="price fleft">200,000</span> <a
-													class="button fright" href="#">상세보기</a>
-											</div>
+												<!-- <span class="price fleft">200,000</span>  -->
+												<a class="button fright" href="/searchresultdetail?hotel_code=KORDAGDH">상세보기</a>
+											</div> 
 										</div>
 									</figure>
 
 								</div>
 							</article>
 
-							<article class="grid_4 alpha">
+							<!-- <article class="grid_4 alpha">
 								<div class="indent-left hotelList">
 									<figure class="frame2 p2">
 										<div class="color-4 prev-indent-bot hotelName">신라호텔</div>
@@ -289,7 +311,7 @@
 
 											<div class="wrapper">
 												<span class="price fleft">200,000</span> <a
-													class="button fright" href="#">상세보기</a>
+													class="button fright" href="/blog?hotel_code=KORDAGDH">상세보기</a>
 											</div>
 										</div>
 									</figure>
@@ -312,12 +334,12 @@
 
 											<div class="wrapper">
 												<span class="price fleft">200,000</span> <a
-													class="button fright" href="#">상세보기</a>
+													class="button fright" href="/blog?hotel_code=KORDAGDH">상세보기</a>
 											</div>
 										</div>
 									</figure>
 								</div>
-							</article>
+							</article> -->
 						</div>
 					</div>
 				</div>

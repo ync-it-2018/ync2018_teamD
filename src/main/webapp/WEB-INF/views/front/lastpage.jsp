@@ -75,7 +75,7 @@
 				
 					<div class="col-lg-8 listSet">
 						<div id="listTitle" >
-							<h3 class="lipage">관심 상품</h3>
+							<h3 class="lipage">최근 본 상품</h3>
 						</div>
 						<formname="firm"> 
 							<input type="button" class="btn btn-success" value="최고인기순" onclick="" /> 
