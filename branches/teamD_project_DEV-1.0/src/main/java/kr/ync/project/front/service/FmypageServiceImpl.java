@@ -48,7 +48,7 @@ public class FmypageServiceImpl implements FmypageService {
 	@Override
 	public List<FmypageVO> resvChkinNowList() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.resvChkinNowList();
 	}
 
 	/* (non-Javadoc)
@@ -57,7 +57,7 @@ public class FmypageServiceImpl implements FmypageService {
 	@Override
 	public List<FmypageVO> resvChkinFutureList() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.resvChkinFutureList();
 	}
 
 	/* (non-Javadoc)
@@ -66,7 +66,7 @@ public class FmypageServiceImpl implements FmypageService {
 	@Override
 	public List<FmypageVO> resvCancelList() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.resvCancelList();
 	}
 
 	/* (non-Javadoc)
@@ -75,7 +75,7 @@ public class FmypageServiceImpl implements FmypageService {
 	@Override
 	public List<FmypageVO> resvCancel() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.resvCancel();
 	}
 
 }
