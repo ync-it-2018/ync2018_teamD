@@ -193,9 +193,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<div class="container">
+			</div>		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
 					<!-- 검색 내용이 들어갈 공간  -->

@@ -55,7 +55,7 @@ public class FmypageDAOImpl implements FmypageDAO{
 	@Override
 	public List<FmypageVO> resvChkinNowList() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return session.selectList(namespace+".resvChkinNowList");
 	}
 
 	/* (non-Javadoc)
@@ -64,7 +64,7 @@ public class FmypageDAOImpl implements FmypageDAO{
 	@Override
 	public List<FmypageVO> resvChkinFutureList() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return session.selectList(namespace+".resvChkinFutureList");
 	}
 
 	/* (non-Javadoc)
@@ -73,7 +73,7 @@ public class FmypageDAOImpl implements FmypageDAO{
 	@Override
 	public List<FmypageVO> resvCancelList() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return session.selectList(namespace+".resvCancelList");
 	}
 
 	/* (non-Javadoc)
@@ -82,7 +82,7 @@ public class FmypageDAOImpl implements FmypageDAO{
 	@Override
 	public List<FmypageVO> resvCancel() throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return session.selectList(namespace+".resvCancel");
 	}
 	
 	
