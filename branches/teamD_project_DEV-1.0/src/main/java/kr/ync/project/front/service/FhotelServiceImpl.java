@@ -81,6 +81,12 @@ public FroomVO roomdetail(int room_idx) throws Exception {
 	return  dao.roomdetail(room_idx);
 }
 
+@Override
+public List<FroomVO> roomdetailimage(int room_idx) throws Exception {
+	// TODO Auto-generated method stub
+	return dao.roomdetailimage(room_idx);
+}
+
 
 
 

@@ -110,10 +110,10 @@ public class PageController {
 		return "front/avgresult";
 	}
 	@RequestMapping("/roomdetail") //호텔객실 
-	public String roomdetail(
-			@RequestParam("room_idx") int room_idx,Model model) throws Exception {
+	public String roomdetail(@RequestParam("room_idx") int room_idx,Model model) throws Exception {
 		log.info("roomdetail page call.....");
 		model.addAttribute("roomdetail",service.roomdetail(room_idx));
+		model.addAttribute("roomdetailimage",service.roomdetailimage(room_idx));
 		return "front/roomdetail";
 	}
 

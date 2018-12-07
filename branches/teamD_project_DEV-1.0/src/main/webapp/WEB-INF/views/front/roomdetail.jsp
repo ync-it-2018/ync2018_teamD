@@ -21,11 +21,13 @@
       
       
     </tr>
-  </thead>
+  </thead>	
   <tbody>
 			<tr>
-				<td rowspan="2">사진</td>
-				<th>내용1</th>
+			<c:forEach items="${roomdetailimage}" var="FroomVO">
+				<td rowspan="2">${FdetailVO.RIMAGE_PATH}</td>
+				</c:forEach>
+				<th>침대:${roomdetail.BED_NAME}	${roomdetail.BED_CNT}개</th>
 			</tr>
 			<tr>
 				
