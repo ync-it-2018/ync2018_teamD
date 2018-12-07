@@ -28,9 +28,11 @@ public interface FhotelService {
       
       public List<ImageVO> hotel_image(String hotel_code) throws Exception;
 
-      public FroomVO roomdetail(int room_idx) throws Exception;
+      public FroomVO roomdetail(int room_idx) throws Exception; //객실상세보기 룸이름,침대
 
       public List<FroomVO> roomdetailimage(int room_idx)throws Exception;
+
+      public List<FroomVO> roomdetailproduct(int room_idx)throws Exception; //객실상세보기(가전제품)
       
 
 //      public List<BoardVO> listCriteria(Criteria cri) throws Exception;
