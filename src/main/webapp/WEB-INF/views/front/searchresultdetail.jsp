@@ -35,10 +35,10 @@
 		var popUrl = "/roomdetail?room_idx=1";	//팝업창에 출력될 페이지 URL
 		
 
-		var popOption = "width=600, height=500, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		var popOption = "width=500, height=350, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
 
 			window.open(popUrl,"",popOption);
-
+	
 		}
 
 
@@ -237,9 +237,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 							<!-- 슬라이더 시작 -->
 						<div id="main-slider" class="flexslider">
 						
-							<ul class="slides">
+							<ul class="slides" >
 							<c:forEach items="${h_image}" var="ImageVO">
-								<li><img src="${ImageVO.himg_path}" />	
+								<li><img src="${ImageVO.himg_path}" height="300" width="100%"/>	
 							</c:forEach>
 							</ul>
 							
@@ -304,9 +304,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 									
 								</ul>
 							</div>
-							<div class="widget">
+							<div class="widget" onclick="popupOpen()">
 								<h2 class="widgetheading">평점:${detail.rate}</h2>
-								<ul class="recent">
+								<ul class="recent" onclick="popupOpen()">
 									<li>
 										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="popupOpen()"/>
 									</li>
