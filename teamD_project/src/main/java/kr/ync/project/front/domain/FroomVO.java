@@ -30,7 +30,9 @@ public class FroomVO { //중복 룸인덱스 호텔코드
 	
 	private int RIMAGE_IDX; //객실 이미지 번호
 	
-	private String RIMAGE_NAME; //객실 이미지 소스
+	private String RIMAGE_NAME; //객실 이미지 이름
+	
+	private String RIMAGE_PATH; //객실 이미지 소스
 	
 	private int RF_IDX;//객실 편의시설 번호
 	

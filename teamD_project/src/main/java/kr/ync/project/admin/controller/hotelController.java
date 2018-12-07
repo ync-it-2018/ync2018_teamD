@@ -60,4 +60,13 @@ public class hotelController {
 		model.addAttribute("image", service.rimage_detail(idx));
 		return "admin/hotel/imageDetail";
 	}
+	
+	@RequestMapping(value = "/hotelModify", method = RequestMethod.GET)
+	public String hotelModify(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
+		model.addAttribute("hotel", service.read(hotel_code));
+		model.addAttribute("room", service.roomdata(hotel_code));
+		model.addAttribute("hotel_f", service.hotel_feature(hotel_code));
+		model.addAttribute("h_image", service.hotel_image(hotel_code));
+		return "admin/hotel/hotelModify";
+	}
 }

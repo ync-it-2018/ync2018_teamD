@@ -1,13 +1,3 @@
-/**
- * FnoticeVO.java
-*
-* @Author	: 김 건 우
-* @Date		: 2018. 12. 5.
-* @Description
-*		
-*		File description is here
-*		
- */
 package kr.ync.project.front.domain;
 
 import lombok.Getter;

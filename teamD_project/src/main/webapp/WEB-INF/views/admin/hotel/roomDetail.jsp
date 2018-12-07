@@ -38,7 +38,7 @@
 	</div>
 	<div style="border:1px solid; padding: 20px; margin-top:-30px; text-align:center;">
 		<c:forEach items="${image }" var="room_image">
-			<img src="${room_image.rimage_name }" style="width:100px; height:100px; margin:15 15;" onclick="i_detail(${room_image.rimage_idx})"/>
+			<img src="${room_image.rimage_path }" style="width:100px; height:100px; margin:15 15;" onclick="i_detail(${room_image.rimage_idx})"/>
 		</c:forEach>
 	</div>
 </body>

@@ -20,7 +20,7 @@ public interface FhotelDAO {
 	
 	public void updateReplyCnt(Integer bno, int amount) throws Exception;
 	
-	public List<FhotelVO> listAll() throws Exception;
+	public List<FhotelVO> listAll(String textfield) throws Exception;
 	
 	public FdetailVO detail(String hotel_code) throws Exception;
 	
@@ -30,7 +30,11 @@ public interface FhotelDAO {
 	
 	public List<ImageVO> hotel_image(String hotel_code)throws Exception;
 
-	public List<FroomVO> roomdetail(String room_idx)throws Exception;
+	public FroomVO roomdetail(int room_idx)throws Exception;
+
+	public List<FroomVO> roomdetailimage(int room_idx)throws Exception;
+
+	public List<FroomVO> roomdetailproduct(int room_idx)throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   

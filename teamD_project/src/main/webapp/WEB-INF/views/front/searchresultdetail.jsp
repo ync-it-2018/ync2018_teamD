@@ -32,13 +32,13 @@
 	}
 	function room_popupOpen(){
 
-		var popUrl = "/roomdetail?hotel_code=KORDAGDH";	//팝업창에 출력될 페이지 URL
+		var popUrl = "/roomdetail?room_idx=1";	//팝업창에 출력될 페이지 URL
 		
 
-		var popOption = "width=500, height=400, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		var popOption = "width=500, height=350, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
 
 			window.open(popUrl,"",popOption);
-
+	
 		}
 
 
@@ -155,7 +155,7 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/">Home</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle "
+							<!--<li class="dropdown"><a href="#" class="dropdown-toggle "
 								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
 								data-close-others="false">Features <b
 									class=" icon-angle-down"></b></a>
@@ -164,10 +164,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 									<li><a href="/components">Components</a></li>
 									<li><a href="/pricingbox">Pricing box</a></li>
 								</ul></li>
-							<li><a href="/searchresult">SearchResult</a></li>
+							 <li><a href="/searchresult">SearchResult</a></li>
 							<li><a href="/portfolio">Portfolio</a></li>
-							<li><a href="/blog">Blog</a></li>
-							<li><a href="/contact">Contact</a></li>
+							<li><a href="/contact">Contact</a></li> -->
 							<li><a href="#" id="loginPage">Login</a></li>
 						</ul>
 					</div>
@@ -201,7 +200,7 @@ hr.two{width: 100%;color:black;border: thin solid black;}
                       value="yyyy-mm-dd">
                       <input type="button" value="검색" 	style="WIDTH: 50px; HEIGHT: 40px" /> 
                  <%--   <c:forEach items="${detail}" var="FdetailVO">
-					
+						
 						<tr>
 							<td>1</td>
 							<td>
@@ -238,13 +237,10 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 							<!-- 슬라이더 시작 -->
 						<div id="main-slider" class="flexslider">
 						
-							<ul class="slides">
+							<ul class="slides" >
 							<c:forEach items="${h_image}" var="ImageVO">
-								<li><img src="${ImageVO.himg_name}" />	
+								<li><img src="${ImageVO.himg_path}" height="300" width="100%"/>	
 							</c:forEach>
-								<!-- <li><img src="/resources/front/img/slides/1.jpg" alt="" />
-								<li><img src="/resources/front/img/slides/2.jpg" alt="" />
-								<li><img src="/resources/front/img/slides/3.jpg" alt="" /> -->
 							</ul>
 							
 						</div>
@@ -299,11 +295,6 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 					<div class="col-lg-4">
 						<aside class="right-sidebar">
 							<div class="widget">
-								<form class="form-search">
-									<input class="form-control" type="text" placeholder="Search..">
-								</form>
-							</div>
-							<div class="widget">
 								<h1 class="widgetheading">가격:${detail.room_lowprice}</h1>
 								<ul class="cat">
 									<li>
@@ -313,9 +304,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 									
 								</ul>
 							</div>
-							<div class="widget">
+							<div class="widget" onclick="popupOpen()">
 								<h2 class="widgetheading">평점:${detail.rate}</h2>
-								<ul class="recent">
+								<ul class="recent" onclick="popupOpen()">
 									<li>
 										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="popupOpen()"/>
 									</li>
@@ -377,6 +368,10 @@ hr.two{width: 100%;color:black;border: thin solid black;}
                       value="yyyy-mm-dd"></div>
                     <div class=col-lg-2  style="text-align:center;"> <h2> 400,000</h2></div>
                       </div>
+                      <div style="text-align:right ;">
+                      <h2><button style="WIDTH: 150px; HEIGHT: 50px">예약하기</button></h2>
+                      </div>
+                      
 					<!-- </fieldset> -->
 					
 				</div>

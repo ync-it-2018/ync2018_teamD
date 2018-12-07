@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
@@ -204,34 +205,15 @@
 									<th>체크아웃</th>
 									<th>이용후기</th>
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>The Big 7 Hotel</td>
-									<td>2015-07-02</td>
-									<td>2015-07-30</td>
-									<td><button class="btn" name="reviewChk">확인하기</button></td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Daegu Hotel</td>
-									<td>2015-08-22</td>
-									<td>2015-08-25</td>
-									<td><button class="btn" name="reviewChk">확인하기</button></td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Tokyo Sky Hotel</td>
-									<td>2016-10-25</td>
-									<td>2016-11-12</td>
-									<td><button class="btn" name="reviewChk">작성하기</button></td>
-								</tr>
-								<tr>
-									<td>4</td>
-									<td>Lorem Ipsum Hotel</td>
-									<td>2017-01-23</td>
-									<td>2017-05-10</td>
-									<td><button class="btn" name="reviewChk">작성하기</button></td>
-								</tr>
+								<c:forEach items="${resvCompList}"  var="resvCompList">
+									<tr>
+										<td>${resvCompList.BOOKING_IDX}</td>
+										<td>${resvCompList.HOTEL_NAME}</td>
+										<td>${resvCompList.BOOKING_IN_DATE}</td>
+										<td>${resvCompList.BOOKING_OUT_DATE}</td>
+										<td><button class="btn" name="reviewChk">확인하기</button></td>
+									</tr>
+								</c:forEach>
 							</table>
 							<div class="bottom-article">
 								<ul class="meta-post">
@@ -253,7 +235,43 @@
 								</div>
 							</div>
 							<!-- 예약된 목록 페이지  -->
-							<p>예약중인 목록을 불러오는 페이지</p>
+							<p>예약중인 목록을 불러옴</p>
+							<table class="table">
+								<tr>
+									<th>등록번호</th>
+									<th>호텔 명</th>
+									<th>체크인</th>
+									<th>체크아웃</th>
+								</tr>
+								<c:forEach items="${resvChkinNowList}"  var="resvChkinNowList">
+									<tr>
+										<td>${resvChkinNowList.BOOKING_IDX}</td>
+										<td>${resvChkinNowList.HOTEL_NAME}</td>
+										<td>${resvChkinNowList.BOOKING_IN_DATE}</td>
+										<td>${resvChkinNowList.BOOKING_OUT_DATE}</td>
+									</tr>
+								</c:forEach>
+							</table>
+
+							<p>아직 예약날짜가 오지 않은 목록을 불러옴</p>
+							<table class="table">
+								<tr>
+									<th>등록번호</th>
+									<th>호텔 명</th>
+									<th>체크인</th>
+									<th>체크아웃</th>
+								</tr>
+								<c:forEach items="${resvChkinFutureList}"  var="resvChkinFutureList">
+									<tr>
+										<td>${resvChkinFutureList.BOOKING_IDX}</td>
+										<td>${resvChkinFutureList.HOTEL_NAME}</td>
+										<td>${resvChkinFutureList.BOOKING_IN_DATE}</td>
+										<td>${resvChkinFutureList.BOOKING_OUT_DATE}</td>
+									</tr>
+								</c:forEach>
+							</table>
+
+							
 							<div class="bottom-article">
 								<ul class="meta-post">
 									<li><i class="icon-calendar"></i><a href="#"> Mar 23,
@@ -275,6 +293,26 @@
 								</div>
 							</div>
 							<p>예약 취소 페이지</p>
+							<table class="table">
+								<tr>
+									<th>선택</th>
+									<th>등록번호</th>
+									<th>호텔 명</th>
+									<th>체크인</th>
+									<th>체크아웃</th>
+								</tr>
+								<c:forEach items="${resvChkinFutureList}"  var="resvChkinFutureList">
+									<tr>
+										<td><input type="radio" name="resvCancelChk"/>
+										<td>${resvChkinFutureList.BOOKING_IDX}</td>
+										<td>${resvChkinFutureList.HOTEL_NAME}</td>
+										<td>${resvChkinFutureList.BOOKING_IN_DATE}</td>
+										<td>${resvChkinFutureList.BOOKING_OUT_DATE}</td>
+									</tr>
+								</c:forEach>
+							</table>
+							<button class="btn-danger">삭제하기</button>
+							
 							<div class="bottom-article">
 								<ul class="meta-post">
 									<li><i class="icon-calendar"></i><a href="#"> Mar 23,
@@ -458,8 +496,8 @@
 							<div class="widget">
 								<h3 class="widgetheading">마이 페이지</h3>
 								<ul class="cat">
-									<li><i class="icon-angle-right"></i><a id="resv_comp">예약완료내역</a></li>
-									<li><i class="icon-angle-right"></i><a id="resv_list">예약
+									<li><i class="icon-angle-right"></i><a id="resv_complist">예약완료내역</a></li>
+									<li><i class="icon-angle-right"></i><a id="resv_chkinlist">예약
 											현황</a></li>
 									<li><i class="icon-angle-right"></i><a id="resv_cancel">예약
 											취소</a></li>

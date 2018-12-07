@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.FhotelMapper">
 <select id="listAll" resultType="FhotelVO"> 
 <!-- 부등호 <,>를 사용하기 위해서 필요한 부분 : CDATA  -->
+<![CDATA[
 	SELECT 	address, 
 		    room_lowprice, 
 		    rate, 
@@ -18,7 +19,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    city_name		
 	FROM td_hotel h, td_nation n, td_city c
 	where h.nation_code = n.nation_code
-	and   h.city_code = c.city_code 
+	and   h.city_code = c.city_code
+	and   (h.HOTEL_NAME LIKE '%'||#{textfield}||'%'
+	or    h.ADDRESS    LIKE '%'||#{textfield}||'%')
+]]>
 </select>
 
 <select id = "read" resultType= "FhotelVO">
