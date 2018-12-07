@@ -8,11 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import kr.ync.project.admin.service.HotelService;
 import kr.ync.project.front.domain.FhotelVO;
-import kr.ync.project.front.domain.FnoticeVO;
 import kr.ync.project.front.service.FhotelService;
-import kr.ync.project.front.service.FnoticeService;
+import kr.ync.project.front.service.FmypageService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -22,8 +20,7 @@ public class PageController {
 	
 	
 	@Inject
-	private FnoticeService notice_service;
-	
+	private FmypageService mypageService;
 	
 	@Inject
 	private FhotelService service;
@@ -118,9 +115,13 @@ public class PageController {
 	}
 
 	@RequestMapping("/mypage")
-	public String mypage() {
+	public String mypage(Model model) throws Exception {
 		log.info("mypage call.....");
-		
+		// 마이페이지 각 항목별 모델 생성
+		model.addAttribute("resvCompList",mypageService.resvCompList());
+		model.addAttribute("resvChkinNowList",mypageService.resvChkinNowList());
+		model.addAttribute("resvChkinFutureList",mypageService.resvChkinFutureList());
+		model.addAttribute("resvCancelList",mypageService.resvCancelList());
 		return "front/mypage";
 	}
 	

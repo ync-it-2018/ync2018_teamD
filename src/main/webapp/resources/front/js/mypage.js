@@ -24,14 +24,14 @@ $(document).ready(function() {
 	cancelPage.style.display = 'none';
 	modifyPage.style.display = 'none';
 
-	$('#resv_comp').on('click', function() {
+	$('#resv_complist').on('click', function() {
 		compPage.style.display = 'block';
 		listPage.style.display = 'none';
 		cancelPage.style.display = 'none';
 		modifyPage.style.display = 'none';
 	})
 
-	$('#resv_list').on('click', function() {
+	$('#resv_chkinlist').on('click', function() {
 		compPage.style.display = 'none';
 		listPage.style.display = 'block';
 		cancelPage.style.display = 'none';

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.FmypageMapper">
+
+	<select id="resvCompList" resultType="FmypageVO">
+		<![CDATA[
+			SELECT	BOOK.BOOKING_IDX, BOOK.BOOKING_IN_DATE, 
+						 	BOOK.BOOKING_OUT_DATE, BOOK.BOOKING_CANCLE, 
+							BOOK.ROOM_IDX, BOOK.MEMBER_ID, BOOK.BOOKING_CASH, 
+							BOOK.BOOKING_PEOPLE, BOOK.BOOKING_DATE, BOOK.HOTEL_CODE, 
+						 	HOTEL.HOTEL_NAME
+			FROM		TD_BOOKING BOOK, TD_HOTEL HOTEL
+			WHERE	SYSDATE > BOOKING_OUT_DATE
+			AND			BOOK.HOTEL_CODE = HOTEL.HOTEL_CODE
+		]]>
+	</select>
+
+	<select id="resvChkinNowList" resultType="FmypageVO">
+		<![CDATA[
+			SELECT 	BOOK.BOOKING_IDX, BOOK.BOOKING_IN_DATE, 
+						 	BOOK.BOOKING_OUT_DATE, BOOK.BOOKING_CANCLE, 
+						 	BOOK.ROOM_IDX, BOOK.MEMBER_ID, BOOK.BOOKING_CASH, 
+						 	BOOK.BOOKING_PEOPLE, BOOK.BOOKING_DATE, BOOK.HOTEL_CODE, 
+						 	HOTEL.HOTEL_NAME
+			FROM 		TD_BOOKING BOOK, TD_HOTEL HOTEL
+			WHERE 	SYSDATE > BOOKING_IN_DATE
+			AND 		SYSDATE <= BOOKING_OUT_DATE
+			AND 		BOOKING_CANCEL = 'N'
+		]]>
+	</select>
+
+	<select id="resvChkinFutureList" resultType="FmypageVO">
+		<![CDATA[
+			SELECT	BOOK.BOOKING_IDX, BOOK.BOOKING_IN_DATE, 
+						 	BOOK.BOOKING_OUT_DATE, BOOK.BOOKING_CANCLE, 
+						 	BOOK.ROOM_IDX, BOOK.MEMBER_ID, BOOK.BOOKING_CASH, 
+						 	BOOK.BOOKING_PEOPLE, BOOK.BOOKING_DATE, BOOK.HOTEL_CODE, 
+						 	HOTEL.HOTEL_NAME
+			FROM		TD_BOOKING BOOK, TD_HOTEL HOTEL
+			WHERE	SYSDATE < BOOKING_IN_DATE
+		]]>
+	</select>
+
+	<select id="resvCancelList" resultType="FmypageVO">
+			SELECT	BOOK.BOOKING_IDX, BOOK.BOOKING_IN_DATE, 
+						 	BOOK.BOOKING_OUT_DATE, BOOK.BOOKING_CANCLE, 
+						 	BOOK.ROOM_IDX, BOOK.MEMBER_ID, BOOK.BOOKING_CASH, 
+						 	BOOK.BOOKING_PEOPLE, BOOK.BOOKING_DATE, BOOK.HOTEL_CODE, 
+						 	HOTEL.HOTEL_NAME
+			FROM		TD_BOOKING BOOK, TD_HOTEL HOTEL
+			WHERE 	BOOKING_CANCLE = 'Y'
+	</select>
+
+	<select id="resvCancel" resultType="FmypageVO">
+			UPDATE	TD_BOOKING
+			SET 			BOOKING_CANCLE = 'Y'
+			WHERE 	BOOKING_IDX = #{BOOKING_IDX}
+			AND 		MEMBER_ID = #{MEMBER_ID}
+	</select>
+
+</mapper>
+
+
