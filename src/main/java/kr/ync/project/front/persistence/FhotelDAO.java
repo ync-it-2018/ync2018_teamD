@@ -32,6 +32,8 @@ public interface FhotelDAO {
 
 	public FroomVO roomdetail(int room_idx)throws Exception;
 
+	public List<FroomVO> roomdetailimage(int room_idx)throws Exception;
+
 //	public List<BoardVO> listPage(int page) throws Exception;
   
 //	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
