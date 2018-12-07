@@ -111,6 +111,7 @@ public class PageController {
 		log.info("roomdetail page call.....");
 		model.addAttribute("roomdetail",service.roomdetail(room_idx));
 		model.addAttribute("roomdetailimage",service.roomdetailimage(room_idx));
+		model.addAttribute("roomdetailproduct",service.roomdetailproduct(room_idx));
 		return "front/roomdetail";
 	}
 

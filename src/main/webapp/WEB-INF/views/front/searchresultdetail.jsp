@@ -241,9 +241,6 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 							<c:forEach items="${h_image}" var="ImageVO">
 								<li><img src="${ImageVO.himg_path}" />	
 							</c:forEach>
-								<!-- <li><img src="/resources/front/img/slides/1.jpg" alt="" />
-								<li><img src="/resources/front/img/slides/2.jpg" alt="" />
-								<li><img src="/resources/front/img/slides/3.jpg" alt="" /> -->
 							</ul>
 							
 						</div>

@@ -19,12 +19,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  	and   tr.room_idx = #{room_idx} <!-- 상세보기 클릭시 나오는 객실번호 -->
 </select>
 
-<select id = "roomdetailimage" resultType= "FroomVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
-	SELECT  RIMAGE_PATH FROM td_room_image;	
- 	and   tr.room_idx = #{room_idx} <!-- 상세보기 클릭시 나오는 객실번호 -->
+<select id = "roomdetailimage" resultType="FroomVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
+	SELECT  RIMAGE_PATH FROM td_room_image
+	WHERE ROOM_IDX=#{room_idx} 
 </select>
 
- 
+ <select id = "roomdetailproduct" resultType="FroomVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
+	SELECT rf_name FROM
+	TD_ROOM_INFO tri, TD_ROOM_FACILITY trf
+	WHERE tri.RF_IDX= trf.RF_IDX
+	AND tri.ROOM_IDX =#{room_idx}
+	 
+</select>
 
 
 </mapper>
