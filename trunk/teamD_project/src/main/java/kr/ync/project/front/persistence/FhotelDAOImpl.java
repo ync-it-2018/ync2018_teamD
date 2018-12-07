@@ -56,9 +56,10 @@ public class FhotelDAOImpl implements FhotelDAO {
 	}
 
 	@Override
-	public List<FhotelVO> listAll() throws Exception {
+	public List<FhotelVO> listAll(String textfield) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace+".listAll");
+		System.out.println("dao : " + textfield);
+		return session.selectList(namespace+".listAll", textfield);
 	}
 	
 	@Override
@@ -124,9 +125,23 @@ public class FhotelDAOImpl implements FhotelDAO {
 //	}
 
 	@Override
-	public List<FroomVO> roomdetail(String room_idx) throws Exception {
+	public FroomVO roomdetail(int room_idx) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(roomdetail+".roomdetail",room_idx);
+		return session.selectOne(roomdetail + ".roomdetail",room_idx);
 	}
+
+	@Override
+	public List<FroomVO> roomdetailimage(int room_idx) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(roomdetail + ".roomdetailimage",room_idx);
+	}
+
+	@Override
+	public List<FroomVO> roomdetailproduct(int room_idx) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(roomdetail+".roomdetailproduct",room_idx);
+	}
+
+	
 
 }

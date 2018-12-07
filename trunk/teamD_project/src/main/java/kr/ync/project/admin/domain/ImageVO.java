@@ -12,6 +12,8 @@ public class ImageVO {
 	
 	private String rimage_name;
 	
+	private String rimage_path;
+	
 	private int room_idx;
 	
 	private String hotel_code;
@@ -19,6 +21,8 @@ public class ImageVO {
 	private int himg_idx;
 	
 	private String himg_name;
+	
+	private String himg_path;
 
 	
 }

@@ -40,7 +40,7 @@ public class memberController {
 		pageMaker.setTotalCount(service.listSearchCount(cri));
 		model.addAttribute("pageMaker", pageMaker);
 		return "/admin/member/memberList";
-	}	
+	}
 	
 	@RequestMapping(value = "/memberDetail", method = RequestMethod.GET)
 	public String memberDetail(@RequestParam("member_id") String member_id, Model model) throws Exception {

@@ -82,7 +82,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id = "hotel_image" resultType= "ImageVO">
-	SELECT HIMG_NAME, HIMG_IDX
+	SELECT HIMG_NAME, HIMG_IDX, HIMG_PATH
 	FROM  TD_HOTEL_IMAGE
 	WHERE HOTEL_CODE = #{hotel_code}
 </select>

@@ -39,16 +39,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select	
 		member_id,
 		member_fianame,
-		member_joindate
+		member_joindate,
+		member_out
 	from	(select  /*+INDEX_DESC(td_member td_xpkmember*/
         			rownum rn,
        				member_id,
        				member_fianame,
-       				member_joindate
+       				member_joindate,
+       				member_out
      	 	 from
        				td_member
     	 	 where
         			rownum <= #{page} * #{perPageNum}
+        	 and
+        	 		member_out = 1
         	 )
 	where
     	rn > (#{page} -1) * #{perPageNum}
@@ -80,6 +84,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<include refid="search"></include>
 		<![CDATA[
 			AND rownum > 0
+			and member_out = 1
 		]]>
 	</where>
 </select>
@@ -120,7 +125,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND
 			b.hotel_code = h.hotel_code
 		AND
-			booking_in_date < SYSDATE
+			booking_out_date < SYSDATE
 		AND
 			member_id = #{member_id}
 	]]>

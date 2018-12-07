@@ -27,6 +27,8 @@ public class memberVO {
     
     private String member_joindate;
     
+    private String member_idx;
+    
     private String nation_name;
     
     private String hotel_name;
@@ -36,4 +38,5 @@ public class memberVO {
     private String booking_in_date;
     
     private String booking_out_date;
+
 }
