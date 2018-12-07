@@ -71,12 +71,13 @@ public class PageController {
 		return "front/pricingbox";
 	}
 	
-	@RequestMapping(value= "/typography" , method = RequestMethod.GET)
-	public String typography(FhotelVO board, Model model) throws Exception {
-		log.info("typography call.....");
-		model.addAttribute("list", service.listAll());
-		return "front/typography";
+	@RequestMapping(value= "/resultlist" , method = RequestMethod.GET)
+	public String typography(FhotelVO board, Model model, @RequestParam("textfield") String textfield ) throws Exception {
+		log.info("resultlist call.....");
+		model.addAttribute("list", service.listAll(textfield));
+		return "front/resultlist";
 	}
+	
 	
 	
 	@RequestMapping("/searchresult")
@@ -131,6 +132,13 @@ public class PageController {
 		log.info("likepage call.....");
 		
 		return "front/likepage";
+	}
+	
+	@RequestMapping("/lastpage")
+	public String lastpage() {
+		log.info("lastpage call.....");
+		
+		return "front/lastpage";
 	}
 	
 	@RequestMapping("/writereview")

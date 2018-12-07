@@ -26,14 +26,14 @@
 
 
 <!-- 
-	=======================================================
-    	이하 테마 출처
+   =======================================================
+       이하 테마 출처
     Theme Name: Moderna
     Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
     Author: BootstrapMade
     Author URL: https://bootstrapmade.com
-	=======================================================
-	-->
+   =======================================================
+   -->
 
 </head>
 
@@ -113,7 +113,6 @@
 		</form>
 	</div>
 
-
 	<div id="wrapper">
 		<!-- 우상단 바 관련 소스 -->
 		<header>
@@ -171,7 +170,8 @@
 								<ul id="thumbs" class="portfolio">
 									<!-- Item Project and Filter Name -->
 									<!--  c:forEach 를 통해 DB 내의 공지사항을 받아옴 -->
-									<c:forEach items="${readNotice}"  begin="0" end="3" var="readNotice" >
+									<c:forEach items="${readNotice}" begin="0" end="3"
+										var="readNotice">
 										<li class="col-lg-3 design" data-id="id-0" data-type="web">
 											<div class="item-thumbs">
 												<!-- Fancybox - Gallery Enabled - Title - Full Image -->
@@ -194,133 +194,130 @@
 					</div>
 				</div>
 			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<!-- 검색 내용이 들어갈 공간  -->
-						<!-- searchresult에 POST로 전송  -->
-							<table class="table">
-								<tr>
-									<td colspan="2">
-										<div>
-											호텔검색<br> <input type="text" name="textfield"
-												style="text-align: left; width: 200px; height: 30px"
-												value="ex) Tokyo"> <input type="button" name="btn2"
-												value="검색" id="hotelSearch" class="btn">
-										</div> <br>
-									</td>
+		</section>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<!-- 검색 내용이 들어갈 공간  -->
+					<!-- searchresult에 POST로 전송  -->
+					<form method="GET" action="/resultlist">
 
-								</tr>
-								<tr>
-									<td><p>체크인</p> <input type="date" id="userdate"
-										name="userdate" value="2018-12-24"></td>
-									<td><p>체크아웃</p> <input type="date" id="userdate"
-										name="userdate" value="2018-12-25"></td>
-								</tr>
-								<!-- 					<tr>
-						<td>
-						
-    					<div>체크인 날짜 :  </div>
-    					
-    					<div style = "padding: 0px 1px 0px 350px;">  
-                         		체크아웃 날짜 : </div> <br>
-    					<input type="date" id="userdate" name="userdate"
-    		            value="2018-12-24" >
-   						 <div><input type="submit" value="전송"></div>
-   						
-    					<div style = "padding: 0px 1px 0px 350px;">  
-    					<input type="date" id="userdate" name="userdate"
-    		            value="2018-12-25"></div>
-   						 <div><input type="submit" value="전송"></div>
-						<br><br>
-						</td>
-					</tr> -->
-								<tr>
-									<td><p>객실선택</p> <select name="room">
-											<option value="one" selected="selected">1개의 객실</option>
-											<option value="two">2개의 객실</option>
-											<option value="three">3개의 객실</option>
-									</select></td>
-									<td><p>체크아웃</p> <select name="man">
-											<option value="one" selected="selected">1명</option>
-											<option value="two">2명</option>
-											<option value="three">3명</option>
-									</select> <select name="boy">
-											<option value="one" selected="selected">1명</option>
-											<option value="two">2명</option>
-											<option value="three">3명</option>
-									</select></td>
-								</tr>
+						<table class="table">
+							<tr>
+								<td colspan="2">
+									<div>
+										호텔검색<br> <input type="text" name="textfield"
+											id="hotelName"
+											style="text-align: left; width: 200px; height: 30px"
+											value="ex) Tokyo">
 
-								<tr>
-									<td><p>호텔등급</p> <input type="checkbox" name="grade"
-										value="onestar"> ★<br> <input type="checkbox"
-										name="grader" value="twostar"> ★★<br> <input
-										type="checkbox" name="grader" value="threestar"> ★★★<br>
-										<input type="checkbox" name="grader" value="fourstar">
-										★★★★<br> <input type="checkbox" name="grader"
-										value="fourstar"> ★★★★★<br> <input
-										type="checkbox" name="grader" value="fourstar"> ★★★★★★<br></td>
-									<td><p>호텔가격</p> <input type="checkbox" name="fruits"
-										value="apple"> ￦0 - ￦49000<br> <input
-										type="checkbox" name="fruits" value="banana"> ￦50000 -
-										￦99000<br> <input type="checkbox" name="fruits"
-										value="orange"> ￦100000 - ￦149000 <br> <input
-										type="checkbox" name="fruits" value="orange"> ￦150000
-										- ￦199000 <br> <input type="checkbox" name="fruits"
-										value="orange"> ￦200000 - ￦249000 <br> <input
-										type="checkbox" name="fruits" value="orange"> ￦250000
-										- <br></td>
-								</tr>
+									</div> <br>
+								</td>
+
+							</tr>
+							<tr>
+								<td><p>체크인</p> <input type="date" id="CheckinDate"
+									name="CheckinDatename" value="2018-12-24"></td>
+
+								<td><p>체크아웃</p> <input type="date" id="CheckoutDate"
+									name="CheckoutDatename" value="2018-12-25"></td>
+							</tr>
+
+							<tr>
+								<td>
+									<p>객실선택</p> <select name="room">
+										<option value="one" selected="selected">1개의 객실</option>
+										<option value="two">2개의 객실</option>
+										<option value="three">3개의 객실</option>
+								</select>
+								</td>
+								<td><p>성인&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;유아</p> <select
+									name="adult">
+										<option value="one" selected="selected">1명</option>
+										<option value="two">2명</option>
+										<option value="three">3명</option>
+								</select> <select name="children">
+										<option value="one" selected="selected">1명</option>
+										<option value="two">2명</option>
+										<option value="three">3명</option>
+								</select></td>
+							</tr>
 
 
-								<tr>
-									<td colspan="2" style="text-align: right"><p>
-											<a href="/typography"><button class="btn btn-success"
-													id="submit">호텔 검색하기</button></a>
-										</p></td>
-								</tr>
+							<tr>
+								<td><p>호텔등급</p> <input type="checkbox" name="grade1"
+									value="onestar"> ★<br> <input type="checkbox"
+									name="grader2" value="twostar"> ★★<br> <input
+									type="checkbox" name="grader3" value="threestar"> ★★★<br>
+									<input type="checkbox" name="grader4" value="fourstar">★★★★<br>
+									<input type="checkbox" name="grader5" value="fourstar">
+									★★★★★<br> <input type="checkbox" name="grader6"
+									value="fourstar"> ★★★★★★<br></td>
 
-								<tr>
-									<td colspan="2" style="text-align: right"><a
-										href="/likepage"><button class="btn">최근 본 상품</button></a> <a
-										href="/likepage"><button class="btn">관심 상품</button></a></td>
-								</tr>
-							</table>
-					</div>
-
-					<div class="col-lg-6">
-						<!-- 슬라이더 시작 -->
-						<div id="main-slider" class="flexslider">
-							<ul class="slides">
-								<li><img src="/resources/front/img/slides/1.jpg" alt="" />
-									<div class="flex-caption">
-										<h3>대구 노보텔</h3>
-										<p>베리 굳</p>
-										<a href="#" class="btn btn-theme">예약하기</a>
-									</div></li>
-								<li><img src="/resources/front/img/slides/2.jpg" alt="" />
-									<div class="flex-caption">
-										<h3>신라 호텔</h3>
-										<p>굳</p>
-										<a href="#" class="btn btn-theme">예약하기</a>
-									</div></li>
-								<li><img src="/resources/front/img/slides/3.jpg" alt="" />
-									<div class="flex-caption">
-										<h3>클린호텔</h3>
-										<p>클린함</p>
-										<a href="#" class="btn btn-theme">예약하기</a>
-									</div></li>
-							</ul>
-						</div>
-						<!-- 슬라이더 끝 -->
+								<td><p>호텔가격</p> <input type="checkbox" name="price1"
+									value="price11"> ￦0 - ￦49000<br> <input
+									type="checkbox" name="price2" value="price22"> ￦50000 -
+									￦99000<br> <input type="checkbox" name="price3"
+									value="price33"> ￦100000 - ￦149000 <br> <input
+									type="checkbox" name="price4" value="price44"> ￦150000
+									- ￦199000 <br> <input type="checkbox" name="price5"
+									value="price55"> ￦200000 - ￦249000 <br> <input
+									type="checkbox" name="price6" value="price66"> ￦250000
+									- <br></td>
+							</tr>
 
 
+							<tr>
+								<td colspan="2" style="text-align: right"><p>
+										<a href="/resultlist"><button class="btn btn-success"
+												id="submit">호텔 검색하기</button></a>
+									</p></td>
+							</tr>
 
-					</div>
+
+						</table>
+					</form>
+					<table>
+						<tr>
+							<td colspan="2" style="text-align: right"><a
+								href="/lastpage"><button class="btn">최근 본 상품</button></a> <a
+								href="/likepage"><button class="btn">관심 상품</button></a></td>
+						</tr>
+					</table>
 				</div>
 
+				<div class="col-lg-6">
+					<!-- 슬라이더 시작 -->
+					<div id="main-slider" class="flexslider">
+						<ul class="slides">
+							<li><img src="/resources/front/img/slides/1.jpg" alt="" />
+								<div class="flex-caption">
+									<h3>대구 노보텔</h3>
+									<p>베리 굳</p>
+									<a href="#" class="btn btn-theme">예약하기</a>
+								</div></li>
+							<li><img src="/resources/front/img/slides/2.jpg" alt="" />
+								<div class="flex-caption">
+									<h3>신라 호텔</h3>
+									<p>굳</p>
+									<a href="#" class="btn btn-theme">예약하기</a>
+								</div></li>
+							<li><img src="/resources/front/img/slides/3.jpg" alt="" />
+								<div class="flex-caption">
+									<h3>클린호텔</h3>
+									<p>클린함</p>
+									<a href="#" class="btn btn-theme">예약하기</a>
+								</div></li>
+						</ul>
+					</div>
+					<!-- 슬라이더 끝 -->
+
+
+
+				</div>
 			</div>
+
+		</div>
 		</section>
 
 
@@ -447,10 +444,10 @@
 	<script src="/resources/front/js/custom.js"></script>
 	<script src="/resources/front/js/login/login.js"></script>
 	<!-- <script type="text/javascript">
-		function test(){
-			
-		}
-	</script> -->
+      function test(){
+         
+      }
+   </script> -->
 
 </body>
 

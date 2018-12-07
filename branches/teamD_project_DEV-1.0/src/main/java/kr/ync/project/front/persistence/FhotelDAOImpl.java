@@ -56,9 +56,10 @@ public class FhotelDAOImpl implements FhotelDAO {
 	}
 
 	@Override
-	public List<FhotelVO> listAll() throws Exception {
+	public List<FhotelVO> listAll(String textfield) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace+".listAll");
+		System.out.println("dao : " + textfield);
+		return session.selectList(namespace+".listAll", textfield);
 	}
 	
 	@Override
