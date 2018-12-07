@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html>
@@ -204,13 +205,16 @@
 									<th>체크아웃</th>
 									<th>이용후기</th>
 								</tr>
-								<tr>
-									<td>1</td>
-									<td>The Big 7 Hotel</td>
-									<td>2015-07-02</td>
-									<td>2015-07-30</td>
-									<td><button class="btn" name="reviewChk">확인하기</button></td>
-								</tr>
+								<c:forEach items="${resvCompList}"  var="resvCompList">
+									<tr>
+										<td>${resvCompList.BOOKING_IDX}</td>
+										<td>${resvCompList.HOTEL_NAME}</td>
+										<td>${resvCompList.BOOKING_IN_DATE}</td>
+										<td>${resvCompList.BOOKING_OUT_DATE}</td>
+										<td><button class="btn" name="reviewChk">확인하기</button></td>
+									</tr>
+								</c:forEach>
+<!-- 
 								<tr>
 									<td>2</td>
 									<td>Daegu Hotel</td>
@@ -231,7 +235,7 @@
 									<td>2017-01-23</td>
 									<td>2017-05-10</td>
 									<td><button class="btn" name="reviewChk">작성하기</button></td>
-								</tr>
+								</tr> -->
 							</table>
 							<div class="bottom-article">
 								<ul class="meta-post">
@@ -458,8 +462,8 @@
 							<div class="widget">
 								<h3 class="widgetheading">마이 페이지</h3>
 								<ul class="cat">
-									<li><i class="icon-angle-right"></i><a id="resv_comp">예약완료내역</a></li>
-									<li><i class="icon-angle-right"></i><a id="resv_list">예약
+									<li><i class="icon-angle-right"></i><a id="resv_complist">예약완료내역</a></li>
+									<li><i class="icon-angle-right"></i><a id="resv_chkinlist">예약
 											현황</a></li>
 									<li><i class="icon-angle-right"></i><a id="resv_cancel">예약
 											취소</a></li>
