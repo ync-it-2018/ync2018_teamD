@@ -65,6 +65,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 						 	HOTEL.HOTEL_NAME
 			FROM		TD_BOOKING BOOK, TD_HOTEL HOTEL
 			WHERE 	BOOKING_CANCLE = 'Y'
+            AND			BOOK.HOTEL_CODE = HOTEL.HOTEL_CODE
 	</select>
 
 	<select id="resvCancel" resultType="FmypageVO">
