@@ -80,9 +80,9 @@ public class FmypageDAOImpl implements FmypageDAO{
 	 * @see kr.ync.project.front.persistence.FmypageDAO#resvCancel()
 	 */
 	@Override
-	public List<FmypageVO> resvCancel() throws Exception {
+	public List<FmypageVO> resvCancel(int BOOKING_IDX) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace+".resvCancel");
+		return session.selectList(namespace+".resvCancel", BOOKING_IDX);
 	}
 	
 	

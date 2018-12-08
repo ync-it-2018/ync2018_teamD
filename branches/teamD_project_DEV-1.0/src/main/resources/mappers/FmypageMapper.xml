@@ -71,7 +71,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			UPDATE	TD_BOOKING
 			SET 			BOOKING_CANCLE = 'Y'
 			WHERE 	BOOKING_IDX = #{BOOKING_IDX}
-			AND 		MEMBER_ID = #{MEMBER_ID}
 	</select>
 
 </mapper>
