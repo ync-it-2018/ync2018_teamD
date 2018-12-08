@@ -39,14 +39,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select	
 		member_id,
 		member_fianame,
-		member_joindate,
-		member_out
-	from	(select  /*+INDEX_DESC(td_member td_xpkmember*/
+		to_char(member_joindate, 'yyyy-mm-dd') as "member_joindate",
+		member_out,
+		member_idx
+	from	(select  /*+INDEX_DESC(td_member td_member_idx)*/
         			rownum rn,
        				member_id,
        				member_fianame,
        				member_joindate,
-       				member_out
+       				member_out,
+       				member_idx
      	 	 from
        				td_member
     	 	 where
@@ -57,6 +59,32 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	where
     	rn > (#{page} -1) * #{perPageNum}
 ]]>
+</select> 
+<select id="outmemberlist" resultType="memberVO">
+<![CDATA[
+	select	
+		member_id,
+		member_fianame,
+		to_char(member_joindate, 'yyyy-mm-dd') as "member_joindate",
+		decode(member_out, 2, '강제탈퇴', 3, '개인탈퇴') as "member_out",
+		member_idx
+	from	(select  /*+INDEX_DESC(td_member td_member_idx)*/
+        			rownum rn,
+       				member_id,
+       				member_fianame,
+       				member_joindate,
+       				member_out,
+       				member_idx
+     	 	 from
+       				td_member
+    	 	 where
+        			rownum <= #{page} * #{perPageNum}
+        	 and
+        	 		member_out <> 1
+        	 )
+	where
+    	rn > (#{page} -1) * #{perPageNum}
+ ]]>
 </select> 
 <sql id="search">
 	<if test="searchType != null" >

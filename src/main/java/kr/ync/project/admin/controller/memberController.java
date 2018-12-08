@@ -27,13 +27,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequestMapping("/admin")
 public class memberController {
-	//test
 	@Inject
 	private memberService service;
 	
 	@RequestMapping(value = "/memberList", method = RequestMethod.GET)
 	public String memberList(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
-		log.info(cri.toString());
 		model.addAttribute("memberList", service.listCriteria(cri));
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
@@ -54,5 +52,15 @@ public class memberController {
 	public String memberModify(@RequestParam("member_id") String member_id, Model model) throws Exception {
 		model.addAttribute("member", service.read(member_id));
 		return "/admin/member/memberModify";
+	}
+	
+	@RequestMapping(value = "/outmemberList", method = RequestMethod.GET)
+	public String outmemberList(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		model.addAttribute("outmemberList", service.omemberlist(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listSearchCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		return "/admin/member/outmemberList";
 	}
 }

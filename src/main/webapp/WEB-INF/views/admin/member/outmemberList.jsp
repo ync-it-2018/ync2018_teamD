@@ -14,7 +14,7 @@
           <h1>Member Manage</h1>
           <ol class="breadcrumb">
             <li><a href="/admin/memberList"><i class="fa fa-dashboard"></i> Member Manage</a></li>
-            <li><a href="/admin/memberList">MemberList</a></li>
+            <li><a href="/admin/memberList">Out Member List</a></li>
           </ol>
         </section>
     <!-- Main content -->
@@ -26,7 +26,7 @@
 
 		<div class="box">
             <div class="box-header with-border">
-            	<h3 class="box-title">Member List</h3>
+            	<h3 class="box-title">Out Member List</h3>
             </div>
             
             <div class="box-body">
@@ -38,16 +38,13 @@
 						<th>Join_Date</th>
 						<th>Manage</th>
 					</tr>
-				<c:forEach items="${memberList}" var="memberVO" varStatus="status">
+				<c:forEach items="${outmemberList}" var="memberVO" >
 					<tr>
 						<td>${memberVO.member_idx }</td>
-						<!--<td>${status.count} </td>-->
-						<td>
-						<a href="/admin/memberDetail?member_id=${memberVO.member_id }"> ${memberVO.member_id }</a>
-						</td>
+						<td>${memberVO.member_id }</td>
 						<td>${memberVO.member_fianame }</td>
 						<td>${memberVO.member_joindate}</td>
-						<td><button id=''>수정</button><button id=''>삭제</button></td>
+						<td>${memberVO.member_out }</td>
 					</tr>
 				</c:forEach>
 				</table>
@@ -56,16 +53,16 @@
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev}">
-							<li><a href="memberList${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>	
+							<li><a href="outmemberList${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>	
 						</c:if>
 						<c:forEach begin="${pageMaker.startPage}"
 							end="${pageMaker.endPage }" var="idx">
 							<li <c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-								 <a href="memberList${pageMaker.makeSearch(idx)}">${idx}</a>
+								 <a href="outmemberList${pageMaker.makeSearch(idx)}">${idx}</a>
 							</li> 
 						</c:forEach>
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-							<li><a href="memberList${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+							<li><a href="outmemberList${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 						</c:if>
 					</ul>
 				</div>
