@@ -2,7 +2,9 @@
 <%@ page session="false" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
- 
+ <%!
+ 	int i = 0;
+ %>
   <style>
   .h_group{
   	height:65px;
@@ -27,16 +29,62 @@
   	width:80%; 
   	margin:10 10;
   }
+  .adu_num{
+  	width: 80px;
+  }
+  .kid_num{
+  	width:80px;
+  }
+  .price{
+  	width: 100px;
+  }
+  .room_title{
+  	width: 110px;
+  }
   </style>
   <script src="/resources/admin/js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
- <script>
- 	function add_f(){
- 		var select_f;
- 		select_f = $("#hotel_f option:selected").val();
- 		
- 		alert(select_f);
- 	}
+   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+ <script type="text/javascript">
+ 	
+	/*  function setUserID(myValue) {
+	     $('#hid_f_idx').val(myValue).trigger('change');
+	} */
+	/*  $('#hid_f_idx').change(function(){
+		 alert($("#hid_f_idx").val());
+	 		alert($("#hid_f_text").val());
+	}) */
+	
+	function add(idx){
+		var win_open;
+		alert(idx);
+		var popUrl = "/admin/addFacility?idx=" + idx;	//팝업창에 출력될 페이지 URL
+		
+	<%-- 	var st = "#h_fac";
+		while($("#h_fac"+<%=i%>).val()){			
+			<% i = i+1;%>
+		}  --%>
+		var popOption = "width=500, height=650, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		var popName = "popup"
+		win_open = window.open(popUrl,popName,popOption);	
+				
+		
+//		alert($("#hid_f_idx").val());
+		
+	}
+/* 	$("#hid_f_idx").change(function(){
+		alert($("#hid_f_idx").val());
+		alert($("#hid_f_text").val());
+	}  */
+	
+	function remove(){
+		/* var rm = $("#hotel option:selected");
+		rm.remove();
+		 */
+	}
+	
 </script>
+
+
 
 <%@include file="/WEB-INF/views/admin/include/header.jsp" %>
 <!-- 컨텐츠 상단바 -->
@@ -74,23 +122,23 @@
 					
 					<div class="form-group h_group" style="width: 20%; float:left; padding-top:30px;">
 					<input type="button" value="완료" />
-					<input type="button" value="취소"/>
+					<input type="button" value="취소" onClick = "history.back();"/>
 					</div>
 					<hr style="border: 1px solid gray; float:left; width:100%; margin-top:0px;">
 					
 					<div class="form-group">
 						<label>호텔 이미지</label>
 						<div style="width:88%; text-align: left; margin: 0 auto;">
-							<form id = "hotel_f" style="width:100%; text-align:center; margin: atuo;">
-								<select name ="hote_f" size = "8"  style="width: 100%;">
+							<form method="post" name = "hotel_img" id = "hotel_f" style="width:100%; text-align:center; margin: atuo;">
+								<select name ="hotel_img" size = "8"  style="width: 100%;">
 									<c:forEach items="${h_image}" var="h_image" >
-										<option value="${h_image.himg_name}">${h_image.himg_name}</option>
+										<option value="${h_image.himg_idx}">${h_image.himg_name}</option>
 									</c:forEach>
 								</select>
 							</form>
 							<div style="text-align:right; margin:5 5;">
-								<input type="button" value=" 추가 " onclick="add_f()">
-								<input type="button" value=" 삭제 ">
+								<input type="button" value=" 추가 " onclick="add()">
+								<input type="button" value=" 삭제 " onclick="remove()">
 							</div>
 						</div>
 					</div>
@@ -98,19 +146,19 @@
 					<div class="form-group">
 						<label>호텔 내 시설</label>
 							<div style="width:88%; text-align: left; margin: 0 auto;">
-							<div id="pre_set" style="display:none">
-							    <input type="text" name="" value="" class="input_f"> <input type="button" value="삭제" onclick="remove_item(this)">
-							</div>
-							<form id = "hotel_f" style="width:100%; text-align:center; margin: atuo;">
-								<select name ="hote_f" size = "8"  style="width: 100%;">
-									<c:forEach items="${hotel_f}" var="hotel_f" >
-										<option value="${hotel_f.hf_name}">${hotel_f.hf_name}</option>
+							<form method="post" id="hotel" name = "hotel" style="width:100%; text-align:center; margin: atuo;">
+								<select id = "hotel_f" name ="hotel_f" size = "8"  style="width: 100%;">
+									<c:forEach items="${hotel_f}" var="hotel_f">
+										<option value="${hotel_f.hf_idx}" id = "h_fac<%=i%>">${hotel_f.hf_name}</option>
+										<% i = i+1; %>
 									</c:forEach>
 								</select>
+								<!-- <input type="text" id ="hid_f_idx" name="hid_f_idx" style="" />
+								<input type="text" id ="hid_f_text" name="hid_f_text" style=""/> -->
 							</form>
 							<div style="text-align:right; margin:5 5;">
-								<input type="button" value=" 추가 " onclick="add_f()">
-								<input type="button" value=" 삭제 ">
+								<input type="button" value=" 추가 " onclick="add(<%=i%>)">
+								<input type="button" value=" 삭제 " onclick="remove()">
 							</div>
 						</div>
 					</div>					
@@ -127,9 +175,9 @@
 							</tr>
 							<tr>
 								<td>상세 주소</td>
-								<td>${hotel.address }</td>
+								<td><input type="text" value="${hotel.address }"/></td>
 								<td>등급</td>
-								<td>${hotel.hotel_class }</td>
+								<td><input type="text" value="${hotel.hotel_class }"/></td>
 							</tr>
 							<tr>
 								<td>상세정보</td>
@@ -167,10 +215,10 @@
 											</tr>
 											<c:forEach items="${room}" var="roomVO">
 												<tr>
-												<td>${roomVO.room_name }</td>
-												<td>${roomVO.room_peoplenum }</td>
-												<td>${roomVO.room_peoplenum_k }</td>
-												<td>${roomVO.room_price }</td>
+												<td><input class="room_title" type="text" value="${roomVO.room_name}"/></td>
+												<td><input class="adu_num" type="text" value="${roomVO.room_peoplenum }"/></td>
+												<td><input class="kid_num" type="text" value="${roomVO.room_peoplenum_k }"/></td>
+												<td><input class="price" type="text" value="${roomVO.room_price }"/></td>
 												<td><input type="button" value="상세보기" onclick="r_detail('${roomVO.room_idx}');"/></td>
 											</tr>
 											</c:forEach>
@@ -203,9 +251,7 @@
 		window.open(popUrl,"",popOption);
 	}
 	
-	function modify( hotel_code ){
-		window.location.href="/admin/hotelModify?hotel_code="+hotel_code;
-	}
+
 </script>
 
 
