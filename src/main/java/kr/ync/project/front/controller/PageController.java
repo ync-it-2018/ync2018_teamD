@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/")
 public class PageController {
 	
-	
+
 	@Inject
 	private FmypageService mypageService;
 	
@@ -125,6 +125,14 @@ public class PageController {
 		model.addAttribute("resvChkinFutureList",mypageService.resvChkinFutureList());
 		model.addAttribute("resvCancelList",mypageService.resvCancelList());
 		return "front/mypage";
+	}
+	
+	@RequestMapping(value = "/resvCancel", method = RequestMethod.POST)
+	public String resvcancel(@RequestParam("BOOKING_IDX") int BOOKING_IDX  , Model model) throws Exception {
+		log.info("from mypage to delete reserved hotel call.....");
+		model.addAttribute("resvCancel",mypageService.resvCancel(BOOKING_IDX));
+				
+		return "front/resvCancel";
 	}
 	
 	@RequestMapping("/likepage")
