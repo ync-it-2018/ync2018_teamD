@@ -166,8 +166,8 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 								</ul></li>
 							 <li><a href="/searchresult">SearchResult</a></li>
 							<li><a href="/portfolio">Portfolio</a></li>
-							<li><a href="/contact">Contact</a></li> -->
-							<li><a href="#" id="loginPage">Login</a></li>
+							<li><a href="/contact">Contact</a></li> 
+							<li><a href="#" id="loginPage">Login</a></li>-->
 						</ul>
 					</div>
 				</div>
@@ -187,198 +187,104 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 				</div>
 			</div>
 		</section> -->
-		
+
 		<section id="content">
 			<div class="container">
 				<div class="row">
-							<form action = "#" accept-charset="utf-8" name ="person_info1" method = "get">
-            <fieldset style = "width:100%">
-                    목적지 : <input type = "text" name = "hotelname" style="WIDTH: 15%; HEIGHT: 40px"/>
-                    체크인 : <input type="date" id="checkin" name="checkin"
-                      value="yyyy-mm-dd">
-                    체크아웃 : <input type="date" id="checkout" name="checkout"
-                      value="yyyy-mm-dd">
-                      <a href="/resultlist"><button class="btn btn-success"
-						id="submit">호텔 검색하기</button></a>
-                 <%--   <c:forEach items="${detail}" var="FdetailVO">
-						
-						<tr>
-							<td>1</td>
-							<td>
-							${FdetailVO.address}
-							${FdetailVO.room_lowprice}
-							${FdetailVO.rate}
-							${FdetailVO.hotel_class}
-							${FdetailVO.information}
-							${FdetailVO.hotel_discount}
-							${FdetailVO.hotel_code}
-							${FdetailVO.hotel_name}
-							${FdetailVO.nation_name}
-							${FdetailVO.city_name}
-							${FdetailVO.hotel_core_info}
-							${FdetailVO.hotel_precautions}
-							${FdetailVO.hotel_checktime}
-							${FdetailVO.hotel_etc}
-							</td>
-						</tr>
-					</c:forEach> --%>
-                   
-                      
+					<form action="#" accept-charset="utf-8" name="person_info1"
+						method="get">
 
-            </fieldset>
 						<form action=#>
-					<div class="col-lg-8">
-						<article>
-							<div class="post-image">
-								<div class="post-heading">
-									<h3>${detail.hotel_name}</h3>
-								</div>
-								<h4>${detail.information}</h4>
-							</div>
-							<!-- 슬라이더 시작 -->
-						<div id="main-slider" class="flexslider">
-						
-							<ul class="slides" >
-							<c:forEach items="${h_image}" var="ImageVO">
-								<li><img src="${ImageVO.himg_path}" height="300" width="100%"/>	
-							</c:forEach>
-							</ul>
-							
-						</div>
-						<!-- 슬라이더 끝 -->
-							
-						</article>
-						<article>
-						
-									
-								
-									<div>${detail.hotel_core_info}</div>
-									<h4>체크시 준비사항 </h4>
-									<ol>
-										<li>${detail.hotel_precautions}</li>
-										
-									</ol>
-									<h4>체크인/체크아웃 </h4>
-									<ol>
-										<li>${detail.hotel_checktime}</li>
-										
-										
-									</ol>
-									<h4>기타사항 </h4>
-									<ol>
-										
-										<li>${detail.hotel_etc}</li>
-										
-									</ol>
-									
-								
-							
-							</form>
-						</article>
-						<article>
-							<div class="post-video">
-								<div class="post-heading">
-								
-								
-								
-								</div>
-								<!-- <div class="video-container">
-									<iframe src="http://player.vimeo.com/video/30585464?title=0&amp;byline=0">
-								</iframe>
-								</div> -->
-								
-							</div>
-							
-							
-						</article>
-					
-					</div>
-					<div class="col-lg-4">
+							<div class="col-lg-8">
+								<div style="border: 2px solid; padding: 10px;">
+
+									<article>
+
+
+
+										<h2>서구에 있는 호텔</h2>
+										<hr class="two">
+										<h3>객실 정보</h3>
+										<fieldset style="width: 100%">
+											<div>성(영문)을 입력 해주세요</div>
+											<input type="text" name="reservationfamilyname"
+												style="WIDTH: 20%; HEIGHT: 40px" />
+											<div>이름(영문)을 입력 해주세요</div>
+											<input type="text" name="reservationname"
+												style="WIDTH: 20%; HEIGHT: 40px" />
+										</fieldset>
+
+
+										<h3>예약자 정보</h3>
+										<hr class="two">
+										<div>이메일 주소*(이 주소로 확인 메일을 보내 드립니다.)</div>
+										<input type="text" name="emailaddress"
+											style="WIDTH: 40%; HEIGHT: 40px" />
+										<div>휴대폰 번호*(비상시에만 연락드립니다.)</div>
+										<input type="text" name="phonenumber"
+											style="WIDTH: 40%; HEIGHT: 40px" />
+										<!-- 슬라이더 시작 -->
+										<div id="main-slider" class="flexslider">
+
+											<ul class="slides">
+												<c:forEach items="${h_image}" var="ImageVO">
+													<li><img src="${ImageVO.himg_path}" height="300"
+														width="100%" />
+												</c:forEach>
+											</ul>
+
+										</div>
+										<!-- 슬라이더 끝 -->
+
+									</article>
+									<hr class="two">
+									<h3>지불 세부 정보</h3>
+
+									<div>카드 종류</div>
+									<select name="room" style="WIDTH: 150px; HEIGHT: 30px">
+										<option value="카드선택">카드 선택</option>
+										<option value="MASTER CARD">MASTER CARD</option>
+										<option value="VISA CARD">VISA CARD</option>
+										<option value="JCB CARD">JCB CARD</option>
+
+									</select>
+									<div style="text-align:right;"><button>예약하기</button>
+									<button>취소(돌아가기)</button></div>
+										</div>
+										</div>
+	
+
+
+
+
+		<div class="col-lg-4">
 						<aside class="right-sidebar">
 							<div class="widget">
-								<h1 class="widgetheading">가격:${detail.room_lowprice}</h1>
-								<ul class="cat">
-									<li>
-									
-									<img src="/resources/front/img/hotel/maps.jpg" class="pull-left" alt="" />
-									</li>
-									
-								</ul>
+									<img src="/resources/img/hotel/1.jpg" class="pull-left" alt=""  height="100%" width="100%"/>
+									<h3>서구에 있는 호텔</h3>
+									<h4>체크인　:1234/11/11</h4>
+									<h4>체크아웃:1234/11/13</h4>
+									<h2>총 요금:400,000</h2>
+									<div>
+									<button class=col-lg-3>KRW</button>
+									<button class=col-lg-3>JPY</button>
+									<button class=col-lg-3>USD</button>
+									<button class=col-lg-3>EUR</button>
+									</div>
 							</div>
-							<div class="widget" onclick="popupOpen()">
-								<h2 class="widgetheading">평점:${detail.rate}</h2>
-								<ul class="recent" onclick="popupOpen()">
-									<li>
-										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="popupOpen()"/>
-									</li>
-									
-									
-								</ul>
-							</div>
-							<div class="widget">
-								<h5 class="widgetheading">관심호텔</h5>
-								<ul class="tags">
-									<li><input type="button" value="관심호텔 등록" 	style="WIDTH: 200px; HEIGHT: 50px" /></li> <!-- 버튼 누르면 관심 호텔 등록 -->
-								</ul>
-							</div>
+							
+							
+							
 						</aside>
 					</div>
-				<div>
-					<hr class="two">
-					<div class="row">
-					<!-- <fieldset  style="width:100%; border:5 solid black;"> -->
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center;">객실유형</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">객실선택</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">객실정보</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">체크인</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">체크아웃</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">가격정보</div>
-						   </div>
-						<hr class="two">
-						<div class="row">
-						<div class=col-lg-2 style="text-align:center;" onclick="room_popupOpen()">
-						<img src="/resources/front/img/slides/1.jpg" />
-						<div style="text-align:center;">객실정보</div>
-						<div style="text-align:left;"><ol>
-							<li>숙박인원:2명</li>
-							<li>싱글 침대</li>
-							<li>UHD TV</li>
-							</ol>
-							</div>
-						</div> 
-						<div class=col-lg-2 style="text-align:center;">
-						<select name="room" style="WIDTH: 150px; HEIGHT: 30px" >
-							<option value="">객실선택</option>
-							<c:forEach items="${detailroom}" var="FdetailVO">
-							<option value="${FdetailVO.room_name}" >${FdetailVO.room_name}</option>
-							</c:forEach>
-							
-						</select></div>
-  
-						<div class=col-lg-2 style="text-align:center;">
-							<ol>
-							<li>무료wifi</li>
-							<li>무료 주차장</li>
-							<li>무료 조식</li>
-							</ol>
-						</select>
-						</div>
-						<div class=col-lg-2 style="text-align:center;" ><input type="date" id="checkin2" name="checkin2"
-                      value="yyyy-mm-dd"></div>
-                     <div class=col-lg-2 style="text-align:center;" > <input type="date" id="checkin2" name="checkin2"
-                      value="yyyy-mm-dd"></div>
-                    <div class=col-lg-2  style="text-align:center;"> <h2> 400,000</h2></div>
-                      </div>
-                      <div style="text-align:right ;">
-                     <a href="/reservation"><button type="submit" style="WIDTH: 150px; HEIGHT: 50px">예약하기</button></a>
-                      </div>
-                      
-					<!-- </fieldset> -->
-					
+													
+						</form>
+					</form>
 				</div>
 			</div>
-			</div>
+
 		</section>
+		
 		<footer>
 			<div class="container">
 				<div class="row">

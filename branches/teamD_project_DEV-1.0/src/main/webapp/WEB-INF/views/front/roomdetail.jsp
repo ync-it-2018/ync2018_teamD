@@ -22,7 +22,7 @@
   <thead>
   
     <tr>
-      <th scope="col" style="text-align:left;">${roomdetail.ROOM_NAME}</th>
+      <th scope="col" style="text-align:left;"><h2>${roomdetail.ROOM_NAME}</h2></th>
     </tr>
   </thead>	
   <tbody>
