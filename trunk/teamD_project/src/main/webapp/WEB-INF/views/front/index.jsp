@@ -46,11 +46,9 @@
 
 			<div class="modal-container">
 				<label for="uid"><b>Username</b></label> <input type="text"
-					placeholder="Enter Username" name="member_id" required
-					id="member_id"> <label for="pwd"><b>Password</b></label> <input
-					type="password" placeholder="Enter Password" name="member_password"
-					required id="member_password">
-
+					placeholder="Enter Username" name="member_id" required id="member_id">
+				<label for="pwd"><b>Password</b></label> <input
+					type="password" placeholder="Enter Password" name="member_password" required id="member_password">
 				<button type="submit" style="margin: 3px" class="btn btn-success"
 					id="login">로그인</button>
 				<button type="button" style="margin: 3px" class="btn btn-danger"

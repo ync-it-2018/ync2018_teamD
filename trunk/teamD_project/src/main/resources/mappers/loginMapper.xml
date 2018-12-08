@@ -6,14 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.LoginMapper">
 
 	<select id="login" resultType="LoginVO">
-		<![CDATA[
-		SELECT	member_id,
+		select	member_id,
 				member_password,
 				member_fianame
-		FROM	td_member
-		WHERE	member_id = #{member_id}
-		AND		member_password = #{member_password}
-		]]>
+		from	td_member
+		where	member_id = #{member_id}
+		and		member_password = #{member_password}
 	</select>
   
 <!-- 	<update id="keepLogin" >

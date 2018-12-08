@@ -9,9 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>session id 값 : ${userVO.MEMBER_ID} </p>
-<p>session pwd 값 : ${userVO.MEMBER_PASSWORD} </p>
-<p>session name 값 : ${userVO.MEMBER_FIANAME} </p>
+<p>session id 값 : ${LoginVO.MEMBER_ID} </p>
+<p>session pwd 값 : ${LoginVO.MEMBER_PASSWORD} </p>
+<p>session name 값 : ${LoginVO.MEMBER_FIANAME} </p>
 </body>
 </html>
 
+	

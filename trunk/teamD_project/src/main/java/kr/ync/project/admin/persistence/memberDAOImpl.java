@@ -97,6 +97,18 @@ public class memberDAOImpl implements memberDAO{
 		return session.selectList(namespace+".readbookingEnd", member_id);
 	}
 
+	@Override
+	public List<memberVO> omemberlist(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".outmemberlist", cri);
+	}
+
+	@Override
+	public int listomemberCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".listomemberCount", cri);
+	}
+
 	
 
 	
