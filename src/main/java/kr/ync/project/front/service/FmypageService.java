@@ -33,6 +33,6 @@ public interface FmypageService {
 	
 	public List<FmypageVO> resvCancelList() throws Exception;
 	
-	public List<FmypageVO> resvCancel() throws Exception;
+	public List<FmypageVO> resvCancel(int BOOKING_IDX) throws Exception;
 	
 }

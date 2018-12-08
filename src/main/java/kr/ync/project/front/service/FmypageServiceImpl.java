@@ -73,9 +73,9 @@ public class FmypageServiceImpl implements FmypageService {
 	 * @see kr.ync.project.front.service.FmypageService#resvCancel()
 	 */
 	@Override
-	public List<FmypageVO> resvCancel() throws Exception {
+	public List<FmypageVO> resvCancel(int BOOKING_IDX) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.resvCancel();
+		return dao.resvCancel(BOOKING_IDX);
 	}
 
 }

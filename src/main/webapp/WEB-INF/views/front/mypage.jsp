@@ -293,25 +293,28 @@
 								</div>
 							</div>
 							<p>예약 취소 페이지</p>
-							<table class="table">
-								<tr>
-									<th>선택</th>
-									<th>등록번호</th>
-									<th>호텔 명</th>
-									<th>체크인</th>
-									<th>체크아웃</th>
-								</tr>
-								<c:forEach items="${resvChkinFutureList}"  var="resvChkinFutureList">
+							<form method="POST" action="#">
+								<table class="table" id="cancelTable">
 									<tr>
-										<td><input type="radio" name="resvCancelChk"/>
-										<td>${resvChkinFutureList.BOOKING_IDX}</td>
-										<td>${resvChkinFutureList.HOTEL_NAME}</td>
-										<td>${resvChkinFutureList.BOOKING_IN_DATE}</td>
-										<td>${resvChkinFutureList.BOOKING_OUT_DATE}</td>
+										<th>선택</th>
+										<th>등록번호</th>
+										<th>호텔 명</th>
+										<th>체크인</th>
+										<th>체크아웃</th>
+										<th>삭제하기</th>
 									</tr>
-								</c:forEach>
-							</table>
-							<button class="btn-danger">삭제하기</button>
+									<c:forEach items="${resvChkinFutureList}"  var="resvChkinFutureList" varStatus="cancelRowChk">
+										<tr>
+											<td><input type="radio" name="resvCancelChk" id="chkRow${cancelRowChk.count}"/>
+											<td>${resvChkinFutureList.BOOKING_IDX}</td>
+											<td>${resvChkinFutureList.HOTEL_NAME}</td>
+											<td>${resvChkinFutureList.BOOKING_IN_DATE}</td>
+											<td>${resvChkinFutureList.BOOKING_OUT_DATE}</td>
+											<td><button type="submit" class="btn-danger"  name="cancelSubmitBtn">삭제하기</button></td>
+										</tr>
+									</c:forEach>
+								</table>
+							</form>
 							
 							<div class="bottom-article">
 								<ul class="meta-post">

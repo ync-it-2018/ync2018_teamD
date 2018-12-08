@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.ync.project.front.domain.LoginVO;
 import kr.ync.project.front.dto.LoginDTO;
@@ -37,7 +36,7 @@ public class FrontLoginController {
 		if (vo == null)
 			return "";
 		
-		model.addAttribute("loginVO", vo);
+		model.addAttribute("LoginVO", vo);
 		
 		return "front/loginPost";
 	}

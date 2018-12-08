@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public LoginVO login(LoginDTO dto) throws Exception {
-		log.info("UserVO ..........");
+		log.info("LoginVO ..........");
 		return dao.login(dto);
 	}
 
