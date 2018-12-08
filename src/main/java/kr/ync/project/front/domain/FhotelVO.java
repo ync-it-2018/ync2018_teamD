@@ -27,5 +27,7 @@ public class FhotelVO {
     private String nation_name;
 
     private String city_name;  
+    
+    private String hotel_img;
 	
 }
