@@ -93,6 +93,12 @@ public List<FroomVO> roomdetailproduct(int room_idx) throws Exception {
 	return dao.roomdetailproduct(room_idx);
 }
 
+@Override
+public FhotelVO reservation(String hotel_code, int room_idx)throws Exception {
+	// TODO Auto-generated method stub
+	return dao.reservation(hotel_code,room_idx);
+}
+
 
 
 

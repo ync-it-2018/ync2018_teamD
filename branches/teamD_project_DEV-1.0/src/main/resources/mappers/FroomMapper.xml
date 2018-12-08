@@ -12,6 +12,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			ROOM_NAME,
 			BED_NAME,
 			BED_CNT,
+			ROOM_PEOPLENUM,
+			ROOM_PEOPLENUM_K,
 			tr.HOTEL_CODE
 	FROM td_room tr, td_room_bed trb 
 	where   tr.room_idx = trb.room_idx

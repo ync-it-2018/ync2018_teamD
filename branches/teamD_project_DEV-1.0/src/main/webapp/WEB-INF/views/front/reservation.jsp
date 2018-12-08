@@ -202,9 +202,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 
 
 
-										<h2>서구에 있는 호텔</h2>
+										<h2>${reservation.hotel_name}</h2>
 										<hr class="two">
-										<h3>객실 정보</h3>
+										<h3>${reservation.ROOM_NAME	}</h3>
 										<fieldset style="width: 100%">
 											<div>성(영문)을 입력 해주세요</div>
 											<input type="text" name="reservationfamilyname"
@@ -261,10 +261,10 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 						<aside class="right-sidebar">
 							<div class="widget">
 									<img src="/resources/img/hotel/1.jpg" class="pull-left" alt=""  height="100%" width="100%"/>
-									<h3>서구에 있는 호텔</h3>
+									<h3>${reservation.hotel_name}(${reservation.ROOM_NAME})</h3>
 									<h4>체크인　:1234/11/11</h4>
 									<h4>체크아웃:1234/11/13</h4>
-									<h2>총 요금:400,000</h2>
+									<h2>총 요금:${reservation.ROOM_PRICE}</h2>
 									<div>
 									<button class=col-lg-3>KRW</button>
 									<button class=col-lg-3>JPY</button>
