@@ -1,5 +1,6 @@
 package kr.ync.project.admin.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -10,6 +11,7 @@ import kr.ync.project.admin.domain.BedVO;
 import kr.ync.project.admin.domain.FeatureVO;
 import kr.ync.project.admin.domain.HotelVO;
 import kr.ync.project.admin.domain.ImageVO;
+import kr.ync.project.admin.domain.ReviewVO;
 import kr.ync.project.admin.domain.RoomVO;
 import kr.ync.project.admin.persistence.HotelDAO;
 
@@ -39,11 +41,11 @@ public class HotelServiceImpl implements HotelService {
    }
 
    @Override
-   public void remove(Integer bno) throws Exception {
-      // TODO Auto-generated method stub
-      dao.delete(bno);
-   }
-
+	public void hotelDelete(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		dao.delete(hotel_code);
+	}
+   
    @Override
    public List<HotelVO> listAll() throws Exception {
       // TODO Auto-generated method stub
@@ -63,9 +65,9 @@ public class HotelServiceImpl implements HotelService {
 	}
 
 	@Override
-	public List<FeatureVO> room_feature(int room_idx) throws Exception {
+	public List<FeatureVO> room_feature(HashMap h_data) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.room_feature(room_idx);
+		return dao.room_feature(h_data);
 	}
 
 	@Override
@@ -91,6 +93,26 @@ public class HotelServiceImpl implements HotelService {
 		// TODO Auto-generated method stub
 		return dao.rimage_detail(idx);
 	}
+
+	@Override
+	public List<FeatureVO> facilityList() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.facilityList();
+	}
+
+	@Override
+	public List<ReviewVO> review(String hotel_code)throws Exception {
+		// TODO Auto-generated method stub
+		return dao.review(hotel_code);
+	}
+
+	@Override
+	public ReviewVO reviewDetail(int idx) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.reviewDetail(idx);
+	}
+
+	
 
 	
 

@@ -1,5 +1,6 @@
 package kr.ync.project.admin.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -11,6 +12,7 @@ import kr.ync.project.admin.domain.BedVO;
 import kr.ync.project.admin.domain.FeatureVO;
 import kr.ync.project.admin.domain.HotelVO;
 import kr.ync.project.admin.domain.ImageVO;
+import kr.ync.project.admin.domain.ReviewVO;
 import kr.ync.project.admin.domain.RoomVO;
 
 @Repository
@@ -41,9 +43,16 @@ public class HotelDAOImpl implements HotelDAO {
 	}
 
 	@Override
-	public void delete(Integer bno) throws Exception {
+	public void delete(String hotel_code) throws Exception {
 		// TODO Auto-generated method stub
-//		session.delete(namespace+".delete",bno);
+		session.delete(namespace+".delete_info",hotel_code);
+		session.delete(namespace+".delete_detailinfo",hotel_code);
+		session.delete(namespace+".delete_img",hotel_code);
+		session.delete(namespace+".delete_bed",hotel_code);
+		session.delete(namespace+".delete_room_image",hotel_code);
+		session.delete(namespace+".delete_room_info",hotel_code);
+		session.delete(namespace+".delete_room",hotel_code);
+		session.delete(namespace+".delete_hotel",hotel_code);
 	}
 
 	@Override
@@ -81,9 +90,9 @@ public class HotelDAOImpl implements HotelDAO {
 	}
 
 	@Override
-	public List<FeatureVO> room_feature(int room_idx) throws Exception {
+	public List<FeatureVO> room_feature(HashMap h_data) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace + ".room_feature", room_idx);
+		return session.selectList(namespace + ".room_feature", h_data);
 	}
 
 	@Override
@@ -108,6 +117,24 @@ public class HotelDAOImpl implements HotelDAO {
 	public ImageVO rimage_detail(int idx) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace + ".rimage_detail", idx);
+	}
+
+	@Override
+	public List<FeatureVO> facilityList() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".facilityList");
+	}
+
+	@Override
+	public List<ReviewVO> review(String hotel_code) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".review", hotel_code);
+	}
+
+	@Override
+	public ReviewVO reviewDetail(int idx) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+ ".reviewDetail", idx);
 	}
 
 	

@@ -14,5 +14,5 @@ public class FeatureVO {
 	
 	private String hf_name;
 	
-
+	private int hf_idx;
 }

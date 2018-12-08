@@ -23,6 +23,43 @@
   #tb_room{
   	margin: 15 10;
   }
+  .container1{
+  	  width: 95%;
+  	  margin: 0 auto;
+	}
+	ul.tabs{
+	  margin: 0px;
+	  padding: 0px;
+	  list-style: none;
+	}
+	ul.tabs li{
+	  background: none;
+	  color: #222;
+	  display: inline-block;
+	  padding: 10px 15px;
+	  cursor: pointer;
+	  /* font-size:18px; */
+	}
+	 
+	ul.tabs li.current{
+	  background: #D8D8D8;
+	  color: #222;
+	}
+	 
+	.tab-content{
+	  display: none;
+	  background: #D8D8D8;
+	  padding: 15px;
+	}
+	 
+	.tab-content.current{
+	  display: inherit;
+	}
+	.tb_css{
+	  width:95%; 
+	  text-align:center; 
+	  margin:auto;
+	}
   .jssorl-009-spin img {
             animation-name: jssorl-009-spin;
             animation-duration: 1.6s;
@@ -158,8 +195,9 @@
 					<h3 class="box-title">Hotel Detail</h3>
 				</div>
 				<!-- /.box-header -->
-
+				
 				<div class="box-body">
+					<div style= "overflow: hidden;">
 					<div class="form-group h_group" style="width:50%; float:left">
 						<H2>${hotel.hotel_name }</H2>
 					</div>
@@ -172,10 +210,17 @@
 					
 					<div class="form-group h_group" style="width: 20%; float:left; padding-top:30px;">
 					<input type="button" value="수정" onclick = "modify('${hotel.hotel_code}')"/>
-					<input type="button" value="삭제"/>
+					<input type="button" value="삭제" onclick = "delete_h('${hotel.hotel_code}')"/>
 					<input type="button" value="목록"/>
 					</div>
 					<hr style="border: 1px solid gray; float:left; width:100%; margin-top:0px;">
+					</div>
+					<div class="container1">
+					  <ul class="tabs">
+					    <li class="tab-link current" data-tab="tab-1">호텔 정보</li>
+					    <li class="tab-link" data-tab="tab-2">리뷰</li>
+					  </ul>
+					<div id="tab-1" class="tab-content current">
 					
 					<div class="form-group">
 						<div style="font-weight:bolder; margin-bottom:10px;">호텔 사진</div>
@@ -294,7 +339,7 @@
 												<td>${roomVO.room_peoplenum }</td>
 												<td>${roomVO.room_peoplenum_k }</td>
 												<td>${roomVO.room_price }</td>
-												<td><input type="button" value="상세보기" onclick="r_detail('${roomVO.room_idx}');"/></td>
+												<td><input type="button" value="상세보기" onclick="r_detail('${roomVO.room_idx}','${roomVO.hotel_code}');"/></td>
 											</tr>
 											</c:forEach>
 										</table>
@@ -303,6 +348,34 @@
 							</tr>
 						</table>
 						</div>
+					</div>
+					</div>
+					<div id="tab-2" class="tab-content">
+						<table class="table table-bordered">
+						<tr>
+							<th style="width: 10px">BNO</th>
+							<th>TITLE</th>
+							<th>RATE</th>
+							<th>WRITER</th>
+							<th>DATE</th>
+						</tr>
+					
+					
+					<c:forEach items="${review}" var="review" >
+					
+						<tr>
+							<td>${review.rownum }</td>
+							<td>
+							<a href="#" onclick="review_d('${review.review_idx }')"> ${review.review_title }</a>
+							</td>
+							<td>${review.review_rate }</td>
+							<td>${review.member_id }</td>
+							<td>${review.review_date }</td>
+						</tr>
+					</c:forEach> 
+					
+					</table>
+					</div>
 					</div>
 				</div>
 				<!-- /.box-body -->
@@ -318,17 +391,52 @@
 </div>
 </section>
 <script>
-	function r_detail( r_idx ){
-		var popUrl = "/admin/roomDetail?room_idx=" + r_idx;	//팝업창에 출력될 페이지 URL
+	function r_detail( r_idx , h_code ){
+		var popUrl = "/admin/roomDetail?room_idx=" + r_idx+"&hotel_code="+h_code;	//팝업창에 출력될 페이지 URL
 
 		var popOption = "width=500, height=650, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
 
 		window.open(popUrl,"",popOption);
 	}
 	
+	function review_d(idx){
+		var popUrl = "/admin/reviewDetail?idx=" + idx;	//팝업창에 출력될 페이지 URL
+
+		var popOption = "width=650, height=500, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+
+		window.open(popUrl,"",popOption); 
+		
+	}
+	
 	function modify( hotel_code ){
 		window.location.href="/admin/hotelModify?hotel_code="+hotel_code;
 	}
+	
+	function delete_h( hotel_code ){
+		if (confirm("정말로 삭제하시겠습니까?")){
+			window.location.href="/admin/hotelDelete?hotel_code="+hotel_code;
+		}else{
+			alert("취소되었습니다.");
+		}
+	}
+	$(document).ready(function(){
+		
+		$('ul.tabs li').click(function(){
+			var tab_id = $(this).attr('data-tab');
+			$('ul.tabs li').removeClass('current');
+			$('.tab-content').removeClass('current');
+
+			$(this).addClass('current');
+			$("#"+tab_id).addClass('current');
+			
+			if(tab_id == "tab-1"){
+				$("#modi").show();
+			}else{
+				$("#modi").hide();
+			}
+		})
+
+	})
 </script>
 
 

@@ -21,6 +21,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	and   h.city_code = c.city_code 
 </select>
 
+<delete id="delete_info">
+	DELETE FROM TD_HOTEL_INFO WHERE HOTEL_CODE = #{hotel_code}
+</delete>
+
+<delete id="delete_detailinfo">
+	DELETE FROM TD_HOTEL_DETAILINFO WHERE HOTEL_CODE = #{hotel_code}
+</delete>
+
+<delete id="delete_img">
+	DELETE FROM TD_HOTEL_IMAGE WHERE HOTEL_CODE = #{hotel_code}
+</delete>
+
+<delete id="delete_bed">
+	DELETE FROM TD_ROOM_BED WHERE HOTEL_CODE = #{hotel_code}
+</delete>
+
+<delete id="delete_room_image">
+	DELETE FROM TD_ROOM_IMAGE WHERE HOTEL_CODE = #{hotel_code}
+</delete>
+
+<delete id="delete_room_info">
+	DELETE FROM TD_ROOM_INFO WHERE HOTEL_CODE = #{hotel_code}
+</delete>
+
+<delete id="delete_room">
+	DELETE FROM TD_ROOM WHERE HOTEL_CODE = #{hotel_code}
+</delete>
+
+<delete id="delete_hotel">
+	DELETE FROM TD_HOTEL WHERE HOTEL_CODE = #{hotel_code}
+</delete>
+
 <select id = "read" resultType= "HotelVO">
 	SELECT 	address, 
 		    room_lowprice, 
@@ -49,7 +81,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    room_peoplenum_k,
 		    room_bed, 
 		    room_price,
-		    room_name	
+		    room_name,
+		    hotel_code	
 	FROM  td_room
 	where hotel_code = #{hotel_code}
 </select>
@@ -61,12 +94,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	AND   HOTEL_CODE = #{room_idx}
 </select>
 
-<select id = "room_feature" resultType= "FeatureVO">
+<select id = "room_feature"  parameterType="java.util.HashMap" resultType= "FeatureVO">
 	SELECT f.RF_NAME, r.ROOM_NAME
 	FROM TD_ROOM_INFO i, TD_ROOM_FACILITY f, TD_ROOM r
 	WHERE i.RF_IDX = f.RF_IDX
 	AND   i.ROOM_IDX = r.ROOM_IDX
 	AND   i.ROOM_IDX = #{room_idx}
+	AND   r.HOTEL_CODE = #{hotel_code}
 </select>
 
 <select id = "room_bed" resultType= "BedVO">
@@ -91,5 +125,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	SELECT * 
 	FROM TD_ROOM_IMAGE 
 	WHERE RIMAGE_IDX = #{idx}
+</select>
+
+<select id = "facilityList" resultType= "FeatureVO">
+	SELECT * 
+	FROM TD_HOTEL_FACILITY
+</select>
+
+<select id = "review" resultType= "ReviewVO">
+	SELECT ROWNUM, REVIEW_IDX, REVIEW_TITLE, REVIEW_RATE, MEMBER_ID, TO_CHAR(REVIEW_DATE, 'yyyy-mm-dd') AS REVIEW_DATE 
+	FROM TD_REVIEW
+	WHERE HOTEL_CODE = #{hotel_code}
+	ORDER BY ROWNUM DESC
+</select>
+
+<select id = "reviewDetail" resultType= "ReviewVO">
+	SELECT *
+	FROM TD_REVIEW
+	WHERE review_idx = #{review_idx}
 </select>
 </mapper>
