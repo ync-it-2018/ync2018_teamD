@@ -147,6 +147,15 @@ public class PageController {
 		
 		return "front/writereview";
 	}
+	@RequestMapping(value= "/reservation" )
+	public String reservation() {
+		log.info("reservation call.....");
+		
+		return "front/reservation";
+	}
+			
+		
+
 
 //	@RequestMapping(value = "/noticelist", method = RequestMethod.GET)
 //	public String noticelist(FnoticeVO board, Model model) throws Exception {
