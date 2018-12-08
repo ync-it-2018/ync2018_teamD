@@ -29,5 +29,9 @@ public class FhotelVO {
     private String city_name;  
     
     private String hotel_img;
+    
+    private String ROOM_NAME; //각 객실의 이름
+    
+    private int ROOM_PRICE;//객실 일반 가격
 	
 }
