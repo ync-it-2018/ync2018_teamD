@@ -59,7 +59,7 @@ public class memberController {
 		model.addAttribute("outmemberList", service.omemberlist(cri));
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
-		pageMaker.setTotalCount(service.listSearchCount(cri));
+		pageMaker.setTotalCount(service.listomemberCount(cri));
 		model.addAttribute("pageMaker", pageMaker);
 		return "/admin/member/outmemberList";
 	}

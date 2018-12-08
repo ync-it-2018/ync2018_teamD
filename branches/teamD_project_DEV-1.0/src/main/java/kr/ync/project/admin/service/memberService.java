@@ -28,5 +28,7 @@ public interface memberService {
     public List<memberVO> readbookingEnd(String member_id) throws Exception;
 
 	public List<memberVO> omemberlist(SearchCriteria cri) throws Exception;
+
+	public int listomemberCount(SearchCriteria cri) throws Exception;
     
 }
