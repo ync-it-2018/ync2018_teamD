@@ -116,6 +116,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</where>
 </select>
+<select id="listomemberCount"  resultType="int">
+	<![CDATA[
+		SELECT	count(member_id)
+		FROM	td_member
+	]]>
+	
+	<where>
+		<include refid="search"></include>
+		<![CDATA[
+			AND rownum > 0
+			and member_out <> 1
+		]]>
+	</where>
+</select>
 <select id = "readbooking" resultType = "memberVO">
 	<![CDATA[
 		SELECT
@@ -135,6 +149,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			booking_in_date > SYSDATE
 		AND
 			member_id = #{member_id}
+		AND
+			b.booking_cancle = 'N'
 	]]>
 </select>
 <select id = "readbookingEnd" resultType = "memberVO">
@@ -156,6 +172,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			booking_out_date < SYSDATE
 		AND
 			member_id = #{member_id}
+		AND
+			b.booking_cancle = 'N'
 	]]>
 </select>
 <!-- <select id="mcountPaging" resultType="int">
