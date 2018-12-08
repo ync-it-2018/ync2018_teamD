@@ -1,6 +1,8 @@
 package kr.ync.project.front.persistence;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -30,6 +32,9 @@ public class FhotelDAOImpl implements FhotelDAO {
 	
 	private static String roomdetail 
 	= "kr.ync.project.mapper.FroomMapper";
+	
+	private static String reservation 
+	= "kr.ync.project.mapper.FreservationMapper";
 	
 	@Override
 	public void create(FhotelVO vo) throws Exception {
@@ -142,6 +147,15 @@ public class FhotelDAOImpl implements FhotelDAO {
 		return session.selectList(roomdetail+".roomdetailproduct",room_idx);
 	}
 
+	@Override
+	public FhotelVO reservation(String hotel_code, int room_idx) throws Exception {
+		Map<String, Object> paraMap = new HashMap<String, Object>();
+		paraMap.put("hotel_code", hotel_code);
+	    paraMap.put("room_idx", room_idx);
+		// TODO Auto-generated method stub
+		return session.selectOne(reservation+".reservation",paraMap);
+	}
+	
 	
 
 }

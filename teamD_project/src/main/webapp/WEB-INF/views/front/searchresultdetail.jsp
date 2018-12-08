@@ -1,60 +1,58 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<title>검색결과 페이지</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="" />
-	<!-- css -->
-	<link href="/resources/front/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="/resources/front/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-	<link href="/resources/front/css/jcarousel.css" rel="stylesheet" />
-	<link href="/resources/front/css/flexslider.css" rel="stylesheet" />
-	<link href="/resources/front/css/style.css" rel="stylesheet" />
-	<link href="/resources/front/css/loginform.css" rel="stylesheet" />
+<meta charset="utf-8">
+<title>검색결과 페이지</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<!-- css -->
+<link href="/resources/front/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/resources/front/css/fancybox/jquery.fancybox.css"
+	rel="stylesheet">
+<link href="/resources/front/css/jcarousel.css" rel="stylesheet" />
+<link href="/resources/front/css/flexslider.css" rel="stylesheet" />
+<link href="/resources/front/css/style.css" rel="stylesheet" />
+<link href="/resources/front/css/loginform.css" rel="stylesheet" />
 
 
-	<!-- Theme skin -->
-	<link href="/resources/front/skins/default.css" rel="stylesheet" />
-	<script type="text/javascript">
+<!-- Theme skin -->
+<link href="/resources/front/skins/default.css" rel="stylesheet" />
+<script type="text/javascript">
+	function popupOpen() {
 
-	function popupOpen(){
+		var popUrl = "/avgresult?hotel_code=KORDAGDH"; //팝업창에 출력될 페이지 URL
 
-	var popUrl = "/avgresult?hotel_code=KORDAGDH";	//팝업창에 출력될 페이지 URL
-	
+		var popOption = "width=700, height=800, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
 
-	var popOption = "width=500, height=400, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-
-		window.open(popUrl,"",popOption);
+		window.open(popUrl, "", popOption);
 
 	}
-	function room_popupOpen(){
+	function room_popupOpen() {
 
-		var popUrl = "/roomdetail?room_idx=1";	//팝업창에 출력될 페이지 URL
-		
+		var popUrl = "/roomdetail?room_idx=1"; //팝업창에 출력될 페이지 URL
 
-		var popOption = "width=500, height=350, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		var popOption = "width=700, height=350, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
 
-			window.open(popUrl,"",popOption);
-	
-		}
+		window.open(popUrl, "", popOption);
 
-
-
+	}
 </script>
 <style>
-hr.two{width: 100%;color:black;border: thin solid black;}
-
-
+hr.two {
+	width: 100%;
+	color: black;
+	border: thin solid black;
+}
 </style>
 
 
 
 
 
-	<!-- =======================================================
+<!-- =======================================================
     Theme Name: Moderna
     Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
     Author: BootstrapMade
@@ -187,19 +185,20 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 				</div>
 			</div>
 		</section> -->
-		
+
 		<section id="content">
 			<div class="container">
 				<div class="row">
-							<form action = "#" accept-charset="utf-8" name ="person_info1" method = "get">
-            <fieldset style = "width:100%">
-                    목적지 : <input type = "text" name = "hotelname" style="WIDTH: 15%; HEIGHT: 40px"/>
-                    체크인 : <input type="date" id="checkin" name="checkin"
-                      value="yyyy-mm-dd">
-                    체크아웃 : <input type="date" id="checkout" name="checkout"
-                      value="yyyy-mm-dd">
-                      <input type="button" value="검색" 	style="WIDTH: 50px; HEIGHT: 40px" /> 
-                 <%--   <c:forEach items="${detail}" var="FdetailVO">
+					<form action="/resultlist" accept-charset="utf-8" name="person_info1"
+						method="get">
+						<fieldset style="width: 100%">
+							검색(*호텔이름이나 지역을 검색하세요) : <input type="text" name="textfiled"style="WIDTH: 15%; HEIGHT: 40px" /> 
+							<!-- 체크인 : <input type="date"id="checkin" name="checkin" value="yyyy-mm-dd"> 
+							체크아웃 : <input type="date" id="checkout" name="checkout" value="yyyy-mm-dd"> -->
+							<button id="submit">호텔 검색</button>
+						</fieldset>
+					</form>
+					<%--   <c:forEach items="${detail}" var="FdetailVO">
 						
 						<tr>
 							<td>1</td>
@@ -221,243 +220,254 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 							</td>
 						</tr>
 					</c:forEach> --%>
-                   
-                      
 
-            </fieldset>
-						<form action=#>
-					<div class="col-lg-8">
-						<article>
-							<div class="post-image">
-								<div class="post-heading">
-									<h3>${detail.hotel_name}</h3>
+
+
+					</fieldset>
+					<form action=#>
+						<div class="col-lg-8">
+							<article>
+								<div class="post-image">
+									<div class="post-heading">
+										<h3>${detail.hotel_name}</h3>
+									</div>
+									<h4>${detail.information}</h4>
 								</div>
-								<h4>${detail.information}</h4>
-							</div>
-							<!-- 슬라이더 시작 -->
-						<div id="main-slider" class="flexslider">
-						
-							<ul class="slides" >
-							<c:forEach items="${h_image}" var="ImageVO">
-								<li><img src="${ImageVO.himg_path}" height="300" width="100%"/>	
-							</c:forEach>
-							</ul>
-							
-						</div>
-						<!-- 슬라이더 끝 -->
-							
-						</article>
-						<article>
-						
-									
-								
-									<div>${detail.hotel_core_info}</div>
-									<h4>체크시 준비사항 </h4>
-									<ol>
-										<li>${detail.hotel_precautions}</li>
-										
-									</ol>
-									<h4>체크인/체크아웃 </h4>
-									<ol>
-										<li>${detail.hotel_checktime}</li>
-										
-										
-									</ol>
-									<h4>기타사항 </h4>
-									<ol>
-										
-										<li>${detail.hotel_etc}</li>
-										
-									</ol>
-									
-								
-							
-							</form>
-						</article>
-						<article>
-							<div class="post-video">
-								<div class="post-heading">
-								
-								
-								
+								<!-- 슬라이더 시작 -->
+								<div id="main-slider" class="flexslider">
+
+									<ul class="slides">
+										<c:forEach items="${h_image}" var="ImageVO">
+											<li><img src="${ImageVO.himg_path}" height="300"
+												width="100%" />
+										</c:forEach>
+									</ul>
+
 								</div>
-								<!-- <div class="video-container">
+								<!-- 슬라이더 끝 -->
+
+							</article>
+							<article>
+
+
+
+								<div>${detail.hotel_core_info}</div>
+								<h4>체크시 준비사항</h4>
+								<ol>
+									<li>${detail.hotel_precautions}</li>
+
+								</ol>
+								<h4>체크인/체크아웃</h4>
+								<ol>
+									<li>${detail.hotel_checktime}</li>
+
+
+								</ol>
+								<h4>기타사항</h4>
+								<ol>
+
+									<li>${detail.hotel_etc}</li>
+
+								</ol>
+					</form>
+					</article>
+					<article>
+						<div class="post-video">
+							<div class="post-heading"></div>
+							<!-- <div class="video-container">
 									<iframe src="http://player.vimeo.com/video/30585464?title=0&amp;byline=0">
 								</iframe>
 								</div> -->
-								
-							</div>
-							
-							
-						</article>
-					
-					</div>
-					<div class="col-lg-4">
-						<aside class="right-sidebar">
-							<div class="widget">
-								<h1 class="widgetheading">가격:${detail.room_lowprice}</h1>
-								<ul class="cat">
-									<li>
-									
-									<img src="/resources/front/img/hotel/maps.jpg" class="pull-left" alt="" />
-									</li>
-									
-								</ul>
-							</div>
-							<div class="widget" onclick="popupOpen()">
-								<h2 class="widgetheading">평점:${detail.rate}</h2>
-								<ul class="recent" onclick="popupOpen()">
-									<li>
-										<img src="/resources/front/img/hotel/avg.PNG" class="pull-left" alt="" onclick="popupOpen()"/>
-									</li>
-									
-									
-								</ul>
-							</div>
-							<div class="widget">
-								<h5 class="widgetheading">관심호텔</h5>
-								<ul class="tags">
-									<li><input type="button" value="관심호텔 등록" 	style="WIDTH: 200px; HEIGHT: 50px" /></li> <!-- 버튼 누르면 관심 호텔 등록 -->
-								</ul>
-							</div>
-						</aside>
-					</div>
+
+						</div>
+
+
+					</article>
+				</div>
+				<div class="col-lg-4">
+					<aside class="right-sidebar">
+						<div class="widget">
+							<h2 class="widgetheading">가격(최저가):${detail.room_lowprice}</h2>
+							<ul class="cat">
+								<li><img src="/resources/front/img/hotel/maps.jpg"
+									class="pull-left" alt="" /></li>
+
+							</ul>
+						</div>
+						<div class="widget" >
+							<h2 class="widgetheading">평점:${detail.rate}</h2>
+							<ul class="recent" onclick="popupOpen()">
+								<li><img src="/resources/front/img/hotel/avg.PNG"
+									class="pull-left" alt="" onclick="popupOpen()" /></li>
+
+
+							</ul>
+						</div>
+						<div class="widget">
+							<h5 class="widgetheading">관심호텔</h5>
+							<ul class="tags">
+								<li><input type="button" value="관심호텔 등록"
+									style="WIDTH: 200px; HEIGHT: 50px" /></li>
+								<!-- 버튼 누르면 관심 호텔 등록 -->
+							</ul>
+						</div>
+					</aside>
+				</div>
 				<div>
 					<hr class="two">
 					<div class="row">
-					<!-- <fieldset  style="width:100%; border:5 solid black;"> -->
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center;">객실유형</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">객실선택</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">객실정보</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">체크인</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">체크아웃</div>
-						<div class=col-lg-2 style="font-size: 2.0em;text-align: center; ">가격정보</div>
-						   </div>
-						<hr class="two">
-						<div class="row">
-						<div class=col-lg-2 style="text-align:center;" onclick="room_popupOpen()">
-						<img src="/resources/front/img/slides/1.jpg" />
-						<div style="text-align:center;">객실정보</div>
-						<div style="text-align:left;"><ol>
-							<li>숙박인원:2명</li>
-							<li>싱글 침대</li>
-							<li>UHD TV</li>
-							</ol>
+						<!-- <fieldset  style="width:100%; border:5 solid black;"> -->
+						<div class=col-lg-2 style="font-size: 2.0em; text-align: center;">객실유형</div>
+						<div class=col-lg-2 style="font-size: 2.0em; text-align: center;">객실선택</div>
+						<div class=col-lg-2 style="font-size: 2.0em; text-align: center;">객실정보</div>
+						<div class=col-lg-2 style="font-size: 2.0em; text-align: center;">체크인</div>
+						<div class=col-lg-2 style="font-size: 2.0em; text-align: center;">체크아웃</div>
+						<div class=col-lg-2 style="font-size: 2.0em; text-align: center;">가격정보</div>
+					</div>
+					<hr class="two">
+					<div class="row">
+						<div class=col-lg-2 style="text-align: center;"
+							onclick="room_popupOpen()">
+							<img src="/resources/front/img/slides/1.jpg" />
+							<div style="text-align: center;">객실정보</div>
+							<div style="text-align: left;">
+								<ol>
+									<li>숙박인원:2명</li>
+									<li>싱글 침대</li>
+									<li>UHD TV</li>
+								</ol>
 							</div>
-						</div> 
-						<div class=col-lg-2 style="text-align:center;">
-						<select name="room" style="WIDTH: 150px; HEIGHT: 30px" >
-							<option value="">객실선택</option>
-							<c:forEach items="${detailroom}" var="FdetailVO">
-							<option value="${FdetailVO.room_name}" >${FdetailVO.room_name}</option>
-							</c:forEach>
-							
-						</select></div>
-  
-						<div class=col-lg-2 style="text-align:center;">
-							<ol>
-							<li>무료wifi</li>
-							<li>무료 주차장</li>
-							<li>무료 조식</li>
-							</ol>
-						</select>
 						</div>
-						<div class=col-lg-2 style="text-align:center;" ><input type="date" id="checkin2" name="checkin2"
-                      value="yyyy-mm-dd"></div>
-                     <div class=col-lg-2 style="text-align:center;" > <input type="date" id="checkin2" name="checkin2"
-                      value="yyyy-mm-dd"></div>
-                    <div class=col-lg-2  style="text-align:center;"> <h2> 400,000</h2></div>
-                      </div>
-                      <div style="text-align:right ;">
-                      <h2><button style="WIDTH: 150px; HEIGHT: 50px">예약하기</button></h2>
-                      </div>
-                      
+						<div class=col-lg-2 style="text-align: center;">
+							<select name="room" style="WIDTH: 150px; HEIGHT: 30px">
+								<!-- <option value="">객실선택</option> -->
+								<c:forEach items="${detailroom}" var="FdetailVO">
+									<option value="${FdetailVO.room_name}">${FdetailVO.room_name}</option>
+								</c:forEach>
+
+							</select>
+						</div>
+
+						<div class=col-lg-2 style="text-align: center;">
+							<ol>
+								<li>무료wifi</li>
+								<li>무료 주차장</li>
+								<li>무료 조식</li>
+							</ol>
+							</select>
+						</div>
+						<div class=col-lg-2 style="text-align: center;">
+							<input type="date" id="checkin2" name="checkin2"
+								value="yyyy-mm-dd">
+						</div>
+						<div class=col-lg-2 style="text-align: center;">
+							<input type="date" id="checkin2" name="checkin2"
+								value="yyyy-mm-dd">
+						</div>
+						<div class=col-lg-2 style="text-align: center;">
+							<h2>400,000</h2>
+						</div>
+					</div>
+					<div style="text-align: right;">
+						<a href="/reservation?hotel_code=KORDAGDH&room_idx=1""><button type="submit" 
+								style="WIDTH: 150px; HEIGHT: 50px">예약하기</button></a>
+					</div><!--  뒤에서부터는 &로 계속 붙여준다 -->
+
 					<!-- </fieldset> -->
-					
+
 				</div>
 			</div>
+	</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="widget">
+						<h5 class="widgetheading">Get in touch with us</h5>
+						<address>
+							<strong>Moderna company Inc</strong><br> Modernbuilding
+							suite V124, AB 01<br> Someplace 16425 Earth
+						</address>
+						<p>
+							<i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
+							<i class="icon-envelope-alt"></i> email@domainname.com
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="widget">
+						<h5 class="widgetheading">Pages</h5>
+						<ul class="link-list">
+							<li><a href="#">Press release</a></li>
+							<li><a href="#">Terms and conditions</a></li>
+							<li><a href="#">Privacy policy</a></li>
+							<li><a href="#">Career center</a></li>
+							<li><a href="#">Contact us</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="widget">
+						<h5 class="widgetheading">Latest posts</h5>
+						<ul class="link-list">
+							<li><a href="#">Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit.</a></li>
+							<li><a href="#">Pellentesque et pulvinar enim. Quisque
+									at tempor ligula</a></li>
+							<li><a href="#">Natus error sit voluptatem accusantium
+									doloremque</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="widget">
+						<h5 class="widgetheading">Flickr photostream</h5>
+						<div class="flickr_badge">
+							<script type="text/javascript"
+								src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
 			</div>
-		</section>
-		<footer>
+		</div>
+		<div id="sub-footer">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3">
-						<div class="widget">
-							<h5 class="widgetheading">Get in touch with us</h5>
-							<address>
-					<strong>Moderna company Inc</strong><br>
-					 Modernbuilding suite V124, AB 01<br>
-					 Someplace 16425 Earth </address>
-							<p>
-								<i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-								<i class="icon-envelope-alt"></i> email@domainname.com
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="widget">
-							<h5 class="widgetheading">Pages</h5>
-							<ul class="link-list">
-								<li><a href="#">Press release</a></li>
-								<li><a href="#">Terms and conditions</a></li>
-								<li><a href="#">Privacy policy</a></li>
-								<li><a href="#">Career center</a></li>
-								<li><a href="#">Contact us</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="widget">
-							<h5 class="widgetheading">Latest posts</h5>
-							<ul class="link-list">
-								<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-								<li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-								<li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-3">
-						<div class="widget">
-							<h5 class="widgetheading">Flickr photostream</h5>
-							<div class="flickr_badge">
-								<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-							</div>
-							<div class="clear">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="sub-footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="copyright">
-								<p>&copy; Moderna Theme. All right reserved.</p>
-								<div class="credits">
-									<!--
+					<div class="col-lg-6">
+						<div class="copyright">
+							<p>&copy; Moderna Theme. All right reserved.</p>
+							<div class="credits">
+								<!--
                     All the links in the footer should remain intact.
                     You can delete the links only if you purchased the pro version.
                     Licensing information: https://bootstrapmade.com/license/
                     Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Moderna
                   -->
-									<a href="https://bootstrapmade.com/">Free Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-								</div>
+								<a href="https://bootstrapmade.com/">Free Bootstrap Themes</a>
+								by <a href="https://bootstrapmade.com/">BootstrapMade</a>
 							</div>
 						</div>
-						<div class="col-lg-6">
-							<ul class="social-network">
-								<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-								<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
+					</div>
+					<div class="col-lg-6">
+						<ul class="social-network">
+							<li><a href="#" data-placement="top" title="Facebook"><i
+									class="fa fa-facebook"></i></a></li>
+							<li><a href="#" data-placement="top" title="Twitter"><i
+									class="fa fa-twitter"></i></a></li>
+							<li><a href="#" data-placement="top" title="Linkedin"><i
+									class="fa fa-linkedin"></i></a></li>
+							<li><a href="#" data-placement="top" title="Pinterest"><i
+									class="fa fa-pinterest"></i></a></li>
+							<li><a href="#" data-placement="top" title="Google plus"><i
+									class="fa fa-google-plus"></i></a></li>
+						</ul>
 					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 	</div>
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 	<!-- javascript
@@ -475,7 +485,7 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 	<script src="/resources/front/js/animate.js"></script>
 	<script src="/resources/front/js/custom.js"></script>
 	<script src="/resources/front/js/login/login.js"></script>
-	
+
 </body>
 
 </html>

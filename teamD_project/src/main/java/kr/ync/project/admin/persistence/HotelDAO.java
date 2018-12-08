@@ -1,11 +1,13 @@
 package kr.ync.project.admin.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 
 import kr.ync.project.admin.domain.BedVO;
 import kr.ync.project.admin.domain.FeatureVO;
 import kr.ync.project.admin.domain.HotelVO;
 import kr.ync.project.admin.domain.ImageVO;
+import kr.ync.project.admin.domain.ReviewVO;
 import kr.ync.project.admin.domain.RoomVO;
 
 public interface HotelDAO {
@@ -16,7 +18,7 @@ public interface HotelDAO {
 
 	public void update(HotelVO vo) throws Exception;
 
-	public void delete(Integer bno) throws Exception;
+	public void delete(String hotel_code) throws Exception;
 	
 	public void updateReplyCnt(Integer bno, int amount) throws Exception;
 	
@@ -26,7 +28,7 @@ public interface HotelDAO {
 	
 	public List<FeatureVO> hotel_feature(String hotel_code)throws Exception;
 
-	public List<FeatureVO> room_feature(int room_idx)throws Exception;
+	public List<FeatureVO> room_feature(HashMap h_data)throws Exception;
 	
 	public List<BedVO> room_bed(int room_idx)throws Exception;
 	
@@ -35,6 +37,12 @@ public interface HotelDAO {
 	public List<ImageVO> hotel_image(String hotel_code)throws Exception;
 	
 	public ImageVO rimage_detail(int idx)throws Exception;
+	
+	public List<FeatureVO> facilityList() throws Exception;
+
+	public List<ReviewVO> review(String hotel_code) throws Exception;
+	
+	public ReviewVO reviewDetail(int idx) throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   

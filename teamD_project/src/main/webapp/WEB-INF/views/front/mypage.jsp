@@ -293,25 +293,46 @@
 								</div>
 							</div>
 							<p>예약 취소 페이지</p>
-							<table class="table">
-								<tr>
-									<th>선택</th>
-									<th>등록번호</th>
-									<th>호텔 명</th>
-									<th>체크인</th>
-									<th>체크아웃</th>
-								</tr>
-								<c:forEach items="${resvChkinFutureList}"  var="resvChkinFutureList">
+							<form method="POST" action="/resvCancel">
+								<table class="table" id="cancelTable">
 									<tr>
-										<td><input type="radio" name="resvCancelChk"/>
-										<td>${resvChkinFutureList.BOOKING_IDX}</td>
-										<td>${resvChkinFutureList.HOTEL_NAME}</td>
-										<td>${resvChkinFutureList.BOOKING_IN_DATE}</td>
-										<td>${resvChkinFutureList.BOOKING_OUT_DATE}</td>
+										<th>등록번호</th>
+										<th>호텔 명</th>
+										<th>체크인</th>
+										<th>체크아웃</th>
+										<th>삭제하기</th>
 									</tr>
-								</c:forEach>
-							</table>
-							<button class="btn-danger">삭제하기</button>
+									<c:forEach items="${resvChkinFutureList}"  var="resvChkinFutureList" varStatus="cancelRowChk">
+										<tr>
+											<td>${resvChkinFutureList.BOOKING_IDX}</td>
+											<td>${resvChkinFutureList.HOTEL_NAME}</td>
+											<td>${resvChkinFutureList.BOOKING_IN_DATE}</td>
+											<td>${resvChkinFutureList.BOOKING_OUT_DATE}</td>
+											<td><button type="submit" class="btn-danger"  id="cancelSubmitBtn">삭제하기</button>
+											       <input type="hidden" name="BOOKING_IDX" value="${resvChkinFutureList.BOOKING_IDX}"/>
+											</td>
+										</tr>
+									</c:forEach>
+								</table>
+							</form>
+							
+							<table class="table" id="cancelListTable">
+									<tr>
+										<th>등록번호</th>
+										<th>호텔 명</th>
+										<th>체크인</th>
+										<th>체크아웃</th>
+									</tr>
+									<c:forEach items="${resvCancelList}"  var="resvCancelList" >
+										<tr>
+											<td>${resvCancelList.BOOKING_IDX}</td>
+											<td>${resvCancelList.HOTEL_NAME}</td>
+											<td>${resvCancelList.BOOKING_IN_DATE}</td>
+											<td>${resvCancelList.BOOKING_OUT_DATE}</td>
+										</tr>
+									</c:forEach>
+								</table>
+							
 							
 							<div class="bottom-article">
 								<ul class="meta-post">

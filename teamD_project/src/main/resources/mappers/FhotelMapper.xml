@@ -16,7 +16,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    hotel_code, 
 		    hotel_name, 
 		    nation_name, 
-		    city_name		
+		    city_name,		
+		    hotel_img
 	FROM td_hotel h, td_nation n, td_city c
 	where h.nation_code = n.nation_code
 	and   h.city_code = c.city_code

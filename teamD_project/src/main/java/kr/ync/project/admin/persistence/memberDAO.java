@@ -30,4 +30,8 @@ public interface memberDAO {
 	public int mcountPaging(Criteria cri) throws Exception;
 	
 	public int listSearchCount(SearchCriteria cri)throws Exception;
+
+	public List<memberVO> omemberlist(SearchCriteria cri) throws Exception;
+
+	public int listomemberCount(SearchCriteria cri) throws Exception;
 }

@@ -75,6 +75,18 @@ public class memberServiceImpl implements memberService {
 	public List<memberVO> readbookingEnd(String member_id) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.readbookingEnd(member_id);
+	}
+
+	@Override
+	public List<memberVO> omemberlist(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.omemberlist(cri);
+	}
+
+	@Override
+	public int listomemberCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listomemberCount(cri);
 	}	
 
 }

@@ -22,7 +22,7 @@
   <thead>
   
     <tr>
-      <th scope="col" style="text-align:left;">${roomdetail.ROOM_NAME}</th>
+      <th scope="col" style="text-align:left;"><h2>${roomdetail.ROOM_NAME}</h2></th>
     </tr>
   </thead>	
   <tbody>
@@ -47,7 +47,9 @@
 
 			
 			</th>
-				<td>침대:${roomdetail.BED_NAME}	${roomdetail.BED_CNT}개</td>
+				<td><div>침대:${roomdetail.BED_NAME}${roomdetail.BED_CNT}개</div>
+					<div>최대인원:어른(${roomdetail.ROOM_PEOPLENUM})어린이(${roomdetail.ROOM_PEOPLENUM_K})</div>
+				</td>
 			</tr>
 			
 			

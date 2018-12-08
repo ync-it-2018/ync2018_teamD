@@ -247,55 +247,60 @@
 							<option value="">높은가격순</option>
 							<option value="">낮은가격순</option>
 						</select> </formname>
+
+
+
+
 						<div class="wrapper p4">
+							<c:forEach items="${list}" var="FhotelVO">
+								<article class="grid_4 alpha">
+									<div class="indent-left hotelList">
+										<figure class="frame2 p2">
 
-							<article class="grid_4 alpha">
-								<div class="indent-left hotelList">
-									<figure class="frame2 p2">
-									
-										<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
-											<tr>
-											<%-- <td>${list[0].hotel_name}</td> --%>
-											<td>${FhotelVO.hotel_name}</td>
-											</tr>
-										</c:forEach>
-										<br>
-										<!-- <div class="color-4 prev-indent-bot hotelName">노보텔</div> -->
-										<div class="col-lg-6 hotelList">
-											<img src="/resources/front/img/hotel/hotel1.jpg" alt="" />
-										</div>
-										<div class="col-lg-6 hotelList">
-											<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
-											<tr>
-											<td>위치 : ${FhotelVO.city_name}</td>
-											</tr>
-											</c:forEach><br><br>
-											<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
-											<tr>
-											<td>평점 : ${FhotelVO.rate}</td>
-											</tr>
-											</c:forEach><br><br>
-											<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
-											<tr>
-											<td>정보 : ${FhotelVO.information}</td>
-											</tr>
-											</c:forEach><br><br>
-											<c:forEach items="${list}" var="FhotelVO" begin="0" end="0" step="1">
-											<tr>
-											<td>가격 : ${FhotelVO.room_lowprice}</td>
-											</tr>
-											</c:forEach><br><br>
+											<div>
+												${FhotelVO.hotel_name}
+												<!-- <div class="color-4 prev-indent-bot hotelName">노보텔</div> -->
+												<table>
+													<tr>
+														<td>
+															<div class="col-lg-6 hotelList">
+																<div>
+																	<%-- <td>${list[0].hotel_name}</td> --%>
+																	<%-- <td>${FhotelVO.hotel_name}</td> --%>
+																	<img src="${FhotelVO.hotel_img}">
+																</div>
+																<!-- <img src="/resources/front/img/hotel/hotel1.jpg" alt="" /> -->
+															</div>
+														</td>
+													</tr>
+												</table>
+												<div class="col-lg-6 hotelList">
+													<table class="table">
+														<tr>
+															<td>위치 : ${FhotelVO.city_name}</td>
+														</tr>
+														<tr>
+															<td>평점 : ${FhotelVO.rate}</td>
+														</tr>
+														<tr>
+															<td>정보 : ${FhotelVO.information}</td>
+														</tr>
+														<tr>
+															<td>가격 : ${FhotelVO.room_lowprice}</td>
+														</tr>
+													</table>
+													<div class="wrapper">
+														<!-- <span class="price fleft">200,000</span>  -->
+														<a class="button fright"
+															href="/searchresultdetail?hotel_code=KORDAGDH">상세보기</a>
+													</div>
+												</div>
+											</div>
 
-											<div class="wrapper">
-												<!-- <span class="price fleft">200,000</span>  -->
-												<a class="button fright" href="/searchresultdetail?hotel_code=KORDAGDH">상세보기</a>
-											</div> 
-										</div>
-									</figure>
-
-								</div>
-							</article>
-
+										</figure>
+									</div>
+								</article>
+							</c:forEach>
 							<!-- <article class="grid_4 alpha">
 								<div class="indent-left hotelList">
 									<figure class="frame2 p2">

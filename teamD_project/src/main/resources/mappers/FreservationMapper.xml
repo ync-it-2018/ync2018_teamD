@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- maven build 시 mapper xml찾지못하는 오류 방지하기위해 임시로 작성한 mapper xml -->
+<mapper namespace="kr.ync.project.mapper.FreservationMapper"> <!-- 네임스페이스 잘보자  -->
+
+
+<select id = "reservation" parameterType="map" resultType= "FhotelVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
+	SELECT 	
+			tr.ROOM_IDX,
+			ROOM_NAME,
+			HOTEL_NAME,
+			ROOM_PRICE,
+			tr.HOTEL_CODE
+	FROM td_room tr, td_hotel th 
+	where tr.hotel_code = th.hotel_code	<!--셀렉트원이랑 리스트 받아오는 차이 확인  -->
+	and   tr.hotel_code = #{hotel_code}
+ 	and   tr.room_idx = #{room_idx}
+ 	
+</select>
+
+
+
+ 
+
+
+</mapper>
