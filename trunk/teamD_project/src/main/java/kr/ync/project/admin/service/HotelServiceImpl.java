@@ -112,6 +112,24 @@ public class HotelServiceImpl implements HotelService {
 		return dao.reviewDetail(idx);
 	}
 
+	@Override
+	public void reviewDelete(int idx) throws Exception {
+		// TODO Auto-generated method stub
+		dao.r_delete(idx);
+	}
+
+	@Override
+	public int listcnt() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listCnt();
+	}
+
+	@Override
+	public int reviewcnt() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.reviewCnt();
+	}
+
 	
 
 	

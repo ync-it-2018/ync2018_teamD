@@ -36,7 +36,7 @@ public interface FhotelService {
 
       public FhotelVO reservation(String hotel_code, int room_idx)throws Exception; //예약하기
       
-
+      public List<FhotelVO> nationList() throws Exception;
 //      public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 //      
 //      public int listCountCriteria(Criteria cri) throws Exception;

@@ -42,13 +42,13 @@
 	<div id="login" class="modal">
 
 		<!-- Modal Content -->
-		<form method="POST" class="modal-content animate" action="/loginPost">
+		<form id="loginForm" method="POST" class="modal-content animate" action="/loginPost">
 
 			<div class="modal-container">
-				<label for="uid"><b>Username</b></label> <input type="text"
-					placeholder="Enter Username" name="member_id" required id="member_id">
+				<label for="uid"><b>Username</b></label> <input class="form-control form-control-lg" type="text"
+					placeholder="Enter Username" name="MEMBER_ID" required id="member_id">
 				<label for="pwd"><b>Password</b></label> <input
-					type="password" placeholder="Enter Password" name="member_password" required id="member_password">
+					type="password" placeholder="Enter Password" name="MEMBER_PASSWORD" required id="member_password">
 				<button type="submit" style="margin: 3px" class="btn btn-success"
 					id="login">로그인</button>
 				<button type="button" style="margin: 3px" class="btn btn-danger"
@@ -69,20 +69,20 @@
 	<div id="register" class="modal">
 
 		<!-- Modal Content -->
-		<form class="modal-content animate" action="/register_proc/">
+		<form id="registerForm" class="modal-content animate"  method="POST"  action="/register_proc">
 
 			<div class="modal-container">
 				<table class="table">
 					<tr>
 						<th><label for="uid"><b>User ID (E-mail)</b></label></th>
-						<td><input type="text" placeholder="Enter Username" required
-							id="regi_uid">
-							<button type="button" class="btn btn-default" name="doublechk">중복확인</button></td>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Username" required
+							id="regi_uid" name="MEMBER_ID">
+							<button type="button" class="btn btn-default"  id="doublechk">중복확인</button></td>
 					</tr>
 					<tr>
 						<th><label for="pwd"><b>Password</b></label></th>
 						<td><input type="password" placeholder="Enter Password"
-							required id="regi_password"></td>
+							required id="regi_password" name="MEMBER_PASSWORD"></td>
 					</tr>
 					<tr>
 						<th><label for="pwdchk"><b>Password Check</b></label></th>
@@ -96,6 +96,41 @@
 						</td>
 					</tr>
 					<tr>
+						<th><label for="uPhone"><b>Telephone</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Phone Number" required
+							id="regi_phone" name="MEMBER_PNUMBER">
+					</tr>
+					<tr>
+						<th><label for="uNation"><b>Nation</b></label></th>
+						<td>
+							<!-- 국가코드 테스트용 수동 입력부분 -->
+							<!-- <input class="form-control form-control-lg" type="text" placeholder="Enter Nation" required
+							id="regi_nation" name="NATION_CODE"> -->
+							
+							<!-- 국가코드 리스트 생성 -->
+							<select class="form-control" name="NATION_CODE">
+								<option selected disabled hidden="true"> 국가 선택 </option>
+								<c:forEach items="${nationList}" var="FhotelVO" >
+									<option value="${FhotelVO.nation_code}">${FhotelVO.nation_name}</option>
+								</c:forEach>
+							</select>
+					</tr>
+					<tr>
+						<th><label for="uAddress"><b>Address</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Address" required
+							id="regi_address" name="MEMBER_ADDRESS">
+					</tr>
+					<tr>
+						<th><label for="fname"><b>First Name</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter First Name" required
+							id="regi_fianame" name="MEMBER_FIANAME">
+					</tr>
+					<tr>
+						<th><label for="lname"><b>Last Name</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Last Name" required
+							id="regi_laname" name="MEMBER_LANAME">
+					</tr>
+					<tr>
 						<td colspan="2">
 							<button type="submit" class="btn btn-success">회원가입</button>
 							<button type="button" style="margin: 3px" class="btn btn-danger"
@@ -103,10 +138,6 @@
 						</td>
 					</tr>
 				</table>
-			</div>
-			<div class="modal-container" style="background-color: #f1f1f1">
-
-				<span class="pwd">Forgot <a href="#">password?</a></span>
 			</div>
 		</form>
 	</div>
@@ -128,7 +159,7 @@
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/">Home</a></li>
-							<li><a href="/typography">SearchList</a></li>
+							<li><a href="/searchresult">SearchList</a></li>
 							<!-- 드롭다운 예제 	
 							<li class="dropdown"><a href="#" class="dropdown-toggle "
 								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
@@ -195,7 +226,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<!-- 검색 내용이 들어갈 공간  -->
-					<!-- searchresult에 POST로 전송  -->
+					<!-- searchresult에 GET으로 전송  -->
 					<form method="GET" action="/resultlist">
 
 						<table class="table">
@@ -427,6 +458,7 @@
 	<!-- javascript
     ================================================== -->
 	<!-- 문서의 아랫쪽에 스크립트를 호출함으로써 페이지 로딩 속도 향상 -->
+
 	<script src="/resources/front/js/jquery.js"></script>
 	<script src="/resources/front/js/jquery.easing.1.3.js"></script>
 	<script src="/resources/front/js/bootstrap.min.js"></script>

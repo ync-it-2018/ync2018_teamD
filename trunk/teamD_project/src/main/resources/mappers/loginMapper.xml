@@ -6,27 +6,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.LoginMapper">
 
 	<select id="login" resultType="LoginVO">
-		select	member_id,
-				member_password,
-				member_fianame
-		from	td_member
-		where	member_id = #{member_id}
-		and		member_password = #{member_password}
+		SELECT MEMBER_ID, MEMBER_PASSWORD, MEMBER_FIANAME
+		FROM TD_MEMBER
+		WHERE MEMBER_ID = #{MEMBER_ID}
+		AND MEMBER_PASSWORD = #{MEMBER_PASSWORD}
 	</select>
-  
-<!-- 	<update id="keepLogin" >
-		UPDATE tbl_user SET 	sessionKey = #{sessionId},
-	  							sessionLimit = #{next}
-		WHERE uids = #{uids}
-	</update>
 
-	<select id="checkUserWithSessionKey" resultType="UserVO">
-		SELECT 	*
-		FROM	tbl_user
-		WHERE	sessionKey = #{value}
-		AND		sessionlimit > SYSDATE
-	</select>	
- -->
+
+	<select id="register" resultType="LoginVO">
+		INSERT INTO TD_MEMBER
+		(MEMBER_ID, MEMBER_PASSWORD, MEMBER_PNUMBER, MEMBER_ADDRESS,
+		MEMBER_OUT, NATION_CODE, MEMBER_FIANAME, MEMBER_LANAME,
+		MEMBER_IDX)
+		VALUES (
+			<!-- 
+				MEMBER_OUT은 초기값 1로 지정
+				MEMBER_IDX는 현재 DB의 최대값보다 1 높은 값을 부여함으로써 중복 방지
+			-->
+			#{MEMBER_ID}, #{MEMBER_PASSWORD}, #{MEMBER_PNUMBER},
+			#{MEMBER_ADDRESS}, 1, #{NATION_CODE}, 
+			#{MEMBER_FIANAME}, #{MEMBER_LANAME}, 
+			(SELECT MAX(MEMBER_IDX)+1 AS NEW_IDX FROM TD_MEMBER))
+	</select>
+	
+	<!-- <update id="keepLogin" > UPDATE tbl_user SET sessionKey = #{sessionId}, 
+		sessionLimit = #{next} WHERE uids = #{uids} </update> <select id="checkUserWithSessionKey" 
+		resultType="UserVO"> SELECT * FROM tbl_user WHERE sessionKey = #{value} AND 
+		sessionlimit > SYSDATE </select> -->
 </mapper>
 
 

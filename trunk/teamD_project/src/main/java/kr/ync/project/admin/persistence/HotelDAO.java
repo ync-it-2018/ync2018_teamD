@@ -43,6 +43,12 @@ public interface HotelDAO {
 	public List<ReviewVO> review(String hotel_code) throws Exception;
 	
 	public ReviewVO reviewDetail(int idx) throws Exception;
+	
+	public void r_delete(int idx) throws Exception;
+
+	public int listCnt() throws Exception;
+
+	public int reviewCnt() throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   

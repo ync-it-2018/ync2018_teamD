@@ -21,24 +21,34 @@
 <!-- Theme skin -->
 <link href="/resources/front/skins/default.css" rel="stylesheet" />
 <script type="text/javascript">
+
+	function room_popupOpen() {
+	
+		var popUrl = "/roomdetail?room_idx=1"; //팝업창에 출력될 페이지 URL
+	
+		var popOption = "width=700, height=350, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
+	
+		window.open(popUrl, "", popOption);
+	
+	}
 	function popupOpen() {
 
-		var popUrl = "/avgresult?hotel_code=KORDAGDH"; //팝업창에 출력될 페이지 URL
+		var popUrl = "/avgresult?hotel_code="+ "${read.hotel_code}"; //팝업창에 출력될 페이지 URL
 
 		var popOption = "width=700, height=800, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
 
 		window.open(popUrl, "", popOption);
 
 	}
-	function room_popupOpen() {
 
-		var popUrl = "/roomdetail?room_idx=1"; //팝업창에 출력될 페이지 URL
-
-		var popOption = "width=700, height=350, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
-
-		window.open(popUrl, "", popOption);
-
+		
+	
+	function hotel_enrollment() {
+		alert("관심호텔로 등록하였습니다.");
+		
+		
 	}
+	
 </script>
 <style>
 hr.two {
@@ -192,7 +202,7 @@ hr.two {
 					<form action="/resultlist" accept-charset="utf-8" name="person_info1"
 						method="get">
 						<fieldset style="width: 100%">
-							검색(*호텔이름이나 지역을 검색하세요) : <input type="text" name="textfiled"style="WIDTH: 15%; HEIGHT: 40px" /> 
+							검색(*호텔이름이나 지역을 검색하세요) : <input type="text" name="textfield"style="WIDTH: 15%; HEIGHT: 40px" /> 
 							<!-- 체크인 : <input type="date"id="checkin" name="checkin" value="yyyy-mm-dd"> 
 							체크아웃 : <input type="date" id="checkout" name="checkout" value="yyyy-mm-dd"> -->
 							<button id="submit">호텔 검색</button>
@@ -306,8 +316,7 @@ hr.two {
 						<div class="widget">
 							<h5 class="widgetheading">관심호텔</h5>
 							<ul class="tags">
-								<li><input type="button" value="관심호텔 등록"
-									style="WIDTH: 200px; HEIGHT: 50px" /></li>
+									 <li><button style="WIDTH: 200px; HEIGHT: 50px;"  id="button1" onclick="hotel_enrollment(); ">관심호텔 등록</button></li> 
 								<!-- 버튼 누르면 관심 호텔 등록 -->
 							</ul>
 						</div>

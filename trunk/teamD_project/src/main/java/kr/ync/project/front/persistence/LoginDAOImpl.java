@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.ync.project.front.domain.LoginVO;
 import kr.ync.project.front.dto.LoginDTO;
+import kr.ync.project.front.dto.RegisterDTO;
 import lombok.extern.slf4j.Slf4j;
 
 @Repository
@@ -22,23 +23,15 @@ public class LoginDAOImpl implements LoginDAO {
 		log.info("LoginDAO ..........");
 		return session.selectOne(namespace + ".login", dto);
 	}
-/*
+
+	/* (non-Javadoc)
+	 * @see kr.ync.project.front.persistence.LoginDAO#register(kr.ync.project.front.dto.RegisterDTO)
+	 */
 	@Override
-	public void keepLogin(String uids, String sessionId, Date next) {
-
-		Map<String, Object> paramMap = new HashMap<String, Object>();
-		paramMap.put("uids", uids);
-		paramMap.put("sessionId", sessionId);
-		paramMap.put("next", next);
-
-		session.update(namespace + ".keepLogin", paramMap);
-
+	public LoginVO register(RegisterDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		
+		log.info("RegisterDAO ..........");
+		return session.selectOne(namespace + ".register", dto);
 	}
-
-	@Override
-	public LoginVO checkUserWithSessionKey(String value) {
-
-		return session.selectOne(namespace + ".checkUserWithSessionKey", value);
-	}
-*/
 }

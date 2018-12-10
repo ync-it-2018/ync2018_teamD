@@ -15,13 +15,12 @@ $(document).ready(function() {
 	$('[name=cancelbtn]').on('click', function() {
 		loginmdl.style.display = 'none';
 		regimdl.style.display = 'none';
-		document.getElementById('uid').value = "";
-		document.getElementById('pwd').value = "";
-		document.getElementById('regi_uid').value = "";
-		document.getElementById('regi_password').value = "";
-		document.getElementById('regi_passwordchk').value = "";
 		$(".alert-success").hide();
 		$(".alert-danger").hide();
+		$("#loginForm")[0].reset();
+		$("#registerForm")[0].reset();
+		
+
 	})
 
 	// 회원가입 모달로 전환
@@ -33,13 +32,12 @@ $(document).ready(function() {
 	// 모달 배경색을 클릭했을 경우 현재 모달 창을 닫음
 	$(window).on('click', function(event) {
 		if (event.target == loginmdl || event.target == regimdl) {
+			$("#loginForm")[0].reset();
+			$("#registerForm")[0].reset();
+		
 			loginmdl.style.display = "none";
 			regimdl.style.display = 'none';
-			document.getElementById('uid').value = "";
-			document.getElementById('pwd').value = "";
-			document.getElementById('regi_uid').value = "";
-			document.getElementById('regi_password').value = "";
-			document.getElementById('regi_passwordchk').value = "";
+
 			$(".alert-success").hide();
 			$(".alert-danger").hide();
 		}

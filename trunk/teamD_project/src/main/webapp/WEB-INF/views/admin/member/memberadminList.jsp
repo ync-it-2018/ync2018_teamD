@@ -10,16 +10,11 @@
 		float:right;
 	}
 </style>
-<script>
-function modify(member_id){
-	window.location.href="/admin/memberModify?member_id="+member_id;
-}
-</script>
 		<section class="content-header">
           <h1>Member Manage</h1>
           <ol class="breadcrumb">
             <li><a href="/admin/memberList"><i class="fa fa-dashboard"></i> Member Manage</a></li>
-            <li><a href="/admin/memberList">MemberList</a></li>
+            <li><a href="/admin/memberList">Admin MemberList</a></li>
           </ol>
         </section>
     <!-- Main content -->
@@ -31,31 +26,28 @@ function modify(member_id){
 
 		<div class="box">
             <div class="box-header with-border">
-            	<h3 class="box-title">Member List</h3>
+            	<h3 class="box-title">Admin MemberList</h3>
             </div>
             
             <div class="box-body">
 				<table class="table table-bordered">
 					<tr>
 						<th style="width: 10px">NO</th>
+						<th>ID</th>
 						<th>E-mail</th>
-						<th>Name</th>
 						<th>Join_Date</th>
 						<th>Manage</th>
 					</tr>
-				<c:forEach items="${memberList}" var="memberVO" varStatus="status">
+				<c:forEach items="${memberadminList}" var="AdminVO" varStatus="status">
 					<tr>
-						<td>${memberVO.member_idx }</td>
+						<td>${AdminVO.admin_idx }</td>
 						<!--<td>${status.count} </td>-->
 						<td>
-						<a href="/admin/memberDetail?member_id=${memberVO.member_id }"> ${memberVO.member_id }</a>
+						<a href="/admin/memberDetail?member_id=${AdminVO.admin_id }"> ${AdminVO.admin_id }</a>
 						</td>
-						<td>${memberVO.member_fianame }</td>
-						<td>${memberVO.member_joindate}</td>
-						<td>
-							<input type="button" value="수정" onclick= "modify('${member.member_id}')" class="btn btn-primary" style="margin:20px 0px 10px 830px ;" id='modi'/>
-							<button id=''>삭제</button>
-						</td>
+						<td>${AdminVO.admin_email }</td>
+						<td>${AdminVO.admin_grade}</td>
+						<td><button id=''>수정</button><button id=''>삭제</button></td>
 					</tr>
 				</c:forEach>
 				</table>
@@ -64,16 +56,16 @@ function modify(member_id){
 				<div class="text-center">
 					<ul class="pagination">
 						<c:if test="${pageMaker.prev}">
-							<li><a href="memberList${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>	
+							<li><a href="memberadminList${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>	
 						</c:if>
 						<c:forEach begin="${pageMaker.startPage}"
 							end="${pageMaker.endPage }" var="idx">
 							<li <c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-								 <a href="memberList${pageMaker.makeSearch(idx)}">${idx}</a>
+								 <a href="memberadminList${pageMaker.makeSearch(idx)}">${idx}</a>
 							</li> 
 						</c:forEach>
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-							<li><a href="memberList${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+							<li><a href="memberadminList${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
 						</c:if>
 					</ul>
 				</div>

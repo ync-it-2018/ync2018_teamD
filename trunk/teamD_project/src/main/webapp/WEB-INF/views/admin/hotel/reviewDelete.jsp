@@ -9,13 +9,13 @@
 	<title></title>
 
 </head>
-<body  onload = "h_delete()">
+<body  onload = "r_close()">
 	
 </body>
 <script>
-	function h_delete(){
+	function r_close(){
 		alert("삭제되었습니다.");
-		window.location.href="/admin/hotelList";
+		self.close();	
 	}	
 </script>
 </html>

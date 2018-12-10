@@ -63,4 +63,14 @@ public class memberController {
 		model.addAttribute("pageMaker", pageMaker);
 		return "/admin/member/outmemberList";
 	}
+	
+	@RequestMapping(value = "/memberadminList", method = RequestMethod.GET)
+	public String memberadminList(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
+		model.addAttribute("memberadminList", service.memberadminList(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.listmemberadminCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		return "/admin/member/memberadminList";
+	}
 }

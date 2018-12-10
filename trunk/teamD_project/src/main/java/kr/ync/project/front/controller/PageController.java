@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.domain.LoginVO;
+import kr.ync.project.front.dto.RegisterDTO;
 import kr.ync.project.front.service.FhotelService;
 import kr.ync.project.front.service.FmypageService;
+import kr.ync.project.front.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -21,7 +24,10 @@ public class PageController {
 
 	@Inject
 	private FmypageService mypageService;
-	
+
+	@Inject
+	private UserService userService;
+
 	@Inject
 	private FhotelService service;
 
@@ -40,6 +46,7 @@ public class PageController {
 		model.addAttribute("detailroom", service.detailroom(hotel_code)); //최종적으로불러올이름
 		model.addAttribute("detail", service.detail(hotel_code));
 		model.addAttribute("h_image", service.hotel_image(hotel_code)); //h_image는 포이치문 아이템즈
+		model.addAttribute("read", service.read(hotel_code));
 		return "front/searchresultdetail"; //최종적으로 페이지
 	}
 	
@@ -155,12 +162,6 @@ public class PageController {
 		
 		return "front/writereview";
 	}
-	/*@RequestMapping(value= "/reservation" )
-	public String reservation() {
-		log.info("reservation call.....");
-		
-		return "front/reservation";
-	}*/
 	@RequestMapping(value= "/reservation" , method = RequestMethod.GET)
 	public String reservation(@RequestParam("hotel_code") String hotel_code,
 			@RequestParam("room_idx") int room_idx,Model model) throws Exception {
@@ -169,7 +170,25 @@ public class PageController {
 		return "front/reservation"; //최종적으로 페이지
 	
 	}
+			
+	@RequestMapping(value = "/register_proc", method = RequestMethod.POST)
+	public String register(
+			@RequestParam("MEMBER_ID") String MEMBER_ID,
+			@RequestParam("MEMBER_PASSWORD") String MEMBER_PASSWORD,
+			@RequestParam("MEMBER_PNUMBER") String MEMBER_PNUMBER,
+			@RequestParam("MEMBER_ADDRESS") String MEMBER_ADDRESS,
+			@RequestParam("NATION_CODE") String NATION_CODE,
+			@RequestParam("MEMBER_FIANAME") String MEMBER_FIANAME,
+			@RequestParam("MEMBER_LANAME") String MEMBER_LANAME,
+			Model model, RegisterDTO dto) throws Exception {
+		// preHandle (not used 라도 필요함)
+		LoginVO vo = userService.register(dto);
+		log.info("register call.....");
 		
+		model.addAttribute("register", userService);
+				
+		return "front/resvCancel";
+	}
 
 
 //	@RequestMapping(value = "/noticelist", method = RequestMethod.GET)

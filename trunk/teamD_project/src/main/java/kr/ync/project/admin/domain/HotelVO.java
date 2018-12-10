@@ -8,6 +8,8 @@ import lombok.ToString;
 @Setter
 @ToString
 public class HotelVO {
+	private int rownum;
+	
 	private String address;
 
 	private int room_lowprice;

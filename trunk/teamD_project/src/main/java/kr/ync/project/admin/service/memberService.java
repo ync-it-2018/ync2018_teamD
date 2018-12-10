@@ -2,6 +2,7 @@ package kr.ync.project.admin.service;
 
 import java.util.List;
 
+import kr.ync.project.admin.domain.AdminVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.domain.memberVO;
@@ -30,5 +31,9 @@ public interface memberService {
 	public List<memberVO> omemberlist(SearchCriteria cri) throws Exception;
 
 	public int listomemberCount(SearchCriteria cri) throws Exception;
+
+	public List<AdminVO> memberadminList(SearchCriteria cri) throws Exception;
+
+	public int listmemberadminCount(SearchCriteria cri) throws Exception;
     
 }

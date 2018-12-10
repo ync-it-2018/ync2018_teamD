@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.admin.domain.AdminVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.domain.memberVO;
@@ -107,6 +108,18 @@ public class memberDAOImpl implements memberDAO{
 	public int listomemberCount(SearchCriteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".listomemberCount", cri);
+	}
+
+	@Override
+	public List<AdminVO> memberadminList(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace+".memberadminList", cri);
+	}
+
+	@Override
+	public int listmemberadminCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".listmemberadminCount", cri);
 	}
 
 	

@@ -156,7 +156,7 @@
               <ul class="treeview-menu">
                 <li><a href="/admin/memberList"><i class="fa fa-circle-o"></i> Member List</a></li>
                 <li><a href="/admin/outmemberList"><i class="fa fa-circle-o"></i> Exit Member Manage</a></li>
-                <li><a href="/admin/memberList"><i class="fa fa-circle-o"></i> Admin Member List</a></li>
+                <li><a href="/admin/memberadminList"><i class="fa fa-circle-o"></i> Admin Member List</a></li>
                 
               </ul>
             </li>
