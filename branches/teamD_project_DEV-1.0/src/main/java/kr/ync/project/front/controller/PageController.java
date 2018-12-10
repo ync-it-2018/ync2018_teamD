@@ -46,6 +46,7 @@ public class PageController {
 		model.addAttribute("detailroom", service.detailroom(hotel_code)); //최종적으로불러올이름
 		model.addAttribute("detail", service.detail(hotel_code));
 		model.addAttribute("h_image", service.hotel_image(hotel_code)); //h_image는 포이치문 아이템즈
+		model.addAttribute("read", service.read(hotel_code));
 		return "front/searchresultdetail"; //최종적으로 페이지
 	}
 	
@@ -161,11 +162,13 @@ public class PageController {
 		
 		return "front/writereview";
 	}
-	@RequestMapping(value= "/reservation" )
-	public String reservation() {
+	@RequestMapping(value= "/reservation" , method = RequestMethod.GET)
+	public String reservation(@RequestParam("hotel_code") String hotel_code,
+			@RequestParam("room_idx") int room_idx,Model model) throws Exception {
 		log.info("reservation call.....");
-		
-		return "front/reservation";
+		model.addAttribute("reservation", service.reservation(hotel_code,room_idx)); //최종적으로불러올이름
+		return "front/reservation"; //최종적으로 페이지
+	
 	}
 			
 	@RequestMapping(value = "/register_proc", method = RequestMethod.POST)
