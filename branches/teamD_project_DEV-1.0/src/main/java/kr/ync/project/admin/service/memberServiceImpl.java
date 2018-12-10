@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Repository;
 
+import kr.ync.project.admin.domain.AdminVO;
 import kr.ync.project.admin.domain.Criteria;
 import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.domain.memberVO;
@@ -87,6 +88,18 @@ public class memberServiceImpl implements memberService {
 	public int listomemberCount(SearchCriteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.listomemberCount(cri);
+	}
+
+	@Override
+	public List<AdminVO> memberadminList(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.memberadminList(cri);
+	}
+
+	@Override
+	public int listmemberadminCount(SearchCriteria cri) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.listmemberadminCount(cri);
 	}	
 
 }

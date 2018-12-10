@@ -86,6 +86,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	rn > (#{page} -1) * #{perPageNum}
  ]]>
 </select> 
+
+<select id="memberadminList" resultType="AdminVO">
+<![CDATA[
+	select
+		admin_id,
+		admin_password,
+		admin_email,
+		decode(admin_grade, 1, '모든권한', 2, '수정,조회', '조회') as "admin_grade",
+		admin_idx
+	from	(select /*+INDEX_DESC(td_admin td_admin_idx)*/
+					rownum rn,
+					admin_id,
+					admin_password,
+					admin_email,
+					admin_grade,
+					admin_idx
+			 from
+			 		td_admin
+			 where
+			 		rownum <= #{page} * #{perPageNum}
+			 )
+	where
+		rn > (#{page} -1) * #{perPageNum}
+]]>
+</select>
 <sql id="search">
 	<if test="searchType != null" >
 		<if test="searchType == 't'.toString()">
@@ -127,6 +152,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<![CDATA[
 			AND rownum > 0
 			and member_out <> 1
+		]]>
+	</where>
+</select>
+<select id="listmemberadminCount" resultType="int">
+	<![CDATA[
+		select	count(admin_id)
+		from	td_admin
+	]]>
+	<where>
+		<include refid="search"></include>
+		<![CDATA[
+			AND rownum > 0
 		]]>
 	</where>
 </select>
@@ -175,6 +212,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		AND
 			b.booking_cancle = 'N'
 	]]>
+</select>
+<select id = "memberupdate" resultType = "memberVO">
+	update 
+		td_member
+	set    
+		member_password = #{member_password}
+		member_pnumber  = #{member_pnumber}
+		member_address  = #{member_address}
+	where  
+		member_id       = #{member_id}
 </select>
 <!-- <select id="mcountPaging" resultType="int">
 <![CDATA[
