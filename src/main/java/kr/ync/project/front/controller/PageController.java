@@ -9,8 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.front.domain.FhotelVO;
+import kr.ync.project.front.domain.LoginVO;
+import kr.ync.project.front.dto.RegisterDTO;
 import kr.ync.project.front.service.FhotelService;
 import kr.ync.project.front.service.FmypageService;
+import kr.ync.project.front.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -21,7 +24,10 @@ public class PageController {
 
 	@Inject
 	private FmypageService mypageService;
-	
+
+	@Inject
+	private UserService userService;
+
 	@Inject
 	private FhotelService service;
 
@@ -169,7 +175,24 @@ public class PageController {
 		return "front/reservation"; //최종적으로 페이지
 	
 	}
+	@RequestMapping(value = "/register_proc", method = RequestMethod.POST)
+	public String register(
+			@RequestParam("MEMBER_ID") String MEMBER_ID,
+			@RequestParam("MEMBER_PASSWORD") String MEMBER_PASSWORD,
+			@RequestParam("MEMBER_PNUMBER") String MEMBER_PNUMBER,
+			@RequestParam("MEMBER_ADDRESS") String MEMBER_ADDRESS,
+			@RequestParam("NATION_CODE") String NATION_CODE,
+			@RequestParam("MEMBER_FIANAME") String MEMBER_FIANAME,
+			@RequestParam("MEMBER_LANAME") String MEMBER_LANAME,
+			Model model, RegisterDTO dto) throws Exception {
+		// preHandle
+		LoginVO vo = userService.register(dto);
+		log.info("register call.....");
 		
+		model.addAttribute("register", vo);
+				
+		return "front/resvCancel";
+	}
 
 
 //	@RequestMapping(value = "/noticelist", method = RequestMethod.GET)

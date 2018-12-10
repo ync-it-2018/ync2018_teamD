@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import kr.ync.project.front.domain.LoginVO;
 import kr.ync.project.front.dto.LoginDTO;
+import kr.ync.project.front.dto.RegisterDTO;
 import kr.ync.project.front.persistence.LoginDAO;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,20 +18,17 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public LoginVO login(LoginDTO dto) throws Exception {
-		log.info("LoginVO ..........");
+		log.info("LoginVO - login session..........");
 		return dao.login(dto);
 	}
 
-/*	@Override
-	public void keepLogin(String uids, String sessionId, Date next) throws Exception {
-
-		dao.keepLogin(uids, sessionId, next);
-
-	}*/
-
-/*	@Override
-	public UserVO checkLoginBefore(String value) {
-
-		return dao.checkUserWithSessionKey(value);
-	}*/
+	/* (non-Javadoc)
+	 * @see kr.ync.project.front.service.UserService#register(kr.ync.project.front.dto.RegisterDTO)
+	 */
+	@Override
+	public LoginVO register(RegisterDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		log.info("LoginVO - register session..........");
+		return dao.register(dto);
+	}
 }
