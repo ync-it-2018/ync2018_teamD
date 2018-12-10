@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.ync.project.front.domain.FnoticeVO;
+import kr.ync.project.front.service.FhotelService;
 import kr.ync.project.front.service.FnoticeService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,6 +20,9 @@ public class HomeController {
 	@Inject
 	private FnoticeService notice_service;
 
+	@Inject
+	private FhotelService hotel_service;
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -29,6 +32,7 @@ public class HomeController {
 		// 가나다
 		log.info("index call.....");
 		model.addAttribute("readNotice", notice_service.listAll());
+		model.addAttribute("nationList", hotel_service.nationList());
 		return "front/index";
 	}
 

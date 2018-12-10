@@ -155,6 +155,15 @@ public class FhotelDAOImpl implements FhotelDAO {
 		// TODO Auto-generated method stub
 		return session.selectOne(reservation+".reservation",paraMap);
 	}
+
+	/* (non-Javadoc)
+	 * @see kr.ync.project.front.persistence.FhotelDAO#nationList()
+	 */
+	@Override
+	public List<FhotelVO> nationList() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".nationList");
+	}
 	
 	
 
