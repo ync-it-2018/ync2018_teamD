@@ -21,24 +21,26 @@
 <!-- Theme skin -->
 <link href="/resources/front/skins/default.css" rel="stylesheet" />
 <script type="text/javascript">
+
+	function room_popupOpen() {
+	
+		var popUrl = "/roomdetail?room_idx=1"; //팝업창에 출력될 페이지 URL
+	
+		var popOption = "width=700, height=350, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
+	
+		window.open(popUrl, "", popOption);
+	
+	}
 	function popupOpen() {
 
-		var popUrl = "/avgresult?hotel_code=KORDAGDH"; //팝업창에 출력될 페이지 URL
+		var popUrl = "/avgresult?hotel_code="+ "${read.hotel_code}"; //팝업창에 출력될 페이지 URL
 
 		var popOption = "width=700, height=800, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
 
 		window.open(popUrl, "", popOption);
 
 	}
-	function room_popupOpen() {
 
-		var popUrl = "/roomdetail?room_idx=1"; //팝업창에 출력될 페이지 URL
-
-		var popOption = "width=700, height=350, resizable=no, scrollbars=no, status=no;"; //팝업창 옵션(optoin)
-
-		window.open(popUrl, "", popOption);
-
-	}
 		
 	
 	function hotel_enrollment() {
