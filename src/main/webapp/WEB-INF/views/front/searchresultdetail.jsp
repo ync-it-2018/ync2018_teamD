@@ -39,6 +39,14 @@
 		window.open(popUrl, "", popOption);
 
 	}
+		
+	
+	function hotel_enrollment() {
+		alert("관심호텔로 등록하였습니다.");
+		
+		
+	}
+	
 </script>
 <style>
 hr.two {
@@ -306,8 +314,7 @@ hr.two {
 						<div class="widget">
 							<h5 class="widgetheading">관심호텔</h5>
 							<ul class="tags">
-								<li><input type="button" value="관심호텔 등록"
-									style="WIDTH: 200px; HEIGHT: 50px" /></li>
+									 <li><button style="WIDTH: 200px; HEIGHT: 50px;"  id="button1" onclick="hotel_enrollment(); ">관심호텔 등록</button></li> 
 								<!-- 버튼 누르면 관심 호텔 등록 -->
 							</ul>
 						</div>
