@@ -22,7 +22,9 @@ public class FhotelVO {
 	
 	private String hotel_code;
 	
-    private String hotel_name;    
+    private String hotel_name;
+    
+    private String nation_code;
 
     private String nation_name;
 

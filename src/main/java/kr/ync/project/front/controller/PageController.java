@@ -161,20 +161,13 @@ public class PageController {
 		
 		return "front/writereview";
 	}
-	/*@RequestMapping(value= "/reservation" )
+	@RequestMapping(value= "/reservation" )
 	public String reservation() {
 		log.info("reservation call.....");
 		
 		return "front/reservation";
-	}*/
-	@RequestMapping(value= "/reservation" , method = RequestMethod.GET)
-	public String reservation(@RequestParam("hotel_code") String hotel_code,
-			@RequestParam("room_idx") int room_idx,Model model) throws Exception {
-		log.info("reservation call.....");
-		model.addAttribute("reservation", service.reservation(hotel_code,room_idx)); //최종적으로불러올이름
-		return "front/reservation"; //최종적으로 페이지
-	
 	}
+			
 	@RequestMapping(value = "/register_proc", method = RequestMethod.POST)
 	public String register(
 			@RequestParam("MEMBER_ID") String MEMBER_ID,
@@ -185,11 +178,11 @@ public class PageController {
 			@RequestParam("MEMBER_FIANAME") String MEMBER_FIANAME,
 			@RequestParam("MEMBER_LANAME") String MEMBER_LANAME,
 			Model model, RegisterDTO dto) throws Exception {
-		// preHandle
+		// preHandle (not used 라도 필요함)
 		LoginVO vo = userService.register(dto);
 		log.info("register call.....");
 		
-		model.addAttribute("register", vo);
+		model.addAttribute("register", userService);
 				
 		return "front/resvCancel";
 	}

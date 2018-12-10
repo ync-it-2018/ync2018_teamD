@@ -8,6 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Register 모달에서 Register_proc로 정상적으로 넘어옴.
+<h1>잠시 후 메인 페이지로 넘어갑니다.</h1>
 </body>
+
+<script>
+	window.open('/', '_self');
+</script>
 </html>
