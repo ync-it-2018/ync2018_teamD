@@ -99,6 +99,15 @@ public FhotelVO reservation(String hotel_code, int room_idx)throws Exception {
 	return dao.reservation(hotel_code,room_idx);
 }
 
+/* (non-Javadoc)
+ * @see kr.ync.project.front.service.FhotelService#nationList()
+ */
+@Override
+public List<FhotelVO> nationList() throws Exception {
+	// TODO Auto-generated method stub
+	return dao.nationList();
+}
+
 
 
 

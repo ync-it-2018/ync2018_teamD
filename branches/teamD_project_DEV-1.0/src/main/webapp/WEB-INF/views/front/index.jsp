@@ -42,10 +42,10 @@
 	<div id="login" class="modal">
 
 		<!-- Modal Content -->
-		<form method="POST" class="modal-content animate" action="/loginPost">
+		<form id="loginForm" method="POST" class="modal-content animate" action="/loginPost">
 
 			<div class="modal-container">
-				<label for="uid"><b>Username</b></label> <input type="text"
+				<label for="uid"><b>Username</b></label> <input class="form-control form-control-lg" type="text"
 					placeholder="Enter Username" name="MEMBER_ID" required id="member_id">
 				<label for="pwd"><b>Password</b></label> <input
 					type="password" placeholder="Enter Password" name="MEMBER_PASSWORD" required id="member_password">
@@ -69,13 +69,13 @@
 	<div id="register" class="modal">
 
 		<!-- Modal Content -->
-		<form class="modal-content animate"  method="POST"  action="/register_proc">
+		<form id="registerForm" class="modal-content animate"  method="POST"  action="/register_proc">
 
 			<div class="modal-container">
 				<table class="table">
 					<tr>
 						<th><label for="uid"><b>User ID (E-mail)</b></label></th>
-						<td><input type="text" placeholder="Enter Username" required
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Username" required
 							id="regi_uid" name="MEMBER_ID">
 							<button type="button" class="btn btn-default"  id="doublechk">중복확인</button></td>
 					</tr>
@@ -91,33 +91,43 @@
 					</tr>
 					<tr>
 						<td colspan="2'">
-							<div class="alert alert-success"><h3>비밀번호가 일치합니다.</h3></div>
-							<div class="alert alert-danger"><h3>비밀번호가 일치하지 않습니다.</h3></div>
+							<div class="alert alert-success">비밀번호가 일치합니다.</div>
+							<div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
 						</td>
 					</tr>
 					<tr>
 						<th><label for="uPhone"><b>Telephone</b></label></th>
-						<td><input type="text" placeholder="Enter Phone Number" required
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Phone Number" required
 							id="regi_phone" name="MEMBER_PNUMBER">
 					</tr>
 					<tr>
 						<th><label for="uNation"><b>Nation</b></label></th>
-						<td><input type="text" placeholder="Enter Nation" required
-							id="regi_nation" name="NATION_CODE">
+						<td>
+							<!-- 국가코드 테스트용 수동 입력부분 -->
+							<!-- <input class="form-control form-control-lg" type="text" placeholder="Enter Nation" required
+							id="regi_nation" name="NATION_CODE"> -->
+							
+							<!-- 국가코드 리스트 생성 -->
+							<select class="form-control" name="NATION_CODE">
+								<option selected disabled hidden="true"> 국가 선택 </option>
+								<c:forEach items="${nationList}" var="FhotelVO" >
+									<option value="${FhotelVO.nation_code}">${FhotelVO.nation_name}</option>
+								</c:forEach>
+							</select>
 					</tr>
 					<tr>
 						<th><label for="uAddress"><b>Address</b></label></th>
-						<td><input type="text" placeholder="Enter Address" required
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Address" required
 							id="regi_address" name="MEMBER_ADDRESS">
 					</tr>
 					<tr>
 						<th><label for="fname"><b>First Name</b></label></th>
-						<td><input type="text" placeholder="Enter First Name" required
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter First Name" required
 							id="regi_fianame" name="MEMBER_FIANAME">
 					</tr>
 					<tr>
 						<th><label for="lname"><b>Last Name</b></label></th>
-						<td><input type="text" placeholder="Enter Last Name" required
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Last Name" required
 							id="regi_laname" name="MEMBER_LANAME">
 					</tr>
 					<tr>
@@ -149,7 +159,7 @@
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/">Home</a></li>
-							<li><a href="/typography">SearchList</a></li>
+							<li><a href="/searchresult">SearchList</a></li>
 							<!-- 드롭다운 예제 	
 							<li class="dropdown"><a href="#" class="dropdown-toggle "
 								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
@@ -448,6 +458,7 @@
 	<!-- javascript
     ================================================== -->
 	<!-- 문서의 아랫쪽에 스크립트를 호출함으로써 페이지 로딩 속도 향상 -->
+
 	<script src="/resources/front/js/jquery.js"></script>
 	<script src="/resources/front/js/jquery.easing.1.3.js"></script>
 	<script src="/resources/front/js/bootstrap.min.js"></script>

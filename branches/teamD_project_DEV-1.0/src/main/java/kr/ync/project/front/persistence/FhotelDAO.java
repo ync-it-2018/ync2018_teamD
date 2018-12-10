@@ -38,6 +38,8 @@ public interface FhotelDAO {
 
 	public FhotelVO reservation(String hotel_code, int room_idx)throws Exception;
 
+	public List<FhotelVO> nationList() throws Exception;
+
 //	public List<BoardVO> listPage(int page) throws Exception;
   
 //	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
