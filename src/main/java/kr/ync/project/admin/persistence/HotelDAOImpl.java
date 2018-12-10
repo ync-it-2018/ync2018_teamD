@@ -51,6 +51,7 @@ public class HotelDAOImpl implements HotelDAO {
 		session.delete(namespace+".delete_bed",hotel_code);
 		session.delete(namespace+".delete_room_image",hotel_code);
 		session.delete(namespace+".delete_room_info",hotel_code);
+//		session.delete(namespace+".delete_review_all", hotel_code);
 		session.delete(namespace+".delete_room",hotel_code);
 		session.delete(namespace+".delete_hotel",hotel_code);
 	}
@@ -135,6 +136,24 @@ public class HotelDAOImpl implements HotelDAO {
 	public ReviewVO reviewDetail(int idx) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+ ".reviewDetail", idx);
+	}
+
+	@Override
+	public void r_delete(int idx) throws Exception {
+		// TODO Auto-generated method stub
+		session.delete(namespace+".delete_review", idx);
+	}
+
+	@Override
+	public int listCnt() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".listCnt"); 
+	}
+
+	@Override
+	public int reviewCnt() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace + ".reviewCnt");
 	}
 
 	

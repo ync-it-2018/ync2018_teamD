@@ -42,6 +42,11 @@ public interface HotelService {
       
       public ReviewVO reviewDetail(int idx) throws Exception;
       
+      public void reviewDelete (int idx) throws Exception;
+
+      public int listcnt() throws Exception;
+      
+      public int reviewcnt() throws Exception;
       
 //      public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 //      
