@@ -46,9 +46,9 @@
 
 			<div class="modal-container">
 				<label for="uid"><b>Username</b></label> <input type="text"
-					placeholder="Enter Username" name="member_id" required id="member_id">
+					placeholder="Enter Username" name="MEMBER_ID" required id="member_id">
 				<label for="pwd"><b>Password</b></label> <input
-					type="password" placeholder="Enter Password" name="member_password" required id="member_password">
+					type="password" placeholder="Enter Password" name="MEMBER_PASSWORD" required id="member_password">
 				<button type="submit" style="margin: 3px" class="btn btn-success"
 					id="login">로그인</button>
 				<button type="button" style="margin: 3px" class="btn btn-danger"
@@ -69,20 +69,20 @@
 	<div id="register" class="modal">
 
 		<!-- Modal Content -->
-		<form class="modal-content animate" action="/register_proc/">
+		<form class="modal-content animate"  method="POST"  action="/register_proc">
 
 			<div class="modal-container">
 				<table class="table">
 					<tr>
 						<th><label for="uid"><b>User ID (E-mail)</b></label></th>
 						<td><input type="text" placeholder="Enter Username" required
-							id="regi_uid">
-							<button type="button" class="btn btn-default" name="doublechk">중복확인</button></td>
+							id="regi_uid" name="MEMBER_ID">
+							<button type="button" class="btn btn-default"  id="doublechk">중복확인</button></td>
 					</tr>
 					<tr>
 						<th><label for="pwd"><b>Password</b></label></th>
 						<td><input type="password" placeholder="Enter Password"
-							required id="regi_password"></td>
+							required id="regi_password" name="MEMBER_PASSWORD"></td>
 					</tr>
 					<tr>
 						<th><label for="pwdchk"><b>Password Check</b></label></th>
@@ -91,9 +91,34 @@
 					</tr>
 					<tr>
 						<td colspan="2'">
-							<div class="alert alert-success">비밀번호가 일치합니다.</div>
-							<div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
+							<div class="alert alert-success"><h3>비밀번호가 일치합니다.</h3></div>
+							<div class="alert alert-danger"><h3>비밀번호가 일치하지 않습니다.</h3></div>
 						</td>
+					</tr>
+					<tr>
+						<th><label for="uPhone"><b>Telephone</b></label></th>
+						<td><input type="text" placeholder="Enter Phone Number" required
+							id="regi_phone" name="MEMBER_PNUMBER">
+					</tr>
+					<tr>
+						<th><label for="uNation"><b>Nation</b></label></th>
+						<td><input type="text" placeholder="Enter Nation" required
+							id="regi_nation" name="NATION_CODE">
+					</tr>
+					<tr>
+						<th><label for="uAddress"><b>Address</b></label></th>
+						<td><input type="text" placeholder="Enter Address" required
+							id="regi_address" name="MEMBER_ADDRESS">
+					</tr>
+					<tr>
+						<th><label for="fname"><b>First Name</b></label></th>
+						<td><input type="text" placeholder="Enter First Name" required
+							id="regi_fianame" name="MEMBER_FIANAME">
+					</tr>
+					<tr>
+						<th><label for="lname"><b>Last Name</b></label></th>
+						<td><input type="text" placeholder="Enter Last Name" required
+							id="regi_laname" name="MEMBER_LANAME">
 					</tr>
 					<tr>
 						<td colspan="2">
@@ -103,10 +128,6 @@
 						</td>
 					</tr>
 				</table>
-			</div>
-			<div class="modal-container" style="background-color: #f1f1f1">
-
-				<span class="pwd">Forgot <a href="#">password?</a></span>
 			</div>
 		</form>
 	</div>
