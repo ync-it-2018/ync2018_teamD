@@ -217,10 +217,10 @@
 					</div>
 					<div class="container1">
 					  <ul class="tabs">
-					    <li class="tab-link current" data-tab="tab-1">호텔 정보</li>
-					    <li class="tab-link" data-tab="tab-2">리뷰</li>
+					    <li class="" id="tab1" data-tab="tab-1">호텔 정보</li>
+					    <li class="" id="tab2" data-tab="tab-2">리뷰</li>
 					  </ul>
-					<div id="tab-1" class="tab-content current">
+					<div id="tab-1" class="">
 					
 					<div class="form-group">
 						<div style="font-weight:bolder; margin-bottom:10px;">호텔 사진</div>
@@ -232,7 +232,7 @@
 				            <c:forEach items="${h_image}" var="hotel_image">
 											<div>
 								                <img data-u="image" src="${ hotel_image.himg_path}" />
-								                <img data-u="thumb" src="${ hotel_image.himg_path}" stlye="width:190; height:90;" />
+								                <img data-u="thumb" src="${ hotel_image.himg_path}" style="width:190; height:90;" />
 								            </div>
 											
 											<!-- <img src="" style="width:150px; height:130px; margin:15 15;"/> -->
@@ -361,12 +361,12 @@
 						</tr>
 					
 					
-					<c:forEach items="${review}" var="review" >
+					<c:forEach items="${review}" begin="${listNum.s_listNum}" end="${listNum.e_listNum}" var="review" >
 					
 						<tr>
 							<td>${review.rownum }</td>
 							<td>
-							<a href="#" onclick="review_d('${review.review_idx }')"> ${review.review_title }</a>
+							<a href="#" onclick="review_d('${review.review_idx}','${review.hotel_code}')"> ${review.review_title }</a>
 							</td>
 							<td>${review.review_rate }</td>
 							<td>${review.member_id }</td>
@@ -379,6 +379,33 @@
 					</div>
 				</div>
 				<!-- /.box-body -->
+				<div class="box-footer">
+				
+					<div class="text-center">
+							<ul class="pagination">
+								 
+								<%--  <c:if test="${pageMaker.prev}">
+								<li><a
+									href="list${pageMaker.makeSearch(pageMaker.startPage - 1) }">&laquo;</a></li>
+								</c:if>
+	 --%>
+								 <c:forEach begin="${listNum.strNum}"
+									end="${listNum.cnt}" var="idx">
+								 	<li
+										<c:out value="${listNum.nowNum == idx?'class =active':''}"/>> 
+										<a href="/admin/hotelDetail?hotel_code=${hotel.hotel_code}&tab=2&nowNum=${idx}">${idx}</a>
+									</li>
+								 </c:forEach>
+						<%--
+								<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+									<li><a
+										href="list${pageMaker.makeSearch(pageMaker.endPage +1) }">&raquo;</a></li>
+								</c:if> --%>
+								
+							</ul>
+						</div>
+					
+				</div>
 			</div>
 			<!-- /.box -->
 		</div>
@@ -399,13 +426,33 @@
 		window.open(popUrl,"",popOption);
 	}
 	
-	function review_d(idx){
-		var popUrl = "/admin/reviewDetail?idx=" + idx;	//팝업창에 출력될 페이지 URL
+	function review_d(idx, h_code){
+		var openDialog = function(uri, name, options, closeCallback) {
+		    var win = window.open(uri, name, options);
+		    var interval = window.setInterval(function() {
+		        try {
+		            if (win == null || win.closed) {
+		                window.clearInterval(interval);
+		                closeCallback(win);
+		            }
+		        }
+		        catch (e) {
+		        }
+		    }, 1000);
+		    return win;
+		};
+		var url = "/admin/reviewDetail?idx=" + idx;	//팝업창에 출력될 페이지 URL
 
-		var popOption = "width=650, height=500, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		var option = "width=650, height=500, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
 
-		window.open(popUrl,"",popOption); 
+	/* 	window.open(popUrl,"",popOption); */
 		
+		openDialog(url, "review Detail", option, function(win) {
+		    //팝업창이 닫히게 될 때 실행 된 내용
+		    
+			window.location.href="/admin/hotelDetail?hotel_code="+h_code+"&tab=2";
+		});
+
 	}
 	
 	function modify( hotel_code ){
@@ -415,11 +462,35 @@
 	function delete_h( hotel_code ){
 		if (confirm("정말로 삭제하시겠습니까?")){
 			window.location.href="/admin/hotelDelete?hotel_code="+hotel_code;
+			
 		}else{
 			alert("취소되었습니다.");
 		}
 	}
 	$(document).ready(function(){
+		var tab1 = document.getElementById("tab1");
+		var tab2 = document.getElementById("tab2");
+		var content1 = document.getElementById("tab-1");
+		var content2 = document.getElementById("tab-2");
+		
+		if(${modal_num} == 1){
+			tab1.setAttribute('class','tab-link current');
+			tab2.setAttribute('class','tab-link');
+			content1.setAttribute('class','tab-content current');
+			content2.setAttribute('class','tab-content');
+		}else{
+			tab1.setAttribute('class','tab-link');
+			tab2.setAttribute('class','tab-link current');
+			content1.setAttribute('class','tab-content');
+			content2.setAttribute('class','tab-content current');
+		}
+		
+		var tab_id1 = $(this).attr('data-tab');
+		if(tab_id1 == "tab-1"){
+			$("#modi").show();
+		}else{
+			$("#modi").hide();
+		}
 		
 		$('ul.tabs li').click(function(){
 			var tab_id = $(this).attr('data-tab');

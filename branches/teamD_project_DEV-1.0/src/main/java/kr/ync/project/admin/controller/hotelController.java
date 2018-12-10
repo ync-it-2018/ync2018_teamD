@@ -6,11 +6,12 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import kr.ync.project.admin.domain.HotelVO;
+import kr.ync.project.admin.domain.ListNumVO;
 import kr.ync.project.admin.service.HotelService;
 //import kr.ync.project.admin.domain.UserVO;
 //import kr.ync.project.admin.dto.LoginDTO;
@@ -25,10 +26,13 @@ public class hotelController {
 	private HotelService service;
 	
 	@RequestMapping(value = "/hotelList", method = RequestMethod.GET)
-	public String hotelList(HotelVO board, Model model) throws Exception {
+	public String hotelList(@ModelAttribute("cri") ListNumVO listNum, Model model) throws Exception {
 		log.info("Hotel List call.....");
-		
+		listNum.setCnt(service.listcnt());
+		listNum.sets_listNum(listNum.getnowNum());
+		listNum.sete_listNum(listNum.gets_listNum());
 		model.addAttribute("list", service.listAll());
+		model.addAttribute("listNum",listNum);
 		
 		return "admin/hotel/hotelList";
 	}
@@ -41,12 +45,18 @@ public class hotelController {
 	}
 	
 	@RequestMapping(value = "/hotelDetail", method = RequestMethod.GET)
-	public String hotelDetail(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
+	public String hotelDetail(@ModelAttribute("cri") ListNumVO listNum, @RequestParam("hotel_code") String hotel_code, @RequestParam("tab") int tab, Model model) throws Exception {
 		model.addAttribute("hotel", service.read(hotel_code));
 		model.addAttribute("room", service.roomdata(hotel_code));
 		model.addAttribute("hotel_f", service.hotel_feature(hotel_code));
 		model.addAttribute("h_image", service.hotel_image(hotel_code));
 		model.addAttribute("review", service.review(hotel_code));
+		model.addAttribute("modal_num", tab);
+		
+		listNum.setCnt(service.reviewcnt());
+		listNum.sets_listNum(listNum.getnowNum());
+		listNum.sete_listNum(listNum.gets_listNum());
+		model.addAttribute("listNum",listNum);
 		return "admin/hotel/hotelDetail";
 	}
 	
@@ -70,7 +80,7 @@ public class hotelController {
 	@RequestMapping(value = "/hotelDelete", method = RequestMethod.GET)
 	public String hotelDelete(@RequestParam("hotel_code") String hotel_code)throws Exception {
 		service.hotelDelete(hotel_code);
-		return "redirect:/admin/hotelList";
+		return "admin/hotel/hotelDelete";
 	}
 	
 	@RequestMapping(value = "/hotelModify", method = RequestMethod.GET)
@@ -92,5 +102,11 @@ public class hotelController {
 	public String reviewDetail(@RequestParam("idx") int idx, Model model)throws Exception {
 		model.addAttribute("data", service.reviewDetail(idx));
 		return "admin/hotel/reviewDetail";
+	}
+	
+	@RequestMapping(value = "/reviewDelete", method = RequestMethod.GET)
+	public String reviewDelete(@RequestParam("idx") int idx)throws Exception {
+		service.reviewDelete(idx);
+		return "admin/hotel/reviewDelete";
 	}
 }
