@@ -192,7 +192,7 @@ hr.two {
 					<form action="/resultlist" accept-charset="utf-8" name="person_info1"
 						method="get">
 						<fieldset style="width: 100%">
-							검색(*호텔이름이나 지역을 검색하세요) : <input type="text" name="textfiled"style="WIDTH: 15%; HEIGHT: 40px" /> 
+							검색(*호텔이름이나 지역을 검색하세요) : <input type="text" name="textfield"style="WIDTH: 15%; HEIGHT: 40px" /> 
 							<!-- 체크인 : <input type="date"id="checkin" name="checkin" value="yyyy-mm-dd"> 
 							체크아웃 : <input type="date" id="checkout" name="checkout" value="yyyy-mm-dd"> -->
 							<button id="submit">호텔 검색</button>

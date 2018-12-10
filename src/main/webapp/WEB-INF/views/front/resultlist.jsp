@@ -160,37 +160,7 @@
 				</div>
 			</div>
 		</section>
-		<%-- <c:forEach items="${list}" var="FhotelVO" >
-		1
-			${FhotelVO.address}
-			${FhotelVO.room_lowprice}
-			${FhotelVO.rate}
-			${FhotelVO.hotel_class}
-			${FhotelVO.information}
-			${FhotelVO.hotel_discount}
-			${FhotelVO.hotel_code}
-			${FhotelVO.hotel_name}
-			${FhotelVO.nation_name}
-			${FhotelVO.city_name}
-		</c:forEach> --%>
-
-		<%-- <table class="table">
-			<c:forEach items="${list}" var="FhotelVO">
-				<tr>
-					<td>1</td>
-					<td>${FhotelVO.address}</td>
-					<td>${FhotelVO.room_lowprice}</td>
-					<td>${FhotelVO.rate}</td>
-					<td>${FhotelVO.hotel_class}</td>
-					<td>${FhotelVO.information}</td>
-					<td>${FhotelVO.hotel_discount}</td>
-					<td>${FhotelVO.hotel_code}</td>
-					<td>${FhotelVO.hotel_name}</td>
-					<td>${FhotelVO.nation_name}</td>
-					<td>${FhotelVO.city_name}</td>
-				</tr>
-			</c:forEach>
-		</table> --%>
+		
 		<section id="content">
 			<div class="container">
 				<div class="row">
@@ -259,17 +229,15 @@
 
 											<div>
 												${FhotelVO.hotel_name}
-												<!-- <div class="color-4 prev-indent-bot hotelName">노보텔</div> -->
 												<table>
 													<tr>
 														<td>
 															<div class="col-lg-6 hotelList">
 																<div>
-																	<%-- <td>${list[0].hotel_name}</td> --%>
-																	<%-- <td>${FhotelVO.hotel_name}</td> --%>
+																	
 																	<img src="${FhotelVO.hotel_img}">
 																</div>
-																<!-- <img src="/resources/front/img/hotel/hotel1.jpg" alt="" /> -->
+																
 															</div>
 														</td>
 													</tr>
@@ -289,11 +257,12 @@
 															<td>가격 : ${FhotelVO.room_lowprice}</td>
 														</tr>
 													</table>
-													<div class="wrapper">
-														<!-- <span class="price fleft">200,000</span>  -->
-														<a class="button fright"
-															href="/searchresultdetail?hotel_code=KORDAGDH">상세보기</a>
-													</div>
+													
+													<form method="GET" action="/searchresultdetail">
+															<a class="button fright"
+															href="/searchresultdetail?hotel_code=${FhotelVO.hotel_code}">상세보기</a>
+															
+													</form>
 												</div>
 											</div>
 

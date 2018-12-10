@@ -226,7 +226,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<!-- 검색 내용이 들어갈 공간  -->
-					<!-- searchresult에 POST로 전송  -->
+					<!-- searchresult에 GET으로 전송  -->
 					<form method="GET" action="/resultlist">
 
 						<table class="table">
