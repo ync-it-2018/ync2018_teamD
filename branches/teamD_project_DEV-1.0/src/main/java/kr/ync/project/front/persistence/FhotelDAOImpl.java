@@ -61,10 +61,13 @@ public class FhotelDAOImpl implements FhotelDAO {
 	}
 
 	@Override
-	public List<FhotelVO> listAll(String textfield) throws Exception {
+	public List<FhotelVO> listAll(String textfield, String grade) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("dao : " + textfield);
-		return session.selectList(namespace+".listAll", textfield);
+		HashMap search = new HashMap();
+		search.put("textfield", textfield);
+		search.put("grade", grade);
+		return session.selectList(namespace+".listAll", search);
 	}
 	
 	@Override
