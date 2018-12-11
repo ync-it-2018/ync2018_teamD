@@ -320,15 +320,37 @@
 							</tr>
 
 
-							<tr>
-								<td><p>호텔등급</p> <input type="checkbox" name="grade1"
-									value="onestar"> ★<br> <input type="checkbox"
-									name="grader2" value="twostar"> ★★<br> <input
-									type="checkbox" name="grader3" value="threestar"> ★★★<br>
-									<input type="checkbox" name="grader4" value="fourstar">★★★★<br>
-									<input type="checkbox" name="grader5" value="fourstar">
-									★★★★★<br> <input type="checkbox" name="grader6"
-									value="fourstar"> ★★★★★★<br></td>
+
+
+								<tr>
+								<td>
+									<p>호텔등급</p> <select name="grade">
+										<option value=1 selected="selected">★</option>
+										<option value=2>★★</option>
+										<option value=3>★★★</option>
+										<option value=4>★★★★</option>
+										<option value=5>★★★★★</option>
+								</select>
+								</td>
+								<td><p>가격</p> <select
+									name="adult">
+										<option value="one" selected="selected">￦0 - ￦49000</option>
+										<option value="two">￦50000 - ￦99000</option>
+										<option value="three">￦100000 - ￦149000</option>
+										<option value="three">￦150000 - ￦199000</option>
+										<option value="three">￦200000 - ￦249000</option>
+										<option value="three">￦250000 - </option>
+								</select></td>
+							</tr>
+							<!-- <tr>
+								 <td><p>호텔등급</p> <input type="checkbox" name="grade"
+									value="1"> ★<br> <input type="checkbox"
+									name="grade" value="2"> ★★<br> <input
+									type="checkbox" name="grade" value="3"> ★★★<br>
+									<input type="checkbox" name="grade" value="4">★★★★<br>
+									<input type="checkbox" name="grade" value="5">
+									★★★★★<br> <input type="checkbox" name="grade"
+									value="6"> ★★★★★★<br></td>
 
 								<td><p>호텔가격</p> <input type="checkbox" name="price1"
 									value="price11"> ￦0 - ￦49000<br> <input
@@ -340,7 +362,7 @@
 									value="price55"> ￦200000 - ￦249000 <br> <input
 									type="checkbox" name="price6" value="price66"> ￦250000
 									- <br></td>
-							</tr>
+							</tr> -->
 
 
 							<tr>

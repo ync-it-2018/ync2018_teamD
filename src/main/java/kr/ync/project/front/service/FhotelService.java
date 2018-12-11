@@ -18,7 +18,7 @@ public interface FhotelService {
       
       public void remove (Integer bno) throws Exception;
       
-      public List<FhotelVO> listAll(String textfield) throws Exception;
+      public List<FhotelVO> listAll(String textfield, String grade) throws Exception;
       
       public FdetailVO detail(String hotel_code) throws Exception;
       

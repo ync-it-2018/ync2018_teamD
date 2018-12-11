@@ -79,9 +79,9 @@ public class PageController {
 	}
 	
 	@RequestMapping(value= "/resultlist" , method = RequestMethod.GET)
-	public String typography(FhotelVO board, Model model, @RequestParam("textfield") String textfield ) throws Exception {
+	public String typography(FhotelVO board, Model model, @RequestParam("textfield") String textfield, @RequestParam("grade") String grade ) throws Exception {
 		log.info("resultlist call.....");
-		model.addAttribute("list", service.listAll(textfield));
+		model.addAttribute("list", service.listAll(textfield, grade));
 		return "front/resultlist";
 	}
 	
@@ -154,6 +154,13 @@ public class PageController {
 		log.info("lastpage call.....");
 		
 		return "front/lastpage";
+	}
+	
+	@RequestMapping("/resultlist_likeVer")
+	public String resultlist_likeVer() {
+		log.info("resultlist_likeVer call.....");
+		
+		return "front/resultlist_likeVer";
 	}
 	
 	@RequestMapping("/writereview")
