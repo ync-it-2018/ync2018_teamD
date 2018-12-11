@@ -123,9 +123,9 @@ public class memberDAOImpl implements memberDAO{
 	}
 
 	@Override
-	public memberVO memberupdate(memberVO memvo) throws Exception {
+	public void memberupdate(memberVO memvo) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne(namespace+".memberupdate", memvo);
+		session.update(namespace+".memberupdate", memvo);
 	}
 
 	

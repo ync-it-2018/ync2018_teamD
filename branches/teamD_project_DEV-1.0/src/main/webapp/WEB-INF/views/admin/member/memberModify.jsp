@@ -72,7 +72,7 @@ $(document).ready(function(){
         <!-- general form elements -->
 
 		<div class="box">
-			<form class="modal-content animate" action="memberModify" method="post">
+			<form class="modal-content animate" action="/admin/memberModifye" method="POST">
             <div class="box-header with-border">
             	<h3 class="box-title">MemberModify</h3>
             </div>
@@ -89,7 +89,11 @@ $(document).ready(function(){
 						<table border =1; class="tb_css">
 							<tr>
 								<td style="width: 15%">* ID</td>
-								<td style="width: 35%" colspan = 3>${member.member_id }</td>
+								<td style="width: 35%" colspan = 3>
+									<label>${member.member_id }</label>
+									<input type="hidden" name="member_id" value="${member.member_id }">
+									
+								</td>
 							</tr>
 							<tr>
 								<td>* Password</td>
