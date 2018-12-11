@@ -125,9 +125,21 @@ public class HotelServiceImpl implements HotelService {
 	}
 
 	@Override
-	public int reviewcnt() throws Exception {
+	public int reviewcnt(String hotel_code) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.reviewCnt();
+		return dao.reviewCnt(hotel_code);
+	}
+
+	@Override
+	public int allreviewcnt() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.allreviewCnt();
+	}
+
+	@Override
+	public List<ReviewVO> allreview() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.Allreview();
 	}
 
 	
