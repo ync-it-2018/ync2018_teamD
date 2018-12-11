@@ -211,7 +211,7 @@
 					<div class="form-group h_group" style="width: 20%; float:left; padding-top:30px;">
 					<input type="button" value="수정" onclick = "modify('${hotel.hotel_code}')"/>
 					<input type="button" value="삭제" onclick = "delete_h('${hotel.hotel_code}')"/>
-					<input type="button" value="목록"/>
+					<input type="button" value="목록" onclick = "location.href='/admin/hotelList'"/>
 					</div>
 					<hr style="border: 1px solid gray; float:left; width:100%; margin-top:0px;">
 					</div>

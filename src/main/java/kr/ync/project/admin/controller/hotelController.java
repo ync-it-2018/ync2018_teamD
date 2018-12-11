@@ -38,9 +38,13 @@ public class hotelController {
 	}
 	
 	@RequestMapping(value = "/commentList", method = RequestMethod.GET)
-	public String commentList() {
+	public String commentList(@ModelAttribute("cri") ListNumVO listNum, Model model)throws Exception {
 		log.info("Comment List call.....");
-			
+		model.addAttribute("allreview",service.allreview());	
+		listNum.setCnt(service.allreviewcnt());
+		listNum.sets_listNum(listNum.getnowNum());
+		listNum.sete_listNum(listNum.gets_listNum());
+		model.addAttribute("listNum",listNum);	
 		return "admin/hotel/commentList";
 	}
 	
@@ -53,7 +57,7 @@ public class hotelController {
 		model.addAttribute("review", service.review(hotel_code));
 		model.addAttribute("modal_num", tab);
 		
-		listNum.setCnt(service.reviewcnt());
+		listNum.setCnt(service.reviewcnt(hotel_code));
 		listNum.sets_listNum(listNum.getnowNum());
 		listNum.sete_listNum(listNum.gets_listNum());
 		model.addAttribute("listNum",listNum);

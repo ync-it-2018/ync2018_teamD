@@ -3,33 +3,37 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- maven build 시 mapper xml찾지못하는 오류 방지하기위해 임시로 작성한 mapper xml -->
-<mapper namespace="kr.ync.project.mapper.hotelMapper">
-<select id="listAll" resultType="HotelVO"> 
+<mapper namespace="kr.ync.project.mapper.NoticeMapper">
+<select id="listAll" resultType="NoticeVO"> 
 <!-- 부등호 <,>를 사용하기 위해서 필요한 부분 : CDATA  -->
-	SELECT 	rownum,
-			address, 
-		    room_lowprice, 
-		    rate, 
-		    hotel_class, 
-		    information, 
-		    hotel_discount, 
-		    hotel_code, 
-		    hotel_name, 
-		    nation_name, 
-		    city_name		
-	FROM td_hotel h, td_nation n, td_city c
-	where h.nation_code = n.nation_code
-	and   h.city_code = c.city_code
-	order by rownum desc 
+<![CDATA[
+	SELECT ROWNUM, NOTICE_IDX, NOTICE_TITLE, NOTICE_DATE, NOTICE_DAYS, NOTICE_CHK
+	FROM(
+		SELECT NOTICE_IDX, NOTICE_TITLE, TO_CHAR(NOTICE_DATE,'yyyy-mm-dd') AS NOTICE_DATE, TO_CHAR(NOTICE_DATE+NOTICE_DAYS,'yyyy-mm-dd') AS NOTICE_DAYS, NOTICE_CHK
+		FROM   TD_NOTICE
+		ORDER BY NOTICE_DATE ASC
+	)
+	ORDER BY ROWNUM DESC
+]]>
 </select>
 
 <select id = "listCnt" resultType= "int">
 <![CDATA[
-	SELECT COUNT(HOTEL_CODE)
-	FROM TD_HOTEL
+	SELECT COUNT(NOTICE_IDX)
+	FROM TD_NOTICE
 ]]>
 </select>
 
+<select id = "noticeDetail" resultType = "NoticeVO">
+	SELECT NOTICE_IDX, NOTICE_TITLE, NOTICE_CHK, NOTICE_CONTENT, NOTICE_IMG, TO_CHAR(NOTICE_DATE,'yyyy-mm-dd') AS NOTICE_DATE, TO_CHAR(NOTICE_DATE+NOTICE_DAYS,'yyyy-mm-dd') AS NOTICE_DAYS, ADMIN_ID
+	FROM   TD_NOTICE
+	WHERE  NOTICE_IDX = #{idx}
+</select>
+
+<update id = "updateNotice" parameterType="java.util.HashMap">
+	UPDATE TD_NOTICE SET NOTICE_CHK = #{nt} WHERE NOTICE_IDX = #{idx}
+</update>
+<!-- 
 <delete id="delete_info">
 	DELETE FROM TD_HOTEL_INFO WHERE HOTEL_CODE = #{hotel_code}
 </delete>
@@ -181,5 +185,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	ORDER BY ROWNUM DESC
 ]]>
 </select>
-
+ -->
 </mapper>
