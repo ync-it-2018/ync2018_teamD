@@ -79,9 +79,9 @@ public class PageController {
 	}
 	
 	@RequestMapping(value= "/resultlist" , method = RequestMethod.GET)
-	public String typography(FhotelVO board, Model model, @RequestParam("textfield") String textfield ) throws Exception {
+	public String typography(FhotelVO board, Model model, @RequestParam("textfield") String textfield, @RequestParam("grade") String grade ) throws Exception {
 		log.info("resultlist call.....");
-		model.addAttribute("list", service.listAll(textfield));
+		model.addAttribute("list", service.listAll(textfield, grade));
 		return "front/resultlist";
 	}
 	
@@ -156,6 +156,13 @@ public class PageController {
 		return "front/lastpage";
 	}
 	
+	@RequestMapping("/resultlist_likeVer")
+	public String resultlist_likeVer() {
+		log.info("resultlist_likeVer call.....");
+		
+		return "front/resultlist_likeVer";
+	}
+	
 	@RequestMapping("/writereview")
 	public String writereview() {
 		log.info("write review page call.....");
@@ -187,9 +194,15 @@ public class PageController {
 		
 		model.addAttribute("register", userService);
 				
-		return "front/resvCancel";
+		return "front/register_proc";
 	}
-
+	
+	@RequestMapping("/logout_proc")
+	public String logout() {
+		
+		log.info("logout call.....");
+		return "front/logout_proc";
+	}
 
 //	@RequestMapping(value = "/noticelist", method = RequestMethod.GET)
 //	public String noticelist(FnoticeVO board, Model model) throws Exception {

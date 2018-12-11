@@ -211,7 +211,7 @@
 							<h3 class="p0">검색한 값이 출력되는 곳 (ex:대구시 남구....)</h3>
 						</div> -->
 						<formname="firm"> <input type="button"
-							class="btn btn-success" value="최고인기순" onclick="/resultlist_likeVer" /> <input
+							class="btn btn-success" value="최고인기순" onclick="" /> <input
 							type=button class="btn btn-info" value="고객평점순" onclick="" /> <select
 							name="price">
 							<option value="">높은가격순</option>

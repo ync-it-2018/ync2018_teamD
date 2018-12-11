@@ -352,6 +352,7 @@ hr.two {
 								<!-- <option value="">객실선택</option> -->
 								<c:forEach items="${detailroom}" var="FdetailVO">
 									<option value="${FdetailVO.room_name}">${FdetailVO.room_name}</option>
+									<option value="${FhotelVO.room_idx}">${FhotelVO.room_idx}</option>
 								</c:forEach>
 
 							</select>
@@ -362,6 +363,7 @@ hr.two {
 								<li>무료wifi</li>
 								<li>무료 주차장</li>
 								<li>무료 조식</li>
+								<li>${FdetailVO.room_idx}</li>
 							</ol>
 							</select>
 						</div>
@@ -378,8 +380,14 @@ hr.two {
 						</div>
 					</div>
 					<div style="text-align: right;">
-						<a href="/reservation?hotel_code=KORDAGDH&room_idx=1""><button type="submit" 
-								style="WIDTH: 150px; HEIGHT: 50px">예약하기</button></a>
+					
+					<form method="GET" action="/reservation">
+					<a class="button fright"
+					href="/reservation?hotel_code=KORDAGDH&room_idx=${FdetailVO.room_idx}">예약하기</a>
+					</form>					
+					
+					<a href="/reservation?hotel_code=KORDAGDH&room_idx=${FdetailVO.room_idx}">
+					<button type="submit" style="WIDTH: 150px; HEIGHT: 50px">예약하기</button></a>
 					</div><!--  뒤에서부터는 &로 계속 붙여준다 -->
 
 					<!-- </fieldset> -->

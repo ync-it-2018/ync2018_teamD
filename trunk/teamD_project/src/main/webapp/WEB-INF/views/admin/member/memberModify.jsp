@@ -72,6 +72,7 @@ $(document).ready(function(){
         <!-- general form elements -->
 
 		<div class="box">
+			<form class="modal-content animate" action="/admin/memberModifye" method="POST">
             <div class="box-header with-border">
             	<h3 class="box-title">MemberModify</h3>
             </div>
@@ -84,14 +85,19 @@ $(document).ready(function(){
   			  <div id="tab-1" class="tab-content current">
   			  	<div class="form-group" >
 						<div class="box-body">
+						
 						<table border =1; class="tb_css">
 							<tr>
 								<td style="width: 15%">* ID</td>
-								<td style="width: 35%" colspan = 3>${member.member_id }</td>
+								<td style="width: 35%" colspan = 3>
+									<label>${member.member_id }</label>
+									<input type="hidden" name="member_id" value="${member.member_id }">
+									
+								</td>
 							</tr>
 							<tr>
 								<td>* Password</td>
-								<td colspan = 3><input type="password"/></td>
+								<td colspan = 3><input type="password" name="member_password"/></td>
 							</tr>
 							<tr>
 								<td>* Password Check</td>
@@ -105,7 +111,7 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 								<td>Address</td>
-								<td colspan = 3><input type="text"/></td>
+								<td colspan = 3><input type="text" name="member_address"/></td>
 							</tr>
 							<tr>
 								<td>* Country</td>
@@ -113,9 +119,10 @@ $(document).ready(function(){
 							</tr>
 							<tr>
 								<td>Tel Number</td>
-								<td colspan = 3><input type="text"/></td>
+								<td colspan = 3><input type="text" name="member_pnumber"/></td>
 							</tr>
 						</table>
+						
 						</div>
 						<p style = "text-align:right; margin-bottom:-20px;">* 필수입력사항</p>
 					</div>
@@ -124,9 +131,10 @@ $(document).ready(function(){
   			  </div>
 			</div>
 			<div class="btn-group">
-				<input type="button" value="수정" class="btn btn-primary" style="margin:20px 0px 10px 780px ;" id='modi'/>
+				<input type="submit" value="수정" class="btn btn-primary" style="margin:20px 0px 10px 780px ;"/>
 				<input type="button" value="취소" class="btn btn-default" style="margin:20px 0px 10px 10px ;" id='cancel'/>
          	</div>
+         	</form>
          </div> 
         </div>
       </div> 

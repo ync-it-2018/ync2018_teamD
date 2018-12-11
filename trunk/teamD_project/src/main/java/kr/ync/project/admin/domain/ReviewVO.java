@@ -34,4 +34,6 @@ public class ReviewVO {
 	
 	private String hotel_code;
 	
+	private String hotel_name;
+	
 }
