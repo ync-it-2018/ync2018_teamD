@@ -222,11 +222,11 @@
 		</dependency>
 		
 		<!-- spring-jdbc안쓰고 HikariCP JDBC connection pool 사용 -->
-		<!-- <dependency>
+		<dependency>
 	        <groupId>com.zaxxer</groupId>
 	        <artifactId>HikariCP</artifactId>
 	        <version>3.1.0</version>
-	    </dependency> -->
+	    </dependency>
 	</dependencies>
 	
 	<build>
