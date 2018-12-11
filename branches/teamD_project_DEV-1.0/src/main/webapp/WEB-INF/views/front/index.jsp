@@ -47,7 +47,7 @@
 			<div class="modal-container">
 				<label for="uid"><b>Username</b></label> <input class="form-control form-control-lg" type="text"
 					placeholder="Enter Username" name="MEMBER_ID" required id="member_id">
-				<label for="pwd"><b>Password</b></label> <input
+				<label for="pwd"><b>Password</b></label> <input class="form-control form-control-lg"
 					type="password" placeholder="Enter Password" name="MEMBER_PASSWORD" required id="member_password">
 				<button type="submit" style="margin: 3px" class="btn btn-success"
 					id="login">로그인</button>
@@ -142,6 +142,57 @@
 		</form>
 	</div>
 
+
+
+<%
+	String id = "";
+	id = (String)session.getAttribute("currentLoginSession");            // request에서 id 파라미터를 가져온다
+	if(id == null || id.equals("")) {
+%>
+
+	<div id="wrapper">
+		<!-- 우상단 바 관련 소스 -->
+		<header>
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/"><span>D</span>aisy <span>H</span>otel
+							<span>S</span>ervice</a>
+					</div>
+					<div class="navbar-collapse collapse ">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="/">Home</a></li>
+<!-- 							<li><a href="/searchresult">SearchList</a></li>
+							드롭다운 예제 	
+							<li class="dropdown"><a href="#" class="dropdown-toggle "
+								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+								data-close-others="false"><b
+									class=" icon-angle-down"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="/typography">SearchList</a></li>
+									<li><a href="/components">Components</a></li>
+									<li><a href="/pricingbox">Pricing box</a></li>
+								</ul></li>
+							<li><a href="/searchresult">SearchResult</a></li>
+							<li><a href="/mypage">Mypage(WIP)</a></li>
+							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
+							<li><a href="/contact">Contact</a></li> -->
+							<li><a href="#" id="loginPage">Login</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+		<!-- ..까지가 우상단 바 -->
+
+<%} else { %>
+
 	<div id="wrapper">
 		<!-- 우상단 바 관련 소스 -->
 		<header>
@@ -171,20 +222,18 @@
 									<li><a href="/pricingbox">Pricing box</a></li>
 								</ul></li> -->
 							<!-- <li><a href="/searchresult">SearchResult</a></li> -->
-							<li><a href="/mypage">Mypage(WIP)</a></li>
+							<li><a href="/mypage">Mypage</a></li>
 							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
 							<!-- <li><a href="/contact">Contact</a></li> -->
-							<li><a href="#" id="loginPage">Login</a></li>
+							<li><a href="/logout_proc" id="logout">Logout</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</header>
-		<!-- ..까지가 우상단 바 -->
-
-
-
-		<!-- 		<section id="content"></section> -->
+	</div>
+<%}%>
+<!-- 여기까지가 공통적으로 들어가야하는 로그인, 회원가입, 우상단바  -->
 
 		<section id="featured">
 			<div class="container">
@@ -453,7 +502,6 @@
 				</div>
 			</div>
 		</footer>
-	</div>
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 	<!-- javascript
     ================================================== -->

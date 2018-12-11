@@ -31,108 +31,119 @@
 </head>
 
 <body>
+	<!-- 로그인 모달 -->
+	<div id="login" class="modal">
 
-	<section title="userlogin">
-		<!-- 모든 front페이지에는 공통적으로 들어가야 할 것  -->
-		<!-- 로그인 모달 -->
-		<div id="login" class="modal">
+		<!-- Modal Content -->
+		<form id="loginForm" method="POST" class="modal-content animate" action="/loginPost">
 
-			<!-- Modal Content -->
-			<form class="modal-content animate" action="/login">
+			<div class="modal-container">
+				<label for="uid"><b>Username</b></label> <input class="form-control form-control-lg" type="text"
+					placeholder="Enter Username" name="MEMBER_ID" required id="member_id">
+				<label for="pwd"><b>Password</b></label> <input class="form-control form-control-lg"
+					type="password" placeholder="Enter Password" name="MEMBER_PASSWORD" required id="member_password">
+				<button type="submit" style="margin: 3px" class="btn btn-success"
+					id="login">로그인</button>
+				<button type="button" style="margin: 3px" class="btn btn-danger"
+					name="cancelbtn">취소</button>
+				<br>
+				<button type="button" style="margin: 3px" class="btn btn-default"
+					id="registerbtn">회원가입</button>
+			</div>
 
-				<div class="modal-container">
-					<label for="uid"><b>Username</b></label> <input type="text"
-						placeholder="Enter Username" name="uid" required id="uid">
-					<label for="pwd"><b>Password</b></label> <input type="password"
-						placeholder="Enter Password" name="pwd" required id="pwd">
+			<div class="modal-container" style="background-color: #f1f1f1">
 
-					<button type="submit" style="margin: 3px" class="btn btn-success"
-						id="login">로그인</button>
-					<button type="button" style="margin: 3px" class="btn btn-danger"
-						name="cancelbtn">취소</button>
-					<br>
-					<button type="button" style="margin: 3px" class="btn btn-default"
-						id="registerbtn">회원가입</button>
-				</div>
+				<span class="pwd">Forgot <a href="#">password?</a></span>
+			</div>
+		</form>
+	</div>
 
-				<div class="modal-container" style="background-color: #f1f1f1">
+	<!-- 회원가입 모달 -->
+	<div id="register" class="modal">
 
-					<span class="pwd">Forgot <a href="#" id="findpwdbtn">password?</a></span>
-				</div>
-			</form>
-		</div>
+		<!-- Modal Content -->
+		<form id="registerForm" class="modal-content animate"  method="POST"  action="/register_proc">
 
-		<!-- 비밀번호 찾기 모달  -->
-		<div id="findpwd" class="modal">
-			<!-- Modal Content -->
-			<form class="modal-content animate" action="/register_proc/">
+			<div class="modal-container">
+				<table class="table">
+					<tr>
+						<th><label for="uid"><b>User ID (E-mail)</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Username" required
+							id="regi_uid" name="MEMBER_ID">
+							<button type="button" class="btn btn-default"  id="doublechk">중복확인</button></td>
+					</tr>
+					<tr>
+						<th><label for="pwd"><b>Password</b></label></th>
+						<td><input type="password" placeholder="Enter Password"
+							required id="regi_password" name="MEMBER_PASSWORD"></td>
+					</tr>
+					<tr>
+						<th><label for="pwdchk"><b>Password Check</b></label></th>
+						<td><input type="password" placeholder="Password Check"
+							required id="regi_passwordchk"></td>
+					</tr>
+					<tr>
+						<td colspan="2'">
+							<div class="alert alert-success">비밀번호가 일치합니다.</div>
+							<div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
+						</td>
+					</tr>
+					<tr>
+						<th><label for="uPhone"><b>Telephone</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Phone Number" required
+							id="regi_phone" name="MEMBER_PNUMBER">
+					</tr>
+					<tr>
+						<th><label for="uNation"><b>Nation</b></label></th>
+						<td>
+							<!-- 국가코드 테스트용 수동 입력부분 -->
+							<!-- <input class="form-control form-control-lg" type="text" placeholder="Enter Nation" required
+							id="regi_nation" name="NATION_CODE"> -->
+							
+							<!-- 국가코드 리스트 생성 -->
+							<select class="form-control" name="NATION_CODE">
+								<option selected disabled hidden="true"> 국가 선택 </option>
+								<c:forEach items="${nationList}" var="FhotelVO" >
+									<option value="${FhotelVO.nation_code}">${FhotelVO.nation_name}</option>
+								</c:forEach>
+							</select>
+					</tr>
+					<tr>
+						<th><label for="uAddress"><b>Address</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Address" required
+							id="regi_address" name="MEMBER_ADDRESS">
+					</tr>
+					<tr>
+						<th><label for="fname"><b>First Name</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter First Name" required
+							id="regi_fianame" name="MEMBER_FIANAME">
+					</tr>
+					<tr>
+						<th><label for="lname"><b>Last Name</b></label></th>
+						<td><input class="form-control form-control-lg" type="text" placeholder="Enter Last Name" required
+							id="regi_laname" name="MEMBER_LANAME">
+					</tr>
+					<tr>
+						<td colspan="2">
+							<button type="submit" class="btn btn-success">회원가입</button>
+							<button type="button" style="margin: 3px" class="btn btn-danger"
+								name="cancelbtn">취소</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
 
-				<div class="modal-container">
-					<table class="table">
-						<tr>
-							<th><label for="uid"><b>ID (E-mail)</b></label></th>
-							<td><input type="text" placeholder="Enter Username" required
-								id="findpwd_uid">
-						</tr>
-						<tr>
-							<td colspan="2" align="center">비밀번호를 찾기 위해 가입 시 입력한 아이디를
-								입력해주세요.</td>
-						</tr>
-						<tr>
-							<td>
-								<button type="submit" class="btn btn-success">비밀번호 찾기</button>
-								<button type="button" style="margin: 3px" class="btn btn-danger"
-									name="cancelbtn">취소</button>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</form>
-		</div>
 
-		<!-- 회원가입 모달 -->
-		<div id="register" class="modal">
 
-			<!-- Modal Content -->
-			<form class="modal-content animate" action="/register_proc/">
-
-				<div class="modal-container">
-					<table class="table">
-						<tr>
-							<th><label for="uid"><b>User ID (E-mail)</b></label></th>
-							<td><input type="text" placeholder="Enter Username" required
-								id="regi_uid">
-								<button type="button" class="btn btn-default" name="doublechk">중복확인</button></td>
-						</tr>
-						<tr>
-							<th><label for="pwd"><b>Password</b></label></th>
-							<td><input type="password" placeholder="Enter Password"
-								required id="regi_password"></td>
-						</tr>
-						<tr>
-							<th><label for="pwdchk"><b>Password Check</b></label></th>
-							<td><input type="password" placeholder="Password Check"
-								required id="regi_passwordchk"></td>
-						</tr>
-						<tr>
-							<td colspan="2'">
-								<div class="alert alert-success">비밀번호가 일치합니다.</div>
-								<div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2">
-								<button type="submit" class="btn btn-success">회원가입</button>
-								<button type="button" style="margin: 3px" class="btn btn-danger"
-									name="cancelbtn">취소</button>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</form>
-		</div>
-		<!-- 로그인 및 회원가입에 관련된 항목 끝 -->
-	</section>
+<%
+	String id = "";
+	id = (String)session.getAttribute("currentLoginSession");            // request에서 id 파라미터를 가져온다
+	if(id == null || id.equals("")) {
+%>
+	<h1>먼저 로그인 해주세요! </h1>
+<%} else { %>
 
 	<div id="wrapper">
 		<!-- 우상단 바 관련 소스 -->
@@ -145,31 +156,37 @@
 							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="/"><span>D</span>aisy <span>H</span>otel
+							<span>S</span>ervice</a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/">Home</a></li>
+							<li><a href="/searchresult">SearchList</a></li>
+							<!-- 드롭다운 예제 	
 							<li class="dropdown"><a href="#" class="dropdown-toggle "
 								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-								data-close-others="false">Features <b
+								data-close-others="false"><b
 									class=" icon-angle-down"></b></a>
 								<ul class="dropdown-menu">
-									<li><a href="/typography">Typography</a></li>
+									<li><a href="/typography">SearchList</a></li>
 									<li><a href="/components">Components</a></li>
 									<li><a href="/pricingbox">Pricing box</a></li>
-								</ul></li>
-							<li><a href="/searchresult">SearchResult</a></li>
-							<li><a href="/portfolio">Portfolio</a></li>
-							<li><a href="/blog">Blog</a></li>
-							<li><a href="/contact">Contact</a></li>
-							<li><a href="#" id="loginPage">Login</a></li>
+								</ul></li> -->
+							<!-- <li><a href="/searchresult">SearchResult</a></li> -->
+							<li><a href="/mypage">Mypage</a></li>
+							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
+							<!-- <li><a href="/contact">Contact</a></li> -->
+							<li><a href="/logout_proc" id="logout">Logout</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</header>
-		<!-- ..까지가 우상단 바 -->
+	</div>
+
+<!-- 여기까지가 공통적으로 들어가야하는 로그인, 회원가입, 우상단바  -->
+
 
 		<section id="inner-headline">
 			<div class="container">
@@ -661,8 +678,9 @@
 				</div>
 			</div>
 		</footer>
-	</div>
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+	
+	<%}%>
 	<!-- javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
