@@ -100,6 +100,12 @@ public class memberServiceImpl implements memberService {
 	public int listmemberadminCount(SearchCriteria cri) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.listmemberadminCount(cri);
+	}
+
+	@Override
+	public memberVO memberupdate(memberVO memvo) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.memberupdate(memvo);
 	}	
 
 }

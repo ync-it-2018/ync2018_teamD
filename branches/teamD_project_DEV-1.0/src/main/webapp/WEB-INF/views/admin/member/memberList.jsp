@@ -13,6 +13,7 @@
 <script>
 function modify(member_id){
 	window.location.href="/admin/memberModify?member_id="+member_id;
+	
 }
 </script>
 		<section class="content-header">
@@ -53,7 +54,7 @@ function modify(member_id){
 						<td>${memberVO.member_fianame }</td>
 						<td>${memberVO.member_joindate}</td>
 						<td>
-							<input type="button" value="수정" onclick= "modify('${member.member_id}')" class="btn btn-primary" style="margin:20px 0px 10px 830px ;" id='modi'/>
+							<input type="button" value="수정" onclick= "modify('${memberVO.member_id}')" id='modi'/>
 							<button id=''>삭제</button>
 						</td>
 					</tr>
