@@ -187,9 +187,15 @@ public class PageController {
 		
 		model.addAttribute("register", userService);
 				
-		return "front/resvCancel";
+		return "front/register_proc";
 	}
-
+	
+	@RequestMapping("/logout_proc")
+	public String logout() {
+		
+		log.info("logout call.....");
+		return "front/logout_proc";
+	}
 
 //	@RequestMapping(value = "/noticelist", method = RequestMethod.GET)
 //	public String noticelist(FnoticeVO board, Model model) throws Exception {
