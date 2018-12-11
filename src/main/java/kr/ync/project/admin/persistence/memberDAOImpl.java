@@ -122,6 +122,12 @@ public class memberDAOImpl implements memberDAO{
 		return session.selectOne(namespace+".listmemberadminCount", cri);
 	}
 
+	@Override
+	public memberVO memberupdate(memberVO memvo) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".memberupdate", memvo);
+	}
+
 	
 
 	
