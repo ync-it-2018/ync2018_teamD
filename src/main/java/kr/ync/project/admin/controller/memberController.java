@@ -52,6 +52,7 @@ public class memberController {
 	@RequestMapping(value = "/memberModify", method = RequestMethod.GET)
 	public String memberModify(@RequestParam("member_id") String member_id, Model model) throws Exception {
 		model.addAttribute("member", service.read(member_id));
+		log.info("메롱");
 		return "/admin/member/memberModify";
 	}
 	
@@ -75,14 +76,15 @@ public class memberController {
 		return "/admin/member/memberadminList";
 	}
 	
-	@RequestMapping(value = "/memberModify", method = RequestMethod.POST)
+	@RequestMapping(value = "/memberModifye", method = RequestMethod.POST)
 	public String memberupdate(
+				@RequestParam("member_id") String member_id,
 				@RequestParam("member_password") String member_password,
 				@RequestParam("member_pnumber") String member_pnumber,
 				@RequestParam("member_address") String member_address,
 				Model model, memberVO memvo) throws Exception{
-		
-		model.addAttribute("memberupdate", service.memberupdate(memvo));
+		System.out.println(member_id);
+		service.memberupdate(memvo);
 		return "/admin/member/memberDetail";
 	}
 

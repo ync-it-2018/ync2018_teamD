@@ -36,6 +36,6 @@ public interface memberService {
 
 	public int listmemberadminCount(SearchCriteria cri) throws Exception;
 
-	public memberVO memberupdate(memberVO memvo) throws Exception;
+	public void memberupdate(memberVO memvo) throws Exception;
     
 }
