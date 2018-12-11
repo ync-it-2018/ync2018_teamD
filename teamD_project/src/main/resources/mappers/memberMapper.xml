@@ -213,16 +213,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			b.booking_cancle = 'N'
 	]]>
 </select>
-<select id = "memberupdate" resultType = "memberVO">
+<update id ="memberupdate" parameterType="memberVO">
 	update 
 		td_member
 	set    
-		member_password = #{member_password}
-		member_pnumber  = #{member_pnumber}
+		member_password = #{member_password},
+		member_pnumber  = #{member_pnumber},
 		member_address  = #{member_address}
 	where  
 		member_id       = #{member_id}
-</select>
+</update>
 <!-- <select id="mcountPaging" resultType="int">
 <![CDATA[
 	select	

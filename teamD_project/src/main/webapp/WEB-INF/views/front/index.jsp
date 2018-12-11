@@ -47,7 +47,7 @@
 			<div class="modal-container">
 				<label for="uid"><b>Username</b></label> <input class="form-control form-control-lg" type="text"
 					placeholder="Enter Username" name="MEMBER_ID" required id="member_id">
-				<label for="pwd"><b>Password</b></label> <input
+				<label for="pwd"><b>Password</b></label> <input class="form-control form-control-lg"
 					type="password" placeholder="Enter Password" name="MEMBER_PASSWORD" required id="member_password">
 				<button type="submit" style="margin: 3px" class="btn btn-success"
 					id="login">로그인</button>
@@ -142,6 +142,57 @@
 		</form>
 	</div>
 
+
+
+<%
+	String id = "";
+	id = (String)session.getAttribute("currentLoginSession");            // request에서 id 파라미터를 가져온다
+	if(id == null || id.equals("")) {
+%>
+
+	<div id="wrapper">
+		<!-- 우상단 바 관련 소스 -->
+		<header>
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/"><span>D</span>aisy <span>H</span>otel
+							<span>S</span>ervice</a>
+					</div>
+					<div class="navbar-collapse collapse ">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="/">Home</a></li>
+<!-- 							<li><a href="/searchresult">SearchList</a></li>
+							드롭다운 예제 	
+							<li class="dropdown"><a href="#" class="dropdown-toggle "
+								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+								data-close-others="false"><b
+									class=" icon-angle-down"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="/typography">SearchList</a></li>
+									<li><a href="/components">Components</a></li>
+									<li><a href="/pricingbox">Pricing box</a></li>
+								</ul></li>
+							<li><a href="/searchresult">SearchResult</a></li>
+							<li><a href="/mypage">Mypage(WIP)</a></li>
+							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
+							<li><a href="/contact">Contact</a></li> -->
+							<li><a href="#" id="loginPage">Login</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+		<!-- ..까지가 우상단 바 -->
+
+<%} else { %>
+
 	<div id="wrapper">
 		<!-- 우상단 바 관련 소스 -->
 		<header>
@@ -171,20 +222,18 @@
 									<li><a href="/pricingbox">Pricing box</a></li>
 								</ul></li> -->
 							<!-- <li><a href="/searchresult">SearchResult</a></li> -->
-							<li><a href="/mypage">Mypage(WIP)</a></li>
+							<li><a href="/mypage">Mypage</a></li>
 							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
 							<!-- <li><a href="/contact">Contact</a></li> -->
-							<li><a href="#" id="loginPage">Login</a></li>
+							<li><a href="/logout_proc" id="logout">Logout</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</header>
-		<!-- ..까지가 우상단 바 -->
-
-
-
-		<!-- 		<section id="content"></section> -->
+	</div>
+<%}%>
+<!-- 여기까지가 공통적으로 들어가야하는 로그인, 회원가입, 우상단바  -->
 
 		<section id="featured">
 			<div class="container">
@@ -271,15 +320,37 @@
 							</tr>
 
 
-							<tr>
-								<td><p>호텔등급</p> <input type="checkbox" name="grade1"
-									value="onestar"> ★<br> <input type="checkbox"
-									name="grader2" value="twostar"> ★★<br> <input
-									type="checkbox" name="grader3" value="threestar"> ★★★<br>
-									<input type="checkbox" name="grader4" value="fourstar">★★★★<br>
-									<input type="checkbox" name="grader5" value="fourstar">
-									★★★★★<br> <input type="checkbox" name="grader6"
-									value="fourstar"> ★★★★★★<br></td>
+
+
+								<tr>
+								<td>
+									<p>호텔등급</p> <select name="grade">
+										<option value=1 selected="selected">★</option>
+										<option value=2>★★</option>
+										<option value=3>★★★</option>
+										<option value=4>★★★★</option>
+										<option value=5>★★★★★</option>
+								</select>
+								</td>
+								<td><p>가격</p> <select
+									name="adult">
+										<option value="one" selected="selected">￦0 - ￦49000</option>
+										<option value="two">￦50000 - ￦99000</option>
+										<option value="three">￦100000 - ￦149000</option>
+										<option value="three">￦150000 - ￦199000</option>
+										<option value="three">￦200000 - ￦249000</option>
+										<option value="three">￦250000 - </option>
+								</select></td>
+							</tr>
+							<!-- <tr>
+								 <td><p>호텔등급</p> <input type="checkbox" name="grade"
+									value="1"> ★<br> <input type="checkbox"
+									name="grade" value="2"> ★★<br> <input
+									type="checkbox" name="grade" value="3"> ★★★<br>
+									<input type="checkbox" name="grade" value="4">★★★★<br>
+									<input type="checkbox" name="grade" value="5">
+									★★★★★<br> <input type="checkbox" name="grade"
+									value="6"> ★★★★★★<br></td>
 
 								<td><p>호텔가격</p> <input type="checkbox" name="price1"
 									value="price11"> ￦0 - ￦49000<br> <input
@@ -291,7 +362,7 @@
 									value="price55"> ￦200000 - ￦249000 <br> <input
 									type="checkbox" name="price6" value="price66"> ￦250000
 									- <br></td>
-							</tr>
+							</tr> -->
 
 
 							<tr>
@@ -453,7 +524,6 @@
 				</div>
 			</div>
 		</footer>
-	</div>
 	<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 	<!-- javascript
     ================================================== -->

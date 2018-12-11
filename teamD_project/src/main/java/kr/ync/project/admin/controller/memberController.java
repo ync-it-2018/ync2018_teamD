@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.ync.project.admin.domain.PageMaker;
 import kr.ync.project.admin.domain.SearchCriteria;
+import kr.ync.project.admin.domain.memberVO;
 import kr.ync.project.admin.service.memberService;
 import lombok.extern.slf4j.Slf4j;
 /**
@@ -51,6 +52,7 @@ public class memberController {
 	@RequestMapping(value = "/memberModify", method = RequestMethod.GET)
 	public String memberModify(@RequestParam("member_id") String member_id, Model model) throws Exception {
 		model.addAttribute("member", service.read(member_id));
+		log.info("메롱");
 		return "/admin/member/memberModify";
 	}
 	
@@ -73,4 +75,17 @@ public class memberController {
 		model.addAttribute("pageMaker", pageMaker);
 		return "/admin/member/memberadminList";
 	}
+	
+	@RequestMapping(value = "/memberModifye", method = RequestMethod.POST)
+	public String memberupdate(
+				@RequestParam("member_id") String member_id,
+				@RequestParam("member_password") String member_password,
+				@RequestParam("member_pnumber") String member_pnumber,
+				@RequestParam("member_address") String member_address,
+				Model model, memberVO memvo) throws Exception{
+		System.out.println(member_id);
+		service.memberupdate(memvo);
+		return "/admin/member/memberDetail";
+	}
+
 }

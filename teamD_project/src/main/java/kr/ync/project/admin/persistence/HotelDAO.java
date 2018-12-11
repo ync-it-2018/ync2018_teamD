@@ -48,7 +48,11 @@ public interface HotelDAO {
 
 	public int listCnt() throws Exception;
 
-	public int reviewCnt() throws Exception;
+	public int reviewCnt(String hotel_code) throws Exception;
+
+	public int allreviewCnt() throws Exception;
+
+	public List<ReviewVO> Allreview() throws Exception;
 
 //	public List<BoardVO> listPage(int page) throws Exception;
   

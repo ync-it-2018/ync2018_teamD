@@ -151,9 +151,21 @@ public class HotelDAOImpl implements HotelDAO {
 	}
 
 	@Override
-	public int reviewCnt() throws Exception {
+	public int reviewCnt(String hotel_code) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne(namespace + ".reviewCnt");
+		return session.selectOne(namespace + ".reviewCnt", hotel_code);
+	}
+
+	@Override
+	public int allreviewCnt() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace + ".AllreviewCnt");
+	}
+
+	@Override
+	public List<ReviewVO> Allreview() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectList(namespace + ".Allreview");
 	}
 
 	

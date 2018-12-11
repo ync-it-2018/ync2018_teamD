@@ -46,7 +46,11 @@ public interface HotelService {
 
       public int listcnt() throws Exception;
       
-      public int reviewcnt() throws Exception;
+      public int reviewcnt(String hotel_code) throws Exception;
+
+	  public int allreviewcnt()throws Exception;
+	  
+	  public List<ReviewVO> allreview() throws Exception;
       
 //      public List<BoardVO> listCriteria(Criteria cri) throws Exception;
 //      

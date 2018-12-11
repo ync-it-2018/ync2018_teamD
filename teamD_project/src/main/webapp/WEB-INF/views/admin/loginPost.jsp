@@ -8,7 +8,7 @@
 </head>
 <body>
   <script type="text/javascript">
-    self.location = "/admin/home";
+    self.location = "/admin/noticeList";
   </script>
 </body>
 </html>

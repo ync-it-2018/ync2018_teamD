@@ -20,7 +20,7 @@ public interface FhotelDAO {
 	
 	public void updateReplyCnt(Integer bno, int amount) throws Exception;
 	
-	public List<FhotelVO> listAll(String textfield) throws Exception;
+	public List<FhotelVO> listAll(String textfield, String grade) throws Exception;
 	
 	public FdetailVO detail(String hotel_code) throws Exception;
 	
