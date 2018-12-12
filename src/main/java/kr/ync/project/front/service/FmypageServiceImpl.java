@@ -37,36 +37,36 @@ public class FmypageServiceImpl implements FmypageService {
 	private FmypageDAO dao;
 
 	@Override
-	public List<FmypageVO> resvCompList() throws Exception {
+	public List<FmypageVO> resvCompList(String MEMBER_ID) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.resvCompList();
+		return dao.resvCompList(MEMBER_ID);
 	}
 
 	/* (non-Javadoc)
 	 * @see kr.ync.project.front.service.FmypageService#resvChkinNowList()
 	 */
 	@Override
-	public List<FmypageVO> resvChkinNowList() throws Exception {
+	public List<FmypageVO> resvChkinNowList(String MEMBER_ID) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.resvChkinNowList();
+		return dao.resvChkinNowList(MEMBER_ID);
 	}
 
 	/* (non-Javadoc)
 	 * @see kr.ync.project.front.service.FmypageService#resvChkinFutureList()
 	 */
 	@Override
-	public List<FmypageVO> resvChkinFutureList() throws Exception {
+	public List<FmypageVO> resvChkinFutureList(String MEMBER_ID) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.resvChkinFutureList();
+		return dao.resvChkinFutureList(MEMBER_ID);
 	}
 
 	/* (non-Javadoc)
 	 * @see kr.ync.project.front.service.FmypageService#resvCancelList()
 	 */
 	@Override
-	public List<FmypageVO> resvCancelList() throws Exception {
+	public List<FmypageVO> resvCancelList(String MEMBER_ID) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.resvCancelList();
+		return dao.resvCancelList(MEMBER_ID);
 	}
 
 	/* (non-Javadoc)

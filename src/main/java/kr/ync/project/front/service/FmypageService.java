@@ -25,13 +25,13 @@ import kr.ync.project.front.domain.FmypageVO;
 *		
  */
 public interface FmypageService {
-	public List<FmypageVO> resvCompList() throws Exception;
+	public List<FmypageVO> resvCompList(String MEMBER_ID) throws Exception;
 	
-	public List<FmypageVO> resvChkinNowList() throws Exception;
+	public List<FmypageVO> resvChkinNowList(String MEMBER_ID) throws Exception;
 	
-	public List<FmypageVO> resvChkinFutureList() throws Exception;
+	public List<FmypageVO> resvChkinFutureList(String MEMBER_ID) throws Exception;
 	
-	public List<FmypageVO> resvCancelList() throws Exception;
+	public List<FmypageVO> resvCancelList(String MEMBER_ID) throws Exception;
 	
 	public List<FmypageVO> resvCancel(int BOOKING_IDX) throws Exception;
 	
