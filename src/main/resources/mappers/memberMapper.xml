@@ -33,6 +33,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	and
 		m.nation_code = n.nation_code
 </select>
+<select id="adminread" resultType="AdminVO">
+	select
+		admin_id,
+		admin_password,
+		admin_email,
+		admin_grade,
+		admin_idx,
+		admin_name,
+		admin_out
+	from
+		td_admin
+	where
+		admin_id = #{admin_id}
+</select>
 
 <select id="listCriteria" resultType="memberVO">
 <![CDATA[
@@ -94,14 +108,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		admin_password,
 		admin_email,
 		decode(admin_grade, 1, '모든권한', 2, '수정,조회', '조회') as "admin_grade",
-		admin_idx
+		admin_idx,
+		admin_name,
+		decode(admin_out, 1, '사용', '비사용') as "admin_out"
 	from	(select /*+INDEX_DESC(td_admin td_admin_idx)*/
 					rownum rn,
 					admin_id,
 					admin_password,
 					admin_email,
 					admin_grade,
-					admin_idx
+					admin_idx,
+					admin_name,
+					admin_out
 			 from
 			 		td_admin
 			 where
@@ -223,6 +241,39 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	where  
 		member_id       = #{member_id}
 </update>
+<update id="memberdelete" parameterType="memberVO">
+	update
+		td_member
+	set
+		member_out	= 2
+	where
+		member_id	= #{member_id}
+</update>
+<update id="memberadmindelete" parameterType="AdminVO">
+	update
+		td_admin
+	set
+		admin_out	= 2
+	where
+		admin_id	= #{admin_id}
+</update>
+<update id="memberadminupdate" parameterType="AdminVO">
+	update
+		td_admin
+	set
+		admin_password	= #{admin_password},
+		admin_email		= #{admin_email},
+		admin_grade		= #{admin_grade},
+		admin_name		= #{admin_name}
+	where
+		admin_id		= #{admin_id}
+</update>
+<insert id="memberadmininsert" parameterType="AdminVO">
+	insert 
+		into td_admin
+	values 
+		(#{admin_id},#{admin_password},#{admin_email},#{admin_grade},td_seq_adminidx.nextval,#{admin_name}, default)
+</insert>
 <!-- <select id="mcountPaging" resultType="int">
 <![CDATA[
 	select	

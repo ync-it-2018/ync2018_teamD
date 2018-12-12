@@ -37,5 +37,15 @@ public interface memberService {
 	public int listmemberadminCount(SearchCriteria cri) throws Exception;
 
 	public void memberupdate(memberVO memvo) throws Exception;
+
+	public void memberDelete(String member_id) throws Exception;
+
+	public void memberadminDelete(String admin_id) throws Exception;
+
+	public AdminVO adminread(String admin_id) throws Exception;
+
+	public void memberadminupdate(AdminVO adminvo) throws Exception;
+
+	public void memberadminInserte(AdminVO adminvo) throws Exception;
     
 }
