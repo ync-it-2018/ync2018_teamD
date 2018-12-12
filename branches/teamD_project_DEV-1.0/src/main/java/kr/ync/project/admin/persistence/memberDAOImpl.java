@@ -128,6 +128,36 @@ public class memberDAOImpl implements memberDAO{
 		session.update(namespace+".memberupdate", memvo);
 	}
 
+	@Override
+	public void memberupdate(String member_id) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace+".memberdelete", member_id);
+	}
+
+	@Override
+	public void memberadminDelete(String admin_id) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace+".memberadmindelete", admin_id);
+	}
+
+	@Override
+	public AdminVO adminread(String admin_id) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".adminread", admin_id);
+	}
+
+	@Override
+	public void memberadminupdate(AdminVO adminvo) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace+".memberadminupdate", adminvo);
+	}
+
+	@Override
+	public void memberadminInserte(AdminVO adminvo) throws Exception {
+		// TODO Auto-generated method stub
+		session.insert(namespace+".memberadmininsert", adminvo);
+	}
+
 	
 
 	

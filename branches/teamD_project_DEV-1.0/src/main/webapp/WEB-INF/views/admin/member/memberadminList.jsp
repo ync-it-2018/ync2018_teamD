@@ -10,6 +10,22 @@
 		float:right;
 	}
 </style>
+<script>
+function ma_delete(admin_id){
+	if (confirm("정말로 삭제하시겠습니까?")){
+		window.location.href="/admin/memberadminDelete?admin_id="+admin_id;
+		
+	}else{
+		alert("취소되었습니다.");
+	}
+}
+function ma_modify(admin_id){
+	window.location.href="/admin/memberadminModify?admin_id="+admin_id;
+}
+function a_insert(){
+	window.location.href="/admin/memberadminInsert";
+}
+</script>
 		<section class="content-header">
           <h1>Member Manage</h1>
           <ol class="breadcrumb">
@@ -27,6 +43,7 @@
 		<div class="box">
             <div class="box-header with-border">
             	<h3 class="box-title">Admin MemberList</h3>
+            	<input type="button" value="새 관리자 추가" style="margin-left:640px;" onclick = "a_insert()"/>
             </div>
             
             <div class="box-body">
@@ -34,20 +51,24 @@
 					<tr>
 						<th style="width: 10px">NO</th>
 						<th>ID</th>
+						<th>NAME</th>
 						<th>E-mail</th>
-						<th>Join_Date</th>
+						<th>GRADE</th>
+						<th>USE</th>
 						<th>Manage</th>
 					</tr>
 				<c:forEach items="${memberadminList}" var="AdminVO" varStatus="status">
 					<tr>
 						<td>${AdminVO.admin_idx }</td>
-						<!--<td>${status.count} </td>-->
-						<td>
-						<a href="/admin/memberDetail?member_id=${AdminVO.admin_id }"> ${AdminVO.admin_id }</a>
-						</td>
+						<td>${AdminVO.admin_id }</td>
+						<td>${AdminVO.admin_name }</td>
 						<td>${AdminVO.admin_email }</td>
 						<td>${AdminVO.admin_grade}</td>
-						<td><button id=''>수정</button><button id=''>삭제</button></td>
+						<td>${AdminVO.admin_out }</td>
+						<td>
+							<input type="button" value="수정" onclick= "ma_modify('${AdminVO.admin_id}')" id='modi'/>
+							<input type="button" value="삭제" onclick= "ma_delete('${AdminVO.admin_id}')" id="dele"/>
+						</td>
 					</tr>
 				</c:forEach>
 				</table>

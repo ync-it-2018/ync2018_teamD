@@ -18,5 +18,9 @@ public class AdminVO {
 	private String admin_grade;
 	
 	private String admin_idx;
+	
+	private String admin_name;
+	
+	private String admin_out;
 
 }
