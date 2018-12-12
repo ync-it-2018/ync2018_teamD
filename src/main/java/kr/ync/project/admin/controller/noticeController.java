@@ -70,11 +70,11 @@ public class noticeController {
 	/*	log.info("파일 이름: {}", notice_img.getOriginalFilename());
 		log.info("파일 크기: {}", notice_img.getSize());*/
 		
-		System.out.println(nt);
+//		System.out.println(nt);
 		
-//		service.addNotice(nt);
+		service.addNotice(nt);
 		
-		return "redirect:/admin/noticeList";
+		return "/admin/notice/noticeWrite_proc";
 	}
 	
 	
