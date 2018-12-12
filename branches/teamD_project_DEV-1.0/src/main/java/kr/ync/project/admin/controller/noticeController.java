@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.ync.project.admin.domain.ListNumVO;
+import kr.ync.project.admin.domain.NoticeVO;
 import kr.ync.project.admin.service.NoticeService;
 import lombok.extern.slf4j.Slf4j;
 @Controller
@@ -53,5 +55,27 @@ public class noticeController {
 		
 		return "redirect:/admin/noticeDetail?idx="+idx;
 	}
+	
+	@RequestMapping(value = "/noticeWrite", method = RequestMethod.GET)
+	public String noticeWrite() throws Exception{
+		log.info("Notice Write Call.....");
+		
+		
+		return "admin/notice/noticeWrite";
+	}
+	
+	@RequestMapping(value = "/n_write", method = RequestMethod.POST)
+	public String n_write(/*MultipartFile notice_img, */NoticeVO nt) throws Exception{
+		log.info("Notice Writing.....");
+	/*	log.info("파일 이름: {}", notice_img.getOriginalFilename());
+		log.info("파일 크기: {}", notice_img.getSize());*/
+		
+		System.out.println(nt);
+		
+//		service.addNotice(nt);
+		
+		return "redirect:/admin/noticeList";
+	}
+	
 	
 }
