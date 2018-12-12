@@ -35,5 +35,7 @@ public class FhotelVO {
     private String ROOM_NAME; //각 객실의 이름
     
     private int ROOM_PRICE;//객실 일반 가격
+    
+    private int ROOM_IDX;//객실 방번호
 	
 }

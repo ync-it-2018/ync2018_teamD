@@ -43,10 +43,12 @@ public class PageController {
 	public String searchresultdetail(@RequestParam("hotel_code") String hotel_code,
 			Model model) throws Exception {
 		log.info("searchresultdetail call.....");
-		model.addAttribute("detailroom", service.detailroom(hotel_code)); //최종적으로불러올이름
+		model.addAttribute("detailroom", service.detailroom(hotel_code));//최종적으로불러올이름
 		model.addAttribute("detail", service.detail(hotel_code));
 		model.addAttribute("h_image", service.hotel_image(hotel_code)); //h_image는 포이치문 아이템즈
 		model.addAttribute("read", service.read(hotel_code));
+		
+		
 		return "front/searchresultdetail"; //최종적으로 페이지
 	}
 	
@@ -109,7 +111,8 @@ public class PageController {
 	}
 	
 	@RequestMapping("/avgresult")
-	public String avgresult(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
+	public String avgresult(@RequestParam("hotel_code") String hotel_code,
+			Model model) throws Exception {
 		log.info("avgresult page call.....");
 		model.addAttribute("review", service.review(hotel_code));
 		return "front/avgresult";
@@ -124,13 +127,15 @@ public class PageController {
 	}
 
 	@RequestMapping("/mypage")
-	public String mypage(Model model) throws Exception {
+	public String mypage(
+			@RequestParam("MEMBER_ID") String MEMBER_ID, Model model) throws Exception {
 		log.info("mypage call.....");
 		// 마이페이지 각 항목별 모델 생성
-		model.addAttribute("resvCompList",mypageService.resvCompList());
-		model.addAttribute("resvChkinNowList",mypageService.resvChkinNowList());
-		model.addAttribute("resvChkinFutureList",mypageService.resvChkinFutureList());
-		model.addAttribute("resvCancelList",mypageService.resvCancelList());
+		
+		model.addAttribute("resvCompList",mypageService.resvCompList(MEMBER_ID));
+		model.addAttribute("resvChkinNowList",mypageService.resvChkinNowList(MEMBER_ID));
+		model.addAttribute("resvChkinFutureList",mypageService.resvChkinFutureList(MEMBER_ID));
+		model.addAttribute("resvCancelList",mypageService.resvCancelList(MEMBER_ID));
 		return "front/mypage";
 	}
 	
@@ -188,7 +193,7 @@ public class PageController {
 			@RequestParam("MEMBER_FIANAME") String MEMBER_FIANAME,
 			@RequestParam("MEMBER_LANAME") String MEMBER_LANAME,
 			Model model, RegisterDTO dto) throws Exception {
-		// preHandle (not used 라도 필요함)
+		// (not used 라도 필요함)
 		LoginVO vo = userService.register(dto);
 		log.info("register call.....");
 		

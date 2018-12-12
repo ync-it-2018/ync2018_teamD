@@ -43,37 +43,37 @@ public class FmypageDAOImpl implements FmypageDAO{
 	 * @see kr.ync.project.front.persistence.FmypageDAO#resvCompList()
 	 */
 	@Override
-	public List<FmypageVO> resvCompList() throws Exception {
+	public List<FmypageVO> resvCompList(String MEMBER_ID) throws Exception {
 		// TODO Auto-generated method stub
 		
-		return session.selectList(namespace+".resvCompList");
+		return session.selectList(namespace+".resvCompList", MEMBER_ID);
 	}
 
 	/* (non-Javadoc)
 	 * @see kr.ync.project.front.persistence.FmypageDAO#resvChkinNowList()
 	 */
 	@Override
-	public List<FmypageVO> resvChkinNowList() throws Exception {
+	public List<FmypageVO> resvChkinNowList(String MEMBER_ID) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace+".resvChkinNowList");
+		return session.selectList(namespace+".resvChkinNowList",MEMBER_ID);
 	}
 
 	/* (non-Javadoc)
 	 * @see kr.ync.project.front.persistence.FmypageDAO#resvChkinFutureList()
 	 */
 	@Override
-	public List<FmypageVO> resvChkinFutureList() throws Exception {
+	public List<FmypageVO> resvChkinFutureList(String MEMBER_ID) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace+".resvChkinFutureList");
+		return session.selectList(namespace+".resvChkinFutureList",MEMBER_ID);
 	}
 
 	/* (non-Javadoc)
 	 * @see kr.ync.project.front.persistence.FmypageDAO#resvCancelList()
 	 */
 	@Override
-	public List<FmypageVO> resvCancelList() throws Exception {
+	public List<FmypageVO> resvCancelList(String MEMBER_ID) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace+".resvCancelList");
+		return session.selectList(namespace+".resvCancelList",MEMBER_ID);
 	}
 
 	/* (non-Javadoc)

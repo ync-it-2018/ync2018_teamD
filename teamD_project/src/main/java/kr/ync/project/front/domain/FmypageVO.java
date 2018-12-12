@@ -40,4 +40,5 @@ public class FmypageVO {
 	
 	private String HOTEL_NAME;
 
+	private String MEMBER_ID;
 }

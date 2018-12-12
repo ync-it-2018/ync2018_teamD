@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.ync.project.admin.domain.AdminVO;
 import kr.ync.project.admin.domain.PageMaker;
 import kr.ync.project.admin.domain.SearchCriteria;
 import kr.ync.project.admin.domain.memberVO;
@@ -52,7 +53,6 @@ public class memberController {
 	@RequestMapping(value = "/memberModify", method = RequestMethod.GET)
 	public String memberModify(@RequestParam("member_id") String member_id, Model model) throws Exception {
 		model.addAttribute("member", service.read(member_id));
-		log.info("메롱");
 		return "/admin/member/memberModify";
 	}
 	
@@ -77,15 +77,43 @@ public class memberController {
 	}
 	
 	@RequestMapping(value = "/memberModifye", method = RequestMethod.POST)
-	public String memberupdate(
-				@RequestParam("member_id") String member_id,
-				@RequestParam("member_password") String member_password,
-				@RequestParam("member_pnumber") String member_pnumber,
-				@RequestParam("member_address") String member_address,
-				Model model, memberVO memvo) throws Exception{
-		System.out.println(member_id);
+	public String memberupdate(memberVO memvo) throws Exception{
 		service.memberupdate(memvo);
-		return "/admin/member/memberDetail";
+		return "redirect:/admin/memberDetail?member_id="+memvo.getMember_id();
 	}
-
+	
+	@RequestMapping(value = "/memberDelete", method = RequestMethod.GET)
+	public String memberDelete(@RequestParam("member_id") String member_id)throws Exception {
+		service.memberDelete(member_id);
+		return "admin/member/memberDelete";
+	}
+	
+	@RequestMapping(value = "/memberadminDelete", method = RequestMethod.GET)
+	public String memberadminDelete(@RequestParam("admin_id") String admin_id)throws Exception {
+		service.memberadminDelete(admin_id);
+		return "admin/member/memberadminDelete";
+	}
+	
+	@RequestMapping(value = "/memberadminModify", method = RequestMethod.GET)
+	public String memberadminModify(@RequestParam("admin_id") String admin_id, Model model) throws Exception {
+		model.addAttribute("admin", service.adminread(admin_id));
+		return "/admin/member/memberadminModify";
+	}
+	
+	@RequestMapping(value = "/memberadminModifye", method = RequestMethod.POST)
+	public String memberupdate(AdminVO adminvo) throws Exception{
+		service.memberadminupdate(adminvo);
+		return "redirect:/admin/memberadminList";
+	}
+	
+	@RequestMapping(value = "/memberadminInsert")
+	public String memberadminInsert() throws Exception{
+		return "/admin/member/memberadminInsert";
+	}
+	
+	@RequestMapping(value = "/memberadminInserte", method = RequestMethod.POST)
+	public String memberadminInserte(AdminVO adminvo) throws Exception{
+		service.memberadminInserte(adminvo);
+		return "redirect:/admin/memberadminList";
+	}
 }
