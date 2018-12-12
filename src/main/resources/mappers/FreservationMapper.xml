@@ -18,6 +18,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	and   tr.hotel_code = #{hotel_code}
  	and   tr.room_idx = #{room_idx}
  	
+ 	
+ 	
 </select>
 
 
