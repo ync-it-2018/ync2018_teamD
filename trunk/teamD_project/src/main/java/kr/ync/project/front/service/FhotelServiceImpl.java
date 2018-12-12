@@ -113,6 +113,7 @@ public List<FhotelVO> nationList() throws Exception {
 
 
 
+
 //
 //@Override
 //public int listCountCriteria(Criteria cri) throws Exception {

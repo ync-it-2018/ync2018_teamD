@@ -17,6 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			FROM		TD_BOOKING BOOK, TD_HOTEL HOTEL
 			WHERE	SYSDATE > BOOKING_OUT_DATE
 			AND			BOOK.HOTEL_CODE = HOTEL.HOTEL_CODE
+            AND         MEMBER_ID = #{MEMBER_ID}
 		]]>
 	</select>
 
@@ -34,6 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			AND 		SYSDATE <= BOOKING_OUT_DATE
             AND			BOOK.HOTEL_CODE = HOTEL.HOTEL_CODE
 			AND 		BOOK.BOOKING_CANCLE = 'N'
+			AND         MEMBER_ID = #{MEMBER_ID}
 			ORDER BY BOOKING_IN_DATE
 		]]>
 	</select>
@@ -51,6 +53,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			WHERE	SYSDATE < BOOKING_IN_DATE
             AND			BOOK.HOTEL_CODE = HOTEL.HOTEL_CODE
 			AND			BOOK.BOOKING_CANCLE = 'N'
+			AND         MEMBER_ID = #{MEMBER_ID}
 			ORDER BY BOOKING_IN_DATE
 		]]>
 	</select>
@@ -66,6 +69,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			FROM		TD_BOOKING BOOK, TD_HOTEL HOTEL
 			WHERE 	BOOKING_CANCLE = 'Y'
             AND			BOOK.HOTEL_CODE = HOTEL.HOTEL_CODE
+            AND         MEMBER_ID = #{MEMBER_ID}
 	</select>
 
 	<select id="resvCancel" resultType="FmypageVO">

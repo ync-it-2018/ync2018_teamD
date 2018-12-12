@@ -52,7 +52,7 @@
 	
 					</table>
 					<div style="text-align:right;">
-						<input type="button" value="Write" style="margin-right: 20px;"/>
+						<input type="button" value="Write" style="margin-right: 20px;" onclick="location.href='/admin/noticeWrite'"/>
 					</div>
           </div>
           <div class="box-footer">

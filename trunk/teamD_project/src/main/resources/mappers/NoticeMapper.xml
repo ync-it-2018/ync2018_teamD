@@ -33,6 +33,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <update id = "updateNotice" parameterType="java.util.HashMap">
 	UPDATE TD_NOTICE SET NOTICE_CHK = #{nt} WHERE NOTICE_IDX = #{idx}
 </update>
+ 
+<insert id = "addNotice" parameterType="NoticeVO">
+	INSERT INTO TD_NOTICE
+	VALUES (TD_SEQ_NOTI.NEXTVAL, #{notice_title}, TO_DATE(#{notice_date}, 'yyyy-mm-dd'), #{notice_days}, #{notice_img}, #{notice_content}, #{admin_id}, #{notice_chk})
+</insert>
 <!-- 
 <delete id="delete_info">
 	DELETE FROM TD_HOTEL_INFO WHERE HOTEL_CODE = #{hotel_code}

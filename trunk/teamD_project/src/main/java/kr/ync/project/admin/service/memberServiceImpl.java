@@ -106,6 +106,36 @@ public class memberServiceImpl implements memberService {
 	public void memberupdate(memberVO memvo) throws Exception {
 		// TODO Auto-generated method stub
 		dao.memberupdate(memvo);
+	}
+
+	@Override
+	public void memberDelete(String member_id) throws Exception {
+		// TODO Auto-generated method stub
+		dao.memberupdate(member_id);
+	}
+
+	@Override
+	public void memberadminDelete(String admin_id) throws Exception {
+		// TODO Auto-generated method stub
+		dao.memberadminDelete(admin_id);
+	}
+
+	@Override
+	public AdminVO adminread(String admin_id) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.adminread(admin_id);
+	}
+
+	@Override
+	public void memberadminupdate(AdminVO adminvo) throws Exception {
+		// TODO Auto-generated method stub
+		dao.memberadminupdate(adminvo);
+	}
+
+	@Override
+	public void memberadminInserte(AdminVO adminvo) throws Exception {
+		// TODO Auto-generated method stub
+		dao.memberadminInserte(adminvo);
 	}	
 
 }

@@ -166,23 +166,8 @@
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="/">Home</a></li>
-<!-- 							<li><a href="/searchresult">SearchList</a></li>
-							드롭다운 예제 	
-							<li class="dropdown"><a href="#" class="dropdown-toggle "
-								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-								data-close-others="false"><b
-									class=" icon-angle-down"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="/typography">SearchList</a></li>
-									<li><a href="/components">Components</a></li>
-									<li><a href="/pricingbox">Pricing box</a></li>
-								</ul></li>
-							<li><a href="/searchresult">SearchResult</a></li>
-							<li><a href="/mypage">Mypage(WIP)</a></li>
-							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
-							<li><a href="/contact">Contact</a></li> -->
-							<li><a href="#" id="loginPage">Login</a></li>
+							<li class="active"><a href="/"><button class="btn">Home</button></a></li>
+							<li><a href="#" id="loginPage"><button class="btn">Login</button></a></li>
 						</ul>
 					</div>
 				</div>
@@ -207,10 +192,11 @@
 						<a class="navbar-brand" href="/"><span>D</span>aisy <span>H</span>otel
 							<span>S</span>ervice</a>
 					</div>
+					
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="/">Home</a></li>
-							<li><a href="/searchresult">SearchList</a></li>
+							<li class="active"><a href="/"><button class="btn">Home</button></a></li>
+							<li><a href="/searchresult"><button class="btn">Searchlist</button></a></li>
 							<!-- 드롭다운 예제 	
 							<li class="dropdown"><a href="#" class="dropdown-toggle "
 								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
@@ -222,12 +208,20 @@
 									<li><a href="/pricingbox">Pricing box</a></li>
 								</ul></li> -->
 							<!-- <li><a href="/searchresult">SearchResult</a></li> -->
-							<li><a href="/mypage">Mypage</a></li>
-							<li><a href="/searchresultdetail?hotel_code=KORDAGDH">SearchResultDetail</a></li>
+							<li>
+								<a href="/mypage">
+									<form method="POST" action="/mypage">
+										<input type="hidden" name="MEMBER_ID"  id = "MEMBER_ID"value="<%=id %>"/>
+										<button class="btn btn-success" type="submit" >Mypage</button>
+									</form>
+								</a>
+							</li>
+							<li><a href="/searchresultdetail?hotel_code=KORDAGDH"><button class="btn">SearchResultDetail</button></a></li>
 							<!-- <li><a href="/contact">Contact</a></li> -->
-							<li><a href="/logout_proc" id="logout">Logout</a></li>
+							<li><a href="/logout_proc" id="logout"><button class="btn">Logout</button></a></li>
 						</ul>
 					</div>
+					
 				</div>
 			</div>
 		</header>

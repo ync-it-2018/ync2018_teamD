@@ -15,6 +15,14 @@ function modify(member_id){
 	window.location.href="/admin/memberModify?member_id="+member_id;
 	
 }
+function m_delete(member_id){
+	if (confirm("정말로 삭제하시겠습니까?")){
+		window.location.href="/admin/memberDelete?member_id="+member_id;
+		
+	}else{
+		alert("취소되었습니다.");
+	}
+}
 </script>
 		<section class="content-header">
           <h1>Member Manage</h1>
@@ -55,7 +63,7 @@ function modify(member_id){
 						<td>${memberVO.member_joindate}</td>
 						<td>
 							<input type="button" value="수정" onclick= "modify('${memberVO.member_id}')" id='modi'/>
-							<button id=''>삭제</button>
+							<input type="button" value="삭제" onclick= "m_delete('${memberVO.member_id}')" id="dele"/>
 						</td>
 					</tr>
 				</c:forEach>
