@@ -85,7 +85,7 @@ public class memberController {
 				Model model, memberVO memvo) throws Exception{
 		System.out.println(member_id);
 		service.memberupdate(memvo);
-		return "/admin/member/memberDetail";
+		return "redirect:/admin/memberDetail?member_id="+member_id;
 	}
 
 }
