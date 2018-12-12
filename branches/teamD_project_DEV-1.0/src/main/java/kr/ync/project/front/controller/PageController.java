@@ -43,10 +43,12 @@ public class PageController {
 	public String searchresultdetail(@RequestParam("hotel_code") String hotel_code,
 			Model model) throws Exception {
 		log.info("searchresultdetail call.....");
-		model.addAttribute("detailroom", service.detailroom(hotel_code)); //최종적으로불러올이름
+		model.addAttribute("detailroom", service.detailroom(hotel_code));//최종적으로불러올이름
 		model.addAttribute("detail", service.detail(hotel_code));
 		model.addAttribute("h_image", service.hotel_image(hotel_code)); //h_image는 포이치문 아이템즈
 		model.addAttribute("read", service.read(hotel_code));
+		
+		
 		return "front/searchresultdetail"; //최종적으로 페이지
 	}
 	
@@ -109,7 +111,8 @@ public class PageController {
 	}
 	
 	@RequestMapping("/avgresult")
-	public String avgresult(@RequestParam("hotel_code") String hotel_code, Model model) throws Exception {
+	public String avgresult(@RequestParam("hotel_code") String hotel_code,
+			Model model) throws Exception {
 		log.info("avgresult page call.....");
 		model.addAttribute("review", service.review(hotel_code));
 		return "front/avgresult";
