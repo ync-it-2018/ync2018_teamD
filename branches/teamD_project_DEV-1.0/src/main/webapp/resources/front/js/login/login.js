@@ -7,6 +7,7 @@
 $(document).ready(function() {
 	var loginmdl = document.getElementById('login');
 	var regimdl = document.getElementById('register');
+	
 	// 로그인 창 띄우기
 	$('#loginPage').on('click', function() {
 		loginmdl.style.display = 'block';
