@@ -14,4 +14,6 @@ public interface NoticeService {
 	public NoticeVO noticeDetail(int idx) throws Exception;
 	
 	public void updateNotice(HashMap ntt) throws Exception;
+	
+	public void addNotice(NoticeVO nt) throws Exception;
 }

@@ -41,5 +41,11 @@ public void updateNotice(HashMap ntt) throws Exception {
 	dao.updateNotice(ntt);
 }
 
+@Override
+public void addNotice(NoticeVO nt) throws Exception {
+	// TODO Auto-generated method stub
+	dao.addNotice(nt);
+}
+
 
 }
