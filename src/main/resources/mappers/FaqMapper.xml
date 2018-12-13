@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.ync.project.mapper.FaqMapper">
+
+<select id="FaqList" resultType="FaqVO">
+<![CDATA[
+	select	
+		faq_idx,
+		faq_title,
+		faq_content,
+		to_char(faq_date, 'yyyy-mm-dd') as "faq_date",
+		admin_id,
+		faq_preference
+	from	(select  /*+INDEX_DESC(td_faq td_xpk_faq)*/
+       				faq_idx,
+       				faq_title,
+       				faq_content,
+       				faq_date,
+       				admin_id,
+       				faq_preference
+     	 	 from
+       				td_faq
+        	 )
+	order by faq_idx desc
+]]>
+</select> 
+</mapper>
