@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.LoginVO;
 import kr.ync.project.front.dto.RegisterDTO;
+import kr.ync.project.front.service.FAQService;
 import kr.ync.project.front.service.FhotelService;
 import kr.ync.project.front.service.FmypageService;
 import kr.ync.project.front.service.UserService;
@@ -30,6 +31,9 @@ public class PageController {
 
 	@Inject
 	private FhotelService service;
+
+	@Inject
+	private FAQService faqService;
 
 		
 	/*@RequestMapping("/blog")
@@ -207,6 +211,13 @@ public class PageController {
 		
 		log.info("logout call.....");
 		return "front/logout_proc";
+	}
+	
+	@RequestMapping("/faqninquiry")
+	public String faq(Model model) throws Exception {
+		log.info("FAQ & Inquiry page call.....");
+		model.addAttribute("FAQList", faqService.FAQList());
+		return "front/faqninquiry";
 	}
 
 //	@RequestMapping(value = "/noticelist", method = RequestMethod.GET)
