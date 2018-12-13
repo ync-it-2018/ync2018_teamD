@@ -8,6 +8,16 @@ import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.FreviewVO;
 import kr.ync.project.front.domain.FroomVO;
 
+/**
+ * 
+ * FhotelService.java
+ *
+ * @Author : 이승민
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *  호텔의 정볼르 불러올 떄 사용할 서비스들을 정의해 둔 인터페이스 
+ *
+ */
 public interface FhotelService {
 
       public void regist(FhotelVO board) throws Exception;

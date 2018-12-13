@@ -7,7 +7,16 @@ import kr.ync.project.front.domain.FdetailVO;
 import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.FreviewVO;
 import kr.ync.project.front.domain.FroomVO;
-
+/**
+ * 
+ * FhotelDAO.java
+ *
+ * @Author : 이승민
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *  호텔정보를 받아오기 위해서 DB와 연결을 위한 DAT의 인터페이스 
+ *
+ */
 public interface FhotelDAO {
 
 	public void create(FhotelVO vo) throws Exception;
@@ -40,19 +49,5 @@ public interface FhotelDAO {
 
 	public List<FhotelVO> nationList() throws Exception;
 
-//	public List<BoardVO> listPage(int page) throws Exception;
-  
-//	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
-
-//	public int countPaging(Criteria cri) throws Exception;
-   
-//	//use for dynamic SQL
-//	// 검색이 적용된 Query 결과 List
-//	public List<BoardVO> listSearch(SearchCriteria cri)throws Exception;
-//	
-//	// 검색이 적용된 Query 결과 Count
-//	public int listSearchCount(SearchCriteria cri)throws Exception;
-//	
-//	public void updateViewCnt(Integer bno)throws Exception;
 
 }
