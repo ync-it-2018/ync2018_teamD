@@ -89,7 +89,7 @@ public class PageController {
 	}
 	
 	@RequestMapping(value= "/resultlist" , method = RequestMethod.GET)
-	public String typography(FhotelVO board, Model model, @RequestParam("textfield") String textfield, @RequestParam("grade") String grade ) throws Exception {
+	public String resultlist(FhotelVO board, Model model, @RequestParam("textfield") String textfield, @RequestParam("grade") String grade ) throws Exception {
 		log.info("resultlist call.....");
 		model.addAttribute("list", service.listAll(textfield, grade));
 		return "front/resultlist";
