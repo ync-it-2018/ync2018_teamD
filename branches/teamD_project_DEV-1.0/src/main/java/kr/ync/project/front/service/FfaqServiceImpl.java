@@ -14,11 +14,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.ync.project.front.domain.FAQVO;
-import kr.ync.project.front.persistence.FAQDAO;
+import kr.ync.project.front.domain.FfaqVO;
+import kr.ync.project.front.persistence.FfaqDAO;
 
 /**
  * FAQServiceImpl.java
@@ -31,13 +30,13 @@ import kr.ync.project.front.persistence.FAQDAO;
 *		
  */
 @Repository
-public class FAQServiceImpl implements FAQService {
+public class FfaqServiceImpl implements FfaqService {
 
 	@Inject
-	private FAQDAO dao;
+	private FfaqDAO dao;
 
 	@Override
-	public List<FAQVO> FAQList() throws Exception {
+	public List<FfaqVO> FAQList() throws Exception {
 		// TODO Auto-generated method stub
 		return dao.FAQList();
 	}

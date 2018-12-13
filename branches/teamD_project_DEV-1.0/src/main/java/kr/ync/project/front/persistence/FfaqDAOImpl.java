@@ -17,32 +17,21 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import kr.ync.project.front.domain.FAQVO;
-
-/**
- * FAQDAOImpl.java
-*
-* @Author	: 김 건 우
-* @Date		: 2018. 12. 13.
-* @Description
-*		
-*		File description is here
-*		
- */
+import kr.ync.project.front.domain.FfaqVO;
 
 @Repository
-public class FAQDAOImpl implements FAQDAO {
+public class FfaqDAOImpl implements FfaqDAO {
 
 	
 	@Inject
 	private SqlSession session;
 
 	private static String namespace 
-	= "kr.ync.project.mapper.FAQMapper";
+	= "kr.ync.project.mapper.FfaqMapper";
 	
 	
 	@Override
-	public List<FAQVO> FAQList() throws Exception {
+	public List<FfaqVO> FAQList() throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".FAQList");
 	}
