@@ -281,7 +281,7 @@
 										호텔검색<br> <input type="text" name="textfield"
 											id="hotelName"
 											style="text-align: left; width: 200px; height: 30px"
-											value="ex) Tokyo">
+											value="ex) 롯데">
 
 									</div> <br>
 								</td>
