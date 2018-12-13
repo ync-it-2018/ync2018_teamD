@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<!--호텔안 객실 상세 페이지 -->
 <head>
 <meta charset="UTF-8">
 
@@ -28,13 +29,6 @@
   <tbody>
 			<tr>
 			<th rowspan="2">
-			 <%--  <div id="main-slider" class="flexslider">
-							<ul class="slides">
-							<c:forEach items="${roomdetailimage}" var="FroomVO">
-								<li><img src="${FroomVO.RIMAGE_PATH}" height="50%" width="100%"/>	
-								</c:forEach>
-							</ul>
-						</div>  --%>  
 	<div class="cycle-slideshow" 
 	cycle-slideshow data-cycle-loader="wait"
     data-cycle-timeout=2000 >
@@ -56,6 +50,7 @@
 			<tr>
 
 				<td>
+				<div>객실 중요 기능 </div>
 					<ol>
 						<c:forEach items="${roomdetailproduct}" var="FroomVO">
 							<li>${FroomVO.RF_NAME}</li>

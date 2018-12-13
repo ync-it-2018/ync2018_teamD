@@ -1,5 +1,6 @@
 package kr.ync.project.front.persistence;
 
+import java.util.HashMap;
 import java.util.List;
 
 import kr.ync.project.admin.domain.ImageVO;
@@ -39,15 +40,16 @@ public interface FhotelDAO {
 	
 	public List<ImageVO> hotel_image(String hotel_code)throws Exception;
 
-	public FroomVO roomdetail(int room_idx)throws Exception;
+	public FroomVO roomdetail(HashMap mp)throws Exception;
 
 	public List<FroomVO> roomdetailimage(int room_idx)throws Exception;
 
 	public List<FroomVO> roomdetailproduct(int room_idx)throws Exception;
 
-	public FhotelVO reservation(String hotel_code, int room_idx)throws Exception;
+	public FhotelVO reservation(HashMap mp)throws Exception;
 
 	public List<FhotelVO> nationList() throws Exception;
+
 
 
 }

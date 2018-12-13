@@ -44,8 +44,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
  <select id = "detailroom" resultType= "FdetailVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함-->
 	SELECT * FROM TD_ROOM
-	WHERE HOTEL_CODE='KORDAGDH'
- 	and  hotel_code = #{hotel_code}
+	WHERE  hotel_code = #{hotel_code}
  	ORDER BY ROOM_IDX<!-- 상세보기 클릭시 나오는 호텔코드 -->
 </select> 
 

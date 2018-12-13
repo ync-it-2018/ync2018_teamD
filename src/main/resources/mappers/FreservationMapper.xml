@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="kr.ync.project.mapper.FreservationMapper"> <!-- 네임스페이스 잘보자  -->
 
 
-<select id = "reservation" parameterType="map" resultType= "FhotelVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
+<select id = "reservation" parameterType="java.util.HashMap"  resultType= "FhotelVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
 	SELECT 	
 			tr.ROOM_IDX,
 			ROOM_NAME,

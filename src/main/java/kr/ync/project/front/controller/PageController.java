@@ -1,5 +1,7 @@
 package kr.ync.project.front.controller;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -31,6 +33,8 @@ public class PageController {
 
 	@Inject
 	private FhotelService service;
+	
+	
 
 	@Inject
 	private FAQService faqService;
@@ -114,17 +118,22 @@ public class PageController {
 		return "front/doublechk";
 	}
 	
-	@RequestMapping("/avgresult")
+	@RequestMapping("/avgresult") //호텔 평점및 후기 
 	public String avgresult(@RequestParam("hotel_code") String hotel_code,
 			Model model) throws Exception {
 		log.info("avgresult page call.....");
 		model.addAttribute("review", service.review(hotel_code));
 		return "front/avgresult";
 	}
-	@RequestMapping("/roomdetail") //호텔객실 
-	public String roomdetail(@RequestParam("room_idx") int room_idx,Model model) throws Exception {
+	@RequestMapping("/roomdetail") //호텔객실 상세보기
+	public String roomdetail(@RequestParam("hotel_code") String hotel_code,
+			@RequestParam("room_idx") int room_idx,
+			Model model) throws Exception {
 		log.info("roomdetail page call.....");
-		model.addAttribute("roomdetail",service.roomdetail(room_idx));
+		HashMap<String, String> mp = new HashMap<String, String>();
+		mp.put("hotel_code", hotel_code);
+		mp.put("room_idx",String.valueOf(room_idx));
+		model.addAttribute("roomdetail",service.roomdetail(mp));
 		model.addAttribute("roomdetailimage",service.roomdetailimage(room_idx));
 		model.addAttribute("roomdetailproduct",service.roomdetailproduct(room_idx));
 		return "front/roomdetail";
@@ -178,13 +187,22 @@ public class PageController {
 		
 		return "front/writereview";
 	}
-	@RequestMapping(value= "/reservation" , method = RequestMethod.GET)
+	@RequestMapping(value= "/reservation" , method = RequestMethod.GET)//호텔 예약하기 화면
 	public String reservation(@RequestParam("hotel_code") String hotel_code,
 			@RequestParam("room_idx") int room_idx,Model model) throws Exception {
 		log.info("reservation call.....");
-		model.addAttribute("reservation", service.reservation(hotel_code,room_idx)); //최종적으로불러올이름
-		return "front/reservation"; //최종적으로 페이지
+		HashMap<String, String> mp = new HashMap<String, String>();
+		mp.put("hotel_code", hotel_code);
+		mp.put("room_idx",String.valueOf(room_idx));
+		model.addAttribute("reservation", service.reservation(mp)); 
+		return "front/reservation"; 
 	
+	}
+	@RequestMapping(value= "/reservationresult")
+	public String reservationresult() {
+		log.info("reservationresult call.....");
+		
+		return "front/reservationresult";
 	}
 			
 	@RequestMapping(value = "/register_proc", method = RequestMethod.POST)
