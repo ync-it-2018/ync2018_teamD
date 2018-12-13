@@ -28,7 +28,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class FAQVO {
+public class FfaqVO {
 	
 	private int FAQ_IDX;
 	

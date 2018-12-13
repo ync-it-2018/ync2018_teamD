@@ -3,9 +3,9 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.ync.project.mapper.FAQMapper">
+<mapper namespace="kr.ync.project.mapper.FfaqMapper">
 
-	<select id="FAQList" resultType="FAQVO">
+	<select id="FAQList" resultType="FfaqVO">
 		SELECT		FAQ_TITLE, FAQ_PREFERENCE
 		FROM			TD_FAQ
 		ORDER	 BY	FAQ_PREFERENCE DESC
