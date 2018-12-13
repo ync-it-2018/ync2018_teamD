@@ -48,6 +48,12 @@ public class NoticeDAOImpl implements NoticeDAO {
 		// TODO Auto-generated method stub
 		session.insert(namespace + ".addNotice", nt);
 	}
+
+	@Override
+	public void noticeModify(NoticeVO nt) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace + ".noticeModify", nt);
+	}
 	
 	
 	

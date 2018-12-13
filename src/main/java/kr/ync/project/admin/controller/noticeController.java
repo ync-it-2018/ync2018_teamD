@@ -77,5 +77,25 @@ public class noticeController {
 		return "/admin/notice/noticeWrite_proc";
 	}
 	
+	@RequestMapping(value = "/noticeModify", method = RequestMethod.GET)
+	public String noticeModify(@RequestParam("idx")int idx, Model model) throws Exception{
+		log.info("Notice Modify Call........");
+		
+		model.addAttribute("notice", service.noticeDetail(idx));
+		
+		return "/admin/notice/noticeModify";
+	}
+	
+	@RequestMapping(value = "/noticeModify_proc", method = RequestMethod.POST)
+	public String noticeModify_proc(NoticeVO nt, Model model) throws Exception{
+		log.info("Notice Modify_proc Call........");
+		
+		System.out.println(nt);
+		service.noticeModify(nt);
+		model.addAttribute("idx", nt.getNotice_idx());
+		
+		return "/admin/notice/noticeModify_proc";
+	}
+	
 	
 }
