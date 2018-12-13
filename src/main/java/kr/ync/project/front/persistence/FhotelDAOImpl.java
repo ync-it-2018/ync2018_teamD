@@ -15,6 +15,17 @@ import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.FreviewVO;
 import kr.ync.project.front.domain.FroomVO;
 
+
+/**
+ * 
+ * FhotelDAOImpl.java
+ *
+ * @Author : 이승민
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *  호텔정보를 받아오기 위해서 DB와 연결을 위한 DAT의 임플리먼트, mapper에 저장되어있는 쿼리문을 불러온다. -> 의존성주입
+ *
+ */
 @Repository
 public class FhotelDAOImpl implements FhotelDAO {
 	

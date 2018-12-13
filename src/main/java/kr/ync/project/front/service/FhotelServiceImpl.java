@@ -14,6 +14,16 @@ import kr.ync.project.front.domain.FroomVO;
 import kr.ync.project.front.persistence.FhotelDAO;
 
 
+/**
+ * 
+ * FhotelServiceImpl.java
+ *
+ * @Author : 이승민
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *   호텔의 정볼르 불러올 떄 사용할 서비스들의 기능을 정의해 둔 임플리먼트 
+ *
+ */
 @Repository
 public class FhotelServiceImpl implements FhotelService {
 

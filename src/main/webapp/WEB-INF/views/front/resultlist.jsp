@@ -270,50 +270,7 @@
 									</div>
 								</article>
 							</c:forEach>
-							<!-- <article class="grid_4 alpha">
-								<div class="indent-left hotelList">
-									<figure class="frame2 p2">
-										<div class="color-4 prev-indent-bot hotelName">신라호텔</div>
-										<div class="col-lg-6 hotelList">
-											<img src="/resources/front/img/hotel/hotel2.jpg" alt="" />
-										</div>
-										<div class="col-lg-6 hotelList">
-											<div>대구</div>
-											<div>평점:9.5</div>
-											<div>3.5도심</div>
-											<div>3.5경북대학교</div>
-
-											<div class="wrapper">
-												<span class="price fleft">200,000</span> <a
-													class="button fright" href="/blog?hotel_code=KORDAGDH">상세보기</a>
-											</div>
-										</div>
-									</figure>
-
-
-								</div>
-							</article>
-							<article class="grid_4 alpha">
-								<div class="indent-left hotelList">
-									<figure class="frame2 p2">
-										<div class="color-4 prev-indent-bot hotelName">클린호텔</div>
-										<div class="col-lg-6 hotelList">
-											<img src="/resources/front/img/hotel/hotel3.jpg" alt="" />
-										</div>
-										<div class="col-lg-6 hotelList">
-											<div>대구</div>
-											<div>평점:9.5</div>
-											<div>3.5도심</div>
-											<div>3.5경북대학교</div>
-
-											<div class="wrapper">
-												<span class="price fleft">200,000</span> <a
-													class="button fright" href="/blog?hotel_code=KORDAGDH">상세보기</a>
-											</div>
-										</div>
-									</figure>
-								</div>
-							</article> -->
+							
 						</div>
 					</div>
 				</div>
