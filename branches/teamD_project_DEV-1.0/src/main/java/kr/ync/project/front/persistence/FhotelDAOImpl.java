@@ -144,9 +144,9 @@ public class FhotelDAOImpl implements FhotelDAO {
 //	}
 
 	@Override
-	public FroomVO roomdetail(int room_idx) throws Exception {
+	public FroomVO roomdetail(HashMap mp) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne(roomdetail + ".roomdetail",room_idx);
+		return session.selectOne(roomdetail + ".roomdetail",mp);
 	}
 
 	@Override
@@ -162,12 +162,9 @@ public class FhotelDAOImpl implements FhotelDAO {
 	}
 
 	@Override
-	public FhotelVO reservation(String hotel_code, int room_idx) throws Exception {
-		Map<String, Object> paraMap = new HashMap<String, Object>();
-		paraMap.put("hotel_code", hotel_code);
-	    paraMap.put("room_idx", room_idx);
+	public FhotelVO reservation(HashMap mp) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne(reservation+".reservation",paraMap);
+		return session.selectOne(reservation+".reservation",mp);
 	}
 
 	/* (non-Javadoc)
@@ -178,6 +175,8 @@ public class FhotelDAOImpl implements FhotelDAO {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".nationList");
 	}
+
+	
 	
 	
 

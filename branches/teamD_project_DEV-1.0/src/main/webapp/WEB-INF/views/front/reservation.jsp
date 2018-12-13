@@ -1,10 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
-
+<!--호텔 예약 화면 페이지 -->
 <head>
 	<meta charset="utf-8">
-	<title>검색결과 페이지</title>
+	<title>예약 페이지</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<!-- css -->
@@ -40,6 +40,10 @@
 			window.open(popUrl,"",popOption);
 	
 		}
+	
+	
+	
+	</script>
 
 
 
@@ -50,16 +54,6 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 
 </style>
 
-
-
-
-
-	<!-- =======================================================
-    Theme Name: Moderna
-    Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-    Author: BootstrapMade
-    Author URL: https://bootstrapmade.com
-	======================================================= -->
 
 </head>
 
@@ -191,10 +185,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 		<section id="content">
 			<div class="container">
 				<div class="row">
-					<form action="#" accept-charset="utf-8" name="person_info1"
-						method="get">
-
-						<form action=#>
+					
+			<form action="/reservationresult?" method="get">
+						
 							<div class="col-lg-8">
 								<div style="border: 2px solid; padding: 10px;">
 
@@ -204,9 +197,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 
 										<h2>${reservation.hotel_name}</h2>
 										<hr class="two">
-										<h3>${reservation.ROOM_NAME	}</h3>
+										<h3>${reservation.ROOM_NAME}</h3>
 										<fieldset style="width: 100%">
-											<div>성(영문)을 입력 해주세요</div>
+												<div>성(영문)을 입력 해주세요</div>
 											<input type="text" name="reservationfamilyname"
 												style="WIDTH: 20%; HEIGHT: 40px" />
 											<div>이름(영문)을 입력 해주세요</div>
@@ -248,10 +241,13 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 										<option value="JCB CARD">JCB CARD</option>
 
 									</select>
-									<div style="text-align:right;"><button>예약하기</button>
+									<div style="text-align:right;">
+									<input type="submit" value="예약하기" />
 									<button>취소(돌아가기)</button></div>
 										</div>
 										</div>
+										</form>	
+										
 	
 
 
@@ -266,7 +262,7 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 									<h4>체크아웃:1234/11/13</h4>
 									<h2>총 요금:${reservation.ROOM_PRICE}</h2>
 									<div>
-									<button class=col-lg-3>KRW</button>
+									<button class=col-lg-3 onclick="KRWbutton()">KRW</button>
 									<button class=col-lg-3>JPY</button>
 									<button class=col-lg-3>USD</button>
 									<button class=col-lg-3>EUR</button>
@@ -277,9 +273,9 @@ hr.two{width: 100%;color:black;border: thin solid black;}
 							
 						</aside>
 					</div>
-													
-						</form>
-					</form>
+											
+						
+					
 				</div>
 			</div>
 
