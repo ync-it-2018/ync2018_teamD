@@ -4,9 +4,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- maven build 시 mapper xml찾지못하는 오류 방지하기위해 임시로 작성한 mapper xml -->
 <mapper namespace="kr.ync.project.mapper.FroomMapper"> <!-- 네임스페이스 잘보자  -->
+<!--
+ * FroomMapper.xml
+ *
+ * @Author : 류환욱
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *  객실상세보기의 정보를 받아오기 위해서 DB와 연결
+  -->
 
-
-<select id = "roomdetail" resultType= "FroomVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
+<select id = "roomdetail"  parameterType="java.util.HashMap" resultType= "FroomVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
 	SELECT 	
 			tr.ROOM_IDX,
 			ROOM_NAME,
@@ -17,7 +24,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			tr.HOTEL_CODE
 	FROM td_room tr, td_room_bed trb 
 	where   tr.room_idx = trb.room_idx
-	and tr.hotel_code = trb.hotel_code	<!--셀렉트원이랑 리스트 받아오는 차이 확인  -->
+	and tr.hotel_code = trb.hotel_code<!--셀렉트원이랑 리스트 받아오는 차이 확인  -->
+ 	and   tr.hotel_code = #{hotel_code}
  	and   tr.room_idx = #{room_idx} <!-- 상세보기 클릭시 나오는 객실번호 -->
 </select>
 
@@ -31,8 +39,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	TD_ROOM_INFO tri, TD_ROOM_FACILITY trf
 	WHERE tri.RF_IDX= trf.RF_IDX
 	AND tri.ROOM_IDX =#{room_idx}
-	 
-</select>
+	</select>
+	
+	
+
 
 
 </mapper>

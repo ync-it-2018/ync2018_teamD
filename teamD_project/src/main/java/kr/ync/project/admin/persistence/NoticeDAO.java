@@ -16,4 +16,6 @@ public interface NoticeDAO {
 	public void updateNotice(HashMap ntt) throws Exception;
 
 	public void addNotice(NoticeVO nt) throws Exception;
+
+	public void noticeModify(NoticeVO nt) throws Exception;
 }

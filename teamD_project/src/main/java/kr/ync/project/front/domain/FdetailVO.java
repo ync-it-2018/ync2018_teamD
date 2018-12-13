@@ -28,7 +28,7 @@ public class FdetailVO {
 
     private String city_name; //도시 코드
     
-    private int idx; 	
+    private String idx;
     
     private  String hotel_core_info; //객실 보유수
     

@@ -56,7 +56,7 @@
             		<tr>
             			<td style="width:80%"><h3>${notice.notice_title}</h3></td>
             			<td><input type="checkbox" id="notice" onclick="notice('${notice.notice_idx}');" />게시</td>
-            			<td style="width:5%;"><input type="button" value="수정"/></td>
+            			<td style="width:5%;"><input type="button" value="수정" onclick = "location.href='/admin/noticeModify?idx=${notice.notice_idx}'"/></td>
             			<td style="width:5%;"><input type="button" value="삭제"/></td>
             			<td><input type="button" value="목록" onclick = "location.href='/admin/noticeList'"/></td>
             		</tr>
@@ -78,7 +78,7 @@
 							<td style="width:9%;"> 게시 시작 :</td>
 							<td style="width:10%;"> ${notice.notice_date}  </td>
 							<td style="width:9%;"> 게시 종료 : </td>
-							<td style="width:55%;"> ${notice.notice_days }</td>
+							<td style="width:55%;"> ${notice.notice_end }</td>
 							<td style="width:9%;"> 작 성 자 : </td>
 							<td style=""> ${notice.admin_id}</td>
 						</td>

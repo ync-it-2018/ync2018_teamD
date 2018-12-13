@@ -1,5 +1,7 @@
 package kr.ync.project.front.controller;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.LoginVO;
 import kr.ync.project.front.dto.RegisterDTO;
+import kr.ync.project.front.service.FfaqService;
 import kr.ync.project.front.service.FhotelService;
 import kr.ync.project.front.service.FmypageService;
 import kr.ync.project.front.service.UserService;
@@ -30,6 +33,11 @@ public class PageController {
 
 	@Inject
 	private FhotelService service;
+	
+	
+
+	@Inject
+	private FfaqService FfaqService;
 
 		
 	/*@RequestMapping("/blog")
@@ -81,7 +89,7 @@ public class PageController {
 	}
 	
 	@RequestMapping(value= "/resultlist" , method = RequestMethod.GET)
-	public String typography(FhotelVO board, Model model, @RequestParam("textfield") String textfield, @RequestParam("grade") String grade ) throws Exception {
+	public String resultlist(FhotelVO board, Model model, @RequestParam("textfield") String textfield, @RequestParam("grade") String grade ) throws Exception {
 		log.info("resultlist call.....");
 		model.addAttribute("list", service.listAll(textfield, grade));
 		return "front/resultlist";
@@ -110,17 +118,22 @@ public class PageController {
 		return "front/doublechk";
 	}
 	
-	@RequestMapping("/avgresult")
+	@RequestMapping("/avgresult") //호텔 평점및 후기 
 	public String avgresult(@RequestParam("hotel_code") String hotel_code,
 			Model model) throws Exception {
 		log.info("avgresult page call.....");
 		model.addAttribute("review", service.review(hotel_code));
 		return "front/avgresult";
 	}
-	@RequestMapping("/roomdetail") //호텔객실 
-	public String roomdetail(@RequestParam("room_idx") int room_idx,Model model) throws Exception {
+	@RequestMapping("/roomdetail") //호텔객실 상세보기
+	public String roomdetail(@RequestParam("hotel_code") String hotel_code,
+			@RequestParam("room_idx") int room_idx,
+			Model model) throws Exception {
 		log.info("roomdetail page call.....");
-		model.addAttribute("roomdetail",service.roomdetail(room_idx));
+		HashMap<String, String> mp = new HashMap<String, String>();
+		mp.put("hotel_code", hotel_code);
+		mp.put("room_idx",String.valueOf(room_idx));
+		model.addAttribute("roomdetail",service.roomdetail(mp));
 		model.addAttribute("roomdetailimage",service.roomdetailimage(room_idx));
 		model.addAttribute("roomdetailproduct",service.roomdetailproduct(room_idx));
 		return "front/roomdetail";
@@ -174,13 +187,22 @@ public class PageController {
 		
 		return "front/writereview";
 	}
-	@RequestMapping(value= "/reservation" , method = RequestMethod.GET)
+	@RequestMapping(value= "/reservation" , method = RequestMethod.GET)//호텔 예약하기 화면
 	public String reservation(@RequestParam("hotel_code") String hotel_code,
 			@RequestParam("room_idx") int room_idx,Model model) throws Exception {
 		log.info("reservation call.....");
-		model.addAttribute("reservation", service.reservation(hotel_code,room_idx)); //최종적으로불러올이름
-		return "front/reservation"; //최종적으로 페이지
+		HashMap<String, String> mp = new HashMap<String, String>();
+		mp.put("hotel_code", hotel_code);
+		mp.put("room_idx",String.valueOf(room_idx));
+		model.addAttribute("reservation", service.reservation(mp)); 
+		return "front/reservation"; 
 	
+	}
+	@RequestMapping(value= "/reservationresult")
+	public String reservationresult() {
+		log.info("reservationresult call.....");
+		
+		return "front/reservationresult";
 	}
 			
 	@RequestMapping(value = "/register_proc", method = RequestMethod.POST)
@@ -207,6 +229,13 @@ public class PageController {
 		
 		log.info("logout call.....");
 		return "front/logout_proc";
+	}
+	
+	@RequestMapping("/faqninquiry")
+	public String faq(Model model) throws Exception {
+		log.info("FAQ & Inquiry page call.....");
+		model.addAttribute("FAQList", FfaqService.FAQList());
+		return "front/faqninquiry";
 	}
 
 //	@RequestMapping(value = "/noticelist", method = RequestMethod.GET)

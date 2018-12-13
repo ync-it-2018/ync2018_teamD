@@ -47,5 +47,11 @@ public void addNotice(NoticeVO nt) throws Exception {
 	dao.addNotice(nt);
 }
 
+@Override
+public void noticeModify(NoticeVO nt) throws Exception {
+	// TODO Auto-generated method stub
+	dao.noticeModify(nt);
+}
+
 
 }

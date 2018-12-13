@@ -7,6 +7,16 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+/**
+ * 
+ * FhotelVO.java
+ *
+ * @Author : 이승민
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *  호텔의 정보를 받아오는 VO
+ *
+ */
 public class FhotelVO {
 	private String address;
 
