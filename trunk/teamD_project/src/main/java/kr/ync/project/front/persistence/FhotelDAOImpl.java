@@ -15,6 +15,17 @@ import kr.ync.project.front.domain.FhotelVO;
 import kr.ync.project.front.domain.FreviewVO;
 import kr.ync.project.front.domain.FroomVO;
 
+
+/**
+ * 
+ * FhotelDAOImpl.java
+ *
+ * @Author : 이승민
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *  호텔정보를 받아오기 위해서 DB와 연결을 위한 DAT의 임플리먼트, mapper에 저장되어있는 쿼리문을 불러온다. -> 의존성주입
+ *
+ */
 @Repository
 public class FhotelDAOImpl implements FhotelDAO {
 	
@@ -133,9 +144,9 @@ public class FhotelDAOImpl implements FhotelDAO {
 //	}
 
 	@Override
-	public FroomVO roomdetail(int room_idx) throws Exception {
+	public FroomVO roomdetail(HashMap mp) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne(roomdetail + ".roomdetail",room_idx);
+		return session.selectOne(roomdetail + ".roomdetail",mp);
 	}
 
 	@Override
@@ -151,12 +162,9 @@ public class FhotelDAOImpl implements FhotelDAO {
 	}
 
 	@Override
-	public FhotelVO reservation(String hotel_code, int room_idx) throws Exception {
-		Map<String, Object> paraMap = new HashMap<String, Object>();
-		paraMap.put("hotel_code", hotel_code);
-	    paraMap.put("room_idx", room_idx);
+	public FhotelVO reservation(HashMap mp) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectOne(reservation+".reservation",paraMap);
+		return session.selectOne(reservation+".reservation",mp);
 	}
 
 	/* (non-Javadoc)
@@ -167,6 +175,8 @@ public class FhotelDAOImpl implements FhotelDAO {
 		// TODO Auto-generated method stub
 		return session.selectList(namespace + ".nationList");
 	}
+
+	
 	
 	
 

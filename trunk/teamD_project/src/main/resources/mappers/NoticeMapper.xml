@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <select id = "noticeDetail" resultType = "NoticeVO">
-	SELECT NOTICE_IDX, NOTICE_TITLE, NOTICE_CHK, NOTICE_CONTENT, NOTICE_IMG, TO_CHAR(NOTICE_DATE,'yyyy-mm-dd') AS NOTICE_DATE, TO_CHAR(NOTICE_DATE+NOTICE_DAYS,'yyyy-mm-dd') AS NOTICE_DAYS, ADMIN_ID
+	SELECT NOTICE_IDX, NOTICE_TITLE, NOTICE_CHK, NOTICE_CONTENT, NOTICE_IMG, TO_CHAR(NOTICE_DATE,'yyyy-mm-dd') AS NOTICE_DATE, TO_CHAR(NOTICE_DATE+NOTICE_DAYS,'yyyy-mm-dd') AS NOTICE_END, NOTICE_DAYS, ADMIN_ID
 	FROM   TD_NOTICE
 	WHERE  NOTICE_IDX = #{idx}
 </select>
@@ -38,6 +38,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	INSERT INTO TD_NOTICE
 	VALUES (TD_SEQ_NOTI.NEXTVAL, #{notice_title}, TO_DATE(#{notice_date}, 'yyyy-mm-dd'), #{notice_days}, #{notice_img}, #{notice_content}, #{admin_id}, #{notice_chk})
 </insert>
+
+<update id = "noticeModify" parameterType="NoticeVO">
+	UPDATE TD_NOTICE SET NOTICE_TITLE = #{notice_title}, 
+	NOTICE_DATE = TO_DATE(#{notice_date},'yyyy-mm-dd'), 
+	NOTICE_DAYS = #{notice_days}, 
+	NOTICE_IMG = #{notice_img} , 
+	NOTICE_CONTENT = #{notice_content} 
+	WHERE NOTICE_IDX = #{notice_idx}
+</update>
+
 <!-- 
 <delete id="delete_info">
 	DELETE FROM TD_HOTEL_INFO WHERE HOTEL_CODE = #{hotel_code}

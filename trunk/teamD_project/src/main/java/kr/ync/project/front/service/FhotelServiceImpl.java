@@ -1,5 +1,6 @@
 package kr.ync.project.front.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -14,6 +15,16 @@ import kr.ync.project.front.domain.FroomVO;
 import kr.ync.project.front.persistence.FhotelDAO;
 
 
+/**
+ * 
+ * FhotelServiceImpl.java
+ *
+ * @Author : 이승민
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *   호텔의 정볼르 불러올 떄 사용할 서비스들의 기능을 정의해 둔 임플리먼트 
+ *
+ */
 @Repository
 public class FhotelServiceImpl implements FhotelService {
 
@@ -76,9 +87,9 @@ public List<ImageVO> hotel_image(String hotel_code) throws Exception {
 }
 
 @Override
-public FroomVO roomdetail(int room_idx) throws Exception {
+public FroomVO roomdetail(HashMap mp) throws Exception {
 	// TODO Auto-generated method stub
-	return  dao.roomdetail(room_idx);
+	return  dao.roomdetail(mp);
 }
 
 @Override
@@ -94,9 +105,9 @@ public List<FroomVO> roomdetailproduct(int room_idx) throws Exception {
 }
 
 @Override
-public FhotelVO reservation(String hotel_code, int room_idx)throws Exception {
+public FhotelVO reservation(HashMap mp)throws Exception {
 	// TODO Auto-generated method stub
-	return dao.reservation(hotel_code,room_idx);
+	return dao.reservation(mp);
 }
 
 /* (non-Javadoc)
@@ -107,6 +118,7 @@ public List<FhotelVO> nationList() throws Exception {
 	// TODO Auto-generated method stub
 	return dao.nationList();
 }
+
 
 
 

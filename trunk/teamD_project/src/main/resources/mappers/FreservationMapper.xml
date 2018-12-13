@@ -4,9 +4,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- maven build 시 mapper xml찾지못하는 오류 방지하기위해 임시로 작성한 mapper xml -->
 <mapper namespace="kr.ync.project.mapper.FreservationMapper"> <!-- 네임스페이스 잘보자  -->
+<!--
+ * FreservationMapper.xml
+ *
+ * @Author : 류환욱
+ * @Date   : 2018. 12. 13.
+ * @Description
+ *  예약 하기페이지에서 호텔코드와 룸인덱스값을 받아오기 위해서 DB와 연결
+  -->
 
-
-<select id = "reservation" parameterType="map" resultType= "FhotelVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
+<select id = "reservation" parameterType="java.util.HashMap"  resultType= "FhotelVO"><!-- DAOimpl의 namespace 뒤에 붙는 이름이랑 같아야함 -->
 	SELECT 	
 			tr.ROOM_IDX,
 			ROOM_NAME,

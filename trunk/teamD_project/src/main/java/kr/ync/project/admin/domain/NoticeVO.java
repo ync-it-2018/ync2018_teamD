@@ -16,6 +16,8 @@ public class NoticeVO {
 	
 	private String notice_date;
 	
+	private String notice_end;
+	
 	private String notice_days;
 	
 	private String notice_img;

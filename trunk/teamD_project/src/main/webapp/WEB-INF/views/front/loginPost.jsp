@@ -8,13 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-<p>session id 값 :  ${LoginVO.MEMBER_ID} </p>
-<p>session pwd 값 : ${LoginVO.MEMBER_PASSWORD} </p>
-<p>session name 값 : ${LoginVO.MEMBER_FIANAME} </p>
-					
+<body>		
 <!-- 세션 생성 -->
-
 <%
 		String id = "";
 		id = (String)request.getParameter("MEMBER_ID");
@@ -23,13 +18,20 @@
 %>
 <!--  세션 생성 끝 -->
 
-<p>현재 세션 : <%=(String)session.getAttribute("currentLoginSession") %></p>
+
+<% if(id == null || id.equals("")) {%>
+	<h1>로그인 오류</h1>
+	<script>window.open("/","_self");</script>
+<%} else {%>
+	<script>
+		alert("<%=(String)session.getAttribute("currentLoginSession")%>님, 반갑습니다.");
+		window.open("/","_self");
+	</script>
+
+<%} %>
 </body>
 
-<script>
-	alert("<%=(String)session.getAttribute("currentLoginSession")%>님, 반갑습니다.");
-	window.open("/","_self");
-</script>
+
 </html>
 
 	
