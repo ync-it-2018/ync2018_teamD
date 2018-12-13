@@ -32,14 +32,14 @@
 
 <body>
 	<!-- 로그인 모달 -->
-	<div id="login" class="modal">
+	<div id="login" class="modal animate">
 
 		<!-- Modal Content -->
 		<form id="loginForm" method="POST" class="modal-content animate" action="/loginPost">
 
 			<div class="modal-container">
 				<label for="uid"><b>Username</b></label> <input class="form-control form-control-lg" type="text"
-					placeholder="Enter Username" name="MEMBER_ID" required id="member_id">
+					placeholder="Enter Username	" name="MEMBER_ID" required id="member_id">
 				<label for="pwd"><b>Password</b></label> <input class="form-control form-control-lg"
 					type="password" placeholder="Enter Password" name="MEMBER_PASSWORD" required id="member_password">
 				<button type="submit" style="margin: 3px" class="btn btn-success"
@@ -59,7 +59,7 @@
 	</div>
 
 	<!-- 회원가입 모달 -->
-	<div id="register" class="modal">
+	<div id="register" class="modal animate">
 
 		<!-- Modal Content -->
 		<form id="registerForm" class="modal-content animate"  method="POST"  action="/register_proc">
@@ -269,7 +269,7 @@
 						</article>
 						
 						
-						<article id="resv_list_data">
+						<article id="InquiryPage">
 							<div class="post-image">
 								<div class="post-heading">
 									<img src="/resources/front/img/dummies/myPage1.png">
@@ -277,40 +277,6 @@
 							</div>
 							<!-- 예약된 목록 페이지  -->
 							<p>예약중인 목록을 불러옴</p>
-							<table class="table">
-								<tr>
-									<th>등록번호</th>
-									<th>호텔 명</th>
-									<th>체크인</th>
-									<th>체크아웃</th>
-								</tr>
-								<c:forEach items="${resvChkinNowList}"  var="resvChkinNowList">
-									<tr>
-										<td>${resvChkinNowList.BOOKING_IDX}</td>
-										<td>${resvChkinNowList.HOTEL_NAME}</td>
-										<td>${resvChkinNowList.BOOKING_IN_DATE}</td>
-										<td>${resvChkinNowList.BOOKING_OUT_DATE}</td>
-									</tr>
-								</c:forEach>
-							</table>
-
-							<p>아직 예약날짜가 오지 않은 목록을 불러옴</p>
-							<table class="table">
-								<tr>
-									<th>등록번호</th>
-									<th>호텔 명</th>
-									<th>체크인</th>
-									<th>체크아웃</th>
-								</tr>
-								<c:forEach items="${resvChkinFutureList}"  var="resvChkinFutureList">
-									<tr>
-										<td>${resvChkinFutureList.BOOKING_IDX}</td>
-										<td>${resvChkinFutureList.HOTEL_NAME}</td>
-										<td>${resvChkinFutureList.BOOKING_IN_DATE}</td>
-										<td>${resvChkinFutureList.BOOKING_OUT_DATE}</td>
-									</tr>
-								</c:forEach>
-							</table>
 							<div class="bottom-article">
 								<ul class="meta-post">
 									<li><i class="icon-calendar"></i><a href="#"> Mar 23,
@@ -440,9 +406,8 @@
 							<div class="widget">
 								<h3 class="widgetheading">마이 페이지</h3>
 								<ul class="cat">
-									<li><i class="icon-angle-right"></i><a id="FAQ">예약완료내역</a></li>
-									<li><i class="icon-angle-right"></i><a id="Inquiry">예약
-											현황</a></li>
+									<li><i class="icon-angle-right"></i><a id="FAQBtn">예약완료내역</a></li>
+									<li><i class="icon-angle-right"></i><a id="InquiryBtn">예약 현황</a></li>
 								</ul>
 							</div>
 
@@ -597,7 +562,7 @@
 	<script src="/resources/front/js/animate.js"></script>
 	<script src="/resources/front/js/custom.js"></script>
 	<script src="/resources/front/js/login/login.js"></script>
-	<script src="/resources/front/js/mypage.js"></script>
+	<script src="/resources/front/js/faqninquiry.js"></script>
 
 </body>
 
