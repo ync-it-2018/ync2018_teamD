@@ -33,10 +33,9 @@
    ======================================================= -->
 
 </head>
+	<!-- 로그인 모달 -->
+	<div id="login" class="modal animate">
 
-<body>
-   <!-- 로그인 모달 -->
-   <div id="login" class="modal animate">
 
       <!-- Modal Content -->
       <form id="loginForm" method="POST" class="modal-content animate" action="/loginPost">
@@ -62,8 +61,9 @@
       </form>
    </div>
 
-   <!-- 회원가입 모달 -->
-   <div id="register" class="modal animate">
+	<!-- 회원가입 모달 -->
+	<div id="register" class="modal animate">
+
 
       <!-- Modal Content -->
       <form id="registerForm" class="modal-content animate"  method="POST"  action="/register_proc">
@@ -147,31 +147,32 @@
    if(id == null || id.equals("")) {
 %>
 
-   <div id="wrapper">
-      <!-- 우상단 바 관련 소스 -->
-      <header>
-         <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-               <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse"
-                     data-target=".navbar-collapse">
-                     <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-                        class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="/"><span>D</span>aisy </a>
-               </div>
-               <div class="navbar-collapse collapse ">
-                  <ul class="nav navbar-nav">
-                     <li class="active"><a href="/"><button class="btn">Home</button></a></li>
-                     <li><a href="#" id="loginPage"><button class="btn">Login</button></a></li>
-                     <li><a href="/faqninquiry" ><button class="btn">고객센터</button></a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </header>
-   </div>
-      <!-- ..까지가 우상단 바 -->
+	<div id="wrapper">
+		<!-- 우상단 바 관련 소스 -->
+		<header>
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/"><span>D</span>aisy </a>
+					</div>
+					<div class="navbar-collapse collapse ">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="/"><button class="btn">Home</button></a></li>
+							<li><a href="#" id="loginPage"><button class="btn">Login</button></a></li>
+							<li><a href="/faqninquiry" ><button class="btn">고객센터</button></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+	</div>
+		<!-- ..까지가 우상단 바 -->
+
 
 <%} else { %>
 
@@ -193,18 +194,6 @@
                <div class="navbar-collapse collapse ">
                   <ul class="nav navbar-nav">
                      <li class="active"><a href="/"><button class="btn">Home</button></a></li>
-                     <li><a href="/searchresult"><button class="btn">Searchlist</button></a></li>
-                     <!-- 드롭다운 예제    
-                     <li class="dropdown"><a href="#" class="dropdown-toggle "
-                        data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                        data-close-others="false"><b
-                           class=" icon-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                           <li><a href="/typography">SearchList</a></li>
-                           <li><a href="/components">Components</a></li>
-                           <li><a href="/pricingbox">Pricing box</a></li>
-                        </ul></li> -->
-                     <!-- <li><a href="/searchresult">SearchResult</a></li> -->
                      <li>
                         <a href="/mypage">
                            <form method="POST" action="/mypage">
@@ -213,19 +202,18 @@
                            </form>
                         </a>
                      </li>
-                     <li><a href="/searchresultdetail?hotel_code=KORDAGDH"><button class="btn">SearchResultDetail</button></a></li>
                      <!-- <li><a href="/contact">Contact</a></li> -->
                      <li><a href="/logout_proc" id="logout"><button class="btn">Logout</button></a></li>
                      <li><a href="/faqninquiry" ><button class="btn">고객센터</button></a></li>
                   </ul>
                </div>
-               
             </div>
          </div>
       </header>
    </div>
 <%}%>
 <!-- 여기까지가 공통적으로 들어가야하는 로그인, 회원가입, 우상단바  -->
+
 		<section id="inner-headline">
 			<div class="container">
 				<div class="row">

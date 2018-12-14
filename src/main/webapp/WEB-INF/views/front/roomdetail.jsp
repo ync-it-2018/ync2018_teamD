@@ -24,9 +24,7 @@
   <tbody>
 			<tr>
 			<th rowspan="2">
-	<div class="cycle-slideshow" 
-	cycle-slideshow data-cycle-loader="wait"
-    data-cycle-timeout=2000 >
+	<div class="cycle-slideshow" data-cycle-loader="wait"data-cycle-timeout=2000 >
     
     <div class="cycle-pager"></div>
 	<c:forEach items="${roomdetailimage}" var="FroomVO">
