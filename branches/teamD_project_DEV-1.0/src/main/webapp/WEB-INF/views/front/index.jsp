@@ -151,7 +151,8 @@
 
 <%
    String id = "";
-   id = (String)session.getAttribute("currentLoginSession");            // request에서 id 파라미터를 가져온다
+   id = (String)session.getAttribute("currentLoginSession");
+   // request에서 id 파라미터를 가져온다
    if(id == null || id.equals("")) {
 %>
 
