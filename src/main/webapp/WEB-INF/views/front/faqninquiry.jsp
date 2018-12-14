@@ -188,12 +188,12 @@
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/"><button class="btn">Home</button></a></li>
 							<li>
-								<form method="POST" action="/mypage">
-									<a href="/mypage"> <input type="hidden" name="MEMBER_ID"
-										id="MEMBER_ID" value="<%=id%>" />
-										<button class="btn btn-success" type="submit">Mypage</button>
+									<a href="/mypage">
+										<form method="POST" action="/mypage">
+											<input type="hidden" name="MEMBER_ID" id="MEMBER_ID" value="<%=id%>" />
+											<button class="btn btn-success" type="submit">Mypage</button>
+										</form>
 									</a>
-								</form>
 							</li>
 							<!-- <li><a href="/contact">Contact</a></li> -->
 							<li><a href="/logout_proc" id="logout"><button

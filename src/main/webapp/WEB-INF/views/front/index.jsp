@@ -14,9 +14,6 @@
 <meta name="description" content="" />
 
 
-<!-- Theme 적용 -->
-<link href="/resources/front/skins/default.css" rel="stylesheet" />
-
 <!-- css 호출 -->
 <link href="/resources/front/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/resources/front/css/fancybox/jquery.fancybox.css"
@@ -25,6 +22,9 @@
 <link href="/resources/front/css/flexslider.css" rel="stylesheet" />
 <link href="/resources/front/css/style.css" rel="stylesheet" />
 <link href="/resources/front/css/loginform.css" rel="stylesheet" />
+
+<!-- Theme 적용 -->
+<link href="/resources/front/skins/default.css" rel="stylesheet" />
 
 
 
