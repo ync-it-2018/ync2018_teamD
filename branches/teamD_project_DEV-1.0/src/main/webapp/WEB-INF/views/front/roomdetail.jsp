@@ -10,7 +10,13 @@
  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://malsup.github.com/jquery.cycle2.js"></script>
- 
+ <style>
+hr.two { /* 화면을 구분하기 위한 선 */
+	width: 100%;
+	color: black;
+	border: thin solid black;
+}
+</style>
 <title>객실 정보</title>
 </head>
 <body>
@@ -35,7 +41,9 @@
 			
 			</th>
 				<td><div>침대:${roomdetail.BED_NAME}${roomdetail.BED_CNT}개</div>
+				
 					<div>최대인원:어른(${roomdetail.ROOM_PEOPLENUM})어린이(${roomdetail.ROOM_PEOPLENUM_K})</div>
+					<hr class="two"/>
 				</td>
 			</tr>
 			
