@@ -95,15 +95,6 @@ public class PageController {
 		return "front/resultlist";
 	}
 	
-	
-	
-	@RequestMapping("/searchresult")
-	public String searchresult() {
-		log.info("searchresult call.....");
-		
-		return "front/searchresult";
-	}
-	
 	@RequestMapping("/register_proc")
 	public String register() {
 		log.info("register confirm call.....");
