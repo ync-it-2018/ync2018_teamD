@@ -7,6 +7,16 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+/**
+ * 
+ * ImageVO.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  호텔, 객실 이미지에 대한 정보
+ *
+ */
 public class ImageVO {
 	private int rimage_idx;
 	

@@ -12,6 +12,16 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+/**
+ * 
+ * ALoginInterceptor.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  로그인 한 회원의 정보를 세션에 저장
+ *
+ */
 public class ALoginInterceptor extends HandlerInterceptorAdapter {
 
 	private static final String LOGIN = "login";

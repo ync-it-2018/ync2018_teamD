@@ -10,7 +10,16 @@ import org.springframework.stereotype.Repository;
 import kr.ync.project.admin.domain.NoticeVO;
 import kr.ync.project.admin.persistence.NoticeDAO;
 
-
+/**
+ * 
+ * NoticeServiceImpl.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  공지사항 관리시 필요한 DAO 실행
+ *
+ */
 @Repository
 public class NoticeServiceImpl implements NoticeService {
 

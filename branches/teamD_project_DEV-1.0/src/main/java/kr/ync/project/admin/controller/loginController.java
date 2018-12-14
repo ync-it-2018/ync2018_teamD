@@ -33,6 +33,14 @@ public class loginController {
 	@Inject
 	private AdminService service;
 	
+	/**
+	 * 
+	 * @Description 
+	 * 관리자 로그인 페이지 불러오는 컨트롤러
+	 * @Method Name : adminlogin
+	 *
+	 * @return
+	 */
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String adminlogin() {
 		log.info("login call.....");
@@ -41,6 +49,18 @@ public class loginController {
 	}
 	
 	@PostMapping(value = "/loginPost")
+	/**
+	 * 
+	 * @Description 
+	 *	관리자 로그인 확인 하는 컨트롤러
+	 * @Method Name : loginPOST
+	 *
+	 * @param ad		로그인 시도하는 아이디, 비밀번호
+	 * @param session	
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
 	public String loginPOST(AdminVO ad, HttpSession session, Model model) throws Exception {
 
 		AdminVO vo = service.a_login(ad);

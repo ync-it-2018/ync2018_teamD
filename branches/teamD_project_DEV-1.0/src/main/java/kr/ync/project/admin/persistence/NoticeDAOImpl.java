@@ -11,6 +11,16 @@ import org.springframework.stereotype.Repository;
 import kr.ync.project.admin.domain.NoticeVO;
 
 @Repository
+/**
+ * 
+ * NoticeDAOImpl.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  공지사항 관련된 동작시 필요한 쿼리문 동작
+ *
+ */
 public class NoticeDAOImpl implements NoticeDAO {
 	
 	@Inject
