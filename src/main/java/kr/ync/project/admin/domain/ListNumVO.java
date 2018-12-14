@@ -1,5 +1,14 @@
 package kr.ync.project.admin.domain;
-
+/**
+ * 
+ * ListNumVO.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  페이징에 필요한 정보
+ *
+ */
 public class ListNumVO {
 
 	private int strNum;
@@ -7,12 +16,12 @@ public class ListNumVO {
 	private int s_listNum;
 	private int e_listNum;
 	private int cnt;
-
+	
 	public ListNumVO() {
 		this.strNum = 1;
 		this.nowNum = 1;
 	}
-
+	
 	public void setstrNum(int strNum) {
 
 		if (strNum <= 0) {
@@ -35,18 +44,6 @@ public class ListNumVO {
 	public int getnowNum() {
 		return nowNum;
 	}
-
-	/*// method for MyBatis SQL Mapper -
-	public int getPageStart() {
-
-		return (this.page - 1) * perPageNum;
-	}
-
-	// method for MyBatis SQL Mapper
-	public int getPerPageNum() {
-
-		return this.perPageNum;
-	}*/
 
 	@Override
 	public String toString() {

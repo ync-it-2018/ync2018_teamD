@@ -7,6 +7,16 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+/**
+ * 
+ * HotelVO.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  호텔에 대한 정보
+ *
+ */
 public class HotelVO {
 	private int rownum;
 	

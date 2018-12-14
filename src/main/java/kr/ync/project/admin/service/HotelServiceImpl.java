@@ -15,7 +15,16 @@ import kr.ync.project.admin.domain.ReviewVO;
 import kr.ync.project.admin.domain.RoomVO;
 import kr.ync.project.admin.persistence.HotelDAO;
 
-
+/**
+ * 
+ * HotelServiceImpl.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  호텔 관리시 동작하는 DAO 실행
+ *
+ */
 @Repository
 public class HotelServiceImpl implements HotelService {
 

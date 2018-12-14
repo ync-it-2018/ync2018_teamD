@@ -10,6 +10,16 @@ import kr.ync.project.admin.domain.AdminVO;
 import kr.ync.project.admin.persistence.AdminDAO;
 
 @Repository
+/**
+ * 
+ * AdminServiceImpl.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  로그인 시 필요한 동작을 DAO를 통해서 실행
+ *
+ */
 public class AdminServiceImpl implements AdminService {
 	@Inject
 	private AdminDAO dao;
