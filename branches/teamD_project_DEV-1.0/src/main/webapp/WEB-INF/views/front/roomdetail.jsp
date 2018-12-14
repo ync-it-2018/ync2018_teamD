@@ -17,7 +17,7 @@ hr.two { /* 화면을 구분하기 위한 선 */
 	border: thin solid black;
 }
 </style>
-<title>객실 정보</title>
+<title>Team_D Project : Daisy</title>
 </head>
 <body>
   <table class="table">
