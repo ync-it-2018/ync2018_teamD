@@ -21,4 +21,16 @@ public class FaqServiceImpl implements FaqService {
 		return 	dao.FaqList();
 	}
 
+	@Override
+	public int FaqCount() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.FaqCount();
+	}
+
+	@Override
+	public void FAQDelete(String faq_idx) throws Exception {
+		// TODO Auto-generated method stub
+		dao.FAQDelete(faq_idx);
+	}
+
 }

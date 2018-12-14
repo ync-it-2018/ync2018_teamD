@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Team_D Project : Daisy</title>
 </head>
 <body>
 	<h1>처리가 완료되면 다시 마이페이지로 돌아갑니다...</h1>

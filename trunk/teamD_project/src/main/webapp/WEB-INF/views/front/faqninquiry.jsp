@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Moderna - Bootstrap 3 flat corporate template</title>
+<title>Team_D Project : Daisy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <!-- css 호출 -->
@@ -134,6 +134,7 @@
 			</div>
 		</form>
 	</div>
+	
 <%
 	String id = "";
 	id = (String)session.getAttribute("currentLoginSession");            // request에서 id 파라미터를 가져온다
@@ -183,37 +184,23 @@
 						<a class="navbar-brand" href="/"><span>D</span>aisy <span>H</span>otel
 							<span>S</span>ervice</a>
 					</div>
-					
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="/"><button class="btn">Home</button></a></li>
-							<li><a href="/searchresult"><button class="btn">Searchlist</button></a></li>
-							<!-- 드롭다운 예제 	
-							<li class="dropdown"><a href="#" class="dropdown-toggle "
-								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-								data-close-others="false"><b
-									class=" icon-angle-down"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="/typography">SearchList</a></li>
-									<li><a href="/components">Components</a></li>
-									<li><a href="/pricingbox">Pricing box</a></li>
-								</ul></li> -->
-							<!-- <li><a href="/searchresult">SearchResult</a></li> -->
 							<li>
-								<a href="/mypage">
-									<form method="POST" action="/mypage">
-										<input type="hidden" name="MEMBER_ID"  id = "MEMBER_ID"value="<%=id %>"/>
-										<button class="btn btn-success" type="submit" >Mypage</button>
-									</form>
-								</a>
+									<a href="/mypage">
+										<form method="POST" action="/mypage">
+											<input type="hidden" name="MEMBER_ID" id="MEMBER_ID" value="<%=id%>" />
+											<button class="btn btn-success" type="submit">Mypage</button>
+										</form>
+									</a>
 							</li>
-							<li><a href="/searchresultdetail?hotel_code=KORDAGDH"><button class="btn">SearchResultDetail</button></a></li>
 							<!-- <li><a href="/contact">Contact</a></li> -->
-							<li><a href="/logout_proc" id="logout"><button class="btn">Logout</button></a></li>
-							<li><a href="/faqninquiry" ><button class="btn">고객센터</button></a></li>
+							<li><a href="/logout_proc" id="logout"><button
+										class="btn">Logout</button></a></li>
+							<li><a href="/faqninquiry"><button class="btn">고객센터</button></a></li>
 						</ul>
 					</div>
-					
 				</div>
 			</div>
 		</header>

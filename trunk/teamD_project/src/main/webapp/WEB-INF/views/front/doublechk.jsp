@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Team_D Project : Daisy</title>
 </head>
 <body>
 Register 모달에서 Doublechk 페이지로 정상적으로 넘어옴

@@ -22,5 +22,11 @@ public class AdminVO {
 	private String admin_name;
 	
 	private String admin_out;
+	
+	private String sessionkey;
+	
+	private String sessionlimit;
+	
+	private boolean adminCookie;
 
 }

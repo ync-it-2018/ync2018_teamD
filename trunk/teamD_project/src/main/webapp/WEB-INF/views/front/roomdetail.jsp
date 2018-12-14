@@ -10,8 +10,14 @@
  
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="http://malsup.github.com/jquery.cycle2.js"></script>
- 
-<title>객실 정보</title>
+ <style>
+hr.two { /* 화면을 구분하기 위한 선 */
+	width: 100%;
+	color: black;
+	border: thin solid black;
+}
+</style>
+<title>Team_D Project : Daisy</title>
 </head>
 <body>
   <table class="table">
@@ -24,9 +30,7 @@
   <tbody>
 			<tr>
 			<th rowspan="2">
-	<div class="cycle-slideshow" 
-	cycle-slideshow data-cycle-loader="wait"
-    data-cycle-timeout=2000 >
+	<div class="cycle-slideshow" data-cycle-loader="wait"data-cycle-timeout=2000 >
     
     <div class="cycle-pager"></div>
 	<c:forEach items="${roomdetailimage}" var="FroomVO">
@@ -37,7 +41,9 @@
 			
 			</th>
 				<td><div>침대:${roomdetail.BED_NAME}${roomdetail.BED_CNT}개</div>
+				
 					<div>최대인원:어른(${roomdetail.ROOM_PEOPLENUM})어린이(${roomdetail.ROOM_PEOPLENUM_K})</div>
+					<hr class="two"/>
 				</td>
 			</tr>
 			

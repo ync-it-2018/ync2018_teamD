@@ -19,6 +19,16 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 @RequestMapping("/admin")
+/**
+ * 
+ * noticeController.java 공지사항 동작 컨트롤러
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  
+ *
+ */
 public class noticeController {
 	
 	@Inject
