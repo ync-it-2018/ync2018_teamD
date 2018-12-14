@@ -24,4 +24,15 @@ public class FaqDAOImpl implements FaqDAO {
 		return session.selectList(namespace+".FaqList");
 	}
 
+	@Override
+	public int FaqCount() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne(namespace+".FaqCount");
+	}
+
+	@Override
+	public void FAQDelete(String faq_idx) throws Exception {
+		// TODO Auto-generated method stub
+		session.update(namespace+".FaqDelete", faq_idx);
+	}
 }

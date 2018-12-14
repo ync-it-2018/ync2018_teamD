@@ -8,4 +8,8 @@ public interface FaqService {
 
 	public List<FaqVO> FaqList() throws Exception;
 
+	public int FaqCount() throws Exception;
+
+	public void FAQDelete(String faq_idx) throws Exception;
+
 }
