@@ -272,7 +272,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	insert 
 		into td_admin
 	values 
-		(#{admin_id},#{admin_password},#{admin_email},#{admin_grade},td_seq_adminidx.nextval,#{admin_name}, default)
+		(#{admin_id},#{admin_password},#{admin_email},#{admin_grade},td_seq_adminidx.nextval,#{admin_name}, default, default, null)
 </insert>
 <!-- <select id="mcountPaging" resultType="int">
 <![CDATA[

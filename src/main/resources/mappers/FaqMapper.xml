@@ -13,18 +13,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		faq_content,
 		to_char(faq_date, 'yyyy-mm-dd') as "faq_date",
 		admin_id,
-		faq_preference
+		faq_preference,
+		decode(faq_out, 1, '활성', '비활성') as "faq_out"
 	from	(select  /*+INDEX_DESC(td_faq td_xpk_faq)*/
        				faq_idx,
        				faq_title,
        				faq_content,
        				faq_date,
        				admin_id,
-       				faq_preference
+       				faq_preference,
+       				faq_out
      	 	 from
        				td_faq
         	 )
 	order by faq_idx desc
 ]]>
 </select> 
+<select id = "FaqCount" resultType="int">
+<![CDATA[
+	select
+		count(faq_idx)
+	from
+		td_faq
+]]>
+</select>
+<update id = "FaqDelete" parameterType="FaqVO">
+	update
+		td_faq
+	set
+		faq_out	= 2
+	where
+		faq_idx	= #{faq_idx}
+</update>
 </mapper>
