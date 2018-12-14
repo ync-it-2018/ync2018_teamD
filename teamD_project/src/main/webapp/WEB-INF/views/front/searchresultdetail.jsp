@@ -5,7 +5,7 @@
 <!--호텔 검색 결과 상세 페이지 -->
 <head>
 <meta charset="utf-8">
-<title>검색결과 페이지</title>
+<title>Team_D Project : Daisy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <!-- css -->
@@ -269,8 +269,8 @@ hr.two { /* 화면을 구분하기 위한 선 */
 					<form action="/resultlist" accept-charset="utf-8" name="person_info1"
 						method="get">
 						<fieldset style="width: 100%">
-							검색(*호텔이름이나 지역을 검색하세요) : <input type="text" name="textfield"style="WIDTH: 15%; HEIGHT: 40px" /> 
-							<span>호텔등급</span> <select name="grade">
+							검색(*호텔이름이나 지역을 검색하세요) : <input type="text" name="textfield"style="WIDTH: 15%; " /> 
+							<span>호텔등급</span> <select name="grade" >
 										<option value=1 selected="selected">★</option> <!--아무것도 고르지않을때 별하나로   -->
 										<option value=2>★★</option>
 										<option value=3>★★★</option>
@@ -346,13 +346,13 @@ hr.two { /* 화면을 구분하기 위한 선 */
 						</div>
 						<div class="widget" >
 							<h2 class="widgetheading">평점:${detail.rate}</h2>
-							<ul class="recent" onclick="popupOpen()">
+							<ul class="recent">
 								<li><img src="/resources/front/img/hotel/avg.PNG"
-									class="pull-left" alt="" onclick="popupOpen()" /></li>
+									class="pull-left" alt=""  /></li>
 							</ul>
 						</div>
 						<div class="widget">
-							<h5 class="widgetheading">관심호텔</h5>
+							<h5 class="widgetheading" onclick="popupOpen()">관심호텔</h5>
 							<ul class="tags">
 									 <li><button style="WIDTH: 200px; HEIGHT: 50px;"  id="button1" onclick="hotel_enrollment(); ">관심호텔 등록</button></li> 
 								<!-- 버튼 누르면 관심 호텔 등록 -->

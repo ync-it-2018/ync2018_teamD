@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Team_D Project : Daisy</title>
 </head>
 <body>
 <h1>잠시 후 메인 페이지로 넘어갑니다.</h1>

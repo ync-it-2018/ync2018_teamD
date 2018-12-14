@@ -20,5 +20,7 @@ public class FaqVO {
 	private String admin_id;
 	
 	private String faq_preference;
+	
+	private String faq_out;
 
 }

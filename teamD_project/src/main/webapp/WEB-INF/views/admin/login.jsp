@@ -32,18 +32,18 @@
 
 <form action="/admin/loginPost" method="post">
   <div class="form-group has-feedback">
-    <input type="text" name="uids" class="form-control" placeholder="USER ID"/>
+    <input type="text" name="admin_id" class="form-control" placeholder="USER ID"/>
     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
   </div>
   <div class="form-group has-feedback">
-    <input type="password" name="upw" class="form-control" placeholder="Password"/>
+    <input type="password" name=admin_password class="form-control" placeholder="Password"/>
     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
   </div>
   <div class="row">
     <div class="col-xs-8">    
       <div class="checkbox icheck">
         <label>
-          <input type="checkbox" name="useCookie"> Remember Me
+          <input type="checkbox" name="adminCookie"> Remember Me
         </label>
       </div>                        
     </div><!-- /.col -->

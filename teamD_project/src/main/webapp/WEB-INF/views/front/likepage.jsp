@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>Moderna - Bootstrap 3 flat corporate template</title>
+<title>Team_D Project : Daisy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <!-- css -->
@@ -33,9 +33,123 @@
 </head>
 
 <body>
+	<!-- 로그인 모달 -->
+	<div id="login" class="modal animate">
+
+
+      <!-- Modal Content -->
+      <form id="loginForm" method="POST" class="modal-content animate" action="/loginPost">
+
+         <div class="modal-container">
+            <label for="uid"><b>Username</b></label> <input class="form-control form-control-lg" type="text"
+               placeholder="Enter Username" name="MEMBER_ID" required id="member_id">
+            <label for="pwd"><b>Password</b></label> <input class="form-control form-control-lg"
+               type="password" placeholder="Enter Password" name="MEMBER_PASSWORD" required id="member_password">
+            <button type="submit" style="margin: 3px" class="btn btn-success"
+               id="login">로그인</button>
+            <button type="button" style="margin: 3px" class="btn btn-danger"
+               name="cancelbtn">취소</button>
+            <br>
+            <button type="button" style="margin: 3px" class="btn btn-default"
+               id="registerbtn">회원가입</button>
+         </div>
+
+         <div class="modal-container" style="background-color: #f1f1f1">
+
+            <span class="pwd">Forgot <a href="#">password?</a></span>
+         </div>
+      </form>
+   </div>
+
+	<!-- 회원가입 모달 -->
+	<div id="register" class="modal animate">
+
+
+      <!-- Modal Content -->
+      <form id="registerForm" class="modal-content animate"  method="POST"  action="/register_proc">
+
+         <div class="modal-container">
+            <table class="table">
+               <tr>
+                  <th><label for="uid"><b>User ID (E-mail)</b></label></th>
+                  <td><input class="form-control form-control-lg" type="text" placeholder="Enter Username" required
+                     id="regi_uid" name="MEMBER_ID">
+                     <button type="button" class="btn btn-default"  id="doublechk">중복확인</button></td>
+               </tr>
+               <tr>
+                  <th><label for="pwd"><b>Password</b></label></th>
+                  <td><input type="password" placeholder="Enter Password"
+                     required id="regi_password" name="MEMBER_PASSWORD"></td>
+               </tr>
+               <tr>
+                  <th><label for="pwdchk"><b>Password Check</b></label></th>
+                  <td><input type="password" placeholder="Password Check"
+                     required id="regi_passwordchk"></td>
+               </tr>
+               <tr>
+                  <td colspan="2'">
+                     <div class="alert alert-success">비밀번호가 일치합니다.</div>
+                     <div class="alert alert-danger">비밀번호가 일치하지 않습니다.</div>
+                  </td>
+               </tr>
+               <tr>
+                  <th><label for="uPhone"><b>Telephone</b></label></th>
+                  <td><input class="form-control form-control-lg" type="text" placeholder="Enter Phone Number" required
+                     id="regi_phone" name="MEMBER_PNUMBER">
+               </tr>
+               <tr>
+                  <th><label for="uNation"><b>Nation</b></label></th>
+                  <td>
+                     <!-- 국가코드 테스트용 수동 입력부분 -->
+                     <!-- <input class="form-control form-control-lg" type="text" placeholder="Enter Nation" required
+                     id="regi_nation" name="NATION_CODE"> -->
+                     
+                     <!-- 국가코드 리스트 생성 -->
+                     <select class="form-control" name="NATION_CODE">
+                        <option selected disabled hidden="true"> 국가 선택 </option>
+                        <c:forEach items="${nationList}" var="FhotelVO" >
+                           <option value="${FhotelVO.nation_code}">${FhotelVO.nation_name}</option>
+                        </c:forEach>
+                     </select>
+               </tr>
+               <tr>
+                  <th><label for="uAddress"><b>Address</b></label></th>
+                  <td><input class="form-control form-control-lg" type="text" placeholder="Enter Address" required
+                     id="regi_address" name="MEMBER_ADDRESS">
+               </tr>
+               <tr>
+                  <th><label for="fname"><b>First Name</b></label></th>
+                  <td><input class="form-control form-control-lg" type="text" placeholder="Enter First Name" required
+                     id="regi_fianame" name="MEMBER_FIANAME">
+               </tr>
+               <tr>
+                  <th><label for="lname"><b>Last Name</b></label></th>
+                  <td><input class="form-control form-control-lg" type="text" placeholder="Enter Last Name" required
+                     id="regi_laname" name="MEMBER_LANAME">
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     <button type="submit" class="btn btn-success">회원가입</button>
+                     <button type="button" style="margin: 3px" class="btn btn-danger"
+                        name="cancelbtn">취소</button>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </form>
+   </div>
+
+
+
+<%
+   String id = "";
+   id = (String)session.getAttribute("currentLoginSession");            // request에서 id 파라미터를 가져온다
+   if(id == null || id.equals("")) {
+%>
+
 	<div id="wrapper">
-		<!-- start header -->
-			<header>
+		<!-- 우상단 바 관련 소스 -->
+		<header>
 			<div class="navbar navbar-default navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
@@ -44,31 +158,62 @@
 							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="/"><span>M</span>oderna</a>
+						<a class="navbar-brand" href="/"><span>D</span>aisy </a>
 					</div>
 					<div class="navbar-collapse collapse ">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="/">Home</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle "
-								data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-								data-close-others="false">Features <b
-									class=" icon-angle-down"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="/typography">Typography</a></li>
-									<li><a href="/components">Components</a></li>
-									<li><a href="/pricingbox">Pricing box</a></li>
-								</ul></li>
-							<li><a href="/searchresult">SearchResult</a></li>
-							<li><a href="/portfolio">Portfolio</a></li>
-							<li><a href="/blog">Blog</a></li>
-							<li><a href="/contact">Contact</a></li>
-							<li><a href="#" id="loginPage">Login</a></li>
+							<li class="active"><a href="/"><button class="btn">Home</button></a></li>
+							<li><a href="#" id="loginPage"><button class="btn">Login</button></a></li>
+							<li><a href="/faqninquiry" ><button class="btn">고객센터</button></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 		</header>
-		<!-- end header -->
+	</div>
+		<!-- ..까지가 우상단 바 -->
+
+
+<%} else { %>
+
+   <div id="wrapper">
+      <!-- 우상단 바 관련 소스 -->
+      <header>
+         <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+               <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse"
+                     data-target=".navbar-collapse">
+                     <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/"><span>D</span>aisy <span>H</span>otel
+                     <span>S</span>ervice</a>
+               </div>
+               
+               <div class="navbar-collapse collapse ">
+                  <ul class="nav navbar-nav">
+                     <li class="active"><a href="/"><button class="btn">Home</button></a></li>
+                     <li>
+                        <a href="/mypage">
+                           <form method="POST" action="/mypage">
+                              <input type="hidden" name="MEMBER_ID"  id = "MEMBER_ID"value="<%=id %>"/>
+                              <button class="btn btn-success" type="submit" >Mypage</button>
+                           </form>
+                        </a>
+                     </li>
+                     <!-- <li><a href="/contact">Contact</a></li> -->
+                     <li><a href="/logout_proc" id="logout"><button class="btn">Logout</button></a></li>
+                     <li><a href="/faqninquiry" ><button class="btn">고객센터</button></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </header>
+   </div>
+<%}%>
+<!-- 여기까지가 공통적으로 들어가야하는 로그인, 회원가입, 우상단바  -->
+
 		
 		<section id="content">
 			<div class="container">
@@ -77,14 +222,14 @@
 						<div id="listTitle" >
 							<h3 class="lipage">관심 상품</h3>
 						</div>
-						<formname="firm"> 
+						<form name="firm"> 
 							<input type="button" class="btn btn-success" value="최고인기순" onclick="" /> 
 							<input type=button class="btn btn-info" value="고객평점순" onclick="" /> 
 							<select name="price">
 								<option value="">높은가격순</option>
 								<option value="">낮은가격순</option>
 							</select>
-						</formname>
+						</form>
 						<div class="wrapper p4">
 
 							<article class="grid_4 alpha">

@@ -9,13 +9,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Moderna - Bootstrap 3 flat corporate template</title>
+<title>Team_D Project : Daisy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 
-
-<!-- Theme 적용 -->
-<link href="/resources/front/skins/default.css" rel="stylesheet" />
 
 <!-- css 호출 -->
 <link href="/resources/front/css/bootstrap.min.css" rel="stylesheet" />
@@ -25,6 +22,9 @@
 <link href="/resources/front/css/flexslider.css" rel="stylesheet" />
 <link href="/resources/front/css/style.css" rel="stylesheet" />
 <link href="/resources/front/css/loginform.css" rel="stylesheet" />
+
+<!-- Theme 적용 -->
+<link href="/resources/front/skins/default.css" rel="stylesheet" />
 
 
 
@@ -151,7 +151,8 @@
 
 <%
    String id = "";
-   id = (String)session.getAttribute("currentLoginSession");            // request에서 id 파라미터를 가져온다
+   id = (String)session.getAttribute("currentLoginSession");
+   // request에서 id 파라미터를 가져온다
    if(id == null || id.equals("")) {
 %>
 
@@ -202,18 +203,6 @@
                <div class="navbar-collapse collapse ">
                   <ul class="nav navbar-nav">
                      <li class="active"><a href="/"><button class="btn">Home</button></a></li>
-                     <li><a href="/searchresult"><button class="btn">Searchlist</button></a></li>
-                     <!-- 드롭다운 예제    
-                     <li class="dropdown"><a href="#" class="dropdown-toggle "
-                        data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                        data-close-others="false"><b
-                           class=" icon-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                           <li><a href="/typography">SearchList</a></li>
-                           <li><a href="/components">Components</a></li>
-                           <li><a href="/pricingbox">Pricing box</a></li>
-                        </ul></li> -->
-                     <!-- <li><a href="/searchresult">SearchResult</a></li> -->
                      <li>
                         <a href="/mypage">
                            <form method="POST" action="/mypage">
@@ -222,13 +211,11 @@
                            </form>
                         </a>
                      </li>
-                     <li><a href="/searchresultdetail?hotel_code=KORDAGDH"><button class="btn">SearchResultDetail</button></a></li>
                      <!-- <li><a href="/contact">Contact</a></li> -->
                      <li><a href="/logout_proc" id="logout"><button class="btn">Logout</button></a></li>
                      <li><a href="/faqninquiry" ><button class="btn">고객센터</button></a></li>
                   </ul>
                </div>
-               
             </div>
          </div>
       </header>
@@ -370,19 +357,19 @@
 							<li><img src="/resources/front/img/slides/1.jpg" alt="" />
 								<div class="flex-caption">
 									<h3>대구 노보텔</h3>
-									<p>베리 굳</p>
+									<p>대구 노보텔 호텔 소개</p>
 									<a href="#" class="btn btn-theme">예약하기</a>
 								</div></li>
 							<li><img src="/resources/front/img/slides/2.jpg" alt="" />
 								<div class="flex-caption">
 									<h3>신라 호텔</h3>
-									<p>굳</p>
+									<p>신라 호텔 소개</p>
 									<a href="#" class="btn btn-theme">예약하기</a>
 								</div></li>
 							<li><img src="/resources/front/img/slides/3.jpg" alt="" />
 								<div class="flex-caption">
-									<h3>클린호텔</h3>
-									<p>클린함</p>
+									<h3>도쿄 호텔</h3>
+									<p>도쿄 호텔 소개</p>
 									<a href="#" class="btn btn-theme">예약하기</a>
 								</div></li>
 						</ul>

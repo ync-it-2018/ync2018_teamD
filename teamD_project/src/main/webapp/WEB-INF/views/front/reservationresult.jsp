@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>검색결과 페이지</title>
+	<title>Team_D Project : Daisy</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="description" content="" />
 	<!-- css -->

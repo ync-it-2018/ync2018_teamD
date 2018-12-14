@@ -44,5 +44,19 @@
 	
 	
 	<!-- interceptor 관련 설정 -->
+	<beans:bean id="aloginInterceptor" class ="kr.ync.project.admin.intercetor.ALoginInterceptor"></beans:bean>
+	<beans:bean id="authInterceptor" class ="kr.ync.project.admin.intercetor.AAuthInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/admin/loginPost"/>
+			<beans:ref bean="aloginInterceptor"/>
+		</interceptor>
+		
+		<!-- <interceptor>
+			<mapping path="/admin/*"/>
+			<beans:ref bean="authInterceptor"/>
+		</interceptor> -->
+	</interceptors>
  		<!-- 넣어야됨(나중에) -->
 </beans:beans>
