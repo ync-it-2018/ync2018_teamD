@@ -7,7 +7,7 @@
 <link href="/resources/front/css/bootstrap-slider.css" rel="stylesheet" />
 <link href="/resources/front/css/review.css" rel="stylesheet" />
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Team_D Project : Daisy</title>
 </head>
 <body>
 	<div class="container show-grid upperdiv">

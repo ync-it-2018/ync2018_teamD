@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Team_D Project : Daisy</title>
 </head>
 <body>
 	<h1>이용해 주셔서 감사합니다.</h1>
