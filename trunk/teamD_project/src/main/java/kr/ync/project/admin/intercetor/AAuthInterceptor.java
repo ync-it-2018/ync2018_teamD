@@ -14,6 +14,16 @@ import kr.ync.project.admin.service.AdminService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+/**
+ * 
+ * AAuthInterceptor.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  로그인 여부 확인 후 지정된 페이지로 이동
+ *
+ */
 public class AAuthInterceptor extends HandlerInterceptorAdapter {
 
 	@Autowired

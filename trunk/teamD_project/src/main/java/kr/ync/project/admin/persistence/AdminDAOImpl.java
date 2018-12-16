@@ -12,6 +12,16 @@ import org.springframework.stereotype.Repository;
 import kr.ync.project.admin.domain.AdminVO;
 
 @Repository
+/**
+ * 
+ * AdminDAOImpl.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  관리자 로그인시 필요한 쿼리문 동작
+ *
+ */
 public class AdminDAOImpl implements AdminDAO {
 	@Inject
 	private SqlSession session;

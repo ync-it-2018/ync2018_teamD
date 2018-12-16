@@ -7,6 +7,16 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+/**
+ * 
+ * RoomVO.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  숙소에 대한 정보
+ *
+ */
 public class RoomVO {
 	private int room_idx;
 

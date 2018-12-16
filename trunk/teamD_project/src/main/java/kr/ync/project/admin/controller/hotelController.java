@@ -40,9 +40,9 @@ public class hotelController {
 	 * 
 	 * @Description 
 	 *  호텔 목록 불러오는 컨트롤러
-	 * @Method Name :  
+	 * @Method Name :  hotelList
 	 *
-	 * @param listNum 
+	 * @param listNum 페이징을 위한 시작 값, 현재 페이지 정보
 	 * @param model
 	 * @return
 	 * @throws Exception
@@ -63,9 +63,9 @@ public class hotelController {
 	 * 
 	 * @Description
 	 * 리뷰 목록 불러오는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : commentList
 	 *
-	 * @param listNum
+	 * @param listNum	페이징을 위한 시작 값, 현재 페이지 정보
 	 * @param model
 	 * @return
 	 * @throws Exception
@@ -85,11 +85,11 @@ public class hotelController {
 	 * 
 	 * @Description 
 	 *	호텔 상세 정보 불러오는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : hotelDetail
 	 *
-	 * @param listNum
-	 * @param hotel_code
-	 * @param tab
+	 * @param listNum		페이징을 위한 시작 값, 현재 페이지 정보
+	 * @param hotel_code	상세하게 볼 호텔 코드
+	 * @param tab			호텔의 정보 1, 호텔의 리뷰 2
 	 * @param model
 	 * @return
 	 * @throws Exception
@@ -112,10 +112,10 @@ public class hotelController {
 	 * 
 	 * @Description
 	 *	호텔 숙소 정보 불러오는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : roomDetail
 	 *
-	 * @param room_idx
-	 * @param hotel_code
+	 * @param room_idx		선택한 숙소의 idx
+	 * @param hotel_code	숙소가 있는 호텔 코드
 	 * @param model
 	 * @return
 	 * @throws Exception
@@ -134,9 +134,9 @@ public class hotelController {
 	 * 
 	 * @Description
 	 * 이미지 상세정보 불러오는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : imageDetail
 	 *
-	 * @param idx
+	 * @param idx		이미지를 불러올 방의 idx
 	 * @param model
 	 * @return
 	 * @throws Exception
@@ -150,9 +150,9 @@ public class hotelController {
 	 * 
 	 * @Description
 	 *	호텔 삭제하는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : hotelDelete
 	 *
-	 * @param hotel_code
+	 * @param hotel_code	삭제하는 호텔의 코드
 	 * @return
 	 * @throws Exception
 	 */
@@ -165,9 +165,9 @@ public class hotelController {
 	 * 
 	 * @Description
 	 *	호텔 수정하는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : hotelModify
 	 *
-	 * @param hotel_code
+	 * @param hotel_code	수정하는 호텔의 코드
 	 * @param model
 	 * @return
 	 * @throws Exception
@@ -184,7 +184,7 @@ public class hotelController {
 	 * 
 	 * @Description
 	 *	호텔의 편의기능을 추가하는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : addFacility
 	 *
 	 * @param model
 	 * @return
@@ -199,9 +199,9 @@ public class hotelController {
 	 * 
 	 * @Description
 	 *	리뷰의 상세 정보 불러오는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : reviewDetail
 	 *
-	 * @param idx
+	 * @param idx		상세하게 볼 리뷰의 idx
 	 * @param model
 	 * @return
 	 * @throws Exception
@@ -215,9 +215,9 @@ public class hotelController {
 	 * 
 	 * @Description
 	 *	리뷰 삭제하는 컨트롤러
-	 * @Method Name : 
+	 * @Method Name : reviewDelete
 	 *
-	 * @param idx
+	 * @param idx	삭제할 리뷰의 idx
 	 * @return
 	 * @throws Exception
 	 */

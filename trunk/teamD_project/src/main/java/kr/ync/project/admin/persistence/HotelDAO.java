@@ -9,7 +9,16 @@ import kr.ync.project.admin.domain.HotelVO;
 import kr.ync.project.admin.domain.ImageVO;
 import kr.ync.project.admin.domain.ReviewVO;
 import kr.ync.project.admin.domain.RoomVO;
-
+/**
+ * 
+ * HotelDAO.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  호텔에 관련된 동작시 필요한 인터페이스
+ *
+ */
 public interface HotelDAO {
 
 	public void create(HotelVO vo) throws Exception;
@@ -53,20 +62,5 @@ public interface HotelDAO {
 	public int allreviewCnt() throws Exception;
 
 	public List<ReviewVO> Allreview() throws Exception;
-
-//	public List<BoardVO> listPage(int page) throws Exception;
-  
-//	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
-
-//	public int countPaging(Criteria cri) throws Exception;
-   
-//	//use for dynamic SQL
-//	// 검색이 적용된 Query 결과 List
-//	public List<BoardVO> listSearch(SearchCriteria cri)throws Exception;
-//	
-//	// 검색이 적용된 Query 결과 Count
-//	public int listSearchCount(SearchCriteria cri)throws Exception;
-//	
-//	public void updateViewCnt(Integer bno)throws Exception;
 
 }
