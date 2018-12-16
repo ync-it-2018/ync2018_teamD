@@ -16,6 +16,16 @@ import kr.ync.project.admin.domain.ReviewVO;
 import kr.ync.project.admin.domain.RoomVO;
 
 @Repository
+/**
+ * 
+ * HotelDAOImpl.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  호텔에 관련된 동작에 필요한 쿼리문 동작
+ *
+ */
 public class HotelDAOImpl implements HotelDAO {
 	
 	@Inject

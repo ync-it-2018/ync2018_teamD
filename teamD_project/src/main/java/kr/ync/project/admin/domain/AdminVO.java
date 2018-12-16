@@ -7,6 +7,16 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+/**
+ * 
+ * AdminVO.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  관리자 관련 데이터
+ *
+ */
 public class AdminVO {
 
 	private String admin_id;

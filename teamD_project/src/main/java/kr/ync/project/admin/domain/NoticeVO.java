@@ -7,6 +7,16 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+/**
+ * 
+ * NoticeVO.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  공지사항에 대한 정보
+ *
+ */
 public class NoticeVO {
 	private int rownum; 
 	

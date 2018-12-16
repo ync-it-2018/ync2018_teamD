@@ -9,7 +9,16 @@ import kr.ync.project.admin.domain.HotelVO;
 import kr.ync.project.admin.domain.ImageVO;
 import kr.ync.project.admin.domain.ReviewVO;
 import kr.ync.project.admin.domain.RoomVO;
-
+/**
+ * 
+ * HotelService.java
+ *
+ * @Author : 이우호
+ * @Date   : 2018. 12. 14.
+ * @Description 
+ *  호텔 관련된 동작을 실행하는 서비스 인터페이스
+ *
+ */
 public interface HotelService {
 
       public void regist(HotelVO board) throws Exception;
