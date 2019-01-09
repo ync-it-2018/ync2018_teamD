@@ -320,7 +320,7 @@
 										<option value=5>★★★★★</option>
 								</select>
 								</td>
-								<td><p>가격</p> <select
+								<!-- <td><p>가격</p> <select
 									name="adult">
 										<option value="one" selected="selected">￦0 - ￦49000</option>
 										<option value="two">￦50000 - ￦99000</option>
@@ -328,7 +328,7 @@
 										<option value="three">￦150000 - ￦199000</option>
 										<option value="three">￦200000 - ￦249000</option>
 										<option value="three">￦250000 - </option>
-								</select></td>
+								</select></td> -->
 							</tr>
 							
 							<tr>
@@ -341,13 +341,13 @@
 
 						</table>
 					</form>
-					<table>
+					<!-- <table>
 						<tr>
 							<td colspan="2" style="text-align: right"><a
 								href="/lastpage"><button class="btn">최근 본 상품</button></a> <a
 								href="/likepage"><button class="btn">관심 상품</button></a></td>
 						</tr>
-					</table>
+					</table> -->
 				</div>
 
 				<div class="col-lg-6">
